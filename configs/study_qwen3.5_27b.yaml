@@ -1,0 +1,96 @@
+version: 1
+# Qwen/Qwen3.5-27B backbone (64 layers, hidden 5120; hybrid Gated DeltaNet / Gated Attention, native multimodal, text-only use here).
+# Needs transformers >= 5.2 (pinned in pyproject) and AnyJev 0.3.0; the pipeline is otherwise the Qwen3 one.
+# Everything except the backbone block, probe layers and outputs_dir is identical to configs/study.yaml,
+# so folds, seeds, hold-out splits and the XGBoost arms are shared across backbones.
+seed: 20261008
+outer_folds: 5
+inner_folds: 3
+search_iterations: 8
+threads: 2
+min_class_count: 10
+bootstrap_iterations: 1000
+
+backbone:
+  model_id: Qwen/Qwen3.5-27B
+  # Pinned on the pod by scripts/queue_pod.sh (HfApi().model_info(model_id).sha) before any GPU stage runs.
+  revision: fc05daec18b0a78c049392ed2e771dde82bdf654
+  anyjev_commit: d458d13968eec0e2cfa8c81b64629b96cf5cb4a9
+  anyjev_batch: 2
+  # Persist zs_partial.json every N patients so long zeroshot runs can resume after a kill.
+  # I/O only — excluded from prediction provenance.
+  anyjev_checkpoint_every: 10
+  llm_batch: 4
+  # Pod placement: shard across every visible GPU (accelerate); set max_memory per GPU if the auto map OOMs.
+  device_map: auto
+  # cuBLAS/sharded kernels may not be bitwise deterministic across GPUs; warn instead of failing.
+  deterministic_warn_only: true
+
+zero_shot_calibration_C: 1.0
+
+# One outputs dir per backbone; compared task by task on the shared hold-out patients.
+outputs_dir: outputs_qwen3.5_27b
+
+probe:
+  # Frozen in study.yaml so existing System 1 prediction provenance still matches.
+  # The trained hybrid (ProbeH / JEV) is retired.
+  layers: [32, 48, 64]
+  Cs: [0.0001, 0.001, 0.01, 0.1, 1.0]
+
+icl:
+  # Native context is 262,144 tokens; the 32k prompt budget of the Qwen3-4B study is kept so ICL subsamples are identical.
+  native_context: 262144
+  context_limit: 32768
+  yarn_factor: 1
+  margin_tokens: 256
+  margin_fraction: 0.02
+  min_per_class: 10
+  # true: equal rows per class in the subsample; false: training-fold class proportions.
+  balanced: false
+  # Gated DeltaNet carries a recurrent state, so a prefix cache cannot be trimmed: "copy" rebuilds it per query batch.
+  reuse: copy
+
+ensemble:
+  # Equal weights across primary models.
+  members: [M2, ZS_raw, ICL_full]
+
+holdout:
+  # XGB_optuna arm: one stratified hold-out per task shared with the zero-shot readout
+  # (same patients in both arms); Optuna tunes trees, class weights and the decision rule
+  # on inner-CV balanced accuracy over the remaining development patients.
+  # Does not affect M2 / ZS_raw predictions (stripped from their provenance keys).
+  fraction: 0.2
+  inner_folds: 5
+  optuna_trials: 200
+  max_minutes: 60
+  threads: 5
+  bootstrap_iterations: 1000
+  # Extra split seeds (study seed + 1..k) with a reduced budget; show wins are not one draw.
+  sensitivity_seeds: 5
+  sensitivity_trials: 100
+  sensitivity_max_minutes: 20
+  # XGB_optuna_full (ten large tables): same hold-out, training on every other row of patients_full.csv.
+  # Optuna runs on a stratified cap of development rows; the best trial is refit on all of them.
+  full:
+    tuning_cap: 50000
+    optuna_trials: 100
+    max_minutes: 60
+  search_space:
+    max_depth: [2, 10]
+    learning_rate: [0.005, 0.3]        # log-uniform
+    n_estimators: [50, 1500]
+    min_child_weight: [0.5, 50]        # log-uniform
+    subsample: [0.5, 1.0]
+    colsample_bytree: [0.4, 1.0]
+    colsample_bylevel: [0.4, 1.0]
+    gamma: [0.0, 5.0]
+    reg_alpha: [0.001, 10]             # log-uniform
+    reg_lambda: [0.01, 50]             # log-uniform
+    max_bin: [64, 128, 256]
+    grow_policy: [depthwise, lossguide]
+    # sample weight of class c = (n / (K * n_c)) ** exponent; 0 = none, 1 = fully balanced
+    class_weight_exponent: [0.0, 1.0]
+    # binary: predict class 1 when P(class 1) >= threshold
+    threshold: [0.05, 0.95]
+    # multiclass: argmax P / prior ** exponent; 0 = plain argmax
+    prior_exponent: [0.0, 1.5]

@@ -1,0 +1,139 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_cardiotocography",
+  "outcome": "nsp",
+  "data_hash": "2f00414ad9d17f1aa4d959262c515931be4014a00efcbb98d3f713474e846050",
+  "dataset_spec_sha256": "2e895910519ec025be136e10c36ef3f254c3f34059e49e11b529b9371b5c694e",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261013,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "Normal",
+    "Suspect",
+    "Pathologic"
+  ],
+  "predictor_columns": [
+    "lb",
+    "ac",
+    "fm",
+    "uc",
+    "dl",
+    "ds",
+    "dp",
+    "astv",
+    "mstv",
+    "altv",
+    "mltv",
+    "width",
+    "min",
+    "max",
+    "nmax",
+    "nzeros",
+    "mode",
+    "mean",
+    "median",
+    "variance",
+    "tendency"
+  ],
+  "zs_raw_csv_sha256": "4948e22fb7023c8eb064394424402f7c423752127a9feee7ed724024fe86f49a",
+  "files": {
+    "split.json": "95857830e0b873ed493b14c7965931a3bb8f4254bf3fa3fd17b99233ddf4f4a1",
+    "trials.csv": "0022612f0ba38846a3e1b9ca6518841a4050574d72cc8bbda0741f1f270be2e6",
+    "XGB_optuna.csv": "eb37b6900f17dee28523ebd3ba77bb957d617da35f9229f0a906aeb3469aa5ff",
+    "ZS_raw.csv": "03745ee371c4a8f3c354602ed8a97b1eaa19aca464a152caf08a4e451628a431",
+    "model.joblib": "10c5816d27306a21d0780e8ff2f5883b2fcdfa76a918e7a5ddb42eb903219e01",
+    "best_params.json": "2fe01d4c2d373a1cac13b8843ea9495ca4d0af4076e58b767f3843d80bd576a9",
+    "metrics.json": "b6953c7babbf1442c2c1af22b0427b89ad56a6b58053a22c4d4ec1c3d12f62e8"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

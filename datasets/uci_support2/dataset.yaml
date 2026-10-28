@@ -1,0 +1,249 @@
+name: uci_support2
+description: 'UCI SUPPORT2 (Study to Understand Prognoses and Preferences for Outcomes and Risks of Treatments,
+  1989-1994, five US teaching hospitals): seriously ill hospitalised adults; class-stratified subsample of 1000
+  for the readout, whole table for XGBoost. 37 predictors measured on study day 3. Binary in-hospital death.'
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: 'Seriously ill adult hospitalised in one of five US teaching hospitals and enrolled in the SUPPORT study
+  with one of nine advanced disease categories. The observations were recorded on the third day after study entry:
+  demographics, disease group, comorbidity count, physiology and laboratory values, SUPPORT and APACHE III scores,
+  physician survival estimates, resuscitation orders and functional status.'
+observations_header: 'Day-3 SUPPORT study record:'
+predictors:
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+  sex:
+    column: sex
+    kind: categorical
+    text_label: Sex
+    text_values:
+      male: Male
+      female: Female
+  dzgroup:
+    column: dzgroup
+    kind: categorical
+    text_label: Disease subgroup
+    text_values:
+      ARF/MOSF w/Sepsis: Acute respiratory failure or multiple organ system failure with sepsis
+      Coma: Coma (non-traumatic)
+      Lung Cancer: Lung cancer
+      COPD: Chronic obstructive pulmonary disease
+      Colon Cancer: Colon cancer with metastases
+      MOSF w/Malig: Multiple organ system failure with malignancy
+      CHF: Congestive heart failure
+      Cirrhosis: Cirrhosis
+  dzclass:
+    column: dzclass
+    kind: categorical
+    text_label: Disease class
+    text_values:
+      ARF/MOSF: Acute respiratory failure or multiple organ system failure
+      Coma: Coma
+      Cancer: Cancer
+      COPD/CHF/Cirrhosis: Chronic organ failure (COPD, heart failure or cirrhosis)
+  num_co:
+    column: num_co
+    kind: numeric
+    text_label: Number of comorbid conditions
+    scale_note: count, 0-7
+  edu:
+    column: edu
+    kind: numeric
+    text_label: Years of education
+    unit: years
+  income:
+    column: income
+    kind: categorical
+    text_label: Annual household income
+    text_values:
+      under $11k: Under 11 000 dollars
+      $11-$25k: 11 000 to 25 000 dollars
+      $25-$50k: 25 000 to 50 000 dollars
+      '>$50k': Over 50 000 dollars
+  scoma:
+    column: scoma
+    kind: numeric
+    text_label: SUPPORT coma score on day 3 (Glasgow-based, model estimated)
+    scale_note: 0 = alert to 100 = deep coma
+  avtisst:
+    column: avtisst
+    kind: numeric
+    text_label: Average Therapeutic Intervention Scoring System (TISS) score, days 3-25
+    scale_note: points; higher means more intensive treatment
+  race:
+    column: race
+    kind: categorical
+    text_label: Race
+    text_values:
+      asian: Asian
+      white: White
+      hispanic: Hispanic
+      black: Black
+      other: Other
+  sps:
+    column: sps
+    kind: numeric
+    text_label: SUPPORT physiology score on day 3
+    scale_note: points; higher is worse
+  aps:
+    column: aps
+    kind: numeric
+    text_label: APACHE III acute physiology score on day 3
+    scale_note: points; higher is worse
+  hday:
+    column: hday
+    kind: numeric
+    text_label: Hospital day on which the patient entered the study
+    unit: days
+  diabetes:
+    column: diabetes
+    kind: categorical
+    text_label: Diabetes as a comorbidity
+    text_values: &id001
+      '0': 'No'
+      '1': 'Yes'
+  dementia:
+    column: dementia
+    kind: categorical
+    text_label: Dementia as a comorbidity
+    text_values: *id001
+  ca:
+    column: ca
+    kind: categorical
+    text_label: Cancer status
+    text_values:
+      'no': No cancer
+      'yes': Cancer, not metastatic
+      metastatic: Metastatic cancer
+  prg2m:
+    column: prg2m
+    kind: numeric
+    text_label: Physician's estimate of the probability of surviving 2 months
+    scale_note: 0-1
+  prg6m:
+    column: prg6m
+    kind: numeric
+    text_label: Physician's estimate of the probability of surviving 6 months
+    scale_note: 0-1
+  dnr:
+    column: dnr
+    kind: categorical
+    text_label: Do-not-resuscitate order
+    text_values:
+      no dnr: No DNR order
+      dnr before sadm: DNR order written before study admission
+      dnr after sadm: DNR order written after study admission
+  dnrday:
+    column: dnrday
+    kind: numeric
+    text_label: Day of the DNR order relative to study entry
+    unit: days
+    scale_note: negative if written before study entry
+  meanbp:
+    column: meanbp
+    kind: numeric
+    text_label: Mean arterial blood pressure on day 3
+    unit: mmHg
+  wblc:
+    column: wblc
+    kind: numeric
+    text_label: White blood cell count on day 3
+    unit: x10^9/L
+  hrt:
+    column: hrt
+    kind: numeric
+    text_label: Heart rate on day 3
+    unit: beats/min
+  resp:
+    column: resp
+    kind: numeric
+    text_label: Respiratory rate on day 3
+    unit: breaths/min
+  temp:
+    column: temp
+    kind: numeric
+    text_label: Temperature on day 3
+    unit: degrees Celsius
+  pafi:
+    column: pafi
+    kind: numeric
+    text_label: PaO2/FiO2 ratio on day 3
+    unit: mmHg
+  alb:
+    column: alb
+    kind: numeric
+    text_label: Serum albumin on day 3
+    unit: g/dL
+  bili:
+    column: bili
+    kind: numeric
+    text_label: Serum bilirubin on day 3
+    unit: mg/dL
+  crea:
+    column: crea
+    kind: numeric
+    text_label: Serum creatinine on day 3
+    unit: mg/dL
+  sod:
+    column: sod
+    kind: numeric
+    text_label: Serum sodium on day 3
+    unit: mmol/L
+  ph:
+    column: ph
+    kind: numeric
+    text_label: Arterial blood pH on day 3
+    scale_note: normal 7.35-7.45
+  glucose:
+    column: glucose
+    kind: numeric
+    text_label: Serum glucose on day 3
+    unit: mg/dL
+  bun:
+    column: bun
+    kind: numeric
+    text_label: Blood urea nitrogen on day 3
+    unit: mg/dL
+  urine:
+    column: urine
+    kind: numeric
+    text_label: Urine output on day 3
+    unit: mL/day
+  adlp:
+    column: adlp
+    kind: categorical
+    text_label: Activities of daily living index reported by the patient
+    text_values: &id002
+      '0': No activities of daily living impaired
+      '1': 1 of 7 activities impaired
+      '2': 2 of 7 activities impaired
+      '3': 3 of 7 activities impaired
+      '4': 4 of 7 activities impaired
+      '5': 5 of 7 activities impaired
+      '6': 6 of 7 activities impaired
+      '7': 7 of 7 activities impaired
+  adls:
+    column: adls
+    kind: categorical
+    text_label: Activities of daily living index reported by a surrogate
+    text_values: *id002
+  adlsc:
+    column: adlsc
+    kind: numeric
+    text_label: Activities of daily living index, imputed and calibrated to surrogate report
+    scale_note: 0-7 impaired activities
+outcomes:
+  hosp_death:
+    column: hosp_death
+    classes:
+    - Discharged alive
+    - Died in hospital
+    mapping:
+      '0': Discharged alive
+      '1': Died in hospital
+    question: Based on this day-3 record, did the patient die before discharge from this hospital stay?

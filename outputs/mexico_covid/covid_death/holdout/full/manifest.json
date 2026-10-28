@@ -1,0 +1,133 @@
+{
+  "model": "XGB_optuna_full",
+  "dataset": "mexico_covid",
+  "outcome": "covid_death",
+  "data_hash": "b26442bec43e60ab87faa778cfadde20b9fca55199e0a2a6a6f055f3f2aae50b",
+  "full_data_hash": "2258a8358eae5fa1fde688f39365e012a6211205345263b251540c971969b240",
+  "readout_to_full_sha256": "67c9671a155697600eb29941e83a791b1f8eae8c5d360237ec2a886286bee9f3",
+  "split_sha256": "cab285a9093f0ba9e7b107b1316aca51eb33545ce8495160d8f507886257f4bf",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261008,
+  "n_trials_requested": 100,
+  "timeout_seconds": 3600.0,
+  "tuning_cap": 50000,
+  "classes": [
+    "Alive",
+    "Died"
+  ],
+  "predictor_columns": [
+    "age",
+    "sex",
+    "pregnancy",
+    "indigenous",
+    "nationality",
+    "pneumonia",
+    "diabetes",
+    "copd",
+    "asthma",
+    "immunosuppressed",
+    "hypertension",
+    "other_disease",
+    "cardiovascular",
+    "obesity",
+    "chronic_kidney",
+    "smoking"
+  ],
+  "files": {
+    "trials.csv": "b7b19160f83a2aa3d618b16596991de3615dcf71a0b892d2f4eeefe4aa6769f0",
+    "XGB_optuna_full.csv": "ce6e9f8ce7361410c084271a056d5991be1193c81adfd154b3681139954f67fd",
+    "model.joblib": "8d3da91201564d0192ef99442c89d0e4d7685849b4bef1ef3576546e10769eed",
+    "best_params.json": "403f3fddd35e2abfbee7eca41a94afce1b14cb472d8a6c3406aac8e560b34f65",
+    "metrics.json": "d5538e160074691ee7c3a35d0fa548107e8117e0a298b5187d6486ebc56d54d2"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

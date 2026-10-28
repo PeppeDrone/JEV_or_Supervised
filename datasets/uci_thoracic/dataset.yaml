@@ -1,0 +1,119 @@
+name: uci_thoracic
+description: UCI Thoracic Surgery Data (Wroclaw Thoracic Surgery Centre, 2007-2011; 470 patients). Major lung resection
+  for primary lung cancer; 16 preoperative predictors. Binary death within one year of surgery.
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: 'Adult scheduled for major lung resection for primary lung cancer at a thoracic surgery centre (Wroclaw,
+  Poland, 2007-2011). The observations are the preoperative registry record: diagnosis group, spirometry, performance
+  status, symptoms, clinical tumour size, comorbidities, smoking and age.'
+observations_header: 'Preoperative findings before lung resection:'
+predictors:
+  dgn:
+    column: dgn
+    kind: categorical
+    text_label: Diagnosis group (registry combination of ICD-10 tumour codes)
+    text_values:
+      DGN1: Diagnosis group DGN1 (rare)
+      DGN2: Diagnosis group DGN2
+      DGN3: Diagnosis group DGN3 (most common)
+      DGN4: Diagnosis group DGN4
+      DGN5: Diagnosis group DGN5
+      DGN6: Diagnosis group DGN6 (rare)
+      DGN8: Diagnosis group DGN8 (rare)
+  pre4:
+    column: pre4
+    kind: numeric
+    text_label: Forced vital capacity (FVC)
+    unit: litres
+  pre5:
+    column: pre5
+    kind: numeric
+    text_label: Forced expiratory volume in 1 second (FEV1)
+    unit: litres
+    scale_note: a few values above 10 appear to be percent of predicted
+  pre6:
+    column: pre6
+    kind: categorical
+    text_label: Performance status (Zubrod/ECOG scale)
+    text_values:
+      PRZ0: '0: fully active'
+      PRZ1: '1: restricted in strenuous activity but ambulatory'
+      PRZ2: '2: ambulatory and self-caring but unable to work'
+  pre7:
+    column: pre7
+    kind: categorical
+    text_label: Pain before surgery
+    text_values: &id001
+      F: 'No'
+      T: 'Yes'
+  pre8:
+    column: pre8
+    kind: categorical
+    text_label: Haemoptysis before surgery
+    text_values: *id001
+  pre9:
+    column: pre9
+    kind: categorical
+    text_label: Dyspnoea before surgery
+    text_values: *id001
+  pre10:
+    column: pre10
+    kind: categorical
+    text_label: Cough before surgery
+    text_values: *id001
+  pre11:
+    column: pre11
+    kind: categorical
+    text_label: Weakness before surgery
+    text_values: *id001
+  pre14:
+    column: pre14
+    kind: categorical
+    text_label: Clinical T stage (tumour size)
+    text_values:
+      OC11: T1 (smallest)
+      OC12: T2
+      OC13: T3
+      OC14: T4 (largest)
+  pre17:
+    column: pre17
+    kind: categorical
+    text_label: Type 2 diabetes mellitus
+    text_values: *id001
+  pre19:
+    column: pre19
+    kind: categorical
+    text_label: Myocardial infarction within the last 6 months
+    text_values: *id001
+  pre25:
+    column: pre25
+    kind: categorical
+    text_label: Peripheral arterial disease
+    text_values: *id001
+  pre30:
+    column: pre30
+    kind: categorical
+    text_label: Smoker
+    text_values: *id001
+  pre32:
+    column: pre32
+    kind: categorical
+    text_label: Asthma
+    text_values: *id001
+  age:
+    column: age
+    kind: numeric
+    text_label: Age at surgery
+    unit: years
+outcomes:
+  died_1y:
+    column: died_1y
+    classes:
+    - Alive one year after surgery
+    - Died within one year of surgery
+    mapping:
+      '0': Alive one year after surgery
+      '1': Died within one year of surgery
+    question: Based on these preoperative findings, did the patient die within one year after the lung resection?

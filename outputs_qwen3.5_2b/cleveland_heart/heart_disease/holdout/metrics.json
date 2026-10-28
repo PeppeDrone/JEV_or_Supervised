@@ -1,0 +1,114 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "cleveland_heart",
+  "outcome": "heart_disease",
+  "seed": 20261008,
+  "n_development": 242,
+  "n_holdout": 61,
+  "n_classes": 2,
+  "inner_folds": 5,
+  "trials_completed": 80,
+  "trials_pruned": 120,
+  "tuning_seconds": 47.821181535720825,
+  "best_params": {
+    "max_depth": 3,
+    "learning_rate": 0.030576744802406745,
+    "n_estimators": 1301,
+    "min_child_weight": 1.9440360930734346,
+    "subsample": 0.7913867551733024,
+    "colsample_bytree": 0.47456091278129425,
+    "colsample_bylevel": 0.6674024931761767,
+    "gamma": 0.8314315353542061,
+    "reg_alpha": 0.006990241416435408,
+    "reg_lambda": 4.57052932471974,
+    "max_bin": 128,
+    "grow_policy": "lossguide",
+    "class_weight_exponent": 0.2613215421181026,
+    "threshold": 0.49679120586273023
+  },
+  "best_cv_balanced_accuracy": 0.844781707825186,
+  "best_cv_sd": 0.026660475177753,
+  "consensus_params": {
+    "max_depth": 3,
+    "learning_rate": 0.030576744802406745,
+    "n_estimators": 1099,
+    "min_child_weight": 1.4564094025342729,
+    "subsample": 0.7913867551733024,
+    "colsample_bytree": 0.7276500033206688,
+    "colsample_bylevel": 0.8004457159103653,
+    "gamma": 0.8314315353542061,
+    "reg_alpha": 0.08220773299205274,
+    "reg_lambda": 2.154018674483638,
+    "max_bin": 128,
+    "grow_policy": "lossguide",
+    "class_weight_exponent": 0.4859060346015534,
+    "threshold": 0.483575556316957
+  },
+  "holdout": {
+    "XGB_optuna": {
+      "balanced_accuracy": 0.8831168831168831,
+      "auroc": 0.9415584415584415,
+      "brier": 0.09825540527528284,
+      "log_loss": 0.31513657826610153,
+      "macro_f1": 0.8841248303934871
+    },
+    "XGB_optuna_argmax": {
+      "balanced_accuracy": 0.8831168831168831,
+      "auroc": 0.9415584415584415,
+      "brier": 0.09825540527528284,
+      "log_loss": 0.31513657826610153,
+      "macro_f1": 0.8841248303934871
+    },
+    "XGB_optuna_consensus": {
+      "balanced_accuracy": 0.8679653679653679,
+      "auroc": 0.933982683982684,
+      "brier": 0.10748181492791492,
+      "log_loss": 0.3397688616451499,
+      "macro_f1": 0.8679653679653679
+    },
+    "ZS_raw": {
+      "balanced_accuracy": 0.625,
+      "auroc": 0.9274891774891775,
+      "brier": 0.19686464571490778,
+      "log_loss": 0.5776221792443464,
+      "macro_f1": 0.5793103448275863
+    },
+    "ZS_raw_prior_matched": {
+      "balanced_accuracy": 0.6812770562770563,
+      "auroc": 0.9274891774891775,
+      "brier": 0.19686464571490778,
+      "log_loss": 0.5776221792443464,
+      "macro_f1": 0.6652439024390244
+    }
+  },
+  "paired": {
+    "XGB_optuna_minus_ZS_raw": {
+      "delta_bacc": 0.2581168831168831,
+      "delta_bacc_ci": [
+        0.1536661255411255,
+        0.3595134644766998
+      ],
+      "delta_auroc": 0.01406926406926401,
+      "delta_auroc_ci": [
+        -0.05277661064425773,
+        0.08011184302002222
+      ],
+      "iterations": 1000
+    },
+    "XGB_optuna_minus_ZS_raw_prior_matched": {
+      "delta_bacc": 0.20183982683982682,
+      "delta_bacc_ci": [
+        0.09444055316091954,
+        0.3059274193548387
+      ],
+      "delta_auroc": 0.01406926406926401,
+      "delta_auroc_ci": [
+        -0.05277661064425773,
+        0.08011184302002222
+      ],
+      "iterations": 1000
+    }
+  },
+  "cv_minus_holdout_balanced_accuracy": -0.038335175291697055,
+  "rescored_from": "outputs/cleveland_heart/heart_disease/holdout"
+}

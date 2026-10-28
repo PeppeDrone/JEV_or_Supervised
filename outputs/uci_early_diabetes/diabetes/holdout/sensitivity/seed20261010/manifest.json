@@ -1,0 +1,133 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_early_diabetes",
+  "outcome": "diabetes",
+  "data_hash": "41b27961fe227b27dbc0254b0e0b1e2912a26e2440be65a8d0aab5d9f90fc701",
+  "dataset_spec_sha256": "882b360f1d6d272a3669616293144ac8543e57de2b800a7a95b42e1246288625",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261010,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "No diabetes",
+    "Diabetes"
+  ],
+  "predictor_columns": [
+    "age",
+    "gender",
+    "polyuria",
+    "polydipsia",
+    "sudden_weight_loss",
+    "weakness",
+    "polyphagia",
+    "genital_thrush",
+    "visual_blurring",
+    "itching",
+    "irritability",
+    "delayed_healing",
+    "partial_paresis",
+    "muscle_stiffness",
+    "alopecia",
+    "obesity"
+  ],
+  "zs_raw_csv_sha256": "891be5d766f1d124a26ee857331eb2d8ac6a1cebb336fda38491c023d5c1e398",
+  "files": {
+    "split.json": "ebad8cb8114ef363ea41b7402e3d2595f7a6a16ca393d58056ea8da735b8a0fd",
+    "trials.csv": "9b168a38af83b9437477b3509e6bf9375aae240d0f9157af33f0198f6ce85934",
+    "XGB_optuna.csv": "b36e4670b9339181cdfff33d704a1914f33a8f41b94599351febd3b045931023",
+    "ZS_raw.csv": "cef07cc49ecc39f90747485ad20d2d2301109dba6818f9941acaec528d1803ce",
+    "model.joblib": "b10413c94afe8c3b6d9be35f289b06d6df524cb981038c65506563d6fae45949",
+    "best_params.json": "c076c22a3b765cca319f64778998f390f1952df9592bf56ec535a69f529c889c",
+    "metrics.json": "7a581ff4cd910fe171da72d643b4616818fc4d8354c06466580ba34cb0fd0352"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

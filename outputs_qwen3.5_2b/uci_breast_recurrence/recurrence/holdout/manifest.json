@@ -1,0 +1,124 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_breast_recurrence",
+  "outcome": "recurrence",
+  "data_hash": "70788dc94170674fc61b4d297f6d9c550285093e22fdb3354a18175f436616a2",
+  "dataset_spec_sha256": "ee7816555f155e5b60e9736ef196d31d887c8d8c5ee43b1acbd7b360ec8f56f1",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261008,
+  "n_trials_requested": 200,
+  "timeout_seconds": 3600.0,
+  "classes": [
+    "No recurrence",
+    "Recurrence"
+  ],
+  "predictor_columns": [
+    "age",
+    "menopause",
+    "tumor_size",
+    "inv_nodes",
+    "node_caps",
+    "deg_malig",
+    "breast",
+    "breast_quad",
+    "irradiat"
+  ],
+  "zs_raw_csv_sha256": "e64ebb7f0429c0b35c9ad3297b4a3d705d3244a3757d43ffc708fca309be4dc8",
+  "files": {
+    "split.json": "40918387dc051591f5c6b6e08a8bf662a4cfff7426410bffe52b2f7e26682343",
+    "trials.csv": "9179cf595df6f0fc0fd1a2e95410b41cc183440f7041af9a83509a884d8f1de8",
+    "XGB_optuna.csv": "405be2bfa7450bcc7d434b37890c8c264b47c881e7cde0cfd1bb742233338b19",
+    "ZS_raw.csv": "1d7937ac3d61bbb2fda533158599570d2b632182c2989cd46c143806ac05a9a4",
+    "model.joblib": "f1a1802685d24930946171d7fec4306b072563e3ae6290417d718b2a5be99c36",
+    "best_params.json": "b64cb9b355973c9c87b0323283904c18aba44154d97d836276b92db170649df9",
+    "metrics.json": "3e3d184adefa8a8022f35d60c35f54ab8ffa825f822cfec238ae9fdacbaee472"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  },
+  "zs_raw_source": "predictions/ZS_raw_holdout.csv",
+  "rescored_from": "outputs/uci_breast_recurrence/recurrence/holdout",
+  "source_data_hash": "c8e6d9d805c971e57e94d4398a1bcc94ec9798c757e7662ced6b0b055865b31e"
+}

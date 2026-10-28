@@ -1,0 +1,34 @@
+{
+  "n_tasks": 45,
+  "missing": [],
+  "zs_wins_bacc": 2,
+  "zs_wins_bacc_exact_ci": [
+    0.005428488700250948,
+    0.15149290024333914
+  ],
+  "zs_wins_bacc_ci_excludes_zero": 0,
+  "zs_wins_bacc_prior_matched": 1,
+  "zs_wins_auroc": 2,
+  "zs_noninferior_margin_005": 2,
+  "median_bacc": {
+    "XGB_optuna": 0.7797202797202798,
+    "XGB_optuna_argmax": 0.7733333333333333,
+    "ZS_raw": 0.5185185185185185,
+    "ZS_raw_prior_matched": 0.5
+  },
+  "median_auroc": {
+    "XGB_optuna": 0.9041051541051541,
+    "ZS_raw": 0.7183568198744149
+  },
+  "median_delta_bacc": 0.20410783055198967,
+  "median_cv_minus_holdout_bacc": 0.014126984126984099,
+  "median_best_minus_consensus_bacc": 0.0,
+  "median_tuning_minutes": 1.0499743461608886,
+  "zs_win_tasks": [
+    "Mammography",
+    "Haberman survival"
+  ],
+  "zs_win_tasks_prior_matched": [
+    "Breast recur"
+  ]
+}

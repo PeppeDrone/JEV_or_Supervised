@@ -1,0 +1,114 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_breast_coimbra",
+  "outcome": "breast_cancer",
+  "seed": 20261008,
+  "n_development": 92,
+  "n_holdout": 24,
+  "n_classes": 2,
+  "inner_folds": 5,
+  "trials_completed": 101,
+  "trials_pruned": 99,
+  "tuning_seconds": 28.252376556396484,
+  "best_params": {
+    "max_depth": 3,
+    "learning_rate": 0.04493320633104619,
+    "n_estimators": 1086,
+    "min_child_weight": 0.6075215361722485,
+    "subsample": 0.6276198825008251,
+    "colsample_bytree": 0.9705162939716391,
+    "colsample_bylevel": 0.42725637236106956,
+    "gamma": 4.040052376549798,
+    "reg_alpha": 0.04050881973793561,
+    "reg_lambda": 0.030792184338136137,
+    "max_bin": 256,
+    "grow_policy": "depthwise",
+    "class_weight_exponent": 0.46158694153488544,
+    "threshold": 0.5021688698803257
+  },
+  "best_cv_balanced_accuracy": 0.7596717171717172,
+  "best_cv_sd": 0.07066013954759519,
+  "consensus_params": {
+    "max_depth": 3,
+    "learning_rate": 0.07822321892095342,
+    "n_estimators": 378,
+    "min_child_weight": 0.6375747313397435,
+    "subsample": 0.6276198825008251,
+    "colsample_bytree": 0.9598919664652331,
+    "colsample_bylevel": 0.5256798605080084,
+    "gamma": 2.6089058125405704,
+    "reg_alpha": 0.00206316533580394,
+    "reg_lambda": 0.030792184338136137,
+    "max_bin": 64,
+    "grow_policy": "depthwise",
+    "class_weight_exponent": 0.5012941873139461,
+    "threshold": 0.5021688698803257
+  },
+  "holdout": {
+    "XGB_optuna": {
+      "balanced_accuracy": 0.7797202797202798,
+      "auroc": 0.916083916083916,
+      "brier": 0.1408608102756291,
+      "log_loss": 0.45705364282853234,
+      "macro_f1": 0.7822141560798548
+    },
+    "XGB_optuna_argmax": {
+      "balanced_accuracy": 0.7797202797202798,
+      "auroc": 0.916083916083916,
+      "brier": 0.1408608102756291,
+      "log_loss": 0.45705364282853234,
+      "macro_f1": 0.7822141560798548
+    },
+    "XGB_optuna_consensus": {
+      "balanced_accuracy": 0.8181818181818181,
+      "auroc": 0.888111888111888,
+      "brier": 0.13824199373408824,
+      "log_loss": 0.4858708778933427,
+      "macro_f1": 0.8222222222222222
+    },
+    "ZS_raw": {
+      "balanced_accuracy": 0.5524475524475525,
+      "auroc": 0.7097902097902098,
+      "brier": 0.22201404169251304,
+      "log_loss": 0.6351382518336222,
+      "macro_f1": 0.4957983193277311
+    },
+    "ZS_raw_prior_matched": {
+      "balanced_accuracy": 0.6643356643356644,
+      "auroc": 0.7097902097902098,
+      "brier": 0.22201404169251304,
+      "log_loss": 0.6351382518336222,
+      "macro_f1": 0.6643356643356644
+    }
+  },
+  "paired": {
+    "XGB_optuna_minus_ZS_raw": {
+      "delta_bacc": 0.2272727272727273,
+      "delta_bacc_ci": [
+        0.042827380952380915,
+        0.4112499999999999
+      ],
+      "delta_auroc": 0.20629370629370625,
+      "delta_auroc_ci": [
+        -0.02083697552447545,
+        0.42859933035714287
+      ],
+      "iterations": 1000
+    },
+    "XGB_optuna_minus_ZS_raw_prior_matched": {
+      "delta_bacc": 0.11538461538461542,
+      "delta_bacc_ci": [
+        -0.05244755244755239,
+        0.28995973389355745
+      ],
+      "delta_auroc": 0.20629370629370625,
+      "delta_auroc_ci": [
+        -0.02083697552447545,
+        0.42859933035714287
+      ],
+      "iterations": 1000
+    }
+  },
+  "cv_minus_holdout_balanced_accuracy": -0.020048562548562576,
+  "rescored_from": "outputs/uci_breast_coimbra/breast_cancer/holdout"
+}

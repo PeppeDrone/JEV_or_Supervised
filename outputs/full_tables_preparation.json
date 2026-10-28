@@ -1,0 +1,30 @@
+{
+  "prepared_at": "2026-10-23T07:18:12.946559+00:00",
+  "tables": {
+    "physionet_2019": {
+      "rows": 20336,
+      "path": "datasets/physionet_2019/patients_full.csv",
+      "sha256": "274a3e302807f4758b2de06b5d9655c10485dda35359025f2688d976e0d76bb9"
+    },
+    "nhanes_htn": {
+      "rows": 6193,
+      "path": "datasets/nhanes_htn/patients_full.csv",
+      "sha256": "2a8f9c0b85703063bedaba0c5df4a5d1414a7768b84d4d50f748559701b84682"
+    },
+    "metabric": {
+      "rows": 1974,
+      "path": "datasets/metabric/patients_full.csv",
+      "sha256": "8c966ab483c677d4dee9500c30d91df2b602d3b9d42dbaffe8d411e22e8e215e"
+    },
+    "mexico_covid": {
+      "rows": 1563135,
+      "path": "datasets/mexico_covid/patients_full.csv",
+      "sha256": "11ca37038a30b0e8e4355eed77faeb49371fca30ff1bf0798c042eb2c1d49ac7"
+    },
+    "dryad_er_cbc": {
+      "rows": 11052,
+      "path": "datasets/dryad_er_cbc/patients_full.csv",
+      "sha256": "c196e716837df1dfba317909a53970ec0ba97a01e20e411851dcded381f8826f"
+    }
+  }
+}

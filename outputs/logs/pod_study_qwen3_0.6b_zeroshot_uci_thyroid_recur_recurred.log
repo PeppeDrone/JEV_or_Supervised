@@ -1,0 +1,56 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+/home/airlab/Desktop/JEV_prediction_testing_v2/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:283: UserWarning: 
+    Found GPU0 NVIDIA GB10 which is of cuda capability 12.1.
+    Minimum and Maximum cuda capability supported by this version of PyTorch is
+    (8.0) - (12.0)
+    
+  warnings.warn(
+{"stage": "zero-shot", "completed": 0, "patients": 383}
+{"stage": "zero-shot", "completed": 8, "patients": 383}
+{"stage": "zero-shot", "completed": 16, "patients": 383}
+{"stage": "zero-shot", "completed": 24, "patients": 383}
+{"stage": "zero-shot", "completed": 32, "patients": 383}
+{"stage": "zero-shot", "completed": 40, "patients": 383}
+{"stage": "zero-shot", "completed": 48, "patients": 383}
+{"stage": "zero-shot", "completed": 56, "patients": 383}
+{"stage": "zero-shot", "completed": 64, "patients": 383}
+{"stage": "zero-shot", "completed": 72, "patients": 383}
+{"stage": "zero-shot", "completed": 80, "patients": 383}
+{"stage": "zero-shot", "completed": 88, "patients": 383}
+{"stage": "zero-shot", "completed": 96, "patients": 383}
+{"stage": "zero-shot", "completed": 104, "patients": 383}
+{"stage": "zero-shot", "completed": 112, "patients": 383}
+{"stage": "zero-shot", "completed": 120, "patients": 383}
+{"stage": "zero-shot", "completed": 128, "patients": 383}
+{"stage": "zero-shot", "completed": 136, "patients": 383}
+{"stage": "zero-shot", "completed": 144, "patients": 383}
+{"stage": "zero-shot", "completed": 152, "patients": 383}
+{"stage": "zero-shot", "completed": 160, "patients": 383}
+{"stage": "zero-shot", "completed": 168, "patients": 383}
+{"stage": "zero-shot", "completed": 176, "patients": 383}
+{"stage": "zero-shot", "completed": 184, "patients": 383}
+{"stage": "zero-shot", "completed": 192, "patients": 383}
+{"stage": "zero-shot", "completed": 200, "patients": 383}
+{"stage": "zero-shot", "completed": 208, "patients": 383}
+{"stage": "zero-shot", "completed": 216, "patients": 383}
+{"stage": "zero-shot", "completed": 224, "patients": 383}
+{"stage": "zero-shot", "completed": 232, "patients": 383}
+{"stage": "zero-shot", "completed": 240, "patients": 383}
+{"stage": "zero-shot", "completed": 248, "patients": 383}
+{"stage": "zero-shot", "completed": 256, "patients": 383}
+{"stage": "zero-shot", "completed": 264, "patients": 383}
+{"stage": "zero-shot", "completed": 272, "patients": 383}
+{"stage": "zero-shot", "completed": 280, "patients": 383}
+{"stage": "zero-shot", "completed": 288, "patients": 383}
+{"stage": "zero-shot", "completed": 296, "patients": 383}
+{"stage": "zero-shot", "completed": 304, "patients": 383}
+{"stage": "zero-shot", "completed": 312, "patients": 383}
+{"stage": "zero-shot", "completed": 320, "patients": 383}
+{"stage": "zero-shot", "completed": 328, "patients": 383}
+{"stage": "zero-shot", "completed": 336, "patients": 383}
+{"stage": "zero-shot", "completed": 344, "patients": 383}
+{"stage": "zero-shot", "completed": 352, "patients": 383}
+{"stage": "zero-shot", "completed": 360, "patients": 383}
+{"stage": "zero-shot", "completed": 368, "patients": 383}
+{"stage": "zero-shot", "completed": 376, "patients": 383}
+{"stage": "zero-shot", "completed": 383, "patients": 383}

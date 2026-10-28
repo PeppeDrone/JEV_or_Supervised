@@ -1,0 +1,29 @@
+{
+  "dataset": "uci_ckd",
+  "prepared_at": "2026-10-20T16:18:27.504208+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/336/data.csv",
+      "path": "datasets/uci_ckd/raw/data.csv",
+      "sha256": "ea4c9ad76029c7f5dd7f12913501c7f43e3b50e85c03b0bf08bee2ebda27aea6",
+      "bytes": 44691,
+      "retrieved": "cached"
+    }
+  ],
+  "patients_csv_sha256": "ebdf2bfc9fc791d2085440454d513575d8575ec19b1d92d71464b36f3ce40a4e",
+  "summary": {
+    "observations": 400,
+    "predictors": 24,
+    "outcome": "ckd_status",
+    "class_counts": {
+      "Chronic kidney disease": 250,
+      "No chronic kidney disease": 150
+    },
+    "identifier_note": "The UCI CKD release does not provide stable patient identifiers; record_id enumerates source rows. Unique patients cannot be independently verified.",
+    "formatting_notes": [
+      "Stripped whitespace and tab characters from nominal fields (notably dm and class).",
+      "UCI cleaned CSV columns wbcc/rbcc renamed to wc/rc to match the documented names.",
+      "Missing markers preserved as blank; no imputation performed."
+    ]
+  }
+}

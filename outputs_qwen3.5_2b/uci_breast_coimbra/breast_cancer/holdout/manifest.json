@@ -1,0 +1,124 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_breast_coimbra",
+  "outcome": "breast_cancer",
+  "data_hash": "ed3b756c3517837dd018f1b4bab509660b572def1d5c3815f438d06bb0421cfa",
+  "dataset_spec_sha256": "fa1cb427be8b9eb240120f5d7df1c5ae52fc25b0971e108fc114c332b0b05fce",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261008,
+  "n_trials_requested": 200,
+  "timeout_seconds": 3600.0,
+  "classes": [
+    "Healthy control",
+    "Breast cancer"
+  ],
+  "predictor_columns": [
+    "age",
+    "bmi",
+    "glucose",
+    "insulin",
+    "homa",
+    "leptin",
+    "adiponectin",
+    "resistin",
+    "mcp1"
+  ],
+  "zs_raw_csv_sha256": "c975433cd377210da215eb09717c20cd8a5be87737f77f651e76a1ed98f8f0ae",
+  "files": {
+    "split.json": "5ab11a94f368a51cf3398dd68d58cdbd005b20f2c0f15f2cfe96b42171ecfab5",
+    "trials.csv": "7e583e71815cbf86da3186fe87d2fd34b9bc0c3293f9c0e59866a0a225f4b46a",
+    "XGB_optuna.csv": "7189273390193bdff61277e0d399ad6d157c19d53d39a1ad5d965fea29fd2504",
+    "ZS_raw.csv": "7cb8f40ed6d07c606e096aa333b12ae502f93614c30d016412edfe229b95ae7f",
+    "model.joblib": "a3aa73c30f03a5e1c8113858f9a75efd711e36a4d8becbab5589992cc32a9004",
+    "best_params.json": "6712f476e92142b2046253afdc3cca4caafc581067fc7a257c92d872b323a254",
+    "metrics.json": "ac9c531a8a4b9fdef335d9570aca0ebb6476f25ceb782d185fb447df8262a1fa"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  },
+  "zs_raw_source": "predictions/ZS_raw_holdout.csv",
+  "rescored_from": "outputs/uci_breast_coimbra/breast_cancer/holdout",
+  "source_data_hash": "4c923b1ce73aea3869937b6477db474fd7458eb918f5c56136decf6e451cd993"
+}

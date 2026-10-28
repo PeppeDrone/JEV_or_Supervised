@@ -1,0 +1,90 @@
+name: uci_hcv
+description: 'UCI HCV data (Hoffmann et al. 2018, Hannover; 608 individuals after dropping the 7 ''suspect donor''
+  rows). Age, sex and ten routine blood laboratory values. 4-class diagnostic category: healthy blood donor, hepatitis
+  C, fibrosis, cirrhosis.'
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Adult seen at a German university hospital laboratory, either a healthy blood donor or a patient with chronic
+  hepatitis C at the hepatitis, fibrosis or cirrhosis stage. The observations are age, sex and ten routine serum
+  laboratory values from a single blood draw.
+observations_header: 'Demographics and serum laboratory values:'
+predictors:
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+  sex:
+    column: sex
+    kind: categorical
+    text_label: Sex
+    text_values:
+      m: Male
+      f: Female
+  albumin:
+    column: albumin
+    kind: numeric
+    text_label: Albumin
+    unit: g/L
+  alkaline_phosphatase:
+    column: alkaline_phosphatase
+    kind: numeric
+    text_label: Alkaline phosphatase
+    unit: U/L
+  alt:
+    column: alt
+    kind: numeric
+    text_label: Alanine aminotransferase (ALT)
+    unit: U/L
+  ast:
+    column: ast
+    kind: numeric
+    text_label: Aspartate aminotransferase (AST)
+    unit: U/L
+  bilirubin:
+    column: bilirubin
+    kind: numeric
+    text_label: Bilirubin
+    unit: µmol/L
+  cholinesterase:
+    column: cholinesterase
+    kind: numeric
+    text_label: Cholinesterase
+    unit: kU/L
+  cholesterol:
+    column: cholesterol
+    kind: numeric
+    text_label: Cholesterol
+    unit: mmol/L
+  creatinine:
+    column: creatinine
+    kind: numeric
+    text_label: Creatinine
+    unit: µmol/L
+  ggt:
+    column: ggt
+    kind: numeric
+    text_label: Gamma-glutamyl transferase (GGT)
+    unit: U/L
+  protein:
+    column: protein
+    kind: numeric
+    text_label: Total protein
+    unit: g/L
+outcomes:
+  hcv_category:
+    column: category
+    classes:
+    - Healthy blood donor
+    - Hepatitis C without fibrosis
+    - Hepatitis C with fibrosis
+    - Hepatitis C with cirrhosis
+    mapping:
+      0=Blood Donor: Healthy blood donor
+      1=Hepatitis: Hepatitis C without fibrosis
+      2=Fibrosis: Hepatitis C with fibrosis
+      3=Cirrhosis: Hepatitis C with cirrhosis
+    question: Based on these demographics and serum laboratory values, which diagnostic category does this individual
+      belong to?

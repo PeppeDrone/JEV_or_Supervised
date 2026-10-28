@@ -1,0 +1,221 @@
+name: physionet_2019
+description: PhysioNet/CinC Challenge 2019 ICU set A (first 1000 patients). Binary ever-sepsis from an early-stay
+  vital and laboratory snapshot.
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Adult admitted to an intensive care unit (PhysioNet/CinC Challenge 2019, training set A, one hospital system).
+  The observations are age, sex, ICU unit type, the time from hospital admission to ICU admission, and the most
+  recent value of each vital sign and laboratory test within the first six hours in the ICU; tests not yet performed
+  are marked as not observed.
+observations_header: 'First six hours in the ICU (most recent value per variable):'
+predictors:
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+  sex:
+    column: sex
+    kind: categorical
+    text_label: Sex
+    text_values:
+      Female: Female
+      Male: Male
+  hosp_adm_time:
+    column: hosp_adm_time
+    kind: numeric
+    text_label: Hours from hospital to ICU admission
+    unit: hours
+  icu_unit:
+    column: icu_unit
+    kind: categorical
+    text_label: ICU unit
+    text_values:
+      SICU: Surgical ICU
+      MICU: Medical ICU
+  hr:
+    column: hr
+    kind: numeric
+    text_label: Heart rate (early ICU)
+    unit: beats/min
+  o2sat:
+    column: o2sat
+    kind: numeric
+    text_label: Oxygen saturation (early ICU)
+    unit: '%'
+  temp:
+    column: temp
+    kind: numeric
+    text_label: Temperature (early ICU)
+    unit: °C
+  sbp:
+    column: sbp
+    kind: numeric
+    text_label: Systolic blood pressure (early ICU)
+    unit: mmHg
+  map:
+    column: map
+    kind: numeric
+    text_label: Mean arterial pressure (early ICU)
+    unit: mmHg
+  dbp:
+    column: dbp
+    kind: numeric
+    text_label: Diastolic blood pressure (early ICU)
+    unit: mmHg
+  resp:
+    column: resp
+    kind: numeric
+    text_label: Respiratory rate (early ICU)
+    unit: breaths/min
+  etco2:
+    column: etco2
+    kind: numeric
+    text_label: End-tidal CO2 (early ICU)
+    unit: mmHg
+  base_excess:
+    column: base_excess
+    kind: numeric
+    text_label: Base excess (early ICU)
+    unit: mmol/L
+  hco3:
+    column: hco3
+    kind: numeric
+    text_label: Bicarbonate (early ICU)
+    unit: mmol/L
+  fio2:
+    column: fio2
+    kind: numeric
+    text_label: Inspired oxygen fraction (early ICU)
+    unit: fraction
+  ph:
+    column: ph
+    kind: numeric
+    text_label: Arterial pH (early ICU)
+    scale_note: pH units
+    text_range:
+    - 6.5
+    - 8.0
+  paco2:
+    column: paco2
+    kind: numeric
+    text_label: Arterial PaCO2 (early ICU)
+    unit: mmHg
+  sao2:
+    column: sao2
+    kind: numeric
+    text_label: Arterial oxygen saturation (early ICU)
+    unit: '%'
+  ast:
+    column: ast
+    kind: numeric
+    text_label: Aspartate aminotransferase (early ICU)
+    unit: IU/L
+  bun:
+    column: bun
+    kind: numeric
+    text_label: Blood urea nitrogen (early ICU)
+    unit: mg/dL
+  alp:
+    column: alp
+    kind: numeric
+    text_label: Alkaline phosphatase (early ICU)
+    unit: IU/L
+  calcium:
+    column: calcium
+    kind: numeric
+    text_label: Calcium (early ICU)
+    unit: mg/dL
+  chloride:
+    column: chloride
+    kind: numeric
+    text_label: Chloride (early ICU)
+    unit: mmol/L
+  creatinine:
+    column: creatinine
+    kind: numeric
+    text_label: Creatinine (early ICU)
+    unit: mg/dL
+  bili_direct:
+    column: bili_direct
+    kind: numeric
+    text_label: Direct bilirubin (early ICU)
+    unit: mg/dL
+  glucose:
+    column: glucose
+    kind: numeric
+    text_label: Glucose (early ICU)
+    unit: mg/dL
+  lactate:
+    column: lactate
+    kind: numeric
+    text_label: Lactate (early ICU)
+    unit: mmol/L
+  magnesium:
+    column: magnesium
+    kind: numeric
+    text_label: Magnesium (early ICU)
+    unit: mmol/L
+  phosphate:
+    column: phosphate
+    kind: numeric
+    text_label: Phosphate (early ICU)
+    unit: mg/dL
+  potassium:
+    column: potassium
+    kind: numeric
+    text_label: Potassium (early ICU)
+    unit: mmol/L
+  bili_total:
+    column: bili_total
+    kind: numeric
+    text_label: Total bilirubin (early ICU)
+    unit: mg/dL
+  troponin_i:
+    column: troponin_i
+    kind: numeric
+    text_label: Troponin I (early ICU)
+    unit: ng/mL
+  hct:
+    column: hct
+    kind: numeric
+    text_label: Hematocrit (early ICU)
+    unit: '%'
+  hgb:
+    column: hgb
+    kind: numeric
+    text_label: Hemoglobin (early ICU)
+    unit: g/dL
+  ptt:
+    column: ptt
+    kind: numeric
+    text_label: Partial thromboplastin time (early ICU)
+    unit: s
+  wbc:
+    column: wbc
+    kind: numeric
+    text_label: White blood cells (early ICU)
+    unit: ×10^9/L
+  fibrinogen:
+    column: fibrinogen
+    kind: numeric
+    text_label: Fibrinogen (early ICU)
+    unit: mg/dL
+  platelets:
+    column: platelets
+    kind: numeric
+    text_label: Platelets (early ICU)
+    unit: ×10^9/L
+outcomes:
+  sepsis:
+    column: sepsis
+    classes:
+    - No sepsis during the ICU stay
+    - Sepsis (Sepsis-3 criteria) during the ICU stay
+    mapping:
+      '0': No sepsis during the ICU stay
+      '1': Sepsis (Sepsis-3 criteria) during the ICU stay
+    question: Based on the first six hours of ICU vital signs and laboratory results, did this patient develop sepsis
+      (Sepsis-3 criteria) at any point during the ICU stay?

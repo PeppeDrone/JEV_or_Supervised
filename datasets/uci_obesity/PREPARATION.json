@@ -1,0 +1,29 @@
+{
+  "dataset": "uci_obesity",
+  "prepared_at": "2026-10-21T11:05:55.171980+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/544/data.csv",
+      "path": "datasets/uci_obesity/raw/data.csv",
+      "sha256": "28b6991062855d3d15642e38b1aa9d1b32fb7abbb5abf5b096f1868cd706154b",
+      "bytes": 263646,
+      "retrieved": "cached"
+    }
+  ],
+  "patients_csv_sha256": "b9934612d4226561a9ba859257e2403c199c99488dc99d345320ffc2d68d28cd",
+  "summary": {
+    "observations": 2111,
+    "predictors": 16,
+    "outcome": "obesity_class",
+    "class_counts": {
+      "Insufficient weight": 272,
+      "Normal weight": 287,
+      "Overweight level I": 290,
+      "Overweight level II": 290,
+      "Obesity type I": 351,
+      "Obesity type II": 297,
+      "Obesity type III": 324
+    },
+    "identifier_note": "UCI Estimation of obesity levels based on eating habits and physical condition."
+  }
+}

@@ -1,0 +1,55 @@
+wids2021 full: 130157 rows
+uci_diabetes130: 69973 rows -> patients_full.csv
+uci_support2: 9105 rows -> patients_full.csv
+uci_cdc_diabetes: 253680 rows -> patients_full.csv
+physionet_2012: 4000 rows -> patients_full.csv
+physionet_2019: downloading 19336 psv files
+physionet_2019: downloading 18747 psv files
+Traceback (most recent call last):
+  File "/home/airlab/Desktop/JEV_prediction_testing_v2/scripts/prepare_full_tables.py", line 95, in <module>
+    main()
+  File "/home/airlab/Desktop/JEV_prediction_testing_v2/scripts/prepare_full_tables.py", line 74, in main
+    retrieval = public.download_ch2019(raw("physionet_2019"), public.CH2019_FULL_N)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airlab/Desktop/JEV_prediction_testing_v2/scripts/prepare_public_extension.py", line 874, in download_ch2019
+    url, dest = fut.result()
+                ^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airlab/Desktop/JEV_prediction_testing_v2/scripts/prepare_public_extension.py", line 868, in one
+    dest.write_bytes(fetch(url, timeout=60))
+                     ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airlab/Desktop/JEV_prediction_testing_v2/scripts/prepare_public_extension.py", line 51, in fetch
+    with urlopen(req, timeout=timeout) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 521, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 630, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 559, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 639, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 404: Not Found
+physionet_2019: downloading 614 psv files
+physionet_2019: 20336 rows -> patients_full.csv
+nhanes_htn: 6193 rows -> patients_full.csv
+metabric: 1974 rows -> patients_full.csv
+mexico_covid: 1563135 rows -> patients_full.csv
+dryad_er_cbc: 11052 rows -> patients_full.csv
+wrote /home/airlab/Desktop/JEV_prediction_testing_v2/outputs/full_tables_preparation.json

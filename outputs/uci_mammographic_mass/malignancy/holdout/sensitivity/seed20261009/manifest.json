@@ -1,0 +1,121 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_mammographic_mass",
+  "outcome": "malignancy",
+  "data_hash": "b9d1de7e0f77bc7ebf181712e69bc6e232e812fde301358006eb295174106a67",
+  "dataset_spec_sha256": "968310f8710aee3ef113bdc440b45aa19cafb44f982f67ef81a4466a73b1d949",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261009,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "Benign",
+    "Malignant"
+  ],
+  "predictor_columns": [
+    "age",
+    "shape",
+    "margin",
+    "density"
+  ],
+  "zs_raw_csv_sha256": "0fb1baac7d3c8efd5ae0e1fc01b53d1b4e49d83bbac35872ac21e6003b193e30",
+  "files": {
+    "split.json": "8d19db9aa79a9aed61ade1dbe0dc1b6693b936a55e92e7b819c68d629a06badb",
+    "trials.csv": "f644aaefd0941ddde0d342a588922c8b4a298e2c6c6aa3be1935805b0bdac787",
+    "XGB_optuna.csv": "069e95de7a62e130d77ef6e8cc74354fb5302dda7d083daedd26a6516679ade1",
+    "ZS_raw.csv": "4000a4695d7505d57e162a348fec30bd6b39b5814b39ea28ec3c9d71380e5dd9",
+    "model.joblib": "7cebcc30942d2205652183c7532076743285deddc82b38df2eec0ecdcd3f8300",
+    "best_params.json": "96080ab9aaae61caeb583e3fd2b8261a54d1755f1729badeeddffddf0ac41ac9",
+    "metrics.json": "8208494c3760b538a973b31d9c809fda666a39438de5bb8500a5d3789aeacfc1"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

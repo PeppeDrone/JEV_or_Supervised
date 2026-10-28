@@ -1,0 +1,104 @@
+name: uci_early_diabetes
+description: UCI Early stage diabetes risk prediction (520 adults, symptom predictors).
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Adult attending Sylhet Diabetes Hospital, Bangladesh, completing a doctor-approved symptom questionnaire
+  (Islam et al. 2020). The observations are age, sex and the presence of each reported symptom or sign.
+observations_header: 'Demographics and reported symptoms:'
+predictors:
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+  gender:
+    column: gender
+    kind: categorical
+    text_label: Sex
+    text_values:
+      Male: Male
+      Female: Female
+  polyuria:
+    column: polyuria
+    kind: categorical
+    text_label: Polyuria (excessive urination)
+    text_values: &id001
+      'Yes': 'Yes'
+      'No': 'No'
+  polydipsia:
+    column: polydipsia
+    kind: categorical
+    text_label: Polydipsia (excessive thirst)
+    text_values: *id001
+  sudden_weight_loss:
+    column: sudden_weight_loss
+    kind: categorical
+    text_label: Sudden weight loss
+    text_values: *id001
+  weakness:
+    column: weakness
+    kind: categorical
+    text_label: Generalised weakness
+    text_values: *id001
+  polyphagia:
+    column: polyphagia
+    kind: categorical
+    text_label: Polyphagia (excessive hunger)
+    text_values: *id001
+  genital_thrush:
+    column: genital_thrush
+    kind: categorical
+    text_label: Genital thrush
+    text_values: *id001
+  visual_blurring:
+    column: visual_blurring
+    kind: categorical
+    text_label: Blurred vision
+    text_values: *id001
+  itching:
+    column: itching
+    kind: categorical
+    text_label: Itching
+    text_values: *id001
+  irritability:
+    column: irritability
+    kind: categorical
+    text_label: Irritability
+    text_values: *id001
+  delayed_healing:
+    column: delayed_healing
+    kind: categorical
+    text_label: Delayed wound healing
+    text_values: *id001
+  partial_paresis:
+    column: partial_paresis
+    kind: categorical
+    text_label: Partial paresis (muscle weakness)
+    text_values: *id001
+  muscle_stiffness:
+    column: muscle_stiffness
+    kind: categorical
+    text_label: Muscle stiffness
+    text_values: *id001
+  alopecia:
+    column: alopecia
+    kind: categorical
+    text_label: Alopecia
+    text_values: *id001
+  obesity:
+    column: obesity
+    kind: categorical
+    text_label: Obesity
+    text_values: *id001
+outcomes:
+  diabetes:
+    column: diabetes
+    classes:
+    - Negative for diabetes
+    - Positive for diabetes
+    mapping:
+      '0': Negative for diabetes
+      '1': Positive for diabetes
+    question: Based on these demographics and reported symptoms, does this person have diabetes?

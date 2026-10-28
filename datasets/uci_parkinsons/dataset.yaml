@@ -1,0 +1,135 @@
+name: uci_parkinsons
+description: UCI Parkinsons (Little et al. 2007; 195 sustained-phonation voice recordings from 31 people, 23 with
+  Parkinson's disease; about six recordings per person). 22 acoustic measures. Binary health status of the speaker.
+  Rows are recordings, not independent patients.
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: 'Movement-disorders clinic: an adult produced a sustained vowel phonation that was recorded and analysed
+  with the Multi-Dimensional Voice Program (MDVP) and nonlinear signal measures. The observations are the fundamental-frequency
+  statistics, several jitter (frequency perturbation) and shimmer (amplitude perturbation) measures, noise-to-harmonics
+  ratios, and nonlinear complexity measures of the voice signal.'
+observations_header: 'Acoustic voice measures from a sustained phonation:'
+predictors:
+  mdvp_fohz:
+    column: mdvp_fohz
+    kind: numeric
+    text_label: Average vocal fundamental frequency (MDVP Fo)
+    unit: Hz
+  mdvp_fhihz:
+    column: mdvp_fhihz
+    kind: numeric
+    text_label: Maximum vocal fundamental frequency (MDVP Fhi)
+    unit: Hz
+  mdvp_flohz:
+    column: mdvp_flohz
+    kind: numeric
+    text_label: Minimum vocal fundamental frequency (MDVP Flo)
+    unit: Hz
+  mdvp_jitterpct:
+    column: mdvp_jitterpct
+    kind: numeric
+    text_label: Jitter, cycle-to-cycle frequency variation (MDVP Jitter)
+    unit: '%'
+  mdvp_jitterabs:
+    column: mdvp_jitterabs
+    kind: numeric
+    text_label: Absolute jitter (MDVP Jitter Abs)
+    unit: seconds
+  mdvp_rap:
+    column: mdvp_rap
+    kind: numeric
+    text_label: Relative average perturbation of pitch (MDVP RAP)
+    scale_note: ratio
+  mdvp_ppq:
+    column: mdvp_ppq
+    kind: numeric
+    text_label: Five-point period perturbation quotient (MDVP PPQ)
+    scale_note: ratio
+  jitter_ddp:
+    column: jitter_ddp
+    kind: numeric
+    text_label: Average absolute difference of differences between consecutive periods (Jitter DDP)
+    scale_note: ratio
+  mdvp_shimmer:
+    column: mdvp_shimmer
+    kind: numeric
+    text_label: Shimmer, cycle-to-cycle amplitude variation (MDVP Shimmer)
+    scale_note: ratio
+  mdvp_shimmerdb:
+    column: mdvp_shimmerdb
+    kind: numeric
+    text_label: Shimmer in decibels (MDVP Shimmer dB)
+    unit: dB
+  shimmer_apq3:
+    column: shimmer_apq3
+    kind: numeric
+    text_label: Three-point amplitude perturbation quotient (Shimmer APQ3)
+    scale_note: ratio
+  shimmer_apq5:
+    column: shimmer_apq5
+    kind: numeric
+    text_label: Five-point amplitude perturbation quotient (Shimmer APQ5)
+    scale_note: ratio
+  mdvp_apq:
+    column: mdvp_apq
+    kind: numeric
+    text_label: Eleven-point amplitude perturbation quotient (MDVP APQ)
+    scale_note: ratio
+  shimmer_dda:
+    column: shimmer_dda
+    kind: numeric
+    text_label: Average absolute difference between consecutive amplitude differences (Shimmer DDA)
+    scale_note: ratio
+  nhr:
+    column: nhr
+    kind: numeric
+    text_label: Noise-to-harmonics ratio (NHR)
+    scale_note: ratio
+  hnr:
+    column: hnr
+    kind: numeric
+    text_label: Harmonics-to-noise ratio (HNR)
+    unit: dB
+  rpde:
+    column: rpde
+    kind: numeric
+    text_label: Recurrence period density entropy (RPDE), nonlinear complexity
+    scale_note: 0-1
+  dfa:
+    column: dfa
+    kind: numeric
+    text_label: Detrended fluctuation analysis exponent (DFA), signal fractal scaling
+    scale_note: 0-1
+  spread1:
+    column: spread1
+    kind: numeric
+    text_label: Nonlinear measure of fundamental-frequency variation (spread1)
+    scale_note: log scale, more negative means less variation
+  spread2:
+    column: spread2
+    kind: numeric
+    text_label: Nonlinear measure of fundamental-frequency variation (spread2)
+    scale_note: ratio
+  d2:
+    column: d2
+    kind: numeric
+    text_label: Correlation dimension (D2), nonlinear complexity
+    scale_note: dimensionless
+  ppe:
+    column: ppe
+    kind: numeric
+    text_label: Pitch period entropy (PPE)
+    scale_note: 0-1
+outcomes:
+  parkinsons:
+    column: parkinsons
+    classes:
+    - Healthy speaker
+    - Speaker with Parkinson's disease
+    mapping:
+      '0': Healthy speaker
+      '1': Speaker with Parkinson's disease
+    question: Based on these acoustic voice measures from a sustained phonation, does this speaker have Parkinson's
+      disease?

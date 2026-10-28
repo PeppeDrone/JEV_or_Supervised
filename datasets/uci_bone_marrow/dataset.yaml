@@ -1,0 +1,269 @@
+name: uci_bone_marrow
+description: 'UCI Bone marrow transplant: children (Wroclaw, 2000-2015; 187 paediatric allogeneic unrelated-donor
+  haematopoietic stem cell transplants). 35 donor, recipient, graft and post-transplant course predictors (several
+  post-transplant events are included in the source table). Binary death during follow-up.'
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Child or adolescent with a malignant or non-malignant haematological disease who received an allogeneic
+  haematopoietic stem cell transplant from an unrelated donor at a paediatric transplant centre (Wroclaw, Poland,
+  2000-2015). The observations are donor and recipient characteristics, blood-group, cytomegalovirus and HLA compatibility,
+  graft cell doses, and the recorded post-transplant course (engraftment times, graft-versus-host disease and relapse).
+observations_header: 'Transplant record:'
+predictors:
+  recipientgender:
+    column: recipientgender
+    kind: categorical
+    text_label: Recipient sex
+    text_values:
+      '0': Female
+      '1': Male
+  stemcellsource:
+    column: stemcellsource
+    kind: categorical
+    text_label: Stem cell source
+    text_values:
+      '0': Bone marrow
+      '1': Peripheral blood
+  donorage:
+    column: donorage
+    kind: numeric
+    text_label: Donor age at apheresis
+    unit: years
+  donorage35:
+    column: donorage35
+    kind: categorical
+    text_label: Donor age category
+    text_values:
+      '0': Under 35 years
+      '1': 35 years or older
+  iiiv:
+    column: iiiv
+    kind: categorical
+    text_label: Acute graft-versus-host disease grade II-IV developed
+    text_values: &id002
+      '0': 'No'
+      '1': 'Yes'
+  gendermatch:
+    column: gendermatch
+    kind: categorical
+    text_label: Donor-recipient sex combination
+    text_values:
+      '0': Other combination
+      '1': Female donor to male recipient
+  donorabo:
+    column: donorabo
+    kind: categorical
+    text_label: Donor ABO blood group
+    text_values: &id001
+      '0': O
+      '1': A
+      '-1': B
+      '2': AB
+  recipientabo:
+    column: recipientabo
+    kind: categorical
+    text_label: Recipient ABO blood group
+    text_values: *id001
+  recipientrh:
+    column: recipientrh
+    kind: categorical
+    text_label: Recipient Rh factor
+    text_values:
+      '0': Rh negative
+      '1': Rh positive
+  abomatch:
+    column: abomatch
+    kind: categorical
+    text_label: Donor-recipient ABO compatibility
+    text_values:
+      '0': Mismatched
+      '1': Matched
+  cmvstatus:
+    column: cmvstatus
+    kind: categorical
+    text_label: Donor-recipient cytomegalovirus serological compatibility score
+    text_values:
+      '0': 0 of 3 (most compatible)
+      '1': 1 of 3
+      '2': 2 of 3
+      '3': 3 of 3 (least compatible)
+  donorcmv:
+    column: donorcmv
+    kind: categorical
+    text_label: Donor cytomegalovirus infection before transplant
+    text_values:
+      '0': Absent
+      '1': Present
+  recipientcmv:
+    column: recipientcmv
+    kind: categorical
+    text_label: Recipient cytomegalovirus infection before transplant
+    text_values:
+      '0': Absent
+      '1': Present
+  disease:
+    column: disease
+    kind: categorical
+    text_label: Underlying disease
+    text_values:
+      ALL: Acute lymphoblastic leukaemia
+      AML: Acute myeloid leukaemia
+      chronic: Chronic leukaemia
+      nonmalignant: Non-malignant disease
+      lymphoma: Lymphoma
+  riskgroup:
+    column: riskgroup
+    kind: categorical
+    text_label: Risk group
+    text_values:
+      '0': Low risk
+      '1': High risk
+  txpostrelapse:
+    column: txpostrelapse
+    kind: categorical
+    text_label: Second transplant after relapse
+    text_values: *id002
+  diseasegroup:
+    column: diseasegroup
+    kind: categorical
+    text_label: Disease group
+    text_values:
+      '0': Non-malignant
+      '1': Malignant
+  hlamatch:
+    column: hlamatch
+    kind: categorical
+    text_label: HLA match (BFM SCT 2008 criteria)
+    text_values:
+      '0': 10/10 matched
+      '1': 9/10 matched
+      '2': 8/10 matched
+      '3': 7/10 matched
+  hlamismatch:
+    column: hlamismatch
+    kind: categorical
+    text_label: HLA mismatch present
+    text_values:
+      '0': Matched
+      '1': Mismatched
+  antigen:
+    column: antigen
+    kind: categorical
+    text_label: Number of HLA antigen differences between donor and recipient
+    text_values:
+      '-1': No antigen difference
+      '0': One antigen difference
+      '1': Two antigen differences
+      '2': Three antigen differences
+  allele:
+    column: allele
+    kind: categorical
+    text_label: Number of HLA allele differences between donor and recipient
+    text_values:
+      '-1': No allele difference
+      '0': One allele difference
+      '1': Two allele differences
+      '2': Three allele differences
+      '3': Four allele differences
+  hlagri:
+    column: hlagri
+    kind: categorical
+    text_label: Type of HLA difference
+    text_values:
+      '0': HLA matched
+      '1': One antigen difference only
+      '2': One allele difference only
+      '3': Difference only in DRB1
+      '4': Two differences (two alleles or two antigens)
+      '5': Two differences (allele plus antigen)
+      '7': Mismatched with more differences
+  recipientage:
+    column: recipientage
+    kind: numeric
+    text_label: Recipient age at transplant
+    unit: years
+  recipientage10:
+    column: recipientage10
+    kind: categorical
+    text_label: Recipient age category
+    text_values:
+      '0': Under 10 years
+      '1': 10 years or older
+  recipientageint:
+    column: recipientageint
+    kind: categorical
+    text_label: Recipient age interval
+    text_values:
+      '0': 0-5 years
+      '1': 5-10 years
+      '2': 10-20 years
+  relapse:
+    column: relapse
+    kind: categorical
+    text_label: Relapse of the disease after transplant
+    text_values: *id002
+  agvhdiiiiv:
+    column: agvhdiiiiv
+    kind: categorical
+    text_label: Acute graft-versus-host disease grade III-IV developed
+    text_values:
+      '0': 'Yes'
+      '1': 'No'
+  extcgvhd:
+    column: extcgvhd
+    kind: categorical
+    text_label: Extensive chronic graft-versus-host disease developed
+    text_values:
+      '0': 'Yes'
+      '1': 'No'
+  cd34kgx10d6:
+    column: cd34kgx10d6
+    kind: numeric
+    text_label: CD34+ cell dose per kg recipient body weight
+    unit: x10^6/kg
+  cd3dcd34:
+    column: cd3dcd34
+    kind: numeric
+    text_label: CD3+ to CD34+ cell ratio in the graft
+    scale_note: ratio
+  cd3dkgx10d8:
+    column: cd3dkgx10d8
+    kind: numeric
+    text_label: CD3+ cell dose per kg recipient body weight
+    unit: x10^8/kg
+  rbodymass:
+    column: rbodymass
+    kind: numeric
+    text_label: Recipient body mass at transplant
+    unit: kg
+  ancrecovery:
+    column: ancrecovery
+    kind: numeric
+    text_label: Time to neutrophil recovery (count above 0.5 x10^9/L)
+    unit: days
+    text_values: &id003
+      '1000000': never reached during observation
+  pltrecovery:
+    column: pltrecovery
+    kind: numeric
+    text_label: Time to platelet recovery (count above 50 x10^9/L)
+    unit: days
+    text_values: *id003
+  time_to_agvhd_iii_iv:
+    column: time_to_agvhd_iii_iv
+    kind: numeric
+    text_label: Time to acute graft-versus-host disease grade III-IV
+    unit: days
+    text_values: *id003
+outcomes:
+  bmt_died:
+    column: bmt_died
+    classes:
+    - Alive at end of follow-up
+    - Died during follow-up
+    mapping:
+      '0': Alive at end of follow-up
+      '1': Died during follow-up
+    question: Based on this transplant record, did the child die during post-transplant follow-up?

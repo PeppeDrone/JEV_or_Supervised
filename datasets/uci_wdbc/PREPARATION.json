@@ -1,0 +1,31 @@
+{
+  "dataset": "uci_wdbc",
+  "prepared_at": "2026-10-20T19:15:51.242097+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/17/data.csv",
+      "path": "datasets/uci_wdbc/raw/data.csv",
+      "sha256": "60c26b254a205a17d247467379303779d6febe06bf5684b1f4a403a4573de151",
+      "bytes": 124461,
+      "retrieved": "2026-10-20T19:15:50.189127+00:00"
+    },
+    {
+      "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/wdbc.data",
+      "path": "datasets/uci_wdbc/raw/wdbc.data",
+      "sha256": "d606af411f3e5be8a317a5a8b652b425aaf0ff38ca683d5327ffff94c3695f4a",
+      "bytes": 124103,
+      "retrieved": "2026-10-20T19:15:51.174474+00:00"
+    }
+  ],
+  "patients_csv_sha256": "74cae02edbc3e6c6220637d2d65663957ec215e4b6d5b680faea7aa7786f335b",
+  "summary": {
+    "observations": 569,
+    "predictors": 30,
+    "outcome": "diagnosis",
+    "class_counts": {
+      "Benign": 357,
+      "Malignant": 212
+    },
+    "identifier_note": "record_id preserves the original WDBC case ID; each row is one fine-needle aspirate image-derived feature vector."
+  }
+}

@@ -1,0 +1,30 @@
+{"stage": "XGB_optuna", "trial": 0, "best": null}
+{"stage": "XGB_optuna", "trial": 10, "best": 0.807899849013781}
+{"stage": "XGB_optuna", "trial": 30, "best": 0.8124222228633527}
+{"stage": "XGB_optuna", "trial": 40, "best": 0.8124222228633527}
+{"stage": "XGB_optuna", "done": true, "holdout_bacc": 0.7911129568106312, "zs_bacc": 0.5269933554817275}
+{"stage": "XGB_optuna", "trial": 0, "best": null}
+{"stage": "XGB_optuna", "trial": 70, "best": 0.8129968360212727}
+{"stage": "XGB_optuna", "trial": 80, "best": 0.8132598597847724}
+{"stage": "XGB_optuna", "done": true, "holdout_bacc": 0.8019102990033222, "zs_bacc": 0.5182724252491695}
+{"stage": "XGB_optuna", "trial": 0, "best": null}
+{"stage": "XGB_optuna", "trial": 20, "best": 0.811381668157295}
+{"stage": "XGB_optuna", "trial": 30, "best": 0.8217083561736054}
+{"stage": "XGB_optuna", "trial": 40, "best": 0.8217083561736054}
+{"stage": "XGB_optuna", "trial": 50, "best": 0.8217083561736054}
+{"stage": "XGB_optuna", "trial": 60, "best": 0.8217083561736054}
+{"stage": "XGB_optuna", "trial": 70, "best": 0.8217083561736054}
+{"stage": "XGB_optuna", "trial": 80, "best": 0.8217083561736054}
+{"stage": "XGB_optuna", "done": true, "holdout_bacc": 0.792358803986711, "zs_bacc": 0.48546511627906974}
+{"stage": "XGB_optuna", "trial": 0, "best": null}
+{"stage": "XGB_optuna", "trial": 20, "best": 0.7715477529980863}
+{"stage": "XGB_optuna", "trial": 40, "best": 0.7974736254964754}
+{"stage": "XGB_optuna", "trial": 60, "best": 0.7974736254964754}
+{"stage": "XGB_optuna", "trial": 80, "best": 0.8031048344440919}
+{"stage": "XGB_optuna", "done": true, "holdout_bacc": 0.8745847176079734, "zs_bacc": 0.5714285714285714}
+{"stage": "XGB_optuna", "trial": 0, "best": null}
+{"stage": "XGB_optuna", "trial": 10, "best": 0.7920241770289373}
+{"stage": "XGB_optuna", "trial": 20, "best": 0.7961195580046738}
+{"stage": "XGB_optuna", "trial": 30, "best": 0.8046704749814875}
+{"stage": "XGB_optuna", "trial": 90, "best": 0.8138585153342373}
+{"stage": "XGB_optuna", "done": true, "holdout_bacc": 0.8450996677740864, "zs_bacc": 0.5328073089700996}

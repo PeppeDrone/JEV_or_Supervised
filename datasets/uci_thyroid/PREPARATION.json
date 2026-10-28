@@ -1,0 +1,31 @@
+{
+  "dataset": "uci_thyroid",
+  "prepared_at": "2026-10-20T19:15:53.037439+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/thyroid-disease/hypothyroid.data",
+      "path": "datasets/uci_thyroid/raw/hypothyroid.data",
+      "sha256": "ffba466e9844cf7d6d8fde1f89209c6ab1d583c865abb449bb6ab8c70875f4c4",
+      "bytes": 219022,
+      "retrieved": "2026-10-20T19:15:52.379722+00:00"
+    },
+    {
+      "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/thyroid-disease/hypothyroid.names",
+      "path": "datasets/uci_thyroid/raw/hypothyroid.names",
+      "sha256": "686ba47a937f812e70240eab449cbe571bbd060ce49424dc7bd7d325ed8cd690",
+      "bytes": 574,
+      "retrieved": "2026-10-20T19:15:52.897032+00:00"
+    }
+  ],
+  "patients_csv_sha256": "a29e4c4e6c81d87932bbe84951d785c288a0e82ec886e05c963a36899af3d6e9",
+  "summary": {
+    "observations": 3163,
+    "predictors": 25,
+    "outcome": "hypothyroid_status",
+    "class_counts": {
+      "No hypothyroidism": 3012,
+      "Hypothyroidism": 151
+    },
+    "identifier_note": "record_id enumerates hypothyroid.data rows; native '?' missingness is preserved as blank cells. Primary UCI Thyroid Disease hypothyroid task (binary)."
+  }
+}

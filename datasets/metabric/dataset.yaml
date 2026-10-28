@@ -1,0 +1,128 @@
+name: metabric
+description: METABRIC breast cancer clinical table (first 1000 tumours). PAM50+claudin-low (NC dropped) from presentation
+  pathology and immunohistochemistry.
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Woman with primary invasive breast cancer in the METABRIC cohort (United Kingdom and Canada, diagnosed
+  1977-2005). The observations are age and menopausal state at diagnosis, surgery type, tumour pathology (size,
+  grade, stage, histological subtype, cellularity, nodal involvement) and immunohistochemical oestrogen, progesterone
+  and HER2 receptor status.
+observations_header: 'Clinical, pathological and immunohistochemical findings at diagnosis:'
+predictors:
+  age:
+    column: age
+    kind: numeric
+    text_label: Age at diagnosis
+    unit: years
+  menopausal:
+    column: menopausal
+    kind: categorical
+    text_label: Menopausal state at diagnosis (inferred)
+    text_values:
+      Post: Postmenopausal
+      Pre: Premenopausal
+  laterality:
+    column: laterality
+    kind: categorical
+    text_label: Primary tumour laterality
+    text_values:
+      Right: Right
+      Left: Left
+  histology:
+    column: histology
+    kind: categorical
+    text_label: Histological subtype
+    text_values:
+      Ductal/NST: Invasive ductal carcinoma (no special type)
+      Mixed: Mixed ductal and lobular
+      Lobular: Invasive lobular carcinoma
+      Tubular/ cribriform: Tubular or cribriform carcinoma
+      Mucinous: Mucinous carcinoma
+      Medullary: Medullary carcinoma
+      Other: Other
+      Metaplastic: Metaplastic carcinoma
+  surgery:
+    column: surgery
+    kind: categorical
+    text_label: Breast surgery
+    text_values:
+      MASTECTOMY: Mastectomy
+      BREAST CONSERVING: Breast-conserving surgery
+  cellularity:
+    column: cellularity
+    kind: categorical
+    text_label: Tumour cellularity
+    text_values:
+      High: High
+      Moderate: Moderate
+      Low: Low
+  tumor_size:
+    column: tumor_size
+    kind: numeric
+    text_label: Tumour size
+    unit: mm
+  tumor_stage:
+    column: tumor_stage
+    kind: categorical
+    text_label: Tumour stage
+    text_values:
+      '0': Stage 0
+      '1': Stage 1
+      '2': Stage 2
+      '3': Stage 3
+      '4': Stage 4
+  grade:
+    column: grade
+    kind: categorical
+    text_label: Histological grade (Nottingham)
+    text_values:
+      '1': Grade 1 (well differentiated)
+      '2': Grade 2 (moderately differentiated)
+      '3': Grade 3 (poorly differentiated)
+  positive_nodes:
+    column: positive_nodes
+    kind: numeric
+    text_label: Positive lymph nodes
+    scale_note: count
+  er_status:
+    column: er_status
+    kind: categorical
+    text_label: Oestrogen receptor (ER) status
+    text_values:
+      Positive: Positive
+      Negative: Negative
+  pr_status:
+    column: pr_status
+    kind: categorical
+    text_label: Progesterone receptor (PR) status
+    text_values:
+      Negative: Negative
+      Positive: Positive
+  her2_status:
+    column: her2_status
+    kind: categorical
+    text_label: HER2 status
+    text_values:
+      Negative: Negative
+      Positive: Positive
+outcomes:
+  pam50_subtype:
+    column: pam50_subtype
+    classes:
+    - Basal-like
+    - HER2-enriched
+    - Luminal A
+    - Luminal B
+    - Normal-like
+    - Claudin-low
+    mapping:
+      Basal: Basal-like
+      Her2: HER2-enriched
+      LumA: Luminal A
+      LumB: Luminal B
+      Normal: Normal-like
+      claudin-low: Claudin-low
+    question: Based on these clinical, pathological and immunohistochemical findings, which intrinsic molecular
+      subtype (PAM50 plus claudin-low) does this breast tumour belong to?

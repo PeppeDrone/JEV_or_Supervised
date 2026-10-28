@@ -1,0 +1,106 @@
+name: dryad_er_cbc
+description: Northern-Italy emergency-room blood-cell differential (first 1000 adults). Binary all-cause death from
+  age, sex, COVID-wave period, and baseline CBC indices.
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Adult presenting to a hospital emergency department during the COVID-19 pandemic period, outside the two
+  main infection waves (BMJ Open 2023 cohort). The observations are age, sex, the pandemic period, and the complete
+  blood count with differential from the first blood draw.
+observations_header: 'First emergency-department blood count:'
+predictors:
+  sex:
+    column: sex
+    kind: categorical
+    text_label: Sex
+    text_values:
+      Female: Female
+      Male: Male
+  covid_wave:
+    column: covid_wave
+    kind: categorical
+    text_label: Pandemic period at presentation
+    text_values:
+      off_waves: Outside the COVID-19 infection waves
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+  hemoglobin:
+    column: hemoglobin
+    kind: numeric
+    text_label: Haemoglobin
+    unit: g/dL
+  mcv:
+    column: mcv
+    kind: numeric
+    text_label: Mean corpuscular volume
+    unit: fL
+  rdw:
+    column: rdw
+    kind: numeric
+    text_label: Red cell distribution width (RDW-CV)
+    unit: '%'
+  pdw:
+    column: pdw
+    kind: numeric
+    text_label: Platelet distribution width
+    unit: '%'
+  pct:
+    column: pct
+    kind: numeric
+    text_label: Plateletcrit
+    unit: '%'
+  rbc:
+    column: rbc
+    kind: numeric
+    text_label: Red blood cells
+    unit: ×10^12/L
+  wbc:
+    column: wbc
+    kind: numeric
+    text_label: White blood cells
+    unit: ×10^9/L
+  neutrophils:
+    column: neutrophils
+    kind: numeric
+    text_label: Neutrophils
+    unit: ×10^9/L
+  lymphocytes:
+    column: lymphocytes
+    kind: numeric
+    text_label: Lymphocytes
+    unit: ×10^9/L
+  monocytes:
+    column: monocytes
+    kind: numeric
+    text_label: Monocytes
+    unit: ×10^9/L
+  eosinophils:
+    column: eosinophils
+    kind: numeric
+    text_label: Eosinophils
+    unit: ×10^9/L
+  basophils:
+    column: basophils
+    kind: numeric
+    text_label: Basophils
+    unit: ×10^9/L
+  platelets:
+    column: platelets
+    kind: numeric
+    text_label: Platelets
+    unit: ×10^9/L
+outcomes:
+  er_death:
+    column: er_death
+    classes:
+    - Alive at the end of follow-up
+    - Died from any cause during follow-up (up to about 17 months)
+    mapping:
+      '0': Alive at the end of follow-up
+      '1': Died from any cause during follow-up (up to about 17 months)
+    question: Based on this first emergency-department blood count, did this patient die from any cause during the
+      follow-up period of up to about 17 months?

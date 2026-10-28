@@ -1,0 +1,56 @@
+name: uci_mammographic_mass
+description: UCI Mammographic Mass lesions (961 observations). Predictors are age, shape, margin and density; BI-RADS
+  assessment is excluded as non-predictive per the UCI documentation.
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Woman with a mass lesion on a full-field digital mammogram at the Institute of Radiology, University Erlangen-Nuremberg,
+  Germany (2003-2006). The observations are her age and the BI-RADS descriptors of the mass (shape, margin and density)
+  recorded by the radiologist; the overall BI-RADS assessment category is withheld.
+observations_header: 'Age and BI-RADS mass descriptors:'
+predictors:
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+  shape:
+    column: shape
+    kind: categorical
+    text_label: Mass shape
+    text_values:
+      '1': Round
+      '2': Oval
+      '3': Lobular
+      '4': Irregular
+  margin:
+    column: margin
+    kind: categorical
+    text_label: Mass margin
+    text_values:
+      '1': Circumscribed
+      '2': Microlobulated
+      '3': Obscured
+      '4': Ill-defined
+      '5': Spiculated
+  density:
+    column: density
+    kind: categorical
+    text_label: Mass density
+    text_values:
+      '1': High
+      '2': Iso-dense (equal to fibroglandular tissue)
+      '3': Low
+      '4': Fat-containing
+outcomes:
+  malignancy:
+    column: severity
+    classes:
+    - Benign
+    - Malignant
+    mapping:
+      '0': Benign
+      '1': Malignant
+    question: Based on this woman's age and the BI-RADS mass descriptors, was the mammographic mass benign or malignant
+      on biopsy?

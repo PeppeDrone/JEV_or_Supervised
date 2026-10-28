@@ -1,0 +1,24 @@
+{
+  "dataset": "uci_haberman",
+  "prepared_at": "2026-10-21T11:03:45.627583+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/43/haberman+s+survival.zip",
+      "path": "datasets/uci_haberman/raw/haberman.zip",
+      "sha256": "1001bac29022350e279b064003c426c8ed60f4d76ab4916fb05baf886c8e3ac7",
+      "bytes": 1844,
+      "retrieved": "2026-10-21T11:03:45.622476+00:00"
+    }
+  ],
+  "patients_csv_sha256": "307fc7d2502ba91b27e5c3a492d8736b61bd5b6ab58268f259ccd7240b3d7da4",
+  "summary": {
+    "observations": 306,
+    "predictors": 3,
+    "outcome": "died_5y",
+    "class_counts": {
+      "Survived \u22655 years": 225,
+      "Died within 5 years": 81
+    },
+    "identifier_note": "UCI Haberman survival; status 1=survived 5y, 2=died within 5y."
+  }
+}

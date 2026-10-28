@@ -1,0 +1,416 @@
+name: physionet_2012
+description: PhysioNet/CinC Challenge 2012 ICU set A (first 1000 patients). Binary in-hospital death from 48-hour
+  named vitals and laboratories.
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Adult admitted to an intensive care unit (PhysioNet/CinC Challenge 2012, set A) and staying at least 48
+  hours. The observations are demographics, ICU type, and for each recorded vital sign and laboratory test the last
+  value and the mean over the first 48 hours of the stay; tests that were never ordered are marked as not observed.
+observations_header: 'First 48 hours in the ICU (last value and 48-hour mean per variable):'
+predictors:
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+  sex:
+    column: sex
+    kind: categorical
+    text_label: Sex
+    text_values:
+      Female: Female
+      Male: Male
+  height:
+    column: height
+    kind: numeric
+    text_label: Height
+    unit: cm
+  weight:
+    column: weight
+    kind: numeric
+    text_label: Weight
+    unit: kg
+  icu_type:
+    column: icu_type
+    kind: categorical
+    text_label: ICU type
+    text_values:
+      Surgical ICU: Surgical ICU
+      Cardiac surgery recovery: Cardiac surgery recovery
+      Medical ICU: Medical ICU
+      Coronary care unit: Coronary care unit
+  mech_vent:
+    column: mech_vent
+    kind: categorical
+    text_label: Mechanical ventilation recorded during the first 48 hours
+    text_values:
+      'Yes': 'Yes'
+  alp_last:
+    column: alp_last
+    kind: numeric
+    text_label: Alkaline phosphatase (last 48h)
+    unit: IU/L
+  alp_mean:
+    column: alp_mean
+    kind: numeric
+    text_label: Alkaline phosphatase (mean 48h)
+    unit: IU/L
+  alt_last:
+    column: alt_last
+    kind: numeric
+    text_label: Alanine aminotransferase (last 48h)
+    unit: IU/L
+  alt_mean:
+    column: alt_mean
+    kind: numeric
+    text_label: Alanine aminotransferase (mean 48h)
+    unit: IU/L
+  ast_last:
+    column: ast_last
+    kind: numeric
+    text_label: Aspartate aminotransferase (last 48h)
+    unit: IU/L
+  ast_mean:
+    column: ast_mean
+    kind: numeric
+    text_label: Aspartate aminotransferase (mean 48h)
+    unit: IU/L
+  albumin_last:
+    column: albumin_last
+    kind: numeric
+    text_label: Albumin (last 48h)
+    unit: g/dL
+  albumin_mean:
+    column: albumin_mean
+    kind: numeric
+    text_label: Albumin (mean 48h)
+    unit: g/dL
+  bun_last:
+    column: bun_last
+    kind: numeric
+    text_label: Blood urea nitrogen (last 48h)
+    unit: mg/dL
+  bun_mean:
+    column: bun_mean
+    kind: numeric
+    text_label: Blood urea nitrogen (mean 48h)
+    unit: mg/dL
+  bilirubin_last:
+    column: bilirubin_last
+    kind: numeric
+    text_label: Bilirubin (last 48h)
+    unit: mg/dL
+  bilirubin_mean:
+    column: bilirubin_mean
+    kind: numeric
+    text_label: Bilirubin (mean 48h)
+    unit: mg/dL
+  cholesterol_last:
+    column: cholesterol_last
+    kind: numeric
+    text_label: Cholesterol (last 48h)
+    unit: mg/dL
+  cholesterol_mean:
+    column: cholesterol_mean
+    kind: numeric
+    text_label: Cholesterol (mean 48h)
+    unit: mg/dL
+  creatinine_last:
+    column: creatinine_last
+    kind: numeric
+    text_label: Creatinine (last 48h)
+    unit: mg/dL
+  creatinine_mean:
+    column: creatinine_mean
+    kind: numeric
+    text_label: Creatinine (mean 48h)
+    unit: mg/dL
+  dias_abp_last:
+    column: dias_abp_last
+    kind: numeric
+    text_label: Diastolic arterial blood pressure (last 48h)
+    unit: mmHg
+  dias_abp_mean:
+    column: dias_abp_mean
+    kind: numeric
+    text_label: Diastolic arterial blood pressure (mean 48h)
+    unit: mmHg
+  fio2_last:
+    column: fio2_last
+    kind: numeric
+    text_label: Inspired oxygen fraction (last 48h)
+    unit: fraction
+  fio2_mean:
+    column: fio2_mean
+    kind: numeric
+    text_label: Inspired oxygen fraction (mean 48h)
+    unit: fraction
+  gcs_last:
+    column: gcs_last
+    kind: numeric
+    text_label: Glasgow coma scale (last 48h)
+    unit: points
+  gcs_mean:
+    column: gcs_mean
+    kind: numeric
+    text_label: Glasgow coma scale (mean 48h)
+    unit: points
+  glucose_last:
+    column: glucose_last
+    kind: numeric
+    text_label: Glucose (last 48h)
+    unit: mg/dL
+  glucose_mean:
+    column: glucose_mean
+    kind: numeric
+    text_label: Glucose (mean 48h)
+    unit: mg/dL
+  hco3_last:
+    column: hco3_last
+    kind: numeric
+    text_label: Bicarbonate (last 48h)
+    unit: mmol/L
+  hco3_mean:
+    column: hco3_mean
+    kind: numeric
+    text_label: Bicarbonate (mean 48h)
+    unit: mmol/L
+  hct_last:
+    column: hct_last
+    kind: numeric
+    text_label: Hematocrit (last 48h)
+    unit: '%'
+  hct_mean:
+    column: hct_mean
+    kind: numeric
+    text_label: Hematocrit (mean 48h)
+    unit: '%'
+  hr_last:
+    column: hr_last
+    kind: numeric
+    text_label: Heart rate (last 48h)
+    unit: beats/min
+  hr_mean:
+    column: hr_mean
+    kind: numeric
+    text_label: Heart rate (mean 48h)
+    unit: beats/min
+  potassium_last:
+    column: potassium_last
+    kind: numeric
+    text_label: Potassium (last 48h)
+    unit: mmol/L
+  potassium_mean:
+    column: potassium_mean
+    kind: numeric
+    text_label: Potassium (mean 48h)
+    unit: mmol/L
+  lactate_last:
+    column: lactate_last
+    kind: numeric
+    text_label: Lactate (last 48h)
+    unit: mmol/L
+  lactate_mean:
+    column: lactate_mean
+    kind: numeric
+    text_label: Lactate (mean 48h)
+    unit: mmol/L
+  magnesium_last:
+    column: magnesium_last
+    kind: numeric
+    text_label: Magnesium (last 48h)
+    unit: mmol/L
+  magnesium_mean:
+    column: magnesium_mean
+    kind: numeric
+    text_label: Magnesium (mean 48h)
+    unit: mmol/L
+  map_last:
+    column: map_last
+    kind: numeric
+    text_label: Mean arterial pressure (last 48h)
+    unit: mmHg
+  map_mean:
+    column: map_mean
+    kind: numeric
+    text_label: Mean arterial pressure (mean 48h)
+    unit: mmHg
+  sodium_last:
+    column: sodium_last
+    kind: numeric
+    text_label: Sodium (last 48h)
+    unit: mmol/L
+  sodium_mean:
+    column: sodium_mean
+    kind: numeric
+    text_label: Sodium (mean 48h)
+    unit: mmol/L
+  ni_dias_abp_last:
+    column: ni_dias_abp_last
+    kind: numeric
+    text_label: Noninvasive diastolic blood pressure (last 48h)
+    unit: mmHg
+  ni_dias_abp_mean:
+    column: ni_dias_abp_mean
+    kind: numeric
+    text_label: Noninvasive diastolic blood pressure (mean 48h)
+    unit: mmHg
+  ni_map_last:
+    column: ni_map_last
+    kind: numeric
+    text_label: Noninvasive mean arterial pressure (last 48h)
+    unit: mmHg
+  ni_map_mean:
+    column: ni_map_mean
+    kind: numeric
+    text_label: Noninvasive mean arterial pressure (mean 48h)
+    unit: mmHg
+  ni_sys_abp_last:
+    column: ni_sys_abp_last
+    kind: numeric
+    text_label: Noninvasive systolic blood pressure (last 48h)
+    unit: mmHg
+  ni_sys_abp_mean:
+    column: ni_sys_abp_mean
+    kind: numeric
+    text_label: Noninvasive systolic blood pressure (mean 48h)
+    unit: mmHg
+  paco2_last:
+    column: paco2_last
+    kind: numeric
+    text_label: Arterial PaCO2 (last 48h)
+    unit: mmHg
+  paco2_mean:
+    column: paco2_mean
+    kind: numeric
+    text_label: Arterial PaCO2 (mean 48h)
+    unit: mmHg
+  pao2_last:
+    column: pao2_last
+    kind: numeric
+    text_label: Arterial PaO2 (last 48h)
+    unit: mmHg
+  pao2_mean:
+    column: pao2_mean
+    kind: numeric
+    text_label: Arterial PaO2 (mean 48h)
+    unit: mmHg
+  ph_last:
+    column: ph_last
+    kind: numeric
+    text_label: Arterial pH (last 48h)
+    scale_note: pH units
+    text_range:
+    - 6.5
+    - 8.0
+  ph_mean:
+    column: ph_mean
+    kind: numeric
+    text_label: Arterial pH (mean 48h)
+    scale_note: pH units
+    text_range:
+    - 6.5
+    - 8.0
+  platelets_last:
+    column: platelets_last
+    kind: numeric
+    text_label: Platelets (last 48h)
+    unit: ×10^9/L
+  platelets_mean:
+    column: platelets_mean
+    kind: numeric
+    text_label: Platelets (mean 48h)
+    unit: ×10^9/L
+  resp_rate_last:
+    column: resp_rate_last
+    kind: numeric
+    text_label: Respiratory rate (last 48h)
+    unit: breaths/min
+  resp_rate_mean:
+    column: resp_rate_mean
+    kind: numeric
+    text_label: Respiratory rate (mean 48h)
+    unit: breaths/min
+  sao2_last:
+    column: sao2_last
+    kind: numeric
+    text_label: Arterial oxygen saturation (last 48h)
+    unit: '%'
+  sao2_mean:
+    column: sao2_mean
+    kind: numeric
+    text_label: Arterial oxygen saturation (mean 48h)
+    unit: '%'
+  sys_abp_last:
+    column: sys_abp_last
+    kind: numeric
+    text_label: Systolic arterial blood pressure (last 48h)
+    unit: mmHg
+  sys_abp_mean:
+    column: sys_abp_mean
+    kind: numeric
+    text_label: Systolic arterial blood pressure (mean 48h)
+    unit: mmHg
+  temp_last:
+    column: temp_last
+    kind: numeric
+    text_label: Temperature (last 48h)
+    unit: °C
+  temp_mean:
+    column: temp_mean
+    kind: numeric
+    text_label: Temperature (mean 48h)
+    unit: °C
+  troponin_i_last:
+    column: troponin_i_last
+    kind: numeric
+    text_label: Troponin I (last 48h)
+    unit: ng/mL
+  troponin_i_mean:
+    column: troponin_i_mean
+    kind: numeric
+    text_label: Troponin I (mean 48h)
+    unit: ng/mL
+  troponin_t_last:
+    column: troponin_t_last
+    kind: numeric
+    text_label: Troponin T (last 48h)
+    unit: ng/mL
+  troponin_t_mean:
+    column: troponin_t_mean
+    kind: numeric
+    text_label: Troponin T (mean 48h)
+    unit: ng/mL
+  urine_last:
+    column: urine_last
+    kind: numeric
+    text_label: Urine output (last 48h)
+    unit: mL
+  urine_mean:
+    column: urine_mean
+    kind: numeric
+    text_label: Urine output (mean 48h)
+    unit: mL
+  wbc_last:
+    column: wbc_last
+    kind: numeric
+    text_label: White blood cells (last 48h)
+    unit: ×10^9/L
+  wbc_mean:
+    column: wbc_mean
+    kind: numeric
+    text_label: White blood cells (mean 48h)
+    unit: ×10^9/L
+outcomes:
+  icu_death:
+    column: icu_death
+    classes:
+    - Survived to hospital discharge
+    - Died in hospital
+    mapping:
+      '0': Survived to hospital discharge
+      '1': Died in hospital
+    question: Based on the first 48 hours of ICU vital signs and laboratory results, did this patient die before
+      hospital discharge?

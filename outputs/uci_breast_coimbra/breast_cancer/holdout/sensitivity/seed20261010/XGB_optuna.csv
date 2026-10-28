@@ -1,0 +1,25 @@
+model,patient_id,observed,p__Healthy control,p__Breast cancer,predicted
+XGB_optuna,coimbra_027,0,0.102301896,0.8976981,1
+XGB_optuna,coimbra_029,0,0.9236139,0.07638609,0
+XGB_optuna,coimbra_032,0,0.042605996,0.957394,1
+XGB_optuna,coimbra_035,0,0.35190272,0.6480973,1
+XGB_optuna,coimbra_039,0,0.00950855,0.99049145,1
+XGB_optuna,coimbra_040,0,0.6136298,0.3863702,0
+XGB_optuna,coimbra_041,0,0.9835594,0.01644058,0
+XGB_optuna,coimbra_042,0,0.39584392,0.6041561,1
+XGB_optuna,coimbra_044,0,0.4466136,0.5533864,0
+XGB_optuna,coimbra_046,0,0.9446003,0.05539973,0
+XGB_optuna,coimbra_048,0,0.7966536,0.20334639,0
+XGB_optuna,coimbra_056,1,0.11242688,0.8875731,1
+XGB_optuna,coimbra_059,1,0.69129604,0.30870396,0
+XGB_optuna,coimbra_068,1,0.0235309,0.9764691,1
+XGB_optuna,coimbra_069,1,0.17741477,0.8225852,1
+XGB_optuna,coimbra_070,1,0.060989738,0.93901026,1
+XGB_optuna,coimbra_074,1,0.58622944,0.41377053,0
+XGB_optuna,coimbra_077,1,0.12198883,0.87801117,1
+XGB_optuna,coimbra_080,1,0.024692178,0.9753078,1
+XGB_optuna,coimbra_081,1,0.11708659,0.8829134,1
+XGB_optuna,coimbra_091,1,0.020118713,0.9798813,1
+XGB_optuna,coimbra_094,1,0.035197318,0.9648027,1
+XGB_optuna,coimbra_096,1,0.30861777,0.6913822,1
+XGB_optuna,coimbra_103,1,0.076268375,0.9237316,1

@@ -1,0 +1,126 @@
+name: hip_fracture_elos
+description: Chongqing Hechuan hip-fracture admissions (1137). Binary extended length of stay from admission and
+  preoperative findings only.
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Adult aged 50 or older admitted to the orthopaedic department of the People's Hospital of Chongqing Hechuan
+  (China, 2019-2025) with a hip fracture and scheduled for surgery. The observations are the fracture type, demographics,
+  preoperative laboratory values and organ dysfunction, the planned procedure (arthroplasty or internal fixation)
+  and whether protocolised tranexamic acid was given, all known at admission.
+observations_header: 'Admission and preoperative findings:'
+predictors:
+  fracture_type:
+    column: fracture_type
+    kind: categorical
+    text_label: Fracture type
+    text_values:
+      '1': Extracapsular
+      '0': Intracapsular
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+  sex:
+    column: sex
+    kind: categorical
+    text_label: Sex
+    text_values:
+      '1': Male
+      '0': Female
+  heart_rate:
+    column: heart_rate
+    kind: numeric
+    text_label: Admission heart rate
+    unit: bpm
+  pre_hb:
+    column: pre_hb
+    kind: numeric
+    text_label: Preoperative haemoglobin
+    unit: g/L
+  pre_hct:
+    column: pre_hct
+    kind: numeric
+    text_label: Preoperative haematocrit
+    unit: '%'
+  pre_mchc:
+    column: pre_mchc
+    kind: numeric
+    text_label: Preoperative MCHC
+    unit: g/L
+  pre_platelet:
+    column: pre_platelet
+    kind: numeric
+    text_label: Preoperative platelets
+    unit: ×10^9/L
+  pre_albumin:
+    column: pre_albumin
+    kind: numeric
+    text_label: Preoperative albumin
+    unit: g/L
+  pre_pt:
+    column: pre_pt
+    kind: numeric
+    text_label: Preoperative prothrombin time ratio (international normalised ratio)
+    scale_note: ratio
+  pre_aptt:
+    column: pre_aptt
+    kind: numeric
+    text_label: Preoperative APTT
+    unit: seconds
+  pre_ddimer:
+    column: pre_ddimer
+    kind: numeric
+    text_label: Preoperative D-dimer
+    unit: mg/L
+  pre_calcium:
+    column: pre_calcium
+    kind: numeric
+    text_label: Preoperative calcium
+    unit: mmol/L
+  pre_creatinine:
+    column: pre_creatinine
+    kind: numeric
+    text_label: Preoperative creatinine
+    unit: µmol/L
+  pre_liver:
+    column: pre_liver
+    kind: categorical
+    text_label: Preoperative liver dysfunction
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  pre_renal:
+    column: pre_renal
+    kind: categorical
+    text_label: Preoperative renal dysfunction
+    text_values:
+      '1': 'Yes'
+      '0': 'No'
+  arthroplasty:
+    column: arthroplasty
+    kind: categorical
+    text_label: Total hip arthroplasty planned at admission
+    text_values:
+      '1': 'Yes'
+      '0': No (internal fixation)
+  tranexamic:
+    column: tranexamic
+    kind: categorical
+    text_label: Protocolized tranexamic acid
+    text_values:
+      '1': 'Yes'
+      '0': 'No'
+outcomes:
+  extended_los:
+    column: extended_los
+    classes:
+    - Hospital stay shorter than 14 days
+    - Extended hospital stay of 14 days or more
+    mapping:
+      '0': Hospital stay shorter than 14 days
+      '1': Extended hospital stay of 14 days or more
+    question: Based on these admission and preoperative findings, did this hip-fracture admission last 14 days or
+      longer?

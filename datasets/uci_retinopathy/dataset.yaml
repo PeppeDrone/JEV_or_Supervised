@@ -1,0 +1,127 @@
+name: uci_retinopathy
+description: 'UCI Diabetic Retinopathy Debrecen (1151 fundus images from the Messidor set). Image-analysis features:
+  quality and pre-screening flags, microaneurysm counts at six detector confidence levels, exudate measures at eight
+  confidence levels, macula-disc distance, optic-disc diameter and an AM/FM texture classification. Binary presence
+  of retinopathy signs.'
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: 'Diabetic retinopathy screening: one colour fundus photograph of an adult with diabetes, analysed by an
+  automatic lesion-detection pipeline. The observations are image-quality and pre-screening flags, the number of
+  candidate microaneurysms found at increasing detector confidence (0.5 to 1.0), normalised exudate measures at
+  increasing confidence, and anatomical descriptors of the macula and optic disc.'
+observations_header: 'Automated fundus-image analysis results:'
+predictors:
+  quality:
+    column: quality
+    kind: categorical
+    text_label: Image quality sufficient for assessment
+    text_values:
+      '0': No (bad quality)
+      '1': Yes (sufficient quality)
+  pre_screening:
+    column: pre_screening
+    kind: categorical
+    text_label: Pre-screening flag for severe retinal abnormality
+    text_values:
+      '0': Not flagged
+      '1': Flagged (severe abnormality suspected)
+  ma1:
+    column: ma1
+    kind: numeric
+    text_label: Microaneurysms detected at confidence level 0.5
+    scale_note: count
+  ma2:
+    column: ma2
+    kind: numeric
+    text_label: Microaneurysms detected at confidence level 0.6
+    scale_note: count
+  ma3:
+    column: ma3
+    kind: numeric
+    text_label: Microaneurysms detected at confidence level 0.7
+    scale_note: count
+  ma4:
+    column: ma4
+    kind: numeric
+    text_label: Microaneurysms detected at confidence level 0.8
+    scale_note: count
+  ma5:
+    column: ma5
+    kind: numeric
+    text_label: Microaneurysms detected at confidence level 0.9
+    scale_note: count
+  ma6:
+    column: ma6
+    kind: numeric
+    text_label: Microaneurysms detected at confidence level 1.0
+    scale_note: count
+  exudate1:
+    column: exudate1
+    kind: numeric
+    text_label: Exudate measure at detector confidence level 1 of 8
+    scale_note: lesion points / retinal region diameter; higher levels are stricter
+  exudate2:
+    column: exudate2
+    kind: numeric
+    text_label: Exudate measure at detector confidence level 2 of 8
+    scale_note: lesion points / retinal region diameter; higher levels are stricter
+  exudate3:
+    column: exudate3
+    kind: numeric
+    text_label: Exudate measure at detector confidence level 3 of 8
+    scale_note: lesion points / retinal region diameter; higher levels are stricter
+  exudate3_1:
+    column: exudate3_1
+    kind: numeric
+    text_label: Exudate measure at detector confidence level 4 of 8
+    scale_note: lesion points / retinal region diameter; higher levels are stricter
+  exudate5:
+    column: exudate5
+    kind: numeric
+    text_label: Exudate measure at detector confidence level 5 of 8
+    scale_note: lesion points / retinal region diameter; higher levels are stricter
+  exudate6:
+    column: exudate6
+    kind: numeric
+    text_label: Exudate measure at detector confidence level 6 of 8
+    scale_note: lesion points / retinal region diameter; higher levels are stricter
+  exudate7:
+    column: exudate7
+    kind: numeric
+    text_label: Exudate measure at detector confidence level 7 of 8
+    scale_note: lesion points / retinal region diameter; higher levels are stricter
+  exudate8:
+    column: exudate8
+    kind: numeric
+    text_label: Exudate measure at detector confidence level 8 of 8
+    scale_note: lesion points / retinal region diameter; higher levels are stricter
+  macula_opticdisc_distance:
+    column: macula_opticdisc_distance
+    kind: numeric
+    text_label: Distance between macula centre and optic-disc centre
+    scale_note: normalised by the retinal region diameter
+  opticdisc_diameter:
+    column: opticdisc_diameter
+    kind: numeric
+    text_label: Optic-disc diameter
+    scale_note: normalised by the retinal region diameter
+  am_fm_classification:
+    column: am_fm_classification
+    kind: categorical
+    text_label: AM/FM texture-based classification of the image
+    text_values:
+      '0': Classified as normal
+      '1': Classified as abnormal
+outcomes:
+  retinopathy:
+    column: retinopathy
+    classes:
+    - No signs of diabetic retinopathy
+    - Signs of diabetic retinopathy
+    mapping:
+      '0': No signs of diabetic retinopathy
+      '1': Signs of diabetic retinopathy
+    question: Based on these automated fundus-image analysis results, does this patient's retinal image show signs
+      of diabetic retinopathy?

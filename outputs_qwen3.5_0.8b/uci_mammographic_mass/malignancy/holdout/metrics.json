@@ -1,0 +1,114 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_mammographic_mass",
+  "outcome": "malignancy",
+  "seed": 20261008,
+  "n_development": 768,
+  "n_holdout": 193,
+  "n_classes": 2,
+  "inner_folds": 5,
+  "trials_completed": 58,
+  "trials_pruned": 142,
+  "tuning_seconds": 23.61655569076538,
+  "best_params": {
+    "max_depth": 10,
+    "learning_rate": 0.02371653121188367,
+    "n_estimators": 128,
+    "min_child_weight": 0.9278037053582365,
+    "subsample": 0.9674951256006046,
+    "colsample_bytree": 0.4344846178675637,
+    "colsample_bylevel": 0.45287836398501274,
+    "gamma": 0.9751126122819108,
+    "reg_alpha": 0.06051604023972165,
+    "reg_lambda": 14.419705833528738,
+    "max_bin": 64,
+    "grow_policy": "lossguide",
+    "class_weight_exponent": 0.03278889417699614,
+    "threshold": 0.447515383812341
+  },
+  "best_cv_balanced_accuracy": 0.8183817256889692,
+  "best_cv_sd": 0.028515203319136616,
+  "consensus_params": {
+    "max_depth": 9,
+    "learning_rate": 0.036088748052102534,
+    "n_estimators": 128,
+    "min_child_weight": 1.0586483642107887,
+    "subsample": 0.8443104937132552,
+    "colsample_bytree": 0.4533006817680184,
+    "colsample_bylevel": 0.7287999450407052,
+    "gamma": 0.890886353343129,
+    "reg_alpha": 0.04806789597397332,
+    "reg_lambda": 20.88592336223516,
+    "max_bin": 64,
+    "grow_policy": "lossguide",
+    "class_weight_exponent": 0.24636011251634618,
+    "threshold": 0.49628145137779633
+  },
+  "holdout": {
+    "XGB_optuna": {
+      "balanced_accuracy": 0.7995354364736387,
+      "auroc": 0.8632238547968886,
+      "brier": 0.15243799180407297,
+      "log_loss": 0.4779879157343211,
+      "macro_f1": 0.7975796692214603
+    },
+    "XGB_optuna_argmax": {
+      "balanced_accuracy": 0.7802506482281764,
+      "auroc": 0.8632238547968886,
+      "brier": 0.15243799180407297,
+      "log_loss": 0.4779879157343211,
+      "macro_f1": 0.7806818181818183
+    },
+    "XGB_optuna_consensus": {
+      "balanced_accuracy": 0.7922968885047537,
+      "auroc": 0.865600691443388,
+      "brier": 0.14817008664374254,
+      "log_loss": 0.4640056137350111,
+      "macro_f1": 0.7918015102481122
+    },
+    "ZS_raw": {
+      "balanced_accuracy": 0.7376836646499567,
+      "auroc": 0.8094209161624891,
+      "brier": 0.23517360414059843,
+      "log_loss": 0.6633932541308152,
+      "macro_f1": 0.7389371980676329
+    },
+    "ZS_raw_prior_matched": {
+      "balanced_accuracy": 0.7058664649956785,
+      "auroc": 0.8094209161624891,
+      "brier": 0.23517360414059843,
+      "log_loss": 0.6633932541308152,
+      "macro_f1": 0.6808862433862434
+    }
+  },
+  "paired": {
+    "XGB_optuna_minus_ZS_raw": {
+      "delta_bacc": 0.061851771823681956,
+      "delta_bacc_ci": [
+        0.01324435829518329,
+        0.1160221401249698
+      ],
+      "delta_auroc": 0.053802938634399444,
+      "delta_auroc_ci": [
+        0.013907670934003719,
+        0.09515019661433423
+      ],
+      "iterations": 1000
+    },
+    "XGB_optuna_minus_ZS_raw_prior_matched": {
+      "delta_bacc": 0.09366897147796016,
+      "delta_bacc_ci": [
+        0.038419631962262155,
+        0.14593180819307067
+      ],
+      "delta_auroc": 0.053802938634399444,
+      "delta_auroc_ci": [
+        0.013907670934003719,
+        0.09515019661433423
+      ],
+      "iterations": 1000
+    }
+  },
+  "cv_minus_holdout_balanced_accuracy": 0.01884628921533049,
+  "rescored_from": "outputs/uci_mammographic_mass/malignancy/holdout"
+}

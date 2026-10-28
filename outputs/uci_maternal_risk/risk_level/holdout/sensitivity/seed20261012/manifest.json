@@ -1,0 +1,124 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_maternal_risk",
+  "outcome": "risk_level",
+  "data_hash": "18aae6b8af2ca70b4fe4086f70da21cc953f1371eecacaeb665081af8c78f5dd",
+  "dataset_spec_sha256": "f2533a5f2d819c7568ece9fdda010340e1472d74689e1cadad8a3dd03768d5fe",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261012,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "Low risk",
+    "Mid risk",
+    "High risk"
+  ],
+  "predictor_columns": [
+    "age",
+    "systolic_bp",
+    "diastolic_bp",
+    "blood_sugar",
+    "body_temp",
+    "heart_rate"
+  ],
+  "zs_raw_csv_sha256": "f16354f130a79408fe7b9e82e53749e1bcdbe2eece826338dbf4135bf22407c7",
+  "files": {
+    "split.json": "ea7183ed65388f7bb2e87a9d4360bac2aaca5035e68e63a95f39fc1a32349d6c",
+    "trials.csv": "4efb264da4d5d845dd70d4df6a828cf37d4af33f6f9599b6fcfec0f04b56d5d9",
+    "XGB_optuna.csv": "a418e2e4c388b36152780801ff1739c304eeab3184884bfc35512245376b2c81",
+    "ZS_raw.csv": "6c489f8e40ef979fdf5a1b9b748a4a9876f79d98c2d0055d8d64b4dfb6303f60",
+    "model.joblib": "e68ede244ffdd655d427b7ada7eafc3a5a1eee261a4abda2e24fa9043c33df65",
+    "best_params.json": "fca0fdb338621fc51d167326fcb034f6acc56006e11a8bbecf0275c968905f13",
+    "metrics.json": "4fee4f12f540adb5a2199c813e202c66b261b603a28bfb9711e0897a37df4eb2"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "metric": "balanced_accuracy",
+  "version": 2,
+  "fidelity": "per-predictor explanation_rate = mean of 0.5*label_score + 0.5*quantity_score; not gold-standard medical correctness",
+  "detail": "prompt words per predictor; unique codebook word types minus schema tokens per predictor; setting + observations_header + question length",
+  "delta": "BalAcc(M2) - BalAcc(ZS_raw)",
+  "n_outcomes": 45,
+  "n_with_zs_raw": 45,
+  "prompt_sample": 1000,
+  "prompt_seed": 20261008
+}

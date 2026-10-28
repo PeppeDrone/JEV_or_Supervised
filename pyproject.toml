@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "jevtest"
+version = "0.1.0"
+requires-python = ">=3.12"
+# Pins match neurojev/pyproject.toml so results are comparable with the NeuroJev study.
+dependencies = ["numpy==2.1.2", "pandas==2.2.3", "scipy==1.15.3", "scikit-learn==1.6.1", "xgboost==3.0.5", "PyYAML==6.0.3", "openpyxl==3.1.5"]
+[project.optional-dependencies]
+# transformers >= 5.2 is required by the Qwen3.5 backbones (configs/study_qwen3.5_*.yaml); the Qwen3 results in
+# outputs/ and outputs_qwen3_0.6b/ were produced with transformers 4.57.1. torch: 2.8.0 on the DGX Spark (bf16 dense
+# sizes); the FP8 MoE checkpoints need the finegrained-fp8 hub kernel and therefore torch >= 2.14 (Triton >= 3.5).
+inference = ["torch>=2.8.0,<3", "transformers==5.20.2", "accelerate==1.10.1", "anyjev @ git+https://github.com/nokia-applied-research/AnyJev.git@d458d13968eec0e2cfa8c81b64629b96cf5cb4a9"]
+test = ["pytest==8.4.2"]
+tuning = ["optuna==4.9.0"]
+plots = ["matplotlib>=3.8,<4"]
+[project.scripts]
+jevtest = "jevtest.cli:main"
+[tool.setuptools.packages.find]
+where = ["src"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]

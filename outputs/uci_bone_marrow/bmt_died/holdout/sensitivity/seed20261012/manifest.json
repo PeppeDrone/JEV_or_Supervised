@@ -1,0 +1,152 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_bone_marrow",
+  "outcome": "bmt_died",
+  "data_hash": "c5ac7eec837d89ad7a4fe318dded024fd78f2183247577162e3468f2fd475e27",
+  "dataset_spec_sha256": "a153efff8a38b9639f8f03ae50beffd4a3507353d753e9d820fddf842d1e3b51",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261012,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "Alive",
+    "Dead"
+  ],
+  "predictor_columns": [
+    "recipientgender",
+    "stemcellsource",
+    "donorage",
+    "donorage35",
+    "iiiv",
+    "gendermatch",
+    "donorabo",
+    "recipientabo",
+    "recipientrh",
+    "abomatch",
+    "cmvstatus",
+    "donorcmv",
+    "recipientcmv",
+    "disease",
+    "riskgroup",
+    "txpostrelapse",
+    "diseasegroup",
+    "hlamatch",
+    "hlamismatch",
+    "antigen",
+    "allele",
+    "hlagri",
+    "recipientage",
+    "recipientage10",
+    "recipientageint",
+    "relapse",
+    "agvhdiiiiv",
+    "extcgvhd",
+    "cd34kgx10d6",
+    "cd3dcd34",
+    "cd3dkgx10d8",
+    "rbodymass",
+    "ancrecovery",
+    "pltrecovery",
+    "time_to_agvhd_iii_iv"
+  ],
+  "zs_raw_csv_sha256": "fb39eb0b08ea800e2bc0627680f5a58d64f9ded66d7ca1fcab5ed1f1d8ba2186",
+  "files": {
+    "split.json": "1c9a5186040b07e8aca56957ed31aa4841171acf4f5a3762ae9e91e0984b8f70",
+    "trials.csv": "23d662b151f7ea4a6a7ba4e2155cd22d9abcb64f2705737f1418470979562d29",
+    "XGB_optuna.csv": "7925d44f75a81389119d3a8dc00833a3a1667560bcf493afe94e03c274bb3081",
+    "ZS_raw.csv": "6b6d3217222c8495fcd2ead02b71cee3d1ce9ff811464d4b5528ee054e3c49c9",
+    "model.joblib": "12f9e9d8830da820da1b2ece30443bec33ea9c24f53eddefd99d3e59046c52b9",
+    "best_params.json": "f5c5a08c3fa1f47ad8a72903dd7488b7a46ff519a02cdcc158eea5c61207a18e",
+    "metrics.json": "2bd6c10de8acda2ead46228f10a28298dffff1cc81b784d51ac698ca49643620"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

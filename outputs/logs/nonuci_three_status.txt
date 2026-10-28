@@ -1,0 +1,10 @@
+2026-10-22T14:25:51+02:00 waiting for GPU zeroshot to finish (do not steal the running queue)
+2026-10-22T14:57:38+02:00 GPU free
+2026-10-22T14:57:38+02:00 START ppd_bangladesh/ppd_high zeroshot
+2026-10-22T15:01:23+02:00 OK ppd_bangladesh/ppd_high zeroshot
+2026-10-22T15:01:23+02:00 START hip_fracture_elos/extended_los zeroshot
+2026-10-22T15:05:01+02:00 OK hip_fracture_elos/extended_los zeroshot
+2026-10-22T15:05:01+02:00 START berlin_appendicitis/appendicitis zeroshot
+2026-10-22T15:07:06+02:00 OK berlin_appendicitis/appendicitis zeroshot
+2026-10-22T15:07:06+02:00 rebuilding combined figures, complexity, summary
+2026-10-22T15:10:32+02:00 NONUCI_THREE_DONE

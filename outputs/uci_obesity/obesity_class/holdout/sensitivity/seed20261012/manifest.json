@@ -1,0 +1,138 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_obesity",
+  "outcome": "obesity_class",
+  "data_hash": "1070620ec1a0036e22f92e66fa0b5d7df27438bde27f4a4f7d95732a773962f7",
+  "dataset_spec_sha256": "7c88e29832be2ac73863b04d108c6d6dc3eb4fc286d9738b4378dd329739ed58",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261012,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "Insufficient weight",
+    "Normal weight",
+    "Overweight level I",
+    "Overweight level II",
+    "Obesity type I",
+    "Obesity type II",
+    "Obesity type III"
+  ],
+  "predictor_columns": [
+    "gender",
+    "age",
+    "height",
+    "weight",
+    "family_history_with_overweight",
+    "favc",
+    "fcvc",
+    "ncp",
+    "caec",
+    "smoke",
+    "ch2o",
+    "scc",
+    "faf",
+    "tue",
+    "calc",
+    "mtrans"
+  ],
+  "zs_raw_csv_sha256": "d421e9ad118494e2145c19e9d4dcd593dd9f0e47f7920457f08651683ff98f84",
+  "files": {
+    "split.json": "1a08bccd563559e80f87ed06dfd3b09e7c1d8ca56efb918e0e7636e034e2befe",
+    "trials.csv": "f523c73aef1a1e98b0c871cb65ec3122e84e348beebabd5985c84a76e83623a3",
+    "XGB_optuna.csv": "c745ead678f5cdb858f86ded7aa33ae0adbb35ad23d159de5004179340d521cf",
+    "ZS_raw.csv": "4f43738dbe3f9f8d729f71da279392547a4b2cb36bdc8acd1453d2b7714b6e09",
+    "model.joblib": "47b1878c0f857a12d363b490f598ad12a184a5849062c2dbf084153d8f4d3906",
+    "best_params.json": "4bbed7ab36aa0e2b3a1ca8fa88fcd2fea21bd4f825c29f9b9392703661b6b7a9",
+    "metrics.json": "5b05c7da5e70706f617e86eeb1bbd4e7c0ee723a8e52435dd7a779ec1fbfcbd6"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

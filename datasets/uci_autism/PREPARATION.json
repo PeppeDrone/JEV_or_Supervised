@@ -1,0 +1,28 @@
+{
+  "dataset": "uci_autism",
+  "prepared_at": "2026-10-21T11:11:25.790799+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/426/data.csv",
+      "path": "datasets/uci_autism/raw/data.csv",
+      "sha256": "5ffba0d12ea9d867c8e5493109149a95c7f5602dc839a5ed73ebce9cb0cb8e8e",
+      "bytes": 58264,
+      "retrieved": "cached"
+    }
+  ],
+  "patients_csv_sha256": "d599d64c497e0e2feadce34b9db4938b8c8b2f6ab11a2c379b077f5396dd983e",
+  "summary": {
+    "observations": 704,
+    "predictors": 18,
+    "outcome": "asd",
+    "excluded_predictors": [
+      "result",
+      "age_desc"
+    ],
+    "class_counts": {
+      "No ASD": 515,
+      "ASD": 189
+    },
+    "identifier_note": "UCI Autism Screening Adult; AQ-10 items; result sum excluded."
+  }
+}

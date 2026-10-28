@@ -1,0 +1,142 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_thyroid",
+  "outcome": "hypothyroid_status",
+  "data_hash": "969ce78505a704a8df699cac37e9813c766983b42562a76efb63f92f2c292dd9",
+  "dataset_spec_sha256": "4cdac46c7afdcad57016579a1b4157b871d625a7edaf73ea336b6a1e96b71e39",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261010,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "No hypothyroidism",
+    "Hypothyroidism"
+  ],
+  "predictor_columns": [
+    "age",
+    "sex",
+    "on_thyroxine",
+    "query_on_thyroxine",
+    "on_antithyroid_medication",
+    "thyroid_surgery",
+    "query_hypothyroid",
+    "query_hyperthyroid",
+    "pregnant",
+    "sick",
+    "tumor",
+    "lithium",
+    "goitre",
+    "TSH_measured",
+    "TSH",
+    "T3_measured",
+    "T3",
+    "TT4_measured",
+    "TT4",
+    "T4U_measured",
+    "T4U",
+    "FTI_measured",
+    "FTI",
+    "TBG_measured",
+    "TBG"
+  ],
+  "zs_raw_csv_sha256": "dd324b7166a0e055b26ca867a603954b0a1b14dc943be9facc73ff33b92495b5",
+  "files": {
+    "split.json": "20fc8e5066ee59f20c436207172d77e3391e9d0a7637b50527865a4d6c6633c5",
+    "trials.csv": "7c55bc8b15ab27bb9ca4ba20ed1cb80a215342ea6efdcde35bd84f4c3ecbf805",
+    "XGB_optuna.csv": "13e67ac9a9d3472b192fd022fe1618975332e4d3049e4443e1d04af144590f47",
+    "ZS_raw.csv": "3ef2d52bd840fedf8f01addba00ea237c8392e40a8f83e763ab1f755d7edd9bf",
+    "model.joblib": "be5b20df89a035509279b8c06055e1c28073bf0f590b6e7aa2f4e580e78b7c12",
+    "best_params.json": "c7309f31d4d3d14abe766bdbb215d742b3eee40713d70c3fa543222c08dad64a",
+    "metrics.json": "c659f0653b2ae6237caf80295a8e68cede7d09d3e3b0d521820fbb290474566c"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

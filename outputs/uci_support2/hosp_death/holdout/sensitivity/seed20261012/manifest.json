@@ -1,0 +1,154 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_support2",
+  "outcome": "hosp_death",
+  "data_hash": "c22354bccc62a4e0ff65559df1927dcf06401ed5fecfeeb8fac061c30f29555b",
+  "dataset_spec_sha256": "aa891a8e7564d6d010ee39e763f3cb18528153b148ecf1746aaadfcafee14401",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261012,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "Discharged alive",
+    "Died in hospital"
+  ],
+  "predictor_columns": [
+    "age",
+    "sex",
+    "dzgroup",
+    "dzclass",
+    "num_co",
+    "edu",
+    "income",
+    "scoma",
+    "avtisst",
+    "race",
+    "sps",
+    "aps",
+    "hday",
+    "diabetes",
+    "dementia",
+    "ca",
+    "prg2m",
+    "prg6m",
+    "dnr",
+    "dnrday",
+    "meanbp",
+    "wblc",
+    "hrt",
+    "resp",
+    "temp",
+    "pafi",
+    "alb",
+    "bili",
+    "crea",
+    "sod",
+    "ph",
+    "glucose",
+    "bun",
+    "urine",
+    "adlp",
+    "adls",
+    "adlsc"
+  ],
+  "zs_raw_csv_sha256": "a1b4a7ed2b0a2b961079407279e6d1bb7af3017d06f881282558810475f8c291",
+  "files": {
+    "split.json": "a8c61d3e5013caba75f9b13ffe6a79c0dd47a3e59facc35a66374d6e1033ae3f",
+    "trials.csv": "3d9924725c57fc57e43f45620143dc11451839cde298e75925da778609ea2034",
+    "XGB_optuna.csv": "d3f6021b184b6d5e77685816d0c40055e824bf634dacd5d1b9c12528b0992e99",
+    "ZS_raw.csv": "808de0282e40088a81918acd2319540e86af8a1bab628f1b488c96b2cf5f716e",
+    "model.joblib": "92cc8cd6254b3d768865ebe160114a5b828618e2e682b6ae6e96ef5b3e17e433",
+    "best_params.json": "c547f33310ba62133db06df5ffb6d55a0eb6976ff3f42eb137061551e2cec097",
+    "metrics.json": "648582c06a5f48b48d6cda7ab829fd2d314e69a25e568c13e909cfc32bdfc9fb"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

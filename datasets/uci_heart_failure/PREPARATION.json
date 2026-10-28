@@ -1,0 +1,27 @@
+{
+  "dataset": "uci_heart_failure",
+  "prepared_at": "2026-10-21T07:56:09.536569+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/519/data.csv",
+      "path": "datasets/uci_heart_failure/raw/data.csv",
+      "sha256": "54349729933cffdde5c92068572a89761bb53df50cc28250b0915fd18066976c",
+      "bytes": 12239,
+      "retrieved": "cached"
+    }
+  ],
+  "patients_csv_sha256": "8dcd46e662949d4a23bbccb5c5fe5d10fe74d9187039ca9504cd730a7ec386bf",
+  "summary": {
+    "observations": 299,
+    "predictors": 11,
+    "outcome": "mortality",
+    "excluded_predictors": [
+      "time"
+    ],
+    "class_counts": {
+      "Survived follow-up": 203,
+      "Died during follow-up": 96
+    },
+    "identifier_note": "UCI Heart Failure Clinical Records (Chicco & Jurman). Follow-up `time` excluded as a predictor to avoid leakage with mortality."
+  }
+}

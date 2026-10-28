@@ -1,0 +1,113 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_thyroid",
+  "outcome": "hypothyroid_status",
+  "seed": 20261012,
+  "n_development": 2530,
+  "n_holdout": 633,
+  "n_classes": 2,
+  "inner_folds": 5,
+  "trials_completed": 49,
+  "trials_pruned": 51,
+  "tuning_seconds": 28.778805255889893,
+  "best_params": {
+    "max_depth": 9,
+    "learning_rate": 0.12818612989937342,
+    "n_estimators": 471,
+    "min_child_weight": 9.922332874482656,
+    "subsample": 0.5011388155998289,
+    "colsample_bytree": 0.6633294180673825,
+    "colsample_bylevel": 0.6401429688831939,
+    "gamma": 3.427246411562949,
+    "reg_alpha": 0.0010432255370427098,
+    "reg_lambda": 2.943148524213495,
+    "max_bin": 128,
+    "grow_policy": "depthwise",
+    "class_weight_exponent": 0.11736905448994021,
+    "threshold": 0.0604819768278638
+  },
+  "best_cv_balanced_accuracy": 0.9698876461843267,
+  "best_cv_sd": 0.009717024143449675,
+  "consensus_params": {
+    "max_depth": 8,
+    "learning_rate": 0.1031543705324219,
+    "n_estimators": 471,
+    "min_child_weight": 10.782642154211292,
+    "subsample": 0.561210310382262,
+    "colsample_bytree": 0.6529095873265411,
+    "colsample_bylevel": 0.7014626692649983,
+    "gamma": 3.482110639489014,
+    "reg_alpha": 0.0016176344641098766,
+    "reg_lambda": 5.185327811268766,
+    "max_bin": 128,
+    "grow_policy": "depthwise",
+    "class_weight_exponent": 0.15155323689848224,
+    "threshold": 0.08163944418537063
+  },
+  "holdout": {
+    "XGB_optuna": {
+      "balanced_accuracy": 0.9634328358208955,
+      "auroc": 0.9973742399115534,
+      "brier": 0.007413101892388219,
+      "log_loss": 0.03128046911254659,
+      "macro_f1": 0.8388312336412429
+    },
+    "XGB_optuna_argmax": {
+      "balanced_accuracy": 0.9808457711442786,
+      "auroc": 0.9973742399115534,
+      "brier": 0.007413101892388219,
+      "log_loss": 0.03128046911254659,
+      "macro_f1": 0.9660808059157646
+    },
+    "XGB_optuna_consensus": {
+      "balanced_accuracy": 0.9634328358208955,
+      "auroc": 0.9969320066334992,
+      "brier": 0.007356320815438393,
+      "log_loss": 0.031558115132251596,
+      "macro_f1": 0.8388312336412429
+    },
+    "ZS_raw": {
+      "balanced_accuracy": 0.9502487562189055,
+      "auroc": 0.9826147042564953,
+      "brier": 0.09290257511300809,
+      "log_loss": 1.1580901475005407,
+      "macro_f1": 0.7238219895287958
+    },
+    "ZS_raw_prior_matched": {
+      "balanced_accuracy": 0.927860696517413,
+      "auroc": 0.9826147042564953,
+      "brier": 0.09290257511300809,
+      "log_loss": 1.1580901475005407,
+      "macro_f1": 0.6652076380149915
+    }
+  },
+  "paired": {
+    "XGB_optuna_minus_ZS_raw": {
+      "delta_bacc": 0.013184079601989973,
+      "delta_bacc_ci": [
+        -0.028337794145268186,
+        0.03833653846153846
+      ],
+      "delta_auroc": 0.014759535655058054,
+      "delta_auroc_ci": [
+        0.007172030034139962,
+        0.024697139089553836
+      ],
+      "iterations": 1000
+    },
+    "XGB_optuna_minus_ZS_raw_prior_matched": {
+      "delta_bacc": 0.035572139303482464,
+      "delta_bacc_ci": [
+        -0.005237976593712054,
+        0.06322795341098164
+      ],
+      "delta_auroc": 0.014759535655058054,
+      "delta_auroc_ci": [
+        0.007172030034139962,
+        0.024697139089553836
+      ],
+      "iterations": 1000
+    }
+  },
+  "cv_minus_holdout_balanced_accuracy": 0.006454810363431207
+}

@@ -1,0 +1,203 @@
+name: uci_dermatology
+description: 'UCI Dermatology erythemato-squamous disease cohort (366 observations, 34 predictors: 12 clinical and
+  22 histopathological features plus age and family history).'
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Patient seen in a dermatology clinic (Ankara and Gazi Universities) with an erythemato-squamous skin disease.
+  Twelve clinical features were scored at examination and twenty-two histopathological features were scored on a
+  skin biopsy; each feature is graded 0 (absent), 1 or 2 (intermediate) or 3 (largest amount possible).
+observations_header: 'Clinical and histopathological feature scores (0 = absent, 1-2 = intermediate, 3 = maximal):'
+predictors:
+  erythema:
+    column: erythema
+    kind: numeric
+    text_label: Erythema
+    scale_note: clinical, score 0-3
+  scaling:
+    column: scaling
+    kind: numeric
+    text_label: Scaling
+    scale_note: clinical, score 0-3
+  definite_borders:
+    column: definite_borders
+    kind: numeric
+    text_label: Definite borders
+    scale_note: clinical, score 0-3
+  itching:
+    column: itching
+    kind: numeric
+    text_label: Itching
+    scale_note: clinical, score 0-3
+  koebner_phenomenon:
+    column: koebner_phenomenon
+    kind: numeric
+    text_label: Koebner phenomenon
+    scale_note: clinical, score 0-3
+  polygonal_papules:
+    column: polygonal_papules
+    kind: numeric
+    text_label: Polygonal papules
+    scale_note: clinical, score 0-3
+  follicular_papules:
+    column: follicular_papules
+    kind: numeric
+    text_label: Follicular papules
+    scale_note: clinical, score 0-3
+  oral_mucosal_involvement:
+    column: oral_mucosal_involvement
+    kind: numeric
+    text_label: Oral mucosal involvement
+    scale_note: clinical, score 0-3
+  knee_elbow_involvement:
+    column: knee_elbow_involvement
+    kind: numeric
+    text_label: Knee and elbow involvement
+    scale_note: clinical, score 0-3
+  scalp_involvement:
+    column: scalp_involvement
+    kind: numeric
+    text_label: Scalp involvement
+    scale_note: clinical, score 0-3
+  family_history:
+    column: family_history
+    kind: categorical
+    text_label: Family history of these diseases
+    text_values:
+      '0': No family history of these diseases
+      '1': Family history of these diseases present
+  melanin_incontinence:
+    column: melanin_incontinence
+    kind: numeric
+    text_label: Melanin incontinence
+    scale_note: histopathology, score 0-3
+  eosinophils_in_infiltrate:
+    column: eosinophils_in_infiltrate
+    kind: numeric
+    text_label: Eosinophils in the infiltrate
+    scale_note: histopathology, score 0-3
+  pnl_infiltrate:
+    column: pnl_infiltrate
+    kind: numeric
+    text_label: Polymorphonuclear leukocyte (neutrophil) infiltrate
+    scale_note: histopathology, score 0-3
+  fibrosis_papillary_dermis:
+    column: fibrosis_papillary_dermis
+    kind: numeric
+    text_label: Fibrosis of the papillary dermis
+    scale_note: histopathology, score 0-3
+  exocytosis:
+    column: exocytosis
+    kind: numeric
+    text_label: Exocytosis
+    scale_note: histopathology, score 0-3
+  acanthosis:
+    column: acanthosis
+    kind: numeric
+    text_label: Acanthosis
+    scale_note: histopathology, score 0-3
+  hyperkeratosis:
+    column: hyperkeratosis
+    kind: numeric
+    text_label: Hyperkeratosis
+    scale_note: histopathology, score 0-3
+  parakeratosis:
+    column: parakeratosis
+    kind: numeric
+    text_label: Parakeratosis
+    scale_note: histopathology, score 0-3
+  clubbing_rete_ridges:
+    column: clubbing_rete_ridges
+    kind: numeric
+    text_label: Clubbing of the rete ridges
+    scale_note: histopathology, score 0-3
+  elongation_rete_ridges:
+    column: elongation_rete_ridges
+    kind: numeric
+    text_label: Elongation of the rete ridges
+    scale_note: histopathology, score 0-3
+  thinning_suprapapillary:
+    column: thinning_suprapapillary
+    kind: numeric
+    text_label: Thinning of the suprapapillary epidermis
+    scale_note: histopathology, score 0-3
+  spongiform_pustule:
+    column: spongiform_pustule
+    kind: numeric
+    text_label: Spongiform pustule
+    scale_note: histopathology, score 0-3
+  munro_microabscess:
+    column: munro_microabscess
+    kind: numeric
+    text_label: Munro microabscess
+    scale_note: histopathology, score 0-3
+  focal_hypergranulosis:
+    column: focal_hypergranulosis
+    kind: numeric
+    text_label: Focal hypergranulosis
+    scale_note: histopathology, score 0-3
+  disappearance_granular_layer:
+    column: disappearance_granular_layer
+    kind: numeric
+    text_label: Disappearance of the granular layer
+    scale_note: histopathology, score 0-3
+  vacuolisation_basal_layer:
+    column: vacuolisation_basal_layer
+    kind: numeric
+    text_label: Vacuolisation and damage of the basal layer
+    scale_note: histopathology, score 0-3
+  spongiosis:
+    column: spongiosis
+    kind: numeric
+    text_label: Spongiosis
+    scale_note: histopathology, score 0-3
+  saw_tooth_retes:
+    column: saw_tooth_retes
+    kind: numeric
+    text_label: Saw-tooth appearance of the rete ridges
+    scale_note: histopathology, score 0-3
+  follicular_horn_plug:
+    column: follicular_horn_plug
+    kind: numeric
+    text_label: Follicular horn plug
+    scale_note: histopathology, score 0-3
+  perifollicular_parakeratosis:
+    column: perifollicular_parakeratosis
+    kind: numeric
+    text_label: Perifollicular parakeratosis
+    scale_note: histopathology, score 0-3
+  inflammatory_mononuclear:
+    column: inflammatory_mononuclear
+    kind: numeric
+    text_label: Inflammatory mononuclear infiltrate
+    scale_note: histopathology, score 0-3
+  band_like_infiltrate:
+    column: band_like_infiltrate
+    kind: numeric
+    text_label: Band-like infiltrate
+    scale_note: histopathology, score 0-3
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+outcomes:
+  dermatological_diagnosis:
+    column: class
+    classes:
+    - Psoriasis
+    - Seborrhoeic dermatitis
+    - Lichen planus
+    - Pityriasis rosea
+    - Chronic dermatitis
+    - Pityriasis rubra pilaris
+    mapping:
+      '1': Psoriasis
+      '2': Seborrhoeic dermatitis
+      '3': Lichen planus
+      '4': Pityriasis rosea
+      '5': Chronic dermatitis
+      '6': Pityriasis rubra pilaris
+    question: Based on these clinical and histopathological feature scores, which of the six erythemato-squamous
+      diseases is the diagnosis?

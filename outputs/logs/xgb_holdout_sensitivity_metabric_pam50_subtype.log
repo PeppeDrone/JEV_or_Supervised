@@ -1,0 +1,42 @@
+{"stage": "XGB_optuna", "trial": 0, "best": null}
+{"stage": "XGB_optuna", "trial": 10, "best": 0.46983364042019315}
+{"stage": "XGB_optuna", "trial": 20, "best": 0.48851480277647996}
+{"stage": "XGB_optuna", "trial": 30, "best": 0.48851480277647996}
+{"stage": "XGB_optuna", "trial": 40, "best": 0.48851480277647996}
+{"stage": "XGB_optuna", "trial": 50, "best": 0.4887217045280042}
+{"stage": "XGB_optuna", "trial": 60, "best": 0.4887217045280042}
+{"stage": "XGB_optuna", "trial": 70, "best": 0.4887217045280042}
+{"stage": "XGB_optuna", "done": true, "holdout_bacc": 0.5240148332060096, "zs_bacc": 0.34446195144724556}
+{"stage": "XGB_optuna", "trial": 0, "best": null}
+{"stage": "XGB_optuna", "trial": 20, "best": 0.4753998405213239}
+{"stage": "XGB_optuna", "trial": 30, "best": 0.4770182788674511}
+{"stage": "XGB_optuna", "trial": 40, "best": 0.4793744344003463}
+{"stage": "XGB_optuna", "trial": 90, "best": 0.49718190941437684}
+{"stage": "XGB_optuna", "done": true, "holdout_bacc": 0.5550849885408708, "zs_bacc": 0.3386087768440709}
+{"stage": "XGB_optuna", "trial": 0, "best": null}
+{"stage": "XGB_optuna", "trial": 20, "best": 0.48045534062662876}
+{"stage": "XGB_optuna", "trial": 30, "best": 0.48556383497997435}
+{"stage": "XGB_optuna", "trial": 60, "best": 0.4879420684508853}
+{"stage": "XGB_optuna", "trial": 70, "best": 0.4879420684508853}
+{"stage": "XGB_optuna", "done": true, "holdout_bacc": 0.5090776462099991, "zs_bacc": 0.3185224089635854}
+{"stage": "XGB_optuna", "trial": 0, "best": null}
+{"stage": "XGB_optuna", "trial": 10, "best": 0.48252973127788046}
+{"stage": "XGB_optuna", "trial": 20, "best": 0.48252973127788046}
+{"stage": "XGB_optuna", "trial": 30, "best": 0.4917737114617583}
+{"stage": "XGB_optuna", "trial": 40, "best": 0.4917737114617583}
+{"stage": "XGB_optuna", "trial": 50, "best": 0.4917737114617583}
+{"stage": "XGB_optuna", "trial": 60, "best": 0.4917737114617583}
+{"stage": "XGB_optuna", "trial": 70, "best": 0.4917737114617583}
+{"stage": "XGB_optuna", "trial": 80, "best": 0.4917737114617583}
+{"stage": "XGB_optuna", "trial": 90, "best": 0.49594976149021114}
+{"stage": "XGB_optuna", "done": true, "holdout_bacc": 0.5144910236822001, "zs_bacc": 0.33057306255835667}
+{"stage": "XGB_optuna", "trial": 0, "best": null}
+{"stage": "XGB_optuna", "trial": 10, "best": 0.4556420229088152}
+{"stage": "XGB_optuna", "trial": 20, "best": 0.48044769862982273}
+{"stage": "XGB_optuna", "trial": 30, "best": 0.4827837948160333}
+{"stage": "XGB_optuna", "trial": 40, "best": 0.48449063425170563}
+{"stage": "XGB_optuna", "trial": 50, "best": 0.49354550640726436}
+{"stage": "XGB_optuna", "trial": 60, "best": 0.49354550640726436}
+{"stage": "XGB_optuna", "trial": 80, "best": 0.49354550640726436}
+{"stage": "XGB_optuna", "trial": 90, "best": 0.49354550640726436}
+{"stage": "XGB_optuna", "done": true, "holdout_bacc": 0.5354341736694678, "zs_bacc": 0.34841269841269845}

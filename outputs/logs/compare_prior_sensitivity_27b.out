@@ -1,0 +1,5 @@
+outputs_sensitivity/qwen3.5_27b_prior_none: 45 / 45 tasks finished and comparable
+  all         n=45  median BA  content-free prior: 0.606   prior off: 0.624   XGB: 0.780   median ΔBA(prior off − content-free prior) +0.000  [IQR -0.043, +0.044]  Wilcoxon P=0.912  better 22 / worse 19   median AUROC content-free prior 0.836 vs prior off 0.840
+  binary      n=37  median BA  content-free prior: 0.653   prior off: 0.659   XGB: 0.780   median ΔBA(prior off − content-free prior) +0.000  [IQR -0.032, +0.032]  Wilcoxon P=0.768  better 18 / worse 15   median AUROC content-free prior 0.837 vs prior off 0.837
+  multiclass  n= 8  median BA  content-free prior: 0.511   prior off: 0.433   XGB: 0.803   median ΔBA(prior off − content-free prior) +0.004  [IQR -0.105, +0.054]  Wilcoxon P=0.641  better 4 / worse 4   median AUROC content-free prior 0.832 vs prior off 0.872
+wrote /home/airlab/Desktop/JEV_prediction_testing_v2/reports/sensitivity_prior_27b/prior_sensitivity.{csv,png}

@@ -1,0 +1,133 @@
+name: mexico_covid
+description: Mexico SSA 2020 COVID-19 line-list (first 1000 confirmed cases). Binary death from age, sex, and named
+  comorbidities.
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Laboratory- or clinically-confirmed COVID-19 case reported to Mexico's national epidemiological surveillance
+  system in 2020. The observations are age, sex, pregnancy, indigenous status, nationality, pneumonia at presentation
+  and the chronic conditions recorded on the case-notification form; hospitalisation, intubation and intensive-care
+  data are withheld.
+observations_header: 'Case-notification form:'
+predictors:
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+  sex:
+    column: sex
+    kind: categorical
+    text_label: Sex
+    text_values:
+      Female: Female
+      Male: Male
+  pregnancy:
+    column: pregnancy
+    kind: categorical
+    text_label: Pregnant
+    text_values:
+      'No': 'No'
+      'Yes': 'Yes'
+  indigenous:
+    column: indigenous
+    kind: categorical
+    text_label: Self-identifies as indigenous
+    text_values:
+      'No': 'No'
+      'Yes': 'Yes'
+  nationality:
+    column: nationality
+    kind: categorical
+    text_label: Nationality
+    text_values:
+      Mexican: Mexican
+      Foreign: Foreign
+  pneumonia:
+    column: pneumonia
+    kind: categorical
+    text_label: Pneumonia at presentation
+    text_values:
+      'No': 'No'
+      'Yes': 'Yes'
+  diabetes:
+    column: diabetes
+    kind: categorical
+    text_label: Diabetes
+    text_values:
+      'Yes': 'Yes'
+      'No': 'No'
+  copd:
+    column: copd
+    kind: categorical
+    text_label: COPD
+    text_values:
+      'No': 'No'
+      'Yes': 'Yes'
+  asthma:
+    column: asthma
+    kind: categorical
+    text_label: Asthma
+    text_values:
+      'No': 'No'
+      'Yes': 'Yes'
+  immunosuppressed:
+    column: immunosuppressed
+    kind: categorical
+    text_label: Immunosuppression
+    text_values:
+      'No': 'No'
+      'Yes': 'Yes'
+  hypertension:
+    column: hypertension
+    kind: categorical
+    text_label: Hypertension
+    text_values:
+      'No': 'No'
+      'Yes': 'Yes'
+  other_disease:
+    column: other_disease
+    kind: categorical
+    text_label: Other chronic condition
+    text_values:
+      'No': 'No'
+      'Yes': 'Yes'
+  cardiovascular:
+    column: cardiovascular
+    kind: categorical
+    text_label: Cardiovascular disease
+    text_values:
+      'No': 'No'
+      'Yes': 'Yes'
+  obesity:
+    column: obesity
+    kind: categorical
+    text_label: Obesity
+    text_values:
+      'No': 'No'
+      'Yes': 'Yes'
+  chronic_kidney:
+    column: chronic_kidney
+    kind: categorical
+    text_label: Chronic kidney disease
+    text_values:
+      'No': 'No'
+      'Yes': 'Yes'
+  smoking:
+    column: smoking
+    kind: categorical
+    text_label: Current smoker
+    text_values:
+      'No': 'No'
+      'Yes': 'Yes'
+outcomes:
+  covid_death:
+    column: covid_death
+    classes:
+    - No death registered
+    - Died
+    mapping:
+      '0': No death registered
+      '1': Died
+    question: Based on this case-notification form, did this confirmed COVID-19 case die?

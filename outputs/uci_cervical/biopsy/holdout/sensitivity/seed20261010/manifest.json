@@ -1,0 +1,146 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_cervical",
+  "outcome": "biopsy",
+  "data_hash": "e7ec47302c49d33d5ef8a5224b7d8ba674309b16c7e79dd65fccb93fefd8928f",
+  "dataset_spec_sha256": "ecd77f8c1d04c1c2e38000971c2db7837f4b1e0aaffce3526eb529b1e1dbcd83",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261010,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "Negative biopsy",
+    "Positive biopsy"
+  ],
+  "predictor_columns": [
+    "age",
+    "number_of_sexual_partners",
+    "first_sexual_intercourse",
+    "num_of_pregnancies",
+    "smokes",
+    "smokes_years",
+    "smokes_packs_year",
+    "hormonal_contraceptives",
+    "hormonal_contraceptives_years",
+    "iud",
+    "iud_years",
+    "stds",
+    "stds_number",
+    "stds_condylomatosis",
+    "stds_cervical_condylomatosis",
+    "stds_vaginal_condylomatosis",
+    "stds_vulvo_perineal_condylomatosis",
+    "stds_syphilis",
+    "stds_pelvic_inflammatory_disease",
+    "stds_genital_herpes",
+    "stds_molluscum_contagiosum",
+    "stds_aids",
+    "stds_hiv",
+    "stds_hepatitis_b",
+    "stds_hpv",
+    "stds__number_of_diagnosis",
+    "hinselmann",
+    "schiller",
+    "citology"
+  ],
+  "zs_raw_csv_sha256": "4b5baed5d6cc9b5316bc2f968753d36ed5268f71404c4e8d8d60bead9b081151",
+  "files": {
+    "split.json": "247dc18a4c1b470a2ee41f69200c2a10833671dae5dd5ad216a2e8b73526ed95",
+    "trials.csv": "f506a6d6859ec5af5683926c7d571a52241ed8b1f01c9d0e49994afea615e25a",
+    "XGB_optuna.csv": "6ac32a1c12fdf609ed273c323e9623940813c9203f97b203405c25dc6a5d26db",
+    "ZS_raw.csv": "796bbcee7ba69e40a1417cc30443c880032a5a0ca253b146168b596748374dd4",
+    "model.joblib": "f4840e19229f7ad37916b41e1726f6c6b4e7b45c65349af7b8d742e65d71b87b",
+    "best_params.json": "d5e5808108da2ae2480788e292920e9bcb8f19c6d156737bd41908ae6799ed37",
+    "metrics.json": "7741d8dfd80f11af6c8bca83700403d30284891404ad0e1a3e0aa833ae0d7817"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

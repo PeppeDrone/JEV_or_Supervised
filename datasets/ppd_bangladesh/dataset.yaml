@@ -1,0 +1,342 @@
+name: ppd_bangladesh
+description: Bangladesh postpartum depression screening (800 women). Binary EPDS high-risk from sociodemographic,
+  obstetric, and neonatal history.
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Woman in Bangladesh surveyed within about two years of giving birth (Raisa and Kaiser 2024 postpartum survey).
+  The observations are her sociodemographic and family circumstances, relationships and support, obstetric and newborn
+  history, and two-item depression screens (PHQ-2) recalled for the periods before and during the latest pregnancy;
+  her current mood and sleep questions are withheld.
+observations_header: 'Sociodemographic, family, obstetric and newborn history:'
+predictors:
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+  residence:
+    column: residence
+    kind: categorical
+    text_label: Residence
+    text_values:
+      City: City
+      Village: Village
+  education:
+    column: education
+    kind: categorical
+    text_label: Education
+    text_values:
+      University: University
+      College: College
+      Primary school: Primary school
+      High school: High school
+  marital_status:
+    column: marital_status
+    kind: categorical
+    text_label: Marital status
+    text_values:
+      Married: Married
+      Divorced: Divorced
+  occupation_before:
+    column: occupation_before
+    kind: categorical
+    text_label: Occupation before latest pregnancy
+    text_values:
+      Student: Student
+      Doctor: Doctor
+      Service: Service
+      Housewife: Housewife
+      Teacher: Teacher
+      Other: Other
+      Business: Business
+  income_before:
+    column: income_before
+    kind: categorical
+    text_label: Monthly income before latest pregnancy
+    text_values:
+      10000 to 20000: 10000 to 20000 BDT
+      More than 30000: More than 30000 BDT
+      Less than 5000: Less than 5000 BDT
+      5000 to 10000: 5000 to 10000 BDT
+      20000 to 30000: 20000 to 30000 BDT
+  occupation_after:
+    column: occupation_after
+    kind: categorical
+    text_label: Occupation after latest childbirth
+    text_values:
+      Student: Student
+      Doctor: Doctor
+      Service: Service
+      Housewife: Housewife
+      Teacher: Teacher
+      Business: Business
+      Other: Other
+  income_current:
+    column: income_current
+    kind: categorical
+    text_label: Current monthly income
+    text_values:
+      10000 to 20000: 10000 to 20000 BDT
+      More than 30000: More than 30000 BDT
+      Less than 5000: Less than 5000 BDT
+      5000 to 10000: 5000 to 10000 BDT
+      20000 to 30000: 20000 to 30000 BDT
+  husband_education:
+    column: husband_education
+    kind: categorical
+    text_label: Husband education
+    text_values:
+      University: University
+      College: College
+      Primary school: Primary school
+      High school: High school
+  husband_income:
+    column: husband_income
+    kind: categorical
+    text_label: Husband monthly income
+    text_values:
+      More than 30000: More than 30000 BDT
+      10000 to 20000: 10000 to 20000 BDT
+      5000 to 10000: 5000 to 10000 BDT
+      20000 to 30000: 20000 to 30000 BDT
+      Less than 5000: Less than 5000 BDT
+  addiction:
+    column: addiction
+    kind: categorical
+    text_label: Substance use
+    text_values:
+      Smoking: Smoking
+      Drinking: Alcohol
+      Drugs: Drugs
+  total_children:
+    column: total_children
+    kind: categorical
+    text_label: Number of children
+    text_values:
+      One: One
+      Two: Two
+      More than two: More than two
+  disease_before:
+    column: disease_before
+    kind: categorical
+    text_label: Illness before the latest pregnancy
+    text_values:
+      Non-chronic disease: Non-chronic disease
+      Chronic disease: Chronic disease
+  pregnancy_loss:
+    column: pregnancy_loss
+    kind: categorical
+    text_label: Previous pregnancy loss
+    text_values:
+      Miscarriage: Miscarriage
+      Stillbirth: Stillbirth
+  family_type:
+    column: family_type
+    kind: categorical
+    text_label: Family type
+    text_values:
+      Nuclear: Nuclear
+      Joint: Joint
+  household_members:
+    column: household_members
+    kind: categorical
+    text_label: People in the household
+    text_values:
+      6 to 8: 6 to 8
+      2 to 5: 2 to 5
+      9 or more: 9 or more
+  inlaw_relationship:
+    column: inlaw_relationship
+    kind: categorical
+    text_label: Relationship with in-laws
+    text_values:
+      Neutral: Neutral
+      Good: Good
+      Poor: Poor
+  husband_relationship:
+    column: husband_relationship
+    kind: categorical
+    text_label: Relationship with husband
+    text_values:
+      Good: Good
+      Neutral: Neutral
+      Poor: Poor
+  newborn_bond:
+    column: newborn_bond
+    kind: categorical
+    text_label: Bond with the newborn
+    text_values:
+      Good: Good
+      Neutral: Neutral
+      Poor: Poor
+      Very good: Very good
+  father_newborn_bond:
+    column: father_newborn_bond
+    kind: categorical
+    text_label: Father–newborn bond
+    text_values:
+      Good: Good
+      Neutral: Neutral
+      Poor: Poor
+      Very good: Very good
+  received_support:
+    column: received_support
+    kind: categorical
+    text_label: Support received around childbirth
+    text_values:
+      High: High
+      Medium: Medium
+      Low: Low
+  need_support:
+    column: need_support
+    kind: categorical
+    text_label: Felt need for more support
+    text_values:
+      Medium: Medium
+      Low: Low
+      High: High
+  major_changes:
+    column: major_changes
+    kind: categorical
+    text_label: Major change or loss during pregnancy
+    text_values:
+      'Yes': 'Yes'
+      'No': 'No'
+  abuse:
+    column: abuse
+    kind: categorical
+    text_label: Abuse or mistreatment
+    text_values:
+      'Yes': 'Yes'
+      'No': 'No'
+  trust_share:
+    column: trust_share
+    kind: categorical
+    text_label: Can trust and share feelings with close others
+    text_values:
+      'Yes': 'Yes'
+      'No': 'No'
+  pregnancy_number:
+    column: pregnancy_number
+    kind: numeric
+    text_label: Number of pregnancies including the latest
+    scale_note: count
+  pregnancy_length:
+    column: pregnancy_length
+    kind: categorical
+    text_label: Length of the latest pregnancy
+    text_values:
+      10 months: 10 months
+      9 months: 9 months
+      8 months: 8 months
+      Less than 5 months: Less than 5 months
+      7 months: 7 months
+      6 months: 6 months
+  pregnancy_planned:
+    column: pregnancy_planned
+    kind: categorical
+    text_label: Latest pregnancy was planned
+    text_values:
+      'No': 'No'
+      'Yes': 'Yes'
+  regular_checkups:
+    column: regular_checkups
+    kind: categorical
+    text_label: Regular prenatal checkups
+    text_values:
+      'Yes': 'Yes'
+      'No': 'No'
+  fear_of_pregnancy:
+    column: fear_of_pregnancy
+    kind: categorical
+    text_label: Feared the pregnancy or childbirth
+    text_values:
+      'Yes': 'Yes'
+      'No': 'No'
+  disease_during:
+    column: disease_during
+    kind: categorical
+    text_label: Illness during the latest pregnancy
+    text_values:
+      Chronic disease: Chronic disease
+      Non-chronic disease: Non-chronic disease
+  newborn_age:
+    column: newborn_age
+    kind: categorical
+    text_label: Age of the youngest child
+    text_values:
+      6 months to 1 year: 6 months to 1 year
+      Older than 1.5 year: Older than 1.5 year
+      0 to 6 months: 0 to 6 months
+      1 year to 1.5 year: 1 year to 1.5 year
+  older_child_age:
+    column: older_child_age
+    kind: categorical
+    text_label: Age of the next older child
+    text_values:
+      13yr or more: 13yr or more
+      1yr to 3yr: 1yr to 3yr
+      7yr to 12yr: 7yr to 12yr
+      4yr to 6yr: 4yr to 6yr
+  delivery_mode:
+    column: delivery_mode
+    kind: categorical
+    text_label: Mode of delivery
+    text_values:
+      Caesarean Section: Caesarean section
+      Normal Delivery: Vaginal delivery
+  newborn_sex:
+    column: newborn_sex
+    kind: categorical
+    text_label: Sex of the newborn
+    text_values:
+      Boy: Boy
+      Girl: Girl
+  birth_complications:
+    column: birth_complications
+    kind: categorical
+    text_label: Complications at the latest birth
+    text_values:
+      'No': 'No'
+      'Yes': 'Yes'
+  breastfeed:
+    column: breastfeed
+    kind: categorical
+    text_label: Breastfeeding
+    text_values:
+      'Yes': 'Yes'
+      'No': 'No'
+  newborn_illness:
+    column: newborn_illness
+    kind: categorical
+    text_label: Newborn has had an illness
+    text_values:
+      'No': 'No'
+      'Yes': 'Yes'
+  phq2_before:
+    column: phq2_before
+    kind: categorical
+    text_label: Two-item depression screen (PHQ-2) before the latest pregnancy
+    text_values:
+      Negative: Negative
+      Positive: Positive
+  phq2_during:
+    column: phq2_during
+    kind: categorical
+    text_label: Two-item depression screen (PHQ-2) during the latest pregnancy
+    text_values:
+      Negative: Negative
+      Positive: Positive
+outcomes:
+  ppd_high:
+    column: ppd_high
+    classes:
+    - Edinburgh Postnatal Depression Scale below 13
+    - Edinburgh Postnatal Depression Scale 13 or higher (probable depression)
+    mapping:
+      '0': Edinburgh Postnatal Depression Scale below 13
+      '1': Edinburgh Postnatal Depression Scale 13 or higher (probable depression)
+    question: Based on this sociodemographic, family, obstetric and newborn history, does this woman currently score
+      13 or higher on the Edinburgh Postnatal Depression Scale?

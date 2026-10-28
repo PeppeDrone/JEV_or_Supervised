@@ -1,0 +1,157 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "ppd_bangladesh",
+  "outcome": "ppd_high",
+  "data_hash": "b9596ed5bfe36ce759561af910331a705843fc5159058fd0a65453523e24f4bc",
+  "dataset_spec_sha256": "b6652a62bcdda4d9917b8547890d20c0ac578e0c778c281b86ddf03a0a35c253",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261012,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "EPDS not high",
+    "EPDS high risk"
+  ],
+  "predictor_columns": [
+    "age",
+    "residence",
+    "education",
+    "marital_status",
+    "occupation_before",
+    "income_before",
+    "occupation_after",
+    "income_current",
+    "husband_education",
+    "husband_income",
+    "addiction",
+    "total_children",
+    "disease_before",
+    "pregnancy_loss",
+    "family_type",
+    "household_members",
+    "inlaw_relationship",
+    "husband_relationship",
+    "newborn_bond",
+    "father_newborn_bond",
+    "received_support",
+    "need_support",
+    "major_changes",
+    "abuse",
+    "trust_share",
+    "pregnancy_number",
+    "pregnancy_length",
+    "pregnancy_planned",
+    "regular_checkups",
+    "fear_of_pregnancy",
+    "disease_during",
+    "newborn_age",
+    "older_child_age",
+    "delivery_mode",
+    "newborn_sex",
+    "birth_complications",
+    "breastfeed",
+    "newborn_illness",
+    "phq2_before",
+    "phq2_during"
+  ],
+  "zs_raw_csv_sha256": "f9370013bbd4dfd89b9c9bb2d5e0c2887dbedacb6d027b1537b18a4959a50626",
+  "files": {
+    "split.json": "2ebb7661fb7d79b5debea12ccded3a0956bae0c945643deef58879c7cd424024",
+    "trials.csv": "082e814d1ef8088ee5710c8850a82635baf52b0383aafa53bfb06b78d7dfa8a7",
+    "XGB_optuna.csv": "5f5e8f864e13319ca91fd36da0f1ae6e62ef08d4b272a6028d5172ce1994edc6",
+    "ZS_raw.csv": "bbcd39e4c14c1166ecfba87e11c58cf2f70f8a4ed1e09a545876fb4390cc0b6a",
+    "model.joblib": "12506e10b5ee532d64c15fc7649101de5bc3c0b4484b445e99ca4b46dda21ca0",
+    "best_params.json": "9e3a314bc3a322f4b45e60aa3ea6c3ad04e58bcfa8dea9999ede9e932d17618d",
+    "metrics.json": "430c1cfc40b47c05fdb062a46484d2ad16b90de9a324bd9250232f924bf78191"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

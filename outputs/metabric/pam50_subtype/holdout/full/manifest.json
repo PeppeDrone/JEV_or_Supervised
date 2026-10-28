@@ -1,0 +1,134 @@
+{
+  "model": "XGB_optuna_full",
+  "dataset": "metabric",
+  "outcome": "pam50_subtype",
+  "data_hash": "c3af42b81c2421d13632bdf00ed82251c4f5972be5d742f226670dfe7a55e339",
+  "full_data_hash": "9ce4b8afcfb4ad247469349cb144c3f8ad1c236ee1a4aa22a4f374440fec9d4c",
+  "readout_to_full_sha256": "8f3282396ee56e33ff91a20f0b91e541675aeb8715ffdca0c1a650450d60c96d",
+  "split_sha256": "54046a6cc81b64d20ac52af188db24f3d7e716b48e334654c6c5c5b723a4bc3b",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261008,
+  "n_trials_requested": 100,
+  "timeout_seconds": 3600.0,
+  "tuning_cap": 50000,
+  "classes": [
+    "Basal",
+    "Her2",
+    "LumA",
+    "LumB",
+    "Normal",
+    "claudin-low"
+  ],
+  "predictor_columns": [
+    "age",
+    "menopausal",
+    "laterality",
+    "histology",
+    "surgery",
+    "cellularity",
+    "tumor_size",
+    "tumor_stage",
+    "grade",
+    "positive_nodes",
+    "er_status",
+    "pr_status",
+    "her2_status"
+  ],
+  "files": {
+    "trials.csv": "69559bb11a7076b2d66d32a9df427b620c4f418a716492ba71e8e561824906ab",
+    "XGB_optuna_full.csv": "5a1feae51cef4dfd054a0ff4290b42de155fc9c5dd1d81c51cc4f02ca240ff3f",
+    "model.joblib": "890b9946b401526f43e14f79ed352e42011fe3bf95390c3449a52ea398d9e7fd",
+    "best_params.json": "6d03111f3f6d745544934509c6f67a2911b03aa000464c85dc1feb1c19883a2a",
+    "metrics.json": "6017c9531b6ee5f64c50c30cc6966d8c0bdaeba7cae3c10fed76d7bdefe754e3"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "dataset": "uci_diabetes130",
+  "prepared_at": "2026-10-21T07:56:57.245008+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/296/data.csv",
+      "path": "datasets/uci_diabetes130/raw/data.csv",
+      "sha256": "f792c388d9b470aac4fbf21c39b176534d55a116e7626881c30bbe7ab0341422",
+      "bytes": 19545081,
+      "retrieved": "cached"
+    }
+  ],
+  "patients_csv_sha256": "01203ea184651ff5ca6d660aeedef528bdc7855a126c4c98c3b4004a87f311d6",
+  "summary": {
+    "observations": 4000,
+    "predictors": 18,
+    "outcome": "readmit_30d",
+    "class_counts": {
+      "No 30-day readmission": 3641,
+      "30-day readmission": 359
+    },
+    "identifier_note": "UCI Diabetes 130-US Hospitals. First encounter per patient; death/hospice discharge dispositions [11, 13, 14, 19, 20, 21] removed; stratified sample of 4000 patients (seed 20261008) for LLM-tractable evaluation. Identifiers, weight (~95% missing), diagnosis codes, and discharge disposition excluded.",
+    "full_first_encounter_pool": 69973
+  },
+  "readout_subsample": {
+    "n": 1000,
+    "from_n": 4000,
+    "seed": 20261008,
+    "method": "class-stratified, within the earlier stratified sample"
+  }
+}

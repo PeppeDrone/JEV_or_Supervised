@@ -1,0 +1,36 @@
+name: uci_haberman
+description: UCI Haberman breast-cancer survival (306 patients, 3 predictors).
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Woman who underwent surgery for breast cancer at the University of Chicago's Billings Hospital between
+  1958 and 1970. The observations are her age at operation, the year of the operation and the number of positive
+  axillary lymph nodes found.
+observations_header: 'Operative findings:'
+predictors:
+  age:
+    column: age
+    kind: numeric
+    text_label: Age at operation
+    unit: years
+  op_year:
+    column: op_year
+    kind: numeric
+    text_label: Year of operation
+    scale_note: two-digit year, 1958-1969
+  nodes:
+    column: nodes
+    kind: numeric
+    text_label: Positive axillary lymph nodes
+    scale_note: count
+outcomes:
+  died_5y:
+    column: died_5y
+    classes:
+    - Survived 5 years or longer after surgery
+    - Died within 5 years of surgery
+    mapping:
+      '0': Survived 5 years or longer after surgery
+      '1': Died within 5 years of surgery
+    question: Based on these operative findings, did this woman die within five years of her breast-cancer surgery?

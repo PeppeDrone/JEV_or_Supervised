@@ -1,0 +1,62 @@
+{
+  "n_tasks": 45,
+  "missing": [],
+  "zs_wins_bacc": 4,
+  "zs_wins_bacc_exact_ci": [
+    0.02475295778346905,
+    0.21221173695433954
+  ],
+  "zs_wins_bacc_ci_excludes_zero": 0,
+  "zs_wins_bacc_prior_matched": 4,
+  "zs_wins_auroc": 5,
+  "zs_noninferior_margin_005": 4,
+  "median_bacc": {
+    "XGB_optuna": 0.7797202797202798,
+    "XGB_optuna_argmax": 0.7733333333333333,
+    "ZS_raw": 0.5644257703081232,
+    "ZS_raw_prior_matched": 0.570285883572804
+  },
+  "median_auroc": {
+    "XGB_optuna": 0.9041051541051541,
+    "ZS_raw": 0.7077228327228328
+  },
+  "median_delta_bacc": 0.19191270860077014,
+  "median_cv_minus_holdout_bacc": 0.014126984126984099,
+  "median_best_minus_consensus_bacc": 0.0,
+  "median_tuning_minutes": 1.0499743461608886,
+  "zs_win_tasks": [
+    "Mammography",
+    "ILPD liver",
+    "Haberman survival",
+    "Breast recur"
+  ],
+  "zs_win_tasks_prior_matched": [
+    "Mammography",
+    "ILPD liver",
+    "Haberman survival",
+    "Breast recur"
+  ],
+  "previous_protocol": {
+    "zs_wins_bacc": 9,
+    "median_M2_bacc": 0.7246074339097595,
+    "median_ZS_bacc": 0.5655706727135299
+  },
+  "sensitivity": {
+    "task_seed_pairs": 225,
+    "zs_wins": 23,
+    "tasks_with_majority_wins": [
+      "Challenge 2012 death",
+      "Diabetes130 readmit",
+      "Haberman survival",
+      "ILPD liver"
+    ]
+  },
+  "full_table_arm": {
+    "n_tasks": 10,
+    "zs_wins_bacc": 0,
+    "zs_wins_auroc": 0,
+    "zs_win_tasks": [],
+    "median_full_minus_subsample_bacc": 0.03756994276553349,
+    "median_full_minus_subsample_auroc": 0.021881267840199836
+  }
+}

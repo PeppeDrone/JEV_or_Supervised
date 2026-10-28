@@ -1,0 +1,39 @@
+{
+  "dataset": "berlin_appendicitis",
+  "prepared_at": "2026-10-22T11:32:21.506527+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://osf.io/download/9wvys/",
+      "path": "datasets/berlin_appendicitis/raw/Data_project_AI_pediatric_appendicitis.zip",
+      "sha256": "e51a0bdca8b0a4966fabc95919d467150cb1f62fbfba8754b489b1319991036a",
+      "bytes": 146254,
+      "retrieved": "2026-10-22T11:32:21.325516+00:00"
+    },
+    {
+      "path": "datasets/berlin_appendicitis/raw/Data project AI pediatric appendicitis.xlsx",
+      "extracted_from": "datasets/berlin_appendicitis/raw/Data_project_AI_pediatric_appendicitis.zip",
+      "sha256": "1ec0617b234fd441db334ab8d8afdd08bb7e829e262f8198ef6c36d11fb319e5"
+    }
+  ],
+  "patients_csv_sha256": "f55b279ace2794625094728f05dee9365f1c4d651693118b462f069c4f1df525",
+  "summary": {
+    "observations": 590,
+    "predictors": 12,
+    "outcome": "appendicitis",
+    "excluded_predictors": [
+      "Gangr\u00e4n",
+      "Phlegmone",
+      "mm_App"
+    ],
+    "class_counts": {
+      "No appendicitis": 117,
+      "Appendicitis": 473
+    },
+    "histopathology_detail": {
+      "uncomplicated": 290,
+      "complicated": 183,
+      "negative": 117
+    },
+    "identifier_note": "OSF 9wvys / Reismann et al. PLOS ONE 2019. Discovery+validation sheets concatenated (paper n=590). Y = histopathology appendicitis vs negative. Not UCI 938 Regensburg."
+  }
+}

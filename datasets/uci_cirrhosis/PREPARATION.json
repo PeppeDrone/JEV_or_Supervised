@@ -1,0 +1,27 @@
+{
+  "dataset": "uci_cirrhosis",
+  "prepared_at": "2026-10-21T11:10:09.145838+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/878/data.csv",
+      "path": "datasets/uci_cirrhosis/raw/data.csv",
+      "sha256": "539c167d30de2dc84d23376712b7f96b4ebb77d76f375574d02d2c51b76861cf",
+      "bytes": 32961,
+      "retrieved": "2026-10-21T11:10:09.124939+00:00"
+    }
+  ],
+  "patients_csv_sha256": "6bc2d1d11730aac6ae33ee27fbf926755b75f8e0935fc760975b49682ab1fd12",
+  "summary": {
+    "observations": 418,
+    "predictors": 17,
+    "outcome": "cirrhosis_died",
+    "excluded_predictors": [
+      "N_Days"
+    ],
+    "class_counts": {
+      "Alive / censored": 257,
+      "Died": 161
+    },
+    "identifier_note": "UCI Cirrhosis; Status D=death; N_Days excluded."
+  }
+}

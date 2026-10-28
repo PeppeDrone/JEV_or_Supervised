@@ -1,0 +1,66 @@
+name: uci_wbc_original
+description: UCI Wisconsin Breast Cancer Original (699 samples, cytology grades).
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Woman with a breast mass sampled by fine-needle aspiration at the University of Wisconsin Hospitals (1989-1991).
+  A cytopathologist graded nine cytological characteristics of the aspirate on a 1-10 scale, where 1 is closest
+  to benign and 10 is most abnormal.
+observations_header: 'Fine-needle aspirate cytology grades (1 = closest to benign, 10 = most abnormal):'
+predictors:
+  clump_thickness:
+    column: clump_thickness
+    kind: numeric
+    text_label: Clump thickness (multilayering of cells)
+    scale_note: grade 1-10
+  uniformity_of_cell_size:
+    column: uniformity_of_cell_size
+    kind: numeric
+    text_label: Uniformity of cell size
+    scale_note: grade 1-10
+  uniformity_of_cell_shape:
+    column: uniformity_of_cell_shape
+    kind: numeric
+    text_label: Uniformity of cell shape
+    scale_note: grade 1-10
+  marginal_adhesion:
+    column: marginal_adhesion
+    kind: numeric
+    text_label: Marginal adhesion (cohesion of cells at the edge of clumps)
+    scale_note: grade 1-10
+  single_epithelial_cell_size:
+    column: single_epithelial_cell_size
+    kind: numeric
+    text_label: Size of single epithelial cells
+    scale_note: grade 1-10
+  bare_nuclei:
+    column: bare_nuclei
+    kind: numeric
+    text_label: Bare nuclei (nuclei without surrounding cytoplasm)
+    scale_note: grade 1-10
+  bland_chromatin:
+    column: bland_chromatin
+    kind: numeric
+    text_label: Bland chromatin (uniformity of nuclear texture)
+    scale_note: grade 1-10
+  normal_nucleoli:
+    column: normal_nucleoli
+    kind: numeric
+    text_label: Normal nucleoli (prominence of nucleoli)
+    scale_note: grade 1-10
+  mitoses:
+    column: mitoses
+    kind: numeric
+    text_label: Mitoses
+    scale_note: grade 1-10
+outcomes:
+  malignant:
+    column: malignant
+    classes:
+    - Benign
+    - Malignant
+    mapping:
+      '0': Benign
+      '1': Malignant
+    question: Based on these cytology grades, was this patient's breast mass malignant on the confirmed diagnosis?

@@ -1,0 +1,163 @@
+name: uci_ckd
+description: UCI Chronic Kidney Disease cohort (400 observations, 24 predictors). Binary ckd vs notckd labels from
+  the original donation.
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Adult assessed at a hospital in Tamil Nadu, India (2015) for possible chronic kidney disease. The observations
+  are age, blood pressure, urinalysis, blood chemistry and haematology, and the recorded history of hypertension,
+  diabetes, coronary artery disease, appetite, oedema and anaemia.
+observations_header: 'Clinical history, urinalysis and blood tests:'
+predictors:
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+  bp:
+    column: bp
+    kind: numeric
+    text_label: Blood pressure
+    unit: mm Hg
+  sg:
+    column: sg
+    kind: numeric
+    text_label: Urine specific gravity
+    scale_note: Documented discrete values 1.005, 1.010, 1.015, 1.020, 1.025
+  al:
+    column: al
+    kind: numeric
+    text_label: Urine albumin
+    scale_note: Urine albumin grade 0–5 as recorded in the original study (ordinal)
+  su:
+    column: su
+    kind: numeric
+    text_label: Urine sugar
+    scale_note: Urine sugar grade 0–5 as recorded in the original study (ordinal)
+  rbc:
+    column: rbc
+    kind: categorical
+    text_label: Red blood cells in urine
+    text_values:
+      normal: Normal
+      abnormal: Abnormal
+  pc:
+    column: pc
+    kind: categorical
+    text_label: Pus cells in urine
+    text_values:
+      normal: Normal
+      abnormal: Abnormal
+  pcc:
+    column: pcc
+    kind: categorical
+    text_label: Pus cell clumps
+    text_values:
+      present: Present
+      notpresent: Not present
+  ba:
+    column: ba
+    kind: categorical
+    text_label: Bacteria in urine
+    text_values:
+      present: Present
+      notpresent: Not present
+  bgr:
+    column: bgr
+    kind: numeric
+    text_label: Random blood glucose
+    unit: mg/dL
+  bu:
+    column: bu
+    kind: numeric
+    text_label: Blood urea
+    unit: mg/dl
+  sc:
+    column: sc
+    kind: numeric
+    text_label: Serum creatinine
+    unit: mg/dl
+  sod:
+    column: sod
+    kind: numeric
+    text_label: Sodium
+    unit: mEq/L
+  pot:
+    column: pot
+    kind: numeric
+    text_label: Potassium
+    unit: mEq/L
+  hemo:
+    column: hemo
+    kind: numeric
+    text_label: Hemoglobin
+    unit: g
+  pcv:
+    column: pcv
+    kind: numeric
+    text_label: Packed cell volume (haematocrit)
+    unit: '%'
+  wc:
+    column: wc
+    kind: numeric
+    text_label: White blood cell count
+    unit: cells/cumm
+  rc:
+    column: rc
+    kind: numeric
+    text_label: Red blood cell count
+    unit: millions/cmm
+  htn:
+    column: htn
+    kind: categorical
+    text_label: Hypertension
+    text_values:
+      'yes': 'Yes'
+      'no': 'No'
+  dm:
+    column: dm
+    kind: categorical
+    text_label: Diabetes mellitus
+    text_values:
+      'yes': 'Yes'
+      'no': 'No'
+  cad:
+    column: cad
+    kind: categorical
+    text_label: Coronary artery disease
+    text_values:
+      'yes': 'Yes'
+      'no': 'No'
+  appet:
+    column: appet
+    kind: categorical
+    text_label: Appetite
+    text_values:
+      good: Good
+      poor: Poor
+  pe:
+    column: pe
+    kind: categorical
+    text_label: Pedal oedema
+    text_values:
+      'yes': 'Yes'
+      'no': 'No'
+  ane:
+    column: ane
+    kind: categorical
+    text_label: Anaemia
+    text_values:
+      'yes': 'Yes'
+      'no': 'No'
+outcomes:
+  ckd_status:
+    column: class
+    classes:
+    - No chronic kidney disease
+    - Chronic kidney disease
+    mapping:
+      notckd: No chronic kidney disease
+      ckd: Chronic kidney disease
+    question: Based on this clinical history and these urine and blood tests, does this patient have chronic kidney
+      disease?

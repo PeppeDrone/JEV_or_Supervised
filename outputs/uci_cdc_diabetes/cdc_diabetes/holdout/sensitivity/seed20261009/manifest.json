@@ -1,0 +1,138 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_cdc_diabetes",
+  "outcome": "cdc_diabetes",
+  "data_hash": "3aea3ce60b07016f9b2463aeb481865293d91bc24b47d53da595d0f0b26aaa8a",
+  "dataset_spec_sha256": "2eaa35c2b076a2603097b05ffcfc451458fdf204fbe36f1248b9b73f367653c0",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261009,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "No diabetes",
+    "Diabetes"
+  ],
+  "predictor_columns": [
+    "highbp",
+    "highchol",
+    "cholcheck",
+    "bmi",
+    "smoker",
+    "stroke",
+    "heartdiseaseorattack",
+    "physactivity",
+    "fruits",
+    "veggies",
+    "hvyalcoholconsump",
+    "anyhealthcare",
+    "nodocbccost",
+    "genhlth",
+    "menthlth",
+    "physhlth",
+    "diffwalk",
+    "sex",
+    "age",
+    "education",
+    "income"
+  ],
+  "zs_raw_csv_sha256": "17f20d4bda1744d97d0ff43d45f4e758d24eada1e5701dbda5ab41d577189913",
+  "files": {
+    "split.json": "3d77361e6d6a2565a8c131f381f63caf8d88676244ed13ed353f6675af5eaec3",
+    "trials.csv": "68b1c6ccbf68f1f4eafc564c5fb3692e5cf9a29eade470020f7641e281f20aac",
+    "XGB_optuna.csv": "5f598ad2ad9a4952841ed2537411adeace6154d58a0f5f43697af6194b542d67",
+    "ZS_raw.csv": "e204a2e1f199c0ec00a2b310133b98a4fc85b458cf07e17d9977869040be0386",
+    "model.joblib": "0081e7d897360ef9a914496f3fe019566b4ade0ba7a6cfe38eed7f838c862adb",
+    "best_params.json": "c95abebd6c62ca61f07675788de899281895635b06f391d9827415a44b8c33da",
+    "metrics.json": "616ba86d6172b6f580d594904e23ec87d208bdc613936be8c1ef940b613041f9"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

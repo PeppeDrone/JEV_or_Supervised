@@ -1,0 +1,24 @@
+{
+  "dataset": "uci_thyroid_recur",
+  "prepared_at": "2026-10-21T11:10:08.149698+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/915/data.csv",
+      "path": "datasets/uci_thyroid_recur/raw/data.csv",
+      "sha256": "a2c65f7c8fa0e78a65aa4946961aafd45218c92760d10375fe2c778045c97b44",
+      "bytes": 43588,
+      "retrieved": "2026-10-21T11:10:08.138289+00:00"
+    }
+  ],
+  "patients_csv_sha256": "381c017088f1d9334bbd24e11a1e4b22da2dadd94c758bbfff831500450c0d5b",
+  "summary": {
+    "observations": 383,
+    "predictors": 16,
+    "outcome": "recurred",
+    "class_counts": {
+      "No recurrence": 275,
+      "Recurred": 108
+    },
+    "identifier_note": "UCI Differentiated Thyroid Cancer Recurrence."
+  }
+}

@@ -1,0 +1,145 @@
+name: uci_aids_cid
+description: 'UCI AIDS Clinical Trials Group Study 175 (1991-1994; 2139 HIV-infected adults with CD4 200-500 randomised
+  to zidovudine-based regimens). 19 baseline predictors (post-baseline CD4/CD8, off-treatment and time variables
+  excluded). Binary primary endpoint reached (cid = 1: at least 50% decline in CD4 count, AIDS-defining event or
+  death) versus censored.'
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: HIV-infected adult with a CD4 count between 200 and 500 cells/mm3 and no prior AIDS-defining illness, enrolled
+  in the ACTG 175 randomised trial (1991-1994) comparing zidovudine alone, zidovudine plus didanosine, zidovudine
+  plus zalcitabine, and didanosine alone. The observations are the baseline demographics, risk history, Karnofsky
+  performance, prior antiretroviral exposure, randomised arm, symptoms and baseline CD4 and CD8 counts. Follow-up
+  lasted up to about three years.
+observations_header: 'Baseline trial record:'
+predictors:
+  trt:
+    column: trt
+    kind: categorical
+    text_label: Randomised treatment arm
+    text_values:
+      '0': Zidovudine only
+      '1': Zidovudine plus didanosine
+      '2': Zidovudine plus zalcitabine
+      '3': Didanosine only
+  age:
+    column: age
+    kind: numeric
+    text_label: Age at baseline
+    unit: years
+  wtkg:
+    column: wtkg
+    kind: numeric
+    text_label: Weight at baseline
+    unit: kg
+  hemo:
+    column: hemo
+    kind: categorical
+    text_label: Haemophilia
+    text_values: &id001
+      '0': 'No'
+      '1': 'Yes'
+  homo:
+    column: homo
+    kind: categorical
+    text_label: Homosexual activity
+    text_values: *id001
+  drugs:
+    column: drugs
+    kind: categorical
+    text_label: History of intravenous drug use
+    text_values: *id001
+  karnof:
+    column: karnof
+    kind: categorical
+    text_label: Karnofsky performance score
+    text_values:
+      '70': '70: cares for self, unable to carry on normal activity or work'
+      '80': '80: normal activity with effort, some symptoms'
+      '90': '90: normal activity, minor symptoms'
+      '100': '100: normal, no complaints'
+  oprior:
+    column: oprior
+    kind: categorical
+    text_label: Non-zidovudine antiretroviral therapy before the trial
+    text_values: *id001
+  z30:
+    column: z30
+    kind: categorical
+    text_label: Zidovudine in the 30 days before the trial
+    text_values: *id001
+  zprior:
+    column: zprior
+    kind: categorical
+    text_label: Zidovudine at any time before the trial
+    text_values: *id001
+  preanti:
+    column: preanti
+    kind: numeric
+    text_label: Days of antiretroviral therapy before the trial
+    unit: days
+  race:
+    column: race
+    kind: categorical
+    text_label: Race
+    text_values:
+      '0': White
+      '1': Non-white
+  gender:
+    column: gender
+    kind: categorical
+    text_label: Sex
+    text_values:
+      '0': Female
+      '1': Male
+  str2:
+    column: str2
+    kind: categorical
+    text_label: Antiretroviral history
+    text_values:
+      '0': Antiretroviral-naive
+      '1': Antiretroviral-experienced
+  strat:
+    column: strat
+    kind: categorical
+    text_label: Antiretroviral history stratum
+    text_values:
+      '1': Antiretroviral-naive
+      '2': More than 1 but at most 52 weeks of prior antiretroviral therapy
+      '3': More than 52 weeks of prior antiretroviral therapy
+  symptom:
+    column: symptom
+    kind: categorical
+    text_label: Symptomatic HIV infection at baseline
+    text_values:
+      '0': Asymptomatic
+      '1': Symptomatic
+  treat:
+    column: treat
+    kind: categorical
+    text_label: Treatment group
+    text_values:
+      '0': Zidovudine monotherapy
+      '1': Combination or didanosine arm
+  cd40:
+    column: cd40
+    kind: numeric
+    text_label: CD4 count at baseline
+    unit: cells/mm3
+  cd80:
+    column: cd80
+    kind: numeric
+    text_label: CD8 count at baseline
+    unit: cells/mm3
+outcomes:
+  aids_event:
+    column: aids_event
+    classes:
+    - Censored without reaching the endpoint
+    - Reached the primary endpoint (CD4 decline of 50% or more, AIDS-defining illness or death)
+    mapping:
+      '0': Censored without reaching the endpoint
+      '1': Reached the primary endpoint (CD4 decline of 50% or more, AIDS-defining illness or death)
+    question: Based on this baseline trial record, did the participant reach the primary endpoint (a decline of
+      at least 50% in CD4 count, an AIDS-defining illness, or death) during trial follow-up?

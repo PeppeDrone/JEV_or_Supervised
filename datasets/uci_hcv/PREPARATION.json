@@ -1,0 +1,30 @@
+{
+  "dataset": "uci_hcv",
+  "prepared_at": "2026-10-20T16:18:27.518037+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/571/data.csv",
+      "path": "datasets/uci_hcv/raw/data.csv",
+      "sha256": "48b10cd92ca290aad9f3d40029bf7db6520b0998f22f862127e6c289861a2c8f",
+      "bytes": 41882,
+      "retrieved": "cached"
+    }
+  ],
+  "patients_csv_sha256": "014316a2ef7a18748a6ef734851f303fc00ce150483dbba0f5c650a60eb4500b",
+  "summary": {
+    "observations": 608,
+    "predictors": 12,
+    "outcome": "hcv_category",
+    "excluded": {
+      "0s=suspect Blood Donor": 7
+    },
+    "class_counts": {
+      "Blood donor": 533,
+      "Hepatitis": 24,
+      "Fibrosis": 21,
+      "Cirrhosis": 30
+    },
+    "identifier_note": "Source ID values from the UCI HCV release are retained as record_id prefixes; the seven suspect blood-donor rows were excluded because that class has fewer than ten observations.",
+    "units_note": "Original documentation does not state laboratory units for ALB/ALP/ALT/AST/BIL/CHE/CHOL/CREA/GGT/PROT; units are therefore omitted from the prompt labels."
+  }
+}

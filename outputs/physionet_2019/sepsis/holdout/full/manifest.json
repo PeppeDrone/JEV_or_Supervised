@@ -1,0 +1,155 @@
+{
+  "model": "XGB_optuna_full",
+  "dataset": "physionet_2019",
+  "outcome": "sepsis",
+  "data_hash": "b075fa239354eef4099d1ed1357ac5d19f367b40c9551edfe639923586adfe5e",
+  "full_data_hash": "1fe47e15c2d5124ee07ba74049331eb53c0f165c2a45fe4258b65cf462da10a1",
+  "readout_to_full_sha256": "6fcf414ef38062fab2a7e18c07b6689e1285f8aea0cedfea1b4a43e25a341fbc",
+  "split_sha256": "175cecf6c8339a9a1de2af4c985da7398e469265a47df316a44a4019d2d8c1af",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261008,
+  "n_trials_requested": 100,
+  "timeout_seconds": 3600.0,
+  "tuning_cap": 50000,
+  "classes": [
+    "No sepsis",
+    "Sepsis"
+  ],
+  "predictor_columns": [
+    "age",
+    "sex",
+    "hosp_adm_time",
+    "icu_unit",
+    "hr",
+    "o2sat",
+    "temp",
+    "sbp",
+    "map",
+    "dbp",
+    "resp",
+    "etco2",
+    "base_excess",
+    "hco3",
+    "fio2",
+    "ph",
+    "paco2",
+    "sao2",
+    "ast",
+    "bun",
+    "alp",
+    "calcium",
+    "chloride",
+    "creatinine",
+    "bili_direct",
+    "glucose",
+    "lactate",
+    "magnesium",
+    "phosphate",
+    "potassium",
+    "bili_total",
+    "troponin_i",
+    "hct",
+    "hgb",
+    "ptt",
+    "wbc",
+    "fibrinogen",
+    "platelets"
+  ],
+  "files": {
+    "trials.csv": "05818d79b064ceecbbf069d015e180bccd718bd8b8617d1c4980936fa41330f9",
+    "XGB_optuna_full.csv": "fee6c5b0efa73c9ce361aa133e1254d429faae576f308ad70fa16519c83bbc49",
+    "model.joblib": "47ecb3adc2cfdf767d5a84456f9eb57e26c8ee7a6dfb39d149ea83fc69036768",
+    "best_params.json": "3613a5e2b22f69ceb8608ea8d9adcad9a773fddb651e3dcf1602fac36fc330df",
+    "metrics.json": "e470f917af93090c2069dcb42ab097374f4ba28deff6e52fc1b365afb578e812"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

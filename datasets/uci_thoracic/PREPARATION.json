@@ -1,0 +1,24 @@
+{
+  "dataset": "uci_thoracic",
+  "prepared_at": "2026-10-21T11:10:21.661891+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/277/data.csv",
+      "path": "datasets/uci_thoracic/raw/data.csv",
+      "sha256": "d7856924d2410ab479ae43f38dc62fe0e84d4e428625ceeeb6b269b9233500c9",
+      "bytes": 23810,
+      "retrieved": "2026-10-21T11:10:21.636673+00:00"
+    }
+  ],
+  "patients_csv_sha256": "176c4cc7e73329bf1705e627eac3b30b4b6d5226cf1c29edc98935469787d414",
+  "summary": {
+    "observations": 470,
+    "predictors": 16,
+    "outcome": "died_1y",
+    "class_counts": {
+      "Alive at 1 year": 400,
+      "Died within 1 year": 70
+    },
+    "identifier_note": "UCI Thoracic Surgery Data; 1-year mortality."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "dataset": "uci_breast_coimbra",
+  "prepared_at": "2026-10-21T11:03:40.261506+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/451/data.csv",
+      "path": "datasets/uci_breast_coimbra/raw/data.csv",
+      "sha256": "68c56c7e7a38dfff1046a8b35e5b3afc17229eff7fb9d8dca7053442b1c37e7e",
+      "bytes": 7665,
+      "retrieved": "2026-10-21T11:03:40.256610+00:00"
+    }
+  ],
+  "patients_csv_sha256": "f7f041a2592b80f2e84ecc364b5114825d54c3dc072242d974d97b5ae15b693e",
+  "summary": {
+    "observations": 116,
+    "predictors": 9,
+    "outcome": "breast_cancer",
+    "class_counts": {
+      "Healthy control": 52,
+      "Breast cancer": 64
+    },
+    "identifier_note": "UCI Breast Cancer Coimbra (blood biomarkers)."
+  }
+}

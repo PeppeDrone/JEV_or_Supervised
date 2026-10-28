@@ -1,0 +1,126 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_wbc_original",
+  "outcome": "malignant",
+  "data_hash": "b116cd5471043f107f64106e8f2fc626c8138c97d6057cb5512b162e655bd68e",
+  "dataset_spec_sha256": "7415edc689de53385896baaacc8350377e07b1eff219605dabff28d9eb108d00",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261009,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "Benign",
+    "Malignant"
+  ],
+  "predictor_columns": [
+    "clump_thickness",
+    "uniformity_of_cell_size",
+    "uniformity_of_cell_shape",
+    "marginal_adhesion",
+    "single_epithelial_cell_size",
+    "bare_nuclei",
+    "bland_chromatin",
+    "normal_nucleoli",
+    "mitoses"
+  ],
+  "zs_raw_csv_sha256": "6d7208b6c8926c8751045052868c207b6a60c041b4802222f41bf9978f694ef3",
+  "files": {
+    "split.json": "7641bc89502b64664a702ba04a28aae1d7bedef38fe725332a54d1e40ce2617b",
+    "trials.csv": "3a341b15460f8cc741dcd046d3d113edb02d66bf829e5386405307a7e2ef8b0a",
+    "XGB_optuna.csv": "204a5c163714932219b9d961df357199a0b2645c5b74e592f09a1d0c0dc284fb",
+    "ZS_raw.csv": "989b27d23482015cd7623a7a98db6bb4c9f7d2a750244f6daee8a41e72ccbbdc",
+    "model.joblib": "85ea4386b0da614b3c1f334e55d767b74eaba88aa96828dfc2e6839c30d09eca",
+    "best_params.json": "74919270eec67100a5c8b926730c21dd53f7dc129a285d2a21f3e1955de50eca",
+    "metrics.json": "60dab4c20e4714a21285c81fc3c729001fd6dc821d0ce52036e27ca5605a967e"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

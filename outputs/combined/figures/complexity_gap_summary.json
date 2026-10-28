@@ -1,0 +1,57 @@
+{
+  "metric": "balanced_accuracy",
+  "measures": [
+    {
+      "id": "complexity_F1",
+      "source": "Ho & Basu / Lorena F1 (inverted)",
+      "domain": "feature overlapping",
+      "definition": "1 / (1 + mean Fisher discriminant ratio over encoded features); higher = harder"
+    },
+    {
+      "id": "F2",
+      "source": "Lorena F2 (geometric-mean form)",
+      "domain": "feature overlapping",
+      "definition": "(\u220f_j mean pairwise class-range overlap/span)^{1/p}; higher = harder"
+    },
+    {
+      "id": "N1",
+      "source": "Ho & Basu N1",
+      "domain": "neighbourhood",
+      "definition": "fraction of points whose nearest neighbour has a different label; higher = harder"
+    },
+    {
+      "id": "N2",
+      "source": "Lorena N2",
+      "domain": "neighbourhood",
+      "definition": "mean intra-class NN distance / mean inter-class NN distance; higher = harder"
+    },
+    {
+      "id": "C2",
+      "source": "Lorena C2",
+      "domain": "class balance",
+      "definition": "max class count / min class count; higher = more imbalanced"
+    },
+    {
+      "id": "T2",
+      "source": "Lorena T2",
+      "domain": "dimensionality",
+      "definition": "n_features / n_samples; higher = harder"
+    },
+    {
+      "id": "missingness",
+      "source": "tabular covariate",
+      "domain": "data quality",
+      "definition": "fraction of NA cells in the declared predictor matrix; higher = more missing"
+    }
+  ],
+  "analyses": [
+    {
+      "name": "delta_zs_raw",
+      "delta": "BalAcc(M2) - BalAcc(ZS_raw)",
+      "binary": "improved = 1{BalAcc(ZS_raw) > BalAcc(M2)}"
+    }
+  ],
+  "n_outcomes": 45,
+  "n_with_zs_raw_delta": 45,
+  "note": "Primary plots: boxplots of complexity measures by improved = 1{BalAcc(ZS_raw) > BalAcc(M2)}, annotated with univariate logistic regression OR(+1SD) and LRT p-value. Improved uses the dark red from the retired JEV/probe complexity plot."
+}

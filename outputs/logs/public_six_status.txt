@@ -1,0 +1,40 @@
+2026-10-22T15:57:50+02:00 waiting for GPU zeroshot to finish (do not steal the running queue)
+2026-10-22T15:57:50+02:00 GPU free
+2026-10-22T15:57:50+02:00 START physionet_2012/icu_death check
+2026-10-22T15:57:50+02:00 OK physionet_2012/icu_death check
+2026-10-22T15:57:50+02:00 START physionet_2012/icu_death classical
+2026-10-22T15:58:00+02:00 OK physionet_2012/icu_death classical
+2026-10-22T15:58:00+02:00 START physionet_2019/sepsis check
+2026-10-22T15:58:01+02:00 OK physionet_2019/sepsis check
+2026-10-22T15:58:01+02:00 START physionet_2019/sepsis classical
+2026-10-22T15:58:05+02:00 OK physionet_2019/sepsis classical
+2026-10-22T15:58:05+02:00 START nhanes_htn/hypertension check
+2026-10-22T15:58:05+02:00 OK nhanes_htn/hypertension check
+2026-10-22T15:58:05+02:00 START nhanes_htn/hypertension classical
+2026-10-22T15:58:10+02:00 OK nhanes_htn/hypertension classical
+2026-10-22T15:58:10+02:00 START metabric/pam50_subtype check
+2026-10-22T15:58:10+02:00 OK metabric/pam50_subtype check
+2026-10-22T15:58:10+02:00 START metabric/pam50_subtype classical
+2026-10-22T15:58:23+02:00 OK metabric/pam50_subtype classical
+2026-10-22T15:58:23+02:00 START mexico_covid/covid_death check
+2026-10-22T15:58:24+02:00 OK mexico_covid/covid_death check
+2026-10-22T15:58:24+02:00 START mexico_covid/covid_death classical
+2026-10-22T15:58:27+02:00 OK mexico_covid/covid_death classical
+2026-10-22T15:58:27+02:00 START dryad_er_cbc/er_death check
+2026-10-22T15:58:28+02:00 OK dryad_er_cbc/er_death check
+2026-10-22T15:58:28+02:00 START dryad_er_cbc/er_death classical
+2026-10-22T15:58:31+02:00 OK dryad_er_cbc/er_death classical
+2026-10-22T15:58:31+02:00 START physionet_2012/icu_death zeroshot
+2026-10-22T16:11:24+02:00 OK physionet_2012/icu_death zeroshot
+2026-10-22T16:11:24+02:00 START physionet_2019/sepsis zeroshot
+2026-10-22T16:16:31+02:00 OK physionet_2019/sepsis zeroshot
+2026-10-22T16:16:31+02:00 START nhanes_htn/hypertension zeroshot
+2026-10-22T16:19:10+02:00 OK nhanes_htn/hypertension zeroshot
+2026-10-22T16:19:10+02:00 START metabric/pam50_subtype zeroshot
+2026-10-22T16:25:49+02:00 OK metabric/pam50_subtype zeroshot
+2026-10-22T16:25:49+02:00 START mexico_covid/covid_death zeroshot
+2026-10-22T16:28:20+02:00 OK mexico_covid/covid_death zeroshot
+2026-10-22T16:28:20+02:00 START dryad_er_cbc/er_death zeroshot
+2026-10-22T16:31:37+02:00 OK dryad_er_cbc/er_death zeroshot
+2026-10-22T16:31:37+02:00 rebuilding combined figures, complexity, summary
+2026-10-22T16:35:37+02:00 PUBLIC_SIX_DONE

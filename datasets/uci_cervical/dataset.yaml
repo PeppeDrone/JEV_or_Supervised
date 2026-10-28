@@ -1,0 +1,207 @@
+name: uci_cervical
+description: 'UCI Cervical Cancer Risk Factors (Hospital Universitario de Caracas; 858 women). 29 predictors: sexual
+  and reproductive history, smoking, contraception, sexually transmitted infections, and the three other screening
+  tests (Hinselmann, Schiller, cytology). Binary cervical biopsy result.'
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Woman attending a gynaecology clinic in Caracas for cervical cancer screening. The observations are her
+  self-reported sexual and reproductive history, smoking, hormonal contraception and intrauterine device use, history
+  of sexually transmitted infections, and the results of the Hinselmann (acetic acid) colposcopy test, the Schiller
+  (iodine) test and cervical cytology.
+observations_header: 'Risk-factor history and screening test results:'
+predictors:
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+  number_of_sexual_partners:
+    column: number_of_sexual_partners
+    kind: numeric
+    text_label: Number of sexual partners
+    scale_note: count
+  first_sexual_intercourse:
+    column: first_sexual_intercourse
+    kind: numeric
+    text_label: Age at first sexual intercourse
+    unit: years
+  num_of_pregnancies:
+    column: num_of_pregnancies
+    kind: numeric
+    text_label: Number of pregnancies
+    scale_note: count
+  smokes:
+    column: smokes
+    kind: categorical
+    text_label: Smokes
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  smokes_years:
+    column: smokes_years
+    kind: numeric
+    text_label: Years of smoking
+    unit: years
+  smokes_packs_year:
+    column: smokes_packs_year
+    kind: numeric
+    text_label: Smoking intensity
+    unit: pack-years
+  hormonal_contraceptives:
+    column: hormonal_contraceptives
+    kind: categorical
+    text_label: Uses hormonal contraceptives
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  hormonal_contraceptives_years:
+    column: hormonal_contraceptives_years
+    kind: numeric
+    text_label: Years of hormonal contraceptive use
+    unit: years
+  iud:
+    column: iud
+    kind: categorical
+    text_label: Uses an intrauterine device
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  iud_years:
+    column: iud_years
+    kind: numeric
+    text_label: Years of intrauterine device use
+    unit: years
+  stds:
+    column: stds
+    kind: categorical
+    text_label: History of any sexually transmitted infection
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  stds_number:
+    column: stds_number
+    kind: numeric
+    text_label: Number of sexually transmitted infections reported
+    scale_note: count
+  stds_condylomatosis:
+    column: stds_condylomatosis
+    kind: categorical
+    text_label: 'Sexually transmitted infection: Condylomatosis'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  stds_cervical_condylomatosis:
+    column: stds_cervical_condylomatosis
+    kind: categorical
+    text_label: 'Sexually transmitted infection: Cervical condylomatosis'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  stds_vaginal_condylomatosis:
+    column: stds_vaginal_condylomatosis
+    kind: categorical
+    text_label: 'Sexually transmitted infection: Vaginal condylomatosis'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  stds_vulvo_perineal_condylomatosis:
+    column: stds_vulvo_perineal_condylomatosis
+    kind: categorical
+    text_label: 'Sexually transmitted infection: Vulvo-perineal condylomatosis'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  stds_syphilis:
+    column: stds_syphilis
+    kind: categorical
+    text_label: 'Sexually transmitted infection: Syphilis'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  stds_pelvic_inflammatory_disease:
+    column: stds_pelvic_inflammatory_disease
+    kind: categorical
+    text_label: 'Sexually transmitted infection: Pelvic inflammatory disease'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  stds_genital_herpes:
+    column: stds_genital_herpes
+    kind: categorical
+    text_label: 'Sexually transmitted infection: Genital herpes'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  stds_molluscum_contagiosum:
+    column: stds_molluscum_contagiosum
+    kind: categorical
+    text_label: 'Sexually transmitted infection: Molluscum contagiosum'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  stds_aids:
+    column: stds_aids
+    kind: categorical
+    text_label: 'Sexually transmitted infection: AIDS'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  stds_hiv:
+    column: stds_hiv
+    kind: categorical
+    text_label: 'Sexually transmitted infection: HIV infection'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  stds_hepatitis_b:
+    column: stds_hepatitis_b
+    kind: categorical
+    text_label: 'Sexually transmitted infection: Hepatitis B'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  stds_hpv:
+    column: stds_hpv
+    kind: categorical
+    text_label: 'Sexually transmitted infection: Human papillomavirus infection'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  stds__number_of_diagnosis:
+    column: stds__number_of_diagnosis
+    kind: numeric
+    text_label: Number of sexually transmitted infection diagnoses on record
+    scale_note: count
+  hinselmann:
+    column: hinselmann
+    kind: categorical
+    text_label: Hinselmann colposcopy test (acetic acid)
+    text_values:
+      '0': Negative
+      '1': Positive
+  schiller:
+    column: schiller
+    kind: categorical
+    text_label: Schiller iodine test
+    text_values:
+      '0': Negative
+      '1': Positive
+  citology:
+    column: citology
+    kind: categorical
+    text_label: Cervical cytology
+    text_values:
+      '0': Negative
+      '1': Positive
+outcomes:
+  biopsy:
+    column: biopsy
+    classes:
+    - Negative biopsy
+    - Positive biopsy
+    mapping:
+      '0': Negative biopsy
+      '1': Positive biopsy
+    question: Based on this risk-factor history and these screening test results, was the cervical biopsy positive?

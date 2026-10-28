@@ -1,0 +1,89 @@
+name: uci_heart_failure
+description: UCI Heart Failure Clinical Records (299 patients, 12 clinical predictors). Binary mortality during
+  follow-up; follow-up duration excluded.
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Adult with heart failure (NYHA class III or IV, left ventricular systolic dysfunction) enrolled at the
+  Faisalabad Institute of Cardiology and Allied Hospital, Pakistan, in 2015 and followed for between one and ten
+  months (median about four months). The observations are baseline clinical characteristics and laboratory results
+  at enrolment.
+observations_header: 'Baseline clinical and laboratory findings:'
+predictors:
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+  anaemia:
+    column: anaemia
+    kind: categorical
+    text_label: Anaemia (reduced red cells or haemoglobin)
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  creatinine_phosphokinase:
+    column: creatinine_phosphokinase
+    kind: numeric
+    text_label: Creatine phosphokinase (CPK)
+    unit: mcg/L
+  diabetes:
+    column: diabetes
+    kind: categorical
+    text_label: Diabetes
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ejection_fraction:
+    column: ejection_fraction
+    kind: numeric
+    text_label: Left ventricular ejection fraction
+    unit: '%'
+  high_blood_pressure:
+    column: high_blood_pressure
+    kind: categorical
+    text_label: Hypertension
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  platelets:
+    column: platelets
+    kind: numeric
+    text_label: Platelets
+    unit: per µL
+  serum_creatinine:
+    column: serum_creatinine
+    kind: numeric
+    text_label: Serum creatinine
+    unit: mg/dL
+  serum_sodium:
+    column: serum_sodium
+    kind: numeric
+    text_label: Serum sodium
+    unit: mEq/L
+  sex:
+    column: sex
+    kind: categorical
+    text_label: Sex
+    text_values:
+      '0': Female
+      '1': Male
+  smoking:
+    column: smoking
+    kind: categorical
+    text_label: Current smoker
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+outcomes:
+  mortality:
+    column: death_event
+    classes:
+    - Alive at the end of follow-up
+    - Died during follow-up
+    mapping:
+      '0': Alive at the end of follow-up
+      '1': Died during follow-up
+    question: Based on these baseline clinical and laboratory findings, did this heart-failure patient die during
+      the follow-up period of one to ten months?

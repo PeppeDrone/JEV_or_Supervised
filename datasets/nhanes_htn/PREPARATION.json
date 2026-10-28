@@ -1,0 +1,73 @@
+{
+  "dataset": "nhanes_htn",
+  "prepared_at": "2026-10-22T13:56:39.723460+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DEMO_L.xpt",
+      "path": "datasets/nhanes_htn/raw/DEMO_L.xpt",
+      "sha256": "ca4374a158b493b8b0163e1388da21d57a18d1b9cecff2aa4e2fa2bec494fe23",
+      "bytes": 2582160,
+      "retrieved": "cached"
+    },
+    {
+      "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/BPXO_L.xpt",
+      "path": "datasets/nhanes_htn/raw/BPXO_L.xpt",
+      "sha256": "189aa9bed689d2c69cf8d780b01de85073276fea5694dd52cdf696229f9054a6",
+      "bytes": 696720,
+      "retrieved": "cached"
+    },
+    {
+      "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/BMX_L.xpt",
+      "path": "datasets/nhanes_htn/raw/BMX_L.xpt",
+      "sha256": "44440c416d9ad709e8b1708a5975378ab4d5b18edc39eb5015c2ae7186500170",
+      "bytes": 1563200,
+      "retrieved": "cached"
+    },
+    {
+      "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/BPQ_L.xpt",
+      "path": "datasets/nhanes_htn/raw/BPQ_L.xpt",
+      "sha256": "0acde3af0526c375942fe0735e3bf69a0422bcbc606f98a478209d2f47baa4b5",
+      "bytes": 409680,
+      "retrieved": "cached"
+    },
+    {
+      "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/DIQ_L.xpt",
+      "path": "datasets/nhanes_htn/raw/DIQ_L.xpt",
+      "sha256": "9535a023673ae869afae19d842d8679e06f6a464606ac15900686b41ef05090f",
+      "bytes": 847600,
+      "retrieved": "cached"
+    },
+    {
+      "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles/SMQ_L.xpt",
+      "path": "datasets/nhanes_htn/raw/SMQ_L.xpt",
+      "sha256": "abbefebfa5585b1e19c079fa14be20c113a4649318070197214b258d05b93c50",
+      "bytes": 651120,
+      "retrieved": "cached"
+    }
+  ],
+  "patients_csv_sha256": "cff52f5e3717f81367d77e4ceb308481db6733a0686485356c52ff9ff8236e20",
+  "summary": {
+    "observations": 1000,
+    "predictors": 12,
+    "outcome": "hypertension",
+    "excluded_predictors": [
+      "BPXOSY1",
+      "BPXOSY2",
+      "BPXOSY3",
+      "BPXODI1",
+      "BPXODI2",
+      "BPXODI3",
+      "BPQ020",
+      "BPQ030",
+      "BPQ150",
+      "BPQ040A",
+      "BPQ050A"
+    ],
+    "class_counts": {
+      "No hypertension": 459,
+      "Hypertension": 541
+    },
+    "identifier_note": "NHANES 2021\u20132023 adults 18+ with oscillometric BP. Y = mean SBP>=130 or mean DBP>=80 or currently taking BP medication (NCHS Data Brief 511). BP values and BP-medication items are used only to build Y. First 1000 SEQN after eligibility.",
+    "cap": 1000
+  }
+}

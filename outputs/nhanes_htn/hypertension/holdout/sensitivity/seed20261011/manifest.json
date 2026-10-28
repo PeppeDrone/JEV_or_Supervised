@@ -1,0 +1,129 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "nhanes_htn",
+  "outcome": "hypertension",
+  "data_hash": "c86b82e7dd12b076baccde0623d3e9d5a0079f616bcec2b83ddcf5ad0e202663",
+  "dataset_spec_sha256": "46ebcb19913e1e0662d65324b4b03579236744449cbc6f61f57a806d97a08bf8",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261011,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "No hypertension",
+    "Hypertension"
+  ],
+  "predictor_columns": [
+    "age",
+    "sex",
+    "race_ethnicity",
+    "education",
+    "poverty_ratio",
+    "bmi",
+    "waist",
+    "weight",
+    "height",
+    "diabetes",
+    "smoked_100",
+    "current_smoking"
+  ],
+  "zs_raw_csv_sha256": "f715f1163a574a3245d62256caead2c21819a7641c0394bd52aa3fb43f3631ef",
+  "files": {
+    "split.json": "f126f48ab5dc7831b43b55416436ea73f9b01fa9e43a387686f5dfeaf5c35819",
+    "trials.csv": "eeef9b4237259af28b1658e659457a3c2d05751f4e2eb7d40b77f1785200ac64",
+    "XGB_optuna.csv": "3ddc1754a55b8b633d955e91e8e44128469178da389da4b4686bc62595283823",
+    "ZS_raw.csv": "3a972cd301d35fd350063548ceb16ff2ebdb6f724d5843de25f4002153d0c7a5",
+    "model.joblib": "793e515e0922b7c33961604215d6e8481ab288c0dc0a314cc2d7961b03790503",
+    "best_params.json": "689debc531d6d48b4b0d6d76c441f72fa82cc643bfd4341657152f3aa534407e",
+    "metrics.json": "6ad883c23c4dc2fa145731db9d9a91fca8cbcb4501f300482dadfc098bcbcd4c"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

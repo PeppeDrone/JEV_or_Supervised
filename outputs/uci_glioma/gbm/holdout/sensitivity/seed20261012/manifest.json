@@ -1,0 +1,140 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_glioma",
+  "outcome": "gbm",
+  "data_hash": "31adf683b0a60937081cf044e0bf5b442abbf55a68f2a3836bf5af76a10fdb59",
+  "dataset_spec_sha256": "edca7e15b79293d64d4db6b409439d631e63598787ac4d26fb06d0f1aa224056",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261012,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "Lower-grade glioma",
+    "Glioblastoma"
+  ],
+  "predictor_columns": [
+    "gender",
+    "age",
+    "race",
+    "idh1",
+    "tp53",
+    "atrx",
+    "pten",
+    "egfr",
+    "cic",
+    "muc16",
+    "pik3ca",
+    "nf1",
+    "pik3r1",
+    "fubp1",
+    "rb1",
+    "notch1",
+    "bcor",
+    "csmd3",
+    "smarca4",
+    "grin2a",
+    "idh2",
+    "fat4",
+    "pdgfra"
+  ],
+  "zs_raw_csv_sha256": "5d851c7e2a0aa3070afe33d919346f9b30d7e7d92897e010f35543183b7febe3",
+  "files": {
+    "split.json": "5d0661e47e3933e4861bfd34ce72ce0935af259aef8f6e547bdc22608cf97df8",
+    "trials.csv": "cd4f656a0bbaa9df993371f1837d2c26e70efb2e90fe41c5c28c21cfdc77c71b",
+    "XGB_optuna.csv": "93368bc7774e21cc4e1cc1cf5895b349aa4b2f89b166793f261c471718afabc7",
+    "ZS_raw.csv": "7df5a4ba9c4a10468c43c861cde8c957605596c90bc4af1a7e1c567578f692b0",
+    "model.joblib": "df270202638bf31a22d824faa2dcd6d87810ee2fce3b7ce2633b22b96765732c",
+    "best_params.json": "d5a96918032dda59818552f62163853c2b90ffc5d0c8daccffbe9d7437051d52",
+    "metrics.json": "0a62af50aa62efa039401160135f11a7509163d3f424563ea504d844e4e449e1"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

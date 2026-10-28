@@ -1,0 +1,104 @@
+name: nhanes_htn
+description: NHANES August 2021–August 2023 (first 1000 eligible adults). Binary measured hypertension from demographics,
+  body measures, smoking, and diabetes history.
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Adult participant in the 2021-2023 US National Health and Nutrition Examination Survey. The observations
+  are demographics, family income relative to the poverty threshold, body measurements from the examination, smoking
+  history and self-reported diabetes; blood-pressure readings and antihypertensive medication are withheld.
+observations_header: 'Survey demographics, body measures, smoking and diabetes history:'
+predictors:
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+  sex:
+    column: sex
+    kind: categorical
+    text_label: Sex
+    text_values:
+      Male: Male
+      Female: Female
+  race_ethnicity:
+    column: race_ethnicity
+    kind: categorical
+    text_label: Race and ethnicity
+    text_values:
+      Non-Hispanic Asian: Non-Hispanic Asian
+      Non-Hispanic White: Non-Hispanic White
+      Other Hispanic: Other Hispanic
+      Mexican American: Mexican American
+      Non-Hispanic Black: Non-Hispanic Black
+      Other or Multi-Racial: Other or Multi-Racial
+  education:
+    column: education
+    kind: categorical
+    text_label: Education level
+    text_values:
+      Less than 9th grade: Less than 9th grade
+      9th to 11th grade: 9th to 11th grade (no diploma)
+      High school or GED: High school graduate or GED
+      Some college or AA: Some college or associate degree
+      College graduate or above: College graduate or above
+  poverty_ratio:
+    column: poverty_ratio
+    kind: numeric
+    text_label: Family income to poverty-threshold ratio
+    scale_note: 0 to 5, where 5 means five times the threshold or more
+  bmi:
+    column: bmi
+    kind: numeric
+    text_label: Body mass index
+    unit: kg/m^2
+  waist:
+    column: waist
+    kind: numeric
+    text_label: Waist circumference
+    unit: cm
+  weight:
+    column: weight
+    kind: numeric
+    text_label: Weight
+    unit: kg
+  height:
+    column: height
+    kind: numeric
+    text_label: Height
+    unit: cm
+  diabetes:
+    column: diabetes
+    kind: categorical
+    text_label: Ever told by a doctor of having diabetes
+    text_values:
+      'No': 'No'
+      'Yes': 'Yes'
+      Borderline: Borderline
+  smoked_100:
+    column: smoked_100
+    kind: categorical
+    text_label: Smoked at least 100 cigarettes in lifetime
+    text_values:
+      'Yes': 'Yes'
+      'No': 'No'
+  current_smoking:
+    column: current_smoking
+    kind: categorical
+    text_label: Current cigarette smoking frequency
+    text_values:
+      Not at all: Not at all
+      Every day: Every day
+      Some days: Some days
+outcomes:
+  hypertension:
+    column: hypertension
+    classes:
+    - No hypertension
+    - Hypertension (measured blood pressure 130/80 mmHg or higher, or on antihypertensive medication)
+    mapping:
+      '0': No hypertension
+      '1': Hypertension (measured blood pressure 130/80 mmHg or higher, or on antihypertensive medication)
+    question: Based on these survey demographics, body measures, smoking and diabetes history, does this adult have
+      hypertension as defined by measured blood pressure or antihypertensive treatment?

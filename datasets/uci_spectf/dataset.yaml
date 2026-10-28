@@ -1,0 +1,243 @@
+name: uci_spectf
+description: UCI SPECTF Heart (267 patients, 44 features). Perfusion counts in 22 myocardial regions of interest
+  at rest and under stress, summarising cardiac SPECT images; binary normal vs abnormal study as judged by cardiologists.
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Adult undergoing myocardial perfusion imaging with cardiac single-photon emission computed tomography (SPECT),
+  acquired at rest and after stress. The observations are the integer perfusion counts (0-100 scale, higher means
+  better tracer uptake) in each of 22 regions of interest of the left ventricle, listed as rest and stress pairs.
+observations_header: 'Myocardial perfusion counts per region of interest (ROI), rest and stress (0-100 scale):'
+predictors:
+  f1r:
+    column: f1r
+    kind: numeric
+    text_label: ROI 1 perfusion count at rest
+    scale_note: 0-100 relative uptake
+  f1s:
+    column: f1s
+    kind: numeric
+    text_label: ROI 1 perfusion count under stress
+    scale_note: 0-100 relative uptake
+  f2r:
+    column: f2r
+    kind: numeric
+    text_label: ROI 2 perfusion count at rest
+    scale_note: 0-100 relative uptake
+  f2s:
+    column: f2s
+    kind: numeric
+    text_label: ROI 2 perfusion count under stress
+    scale_note: 0-100 relative uptake
+  f3r:
+    column: f3r
+    kind: numeric
+    text_label: ROI 3 perfusion count at rest
+    scale_note: 0-100 relative uptake
+  f3s:
+    column: f3s
+    kind: numeric
+    text_label: ROI 3 perfusion count under stress
+    scale_note: 0-100 relative uptake
+  f4r:
+    column: f4r
+    kind: numeric
+    text_label: ROI 4 perfusion count at rest
+    scale_note: 0-100 relative uptake
+  f4s:
+    column: f4s
+    kind: numeric
+    text_label: ROI 4 perfusion count under stress
+    scale_note: 0-100 relative uptake
+  f5r:
+    column: f5r
+    kind: numeric
+    text_label: ROI 5 perfusion count at rest
+    scale_note: 0-100 relative uptake
+  f5s:
+    column: f5s
+    kind: numeric
+    text_label: ROI 5 perfusion count under stress
+    scale_note: 0-100 relative uptake
+  f6r:
+    column: f6r
+    kind: numeric
+    text_label: ROI 6 perfusion count at rest
+    scale_note: 0-100 relative uptake
+  f6s:
+    column: f6s
+    kind: numeric
+    text_label: ROI 6 perfusion count under stress
+    scale_note: 0-100 relative uptake
+  f7r:
+    column: f7r
+    kind: numeric
+    text_label: ROI 7 perfusion count at rest
+    scale_note: 0-100 relative uptake
+  f7s:
+    column: f7s
+    kind: numeric
+    text_label: ROI 7 perfusion count under stress
+    scale_note: 0-100 relative uptake
+  f8r:
+    column: f8r
+    kind: numeric
+    text_label: ROI 8 perfusion count at rest
+    scale_note: 0-100 relative uptake
+  f8s:
+    column: f8s
+    kind: numeric
+    text_label: ROI 8 perfusion count under stress
+    scale_note: 0-100 relative uptake
+  f9r:
+    column: f9r
+    kind: numeric
+    text_label: ROI 9 perfusion count at rest
+    scale_note: 0-100 relative uptake
+  f9s:
+    column: f9s
+    kind: numeric
+    text_label: ROI 9 perfusion count under stress
+    scale_note: 0-100 relative uptake
+  f10r:
+    column: f10r
+    kind: numeric
+    text_label: ROI 10 perfusion count at rest
+    scale_note: 0-100 relative uptake
+  f10s:
+    column: f10s
+    kind: numeric
+    text_label: ROI 10 perfusion count under stress
+    scale_note: 0-100 relative uptake
+  f11r:
+    column: f11r
+    kind: numeric
+    text_label: ROI 11 perfusion count at rest
+    scale_note: 0-100 relative uptake
+  f11s:
+    column: f11s
+    kind: numeric
+    text_label: ROI 11 perfusion count under stress
+    scale_note: 0-100 relative uptake
+  f12r:
+    column: f12r
+    kind: numeric
+    text_label: ROI 12 perfusion count at rest
+    scale_note: 0-100 relative uptake
+  f12s:
+    column: f12s
+    kind: numeric
+    text_label: ROI 12 perfusion count under stress
+    scale_note: 0-100 relative uptake
+  f13r:
+    column: f13r
+    kind: numeric
+    text_label: ROI 13 perfusion count at rest
+    scale_note: 0-100 relative uptake
+  f13s:
+    column: f13s
+    kind: numeric
+    text_label: ROI 13 perfusion count under stress
+    scale_note: 0-100 relative uptake
+  f14r:
+    column: f14r
+    kind: numeric
+    text_label: ROI 14 perfusion count at rest
+    scale_note: 0-100 relative uptake
+  f14s:
+    column: f14s
+    kind: numeric
+    text_label: ROI 14 perfusion count under stress
+    scale_note: 0-100 relative uptake
+  f15r:
+    column: f15r
+    kind: numeric
+    text_label: ROI 15 perfusion count at rest
+    scale_note: 0-100 relative uptake
+  f15s:
+    column: f15s
+    kind: numeric
+    text_label: ROI 15 perfusion count under stress
+    scale_note: 0-100 relative uptake
+  f16r:
+    column: f16r
+    kind: numeric
+    text_label: ROI 16 perfusion count at rest
+    scale_note: 0-100 relative uptake
+  f16s:
+    column: f16s
+    kind: numeric
+    text_label: ROI 16 perfusion count under stress
+    scale_note: 0-100 relative uptake
+  f17r:
+    column: f17r
+    kind: numeric
+    text_label: ROI 17 perfusion count at rest
+    scale_note: 0-100 relative uptake
+  f17s:
+    column: f17s
+    kind: numeric
+    text_label: ROI 17 perfusion count under stress
+    scale_note: 0-100 relative uptake
+  f18r:
+    column: f18r
+    kind: numeric
+    text_label: ROI 18 perfusion count at rest
+    scale_note: 0-100 relative uptake
+  f18s:
+    column: f18s
+    kind: numeric
+    text_label: ROI 18 perfusion count under stress
+    scale_note: 0-100 relative uptake
+  f19r:
+    column: f19r
+    kind: numeric
+    text_label: ROI 19 perfusion count at rest
+    scale_note: 0-100 relative uptake
+  f19s:
+    column: f19s
+    kind: numeric
+    text_label: ROI 19 perfusion count under stress
+    scale_note: 0-100 relative uptake
+  f20r:
+    column: f20r
+    kind: numeric
+    text_label: ROI 20 perfusion count at rest
+    scale_note: 0-100 relative uptake
+  f20s:
+    column: f20s
+    kind: numeric
+    text_label: ROI 20 perfusion count under stress
+    scale_note: 0-100 relative uptake
+  f21r:
+    column: f21r
+    kind: numeric
+    text_label: ROI 21 perfusion count at rest
+    scale_note: 0-100 relative uptake
+  f21s:
+    column: f21s
+    kind: numeric
+    text_label: ROI 21 perfusion count under stress
+    scale_note: 0-100 relative uptake
+  f22r:
+    column: f22r
+    kind: numeric
+    text_label: ROI 22 perfusion count at rest
+    scale_note: 0-100 relative uptake
+  f22s:
+    column: f22s
+    kind: numeric
+    text_label: ROI 22 perfusion count under stress
+    scale_note: 0-100 relative uptake
+outcomes:
+  abnormal:
+    column: abnormal
+    classes:
+    - Normal perfusion study
+    - Abnormal perfusion study
+    mapping:
+      '0': Normal perfusion study
+      '1': Abnormal perfusion study
+    question: Based on these rest and stress perfusion counts, did the cardiologists read this patient's myocardial
+      perfusion SPECT study as abnormal?

@@ -1,0 +1,58 @@
+{
+  "source_basis": "Active benchmark code and reports, confirmed by user",
+  "claims": [
+    {
+      "claim": "39 binary/multiclass clinical tasks",
+      "file": "src/jevtest/benchmark.py",
+      "sha256": "d3ffed149c400250344ad1203267b53f0cbd8697fb0eb0d17e4fd353ad288887"
+    },
+    {
+      "claim": "five outer and three inner folds; Qwen3-4B backbone",
+      "file": "configs/study.yaml",
+      "sha256": "f04c25948943da2ea7773e0324e47b607fb0b4161dfd5cd0245f73951143593b"
+    },
+    {
+      "claim": "supervised XGBoost training only on outer-training cases",
+      "file": "src/jevtest/classical.py",
+      "sha256": "61458c34e6407276f2ee3dd9e4c2516e63f937c7794f4f163dfbae5eed11527e"
+    },
+    {
+      "claim": "deterministic predictor text",
+      "file": "src/jevtest/text.py",
+      "sha256": "05e09b9d56b1b49632450919f7903a594704370dcf377b1c009b42508eee7688"
+    },
+    {
+      "claim": "frozen zero-shot AnyJev L0",
+      "file": "src/jevtest/zeroshot.py",
+      "sha256": "6797aaaa33f11eee1f60a3ce02db545933b78ee0d478d818fcacbfab2b6180fd"
+    },
+    {
+      "claim": "per-task balanced accuracy and differences versus XGBoost",
+      "file": "scripts/plot_predictions.py",
+      "sha256": "13e97a1bf080510605f87de08800d06b7fc8feb181cb64a8b9305e6d8c448499"
+    },
+    {
+      "claim": "shared bootstrap patient resamples and metric intervals",
+      "file": "src/jevtest/metrics.py",
+      "sha256": "b9de359c2b0a886e2e59f22ecb7531de6c353db97e8b2025202657ad9b617593"
+    },
+    {
+      "claim": "associations with task complexity",
+      "file": "scripts/analyse_uci_complexity_gaps.py",
+      "sha256": "dce72c3553c5c5e2128d693c4537104f648a8ce90b380b0c6dd9a68d391a4293"
+    },
+    {
+      "claim": "associations with codebook-derived text properties",
+      "file": "scripts/analyse_codebook_quality.py",
+      "sha256": "22c87f0964d1fd6c61b79f60920f44a58a2dd642cbeca10c3a3aff0e007aad1c"
+    }
+  ],
+  "original_asset_sha256": {
+    "clinical_tasks.png": "083b091924bc65280c5f1d5fccc3f3a249165ca954cde8c010520ddf0f6119b8",
+    "xgboost.png": "5bc62537649491d251713b8ce662d45bf7705577af3ecd8c46080b54e49c9a8b",
+    "complexity.png": "45e8e775bb1f60abd4307259f6bbf4151b988e38bba8beb11a3d23d85fb1f028",
+    "comparison.png": "eb96be26e06c197b7c53c8eda87b091b9727d0401170cbb4f90e404eeebae96b",
+    "codebook.png": "eb7603a927aaad5c1905b54b7aeaa1cea2eea218759e8fb5b4992bdb698a4f71",
+    "system1.png": "7ac5a44297d7104f5115b7e4f9df60dc47b771cdf10ae2e10c356528e187cc6a"
+  }
+}

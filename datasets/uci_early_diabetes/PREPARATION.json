@@ -1,0 +1,24 @@
+{
+  "dataset": "uci_early_diabetes",
+  "prepared_at": "2026-10-21T11:03:40.940975+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/529/data.csv",
+      "path": "datasets/uci_early_diabetes/raw/data.csv",
+      "sha256": "f6bf14c5d2e939feccd78750da2542f131b78d80355ccf35f29554b1f03fcb97",
+      "bytes": 34682,
+      "retrieved": "2026-10-21T11:03:40.933961+00:00"
+    }
+  ],
+  "patients_csv_sha256": "75a88f77759a58ae1b61aa03c98e1aa17b07ba7c8c76fc917265f474dd242430",
+  "summary": {
+    "observations": 520,
+    "predictors": 16,
+    "outcome": "diabetes",
+    "class_counts": {
+      "No diabetes": 200,
+      "Diabetes": 320
+    },
+    "identifier_note": "UCI Early stage diabetes risk prediction (symptom questionnaire)."
+  }
+}

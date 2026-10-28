@@ -1,0 +1,75 @@
+name: uci_ilpd
+description: UCI Indian Liver Patient Dataset (583 observations, 10 predictors).
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Adult from north-east Andhra Pradesh, India (Indian Liver Patient Dataset), whose record was assigned by
+  clinicians either to the liver-patient group or to the non-liver-patient group. The observations are age, sex
+  and routine liver function tests; ages above 89 are recorded as 90.
+observations_header: 'Demographics and liver function tests:'
+predictors:
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+    scale_note: ages above 89 recorded as 90
+  gender:
+    column: gender
+    kind: categorical
+    text_label: Sex
+    text_values:
+      M: Male
+      F: Female
+  tb:
+    column: tb
+    kind: numeric
+    text_label: Total bilirubin
+    unit: mg/dL
+  db:
+    column: db
+    kind: numeric
+    text_label: Direct bilirubin
+    unit: mg/dL
+  alkphos:
+    column: alkphos
+    kind: numeric
+    text_label: Alkaline phosphatase
+    unit: IU/L
+  sgpt:
+    column: sgpt
+    kind: numeric
+    text_label: Alanine aminotransferase (ALT, SGPT)
+    unit: IU/L
+  sgot:
+    column: sgot
+    kind: numeric
+    text_label: Aspartate aminotransferase (AST, SGOT)
+    unit: IU/L
+  tp:
+    column: tp
+    kind: numeric
+    text_label: Total protein
+    unit: g/dL
+  alb:
+    column: alb
+    kind: numeric
+    text_label: Albumin
+    unit: g/dL
+  ag_ratio:
+    column: ag_ratio
+    kind: numeric
+    text_label: Albumin to globulin ratio
+    scale_note: ratio
+outcomes:
+  liver_disease:
+    column: liver_disease
+    classes:
+    - Non-liver-patient group
+    - Liver-patient group (liver disease)
+    mapping:
+      '0': Non-liver-patient group
+      '1': Liver-patient group (liver disease)
+    question: Based on these demographics and liver function tests, was this person in the liver-disease patient
+      group?

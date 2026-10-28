@@ -1,0 +1,139 @@
+name: uci_obesity
+description: UCI Estimation of Obesity Levels (Mexico, Peru, Colombia; 2111 records, of which 77% were generated
+  synthetically with SMOTE from 485 survey answers). 16 lifestyle and anthropometric predictors; ordinal questionnaire
+  answers appear as non-integer values because of the synthetic generation. 7-class obesity level derived from body
+  mass index.
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Adult or adolescent from Mexico, Peru or Colombia who answered an online survey on eating habits and physical
+  condition. The observations are sex, age, height and weight, family history of overweight, and questionnaire answers
+  on diet, snacking, smoking, water intake, calorie monitoring, physical activity, screen time, alcohol and usual
+  transport.
+observations_header: 'Survey answers and anthropometrics:'
+predictors:
+  gender:
+    column: gender
+    kind: categorical
+    text_label: Sex
+    text_values:
+      Female: Female
+      Male: Male
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+  height:
+    column: height
+    kind: numeric
+    text_label: Height
+    unit: m
+  weight:
+    column: weight
+    kind: numeric
+    text_label: Weight
+    unit: kg
+  family_history_with_overweight:
+    column: family_history_with_overweight
+    kind: categorical
+    text_label: Family member has suffered from overweight
+    text_values:
+      'yes': 'Yes'
+      'no': 'No'
+  favc:
+    column: favc
+    kind: categorical
+    text_label: Frequently eats high-calorie food
+    text_values:
+      'no': 'No'
+      'yes': 'Yes'
+  fcvc:
+    column: fcvc
+    kind: numeric
+    text_label: Eats vegetables with meals
+    scale_note: 1 = never, 2 = sometimes, 3 = always
+  ncp:
+    column: ncp
+    kind: numeric
+    text_label: Number of main meals per day
+    scale_note: 1 to 4
+  caec:
+    column: caec
+    kind: categorical
+    text_label: Eats food between meals
+    text_values:
+      'no': 'No'
+      Sometimes: Sometimes
+      Frequently: Frequently
+      Always: Always
+  smoke:
+    column: smoke
+    kind: categorical
+    text_label: Smokes
+    text_values:
+      'no': 'No'
+      'yes': 'Yes'
+  ch2o:
+    column: ch2o
+    kind: numeric
+    text_label: Daily water intake
+    scale_note: 1 = less than 1 litre, 2 = 1-2 litres, 3 = more than 2 litres
+  scc:
+    column: scc
+    kind: categorical
+    text_label: Monitors daily calorie intake
+    text_values:
+      'no': 'No'
+      'yes': 'Yes'
+  faf:
+    column: faf
+    kind: numeric
+    text_label: Physical activity frequency
+    scale_note: 0 = none, 1 = 1-2 days/week, 2 = 2-4 days/week, 3 = 4-5 days/week
+  tue:
+    column: tue
+    kind: numeric
+    text_label: Daily time using technological devices
+    scale_note: 0 = 0-2 hours, 1 = 3-5 hours, 2 = more than 5 hours
+  calc:
+    column: calc
+    kind: categorical
+    text_label: Alcohol consumption
+    text_values:
+      'no': Never
+      Sometimes: Sometimes
+      Frequently: Frequently
+      Always: Always
+  mtrans:
+    column: mtrans
+    kind: categorical
+    text_label: Usual means of transport
+    text_values:
+      Public_Transportation: Public transportation
+      Walking: Walking
+      Automobile: Automobile
+      Motorbike: Motorbike
+      Bike: Bicycle
+outcomes:
+  obesity_class:
+    column: obesity_class
+    classes:
+    - Insufficient weight (BMI below 18.5)
+    - Normal weight (BMI 18.5-24.9)
+    - Overweight level I (BMI 25-27.4)
+    - Overweight level II (BMI 27.5-29.9)
+    - Obesity type I (BMI 30-34.9)
+    - Obesity type II (BMI 35-39.9)
+    - Obesity type III (BMI 40 or more)
+    mapping:
+      Insufficient_Weight: Insufficient weight (BMI below 18.5)
+      Normal_Weight: Normal weight (BMI 18.5-24.9)
+      Overweight_Level_I: Overweight level I (BMI 25-27.4)
+      Overweight_Level_II: Overweight level II (BMI 27.5-29.9)
+      Obesity_Type_I: Obesity type I (BMI 30-34.9)
+      Obesity_Type_II: Obesity type II (BMI 35-39.9)
+      Obesity_Type_III: Obesity type III (BMI 40 or more)
+    question: Based on these survey answers and anthropometrics, which obesity level (derived from body mass index)
+      does this person fall into?

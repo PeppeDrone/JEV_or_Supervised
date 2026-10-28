@@ -1,0 +1,78 @@
+version: 1
+# SENSITIVITY RUN, not part of the reported ladder.
+# Qwen/Qwen3.5-27B read with AnyJev L0 and the label prior switched OFF (rotation averaging only),
+# against the reported run (configs/study_qwen3.5_27b.yaml) that divides out the content-free prior at full strength.
+# Same seed, hold-out split, revision and AnyJev commit, so predictions are paired patient by patient.
+# Writes outside the outputs_qwen3.5_* pattern that scripts/plot_backbone_ladder.py globs, so the manuscript
+# figures and tables never pick it up; compare with scripts/compare_prior_sensitivity.py.
+seed: 20261008
+outer_folds: 5
+inner_folds: 3
+search_iterations: 8
+threads: 2
+min_class_count: 10
+bootstrap_iterations: 1000
+
+backbone:
+  model_id: Qwen/Qwen3.5-27B
+  revision: fc05daec18b0a78c049392ed2e771dde82bdf654
+  anyjev_commit: d458d13968eec0e2cfa8c81b64629b96cf5cb4a9
+  # L0 label prior: content_free (reported), batch (AnyJev default, alpha 0.75) or none (rotations only).
+  anyjev_prior: none
+  anyjev_batch: 2
+  anyjev_checkpoint_every: 10
+  llm_batch: 4
+  # Single GB10 (unified memory): no device_map, plain .cuda() placement as for the 0.8B-9B local runs.
+  deterministic_warn_only: true
+
+zero_shot_calibration_C: 1.0
+
+outputs_dir: outputs_sensitivity/qwen3.5_27b_prior_none
+
+probe:
+  layers: [32, 48, 64]
+  Cs: [0.0001, 0.001, 0.01, 0.1, 1.0]
+
+icl:
+  native_context: 262144
+  context_limit: 32768
+  yarn_factor: 1
+  margin_tokens: 256
+  margin_fraction: 0.02
+  min_per_class: 10
+  balanced: false
+  reuse: copy
+
+ensemble:
+  members: [M2, ZS_raw, ICL_full]
+
+holdout:
+  fraction: 0.2
+  inner_folds: 5
+  optuna_trials: 200
+  max_minutes: 60
+  threads: 5
+  bootstrap_iterations: 1000
+  sensitivity_seeds: 5
+  sensitivity_trials: 100
+  sensitivity_max_minutes: 20
+  full:
+    tuning_cap: 50000
+    optuna_trials: 100
+    max_minutes: 60
+  search_space:
+    max_depth: [2, 10]
+    learning_rate: [0.005, 0.3]
+    n_estimators: [50, 1500]
+    min_child_weight: [0.5, 50]
+    subsample: [0.5, 1.0]
+    colsample_bytree: [0.4, 1.0]
+    colsample_bylevel: [0.4, 1.0]
+    gamma: [0.0, 5.0]
+    reg_alpha: [0.001, 10]
+    reg_lambda: [0.01, 50]
+    max_bin: [64, 128, 256]
+    grow_policy: [depthwise, lossguide]
+    class_weight_exponent: [0.0, 1.0]
+    threshold: [0.05, 0.95]
+    prior_exponent: [0.0, 1.5]

@@ -1,0 +1,41 @@
+{
+  "dataset": "uci_support2",
+  "prepared_at": "2026-10-21T11:10:16.954758+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/880/data.csv",
+      "path": "datasets/uci_support2/raw/data.csv",
+      "sha256": "9da794bbd5c3a6a816e677cc17535e58c122d9ef4cbefd404489330a9f9cd2de",
+      "bytes": 2599071,
+      "retrieved": "2026-10-21T11:10:16.834826+00:00"
+    }
+  ],
+  "patients_csv_sha256": "56cde56ddb022c2d3662837be56d77f8484355ecab799c9a362c29d8011abf12",
+  "summary": {
+    "observations": 2500,
+    "predictors": 37,
+    "outcome": "hosp_death",
+    "excluded_predictors": [
+      "charges",
+      "d.time",
+      "death",
+      "sfdm2",
+      "slos",
+      "surv2m",
+      "surv6m",
+      "totcst",
+      "totmcst"
+    ],
+    "class_counts": {
+      "Discharged alive": 1852,
+      "Died in hospital": 648
+    },
+    "identifier_note": "UCI SUPPORT2; stratified subsample n=2500; survival times/costs excluded."
+  },
+  "readout_subsample": {
+    "n": 1000,
+    "from_n": 2500,
+    "seed": 20261008,
+    "method": "class-stratified, within the earlier stratified sample"
+  }
+}

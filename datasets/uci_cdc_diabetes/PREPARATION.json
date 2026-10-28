@@ -1,0 +1,30 @@
+{
+  "dataset": "uci_cdc_diabetes",
+  "prepared_at": "2026-10-21T11:10:43.699222+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/891/data.csv",
+      "path": "datasets/uci_cdc_diabetes/raw/data.csv",
+      "sha256": "9f71fda9d4ae5f4878c99b9233b6a16accfa9a17c194116a6b78100540934964",
+      "bytes": 13494568,
+      "retrieved": "2026-10-21T11:10:43.475867+00:00"
+    }
+  ],
+  "patients_csv_sha256": "e97bcbd9fa9c1bd24bc1fd48405c8aa32feab23fd0ea9390dca0e01d2d84ea09",
+  "summary": {
+    "observations": 3000,
+    "predictors": 21,
+    "outcome": "cdc_diabetes",
+    "class_counts": {
+      "No diabetes": 2582,
+      "Diabetes": 418
+    },
+    "identifier_note": "UCI CDC Diabetes Health Indicators; stratified subsample n=3000."
+  },
+  "readout_subsample": {
+    "n": 1000,
+    "from_n": 3000,
+    "seed": 20261008,
+    "method": "class-stratified, within the earlier stratified sample"
+  }
+}

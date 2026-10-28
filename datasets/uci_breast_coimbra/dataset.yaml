@@ -1,0 +1,66 @@
+name: uci_breast_coimbra
+description: UCI Breast Cancer Coimbra (116 women, 9 blood biomarkers). Binary cancer vs control.
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Woman attending the University Hospital Centre of Coimbra, Portugal (Patricio et al. 2018), either newly
+  diagnosed with breast cancer before treatment or a healthy control. The observations are age, body mass index
+  and fasting blood measurements of glucose, insulin and adipokines.
+observations_header: 'Anthropometrics and fasting blood measurements:'
+predictors:
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+  bmi:
+    column: bmi
+    kind: numeric
+    text_label: Body mass index
+    unit: kg/m^2
+  glucose:
+    column: glucose
+    kind: numeric
+    text_label: Fasting glucose
+    unit: mg/dL
+  insulin:
+    column: insulin
+    kind: numeric
+    text_label: Fasting insulin
+    unit: µU/mL
+  homa:
+    column: homa
+    kind: numeric
+    text_label: HOMA-IR insulin resistance index
+    scale_note: index, normal below about 2.5
+  leptin:
+    column: leptin
+    kind: numeric
+    text_label: Leptin
+    unit: ng/mL
+  adiponectin:
+    column: adiponectin
+    kind: numeric
+    text_label: Adiponectin
+    unit: µg/mL
+  resistin:
+    column: resistin
+    kind: numeric
+    text_label: Resistin
+    unit: ng/mL
+  mcp1:
+    column: mcp1
+    kind: numeric
+    text_label: Monocyte chemoattractant protein-1 (MCP-1)
+    unit: pg/dL
+outcomes:
+  breast_cancer:
+    column: breast_cancer
+    classes:
+    - Healthy control
+    - Breast cancer
+    mapping:
+      '0': Healthy control
+      '1': Breast cancer
+    question: Based on these anthropometrics and fasting blood measurements, does this woman have breast cancer?

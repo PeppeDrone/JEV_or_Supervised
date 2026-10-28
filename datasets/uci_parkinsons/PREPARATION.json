@@ -1,0 +1,24 @@
+{
+  "dataset": "uci_parkinsons",
+  "prepared_at": "2026-10-21T11:03:45.108791+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/parkinsons/parkinsons.data",
+      "path": "datasets/uci_parkinsons/raw/parkinsons.data",
+      "sha256": "a36116c2deac07895b79ce97a2f99a1b3720ac4892995ff5c3b9ccb397ed2bc5",
+      "bytes": 40697,
+      "retrieved": "2026-10-21T11:03:45.093639+00:00"
+    }
+  ],
+  "patients_csv_sha256": "ce421940679b795ff7acf79ad650096ac023a57a62b790cb11a2fbd9204ec08c",
+  "summary": {
+    "observations": 195,
+    "predictors": 22,
+    "outcome": "parkinsons",
+    "class_counts": {
+      "Healthy": 48,
+      "Parkinson disease": 147
+    },
+    "identifier_note": "UCI Parkinson's; voice measures, status 1=PD."
+  }
+}

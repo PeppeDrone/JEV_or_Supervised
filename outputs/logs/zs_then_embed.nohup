@@ -1,0 +1,74 @@
+2026-10-21T16:11:31+02:00 === phase 0: rebuild ProbeH on cached-embedding core datasets + finish embed where ZS_raw is ready ===
+2026-10-21T16:11:31+02:00 START cleveland_heart/heart_disease probe_h
+2026-10-21T16:25:52+02:00 OK cleveland_heart/heart_disease probe_h
+2026-10-21T16:25:52+02:00 START uci_heart_failure/mortality probe_h
+2026-10-21T16:39:03+02:00 OK uci_heart_failure/mortality probe_h
+2026-10-21T16:39:03+02:00 START uci_ilpd/liver_disease probe_h
+2026-10-21T17:10:29+02:00 OK uci_ilpd/liver_disease probe_h
+2026-10-21T17:10:29+02:00 START uci_hcv/hcv_category probe_h
+2026-10-21T19:54:29+02:00 OK uci_hcv/hcv_category probe_h
+2026-10-21T19:54:29+02:00 START uci_cervical/biopsy probe_h
+2026-10-21T20:22:21+02:00 OK uci_cervical/biopsy probe_h
+2026-10-21T20:22:21+02:00 START uci_mammographic_mass/malignancy probe_h
+2026-10-21T20:54:01+02:00 OK uci_mammographic_mass/malignancy probe_h
+2026-10-21T20:54:01+02:00 START uci_diabetes130/readmit_30d probe_h
+2026-10-21T22:10:20+02:00 OK uci_diabetes130/readmit_30d probe_h
+2026-10-21T22:10:20+02:00 START wids2021/diabetes_mellitus probe_h
+2026-10-21T23:50:53+02:00 OK wids2021/diabetes_mellitus probe_h
+2026-10-21T23:50:53+02:00 START uci_breast_coimbra/breast_cancer embed
+2026-10-21T23:51:44+02:00 FAIL uci_breast_coimbra/breast_cancer embed exit=0
+2026-10-21T23:51:44+02:00 START uci_hepatitis/died embed
+2026-10-22T00:00:52+02:00 OK uci_hepatitis/died embed
+2026-10-22T00:00:52+02:00 START uci_bone_marrow/bmt_died embed
+2026-10-22T00:10:56+02:00 OK uci_bone_marrow/bmt_died embed
+2026-10-22T00:10:56+02:00 START uci_haberman/died_5y embed
+2026-10-22T00:23:55+02:00 OK uci_haberman/died_5y embed
+2026-10-22T00:23:55+02:00 === phase 0 done ===
+2026-10-22T00:23:55+02:00 === phase 1: ALL zeroshot (ZS_raw / ZS_cal) ===
+2026-10-22T00:23:55+02:00 SKIP uci_breast_coimbra/breast_cancer zeroshot
+2026-10-22T00:23:55+02:00 SKIP uci_hepatitis/died zeroshot
+2026-10-22T00:23:55+02:00 SKIP uci_bone_marrow/bmt_died zeroshot
+2026-10-22T00:23:55+02:00 SKIP uci_haberman/died_5y zeroshot
+2026-10-22T00:23:55+02:00 START uci_breast_recurrence/recurrence zeroshot
+2026-10-22T00:24:57+02:00 OK uci_breast_recurrence/recurrence zeroshot
+2026-10-22T00:24:57+02:00 START uci_vertebral/pathology zeroshot
+2026-10-22T00:26:19+02:00 OK uci_vertebral/pathology zeroshot
+2026-10-22T00:26:19+02:00 START uci_cirrhosis/cirrhosis_died zeroshot
+2026-10-22T00:27:52+02:00 OK uci_cirrhosis/cirrhosis_died zeroshot
+2026-10-22T00:27:52+02:00 START uci_glioma/gbm zeroshot
+2026-10-22T00:30:16+02:00 OK uci_glioma/gbm zeroshot
+2026-10-22T00:30:16+02:00 START uci_maternal_risk/risk_level zeroshot
+2026-10-22T00:32:46+02:00 OK uci_maternal_risk/risk_level zeroshot
+2026-10-22T00:32:46+02:00 START uci_aids_cid/aids_event zeroshot
+2026-10-22T00:37:12+02:00 OK uci_aids_cid/aids_event zeroshot
+2026-10-22T00:37:12+02:00 START uci_support2/hosp_death zeroshot
+2026-10-22T00:45:47+02:00 OK uci_support2/hosp_death zeroshot
+2026-10-22T00:45:47+02:00 START uci_cdc_diabetes/cdc_diabetes zeroshot
+2026-10-22T00:51:42+02:00 OK uci_cdc_diabetes/cdc_diabetes zeroshot
+2026-10-22T00:51:42+02:00 === phase 1 done ===
+2026-10-22T00:51:42+02:00 === phase 2: ALL embed (Probe) / probe_h (ProbeH) ===
+2026-10-22T00:51:42+02:00 START uci_breast_coimbra/breast_cancer probe_h
+2026-10-22T00:51:42+02:00 FAIL uci_breast_coimbra/breast_cancer probe_h exit=0
+2026-10-22T00:51:42+02:00 SKIP uci_hepatitis/died embed (Probe+ProbeH present)
+2026-10-22T00:51:42+02:00 SKIP uci_bone_marrow/bmt_died embed (Probe+ProbeH present)
+2026-10-22T00:51:42+02:00 SKIP uci_haberman/died_5y embed (Probe+ProbeH present)
+2026-10-22T00:51:42+02:00 START uci_breast_recurrence/recurrence embed
+2026-10-22T01:05:44+02:00 OK uci_breast_recurrence/recurrence embed
+2026-10-22T01:05:44+02:00 START uci_vertebral/pathology embed
+2026-10-22T01:19:28+02:00 OK uci_vertebral/pathology embed
+2026-10-22T01:19:28+02:00 START uci_cirrhosis/cirrhosis_died embed
+2026-10-22T01:45:48+02:00 OK uci_cirrhosis/cirrhosis_died embed
+2026-10-22T01:45:48+02:00 START uci_glioma/gbm embed
+2026-10-22T02:21:04+02:00 OK uci_glioma/gbm embed
+2026-10-22T02:21:04+02:00 START uci_maternal_risk/risk_level embed
+2026-10-22T03:27:07+02:00 OK uci_maternal_risk/risk_level embed
+2026-10-22T03:27:07+02:00 START uci_aids_cid/aids_event embed
+2026-10-22T04:21:08+02:00 OK uci_aids_cid/aids_event embed
+2026-10-22T04:21:08+02:00 START uci_support2/hosp_death embed
+2026-10-22T05:23:35+02:00 OK uci_support2/hosp_death embed
+2026-10-22T05:23:35+02:00 START uci_cdc_diabetes/cdc_diabetes embed
+2026-10-22T06:31:42+02:00 OK uci_cdc_diabetes/cdc_diabetes embed
+2026-10-22T06:31:42+02:00 === phase 2 done ===
+2026-10-22T06:31:42+02:00 === final summary / complexity ===
+ZS_THEN_EMBED_DONE 2026-10-22T06:33:42+02:00
+2026-10-22T06:33:42+02:00 === finished ===

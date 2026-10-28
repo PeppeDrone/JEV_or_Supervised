@@ -1,0 +1,35 @@
+{
+  "dataset": "uci_dermatology",
+  "prepared_at": "2026-10-20T16:18:27.512552+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/33/data.csv",
+      "path": "datasets/uci_dermatology/raw/data.csv",
+      "sha256": "8702228ddfe36a0e816c3982340d70a4a28956024dfdceafdfd808584e949f32",
+      "bytes": 26705,
+      "retrieved": "cached"
+    },
+    {
+      "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/dermatology/dermatology.data",
+      "path": "datasets/uci_dermatology/raw/dermatology.data",
+      "sha256": "455eba77f72cd087ce54a5a266c514c5f34e85000c8689ad09e796d68ad45742",
+      "bytes": 25964,
+      "retrieved": "cached"
+    }
+  ],
+  "patients_csv_sha256": "388ebcc5ac88d4afd3b82e86d14a5af1cc7a54b18af3047534534d7cad28d438",
+  "summary": {
+    "observations": 366,
+    "predictors": 34,
+    "outcome": "dermatological_diagnosis",
+    "class_counts": {
+      "Psoriasis": 112,
+      "Seborrhoeic dermatitis": 61,
+      "Lichen planus": 72,
+      "Pityriasis rosea": 49,
+      "Chronic dermatitis": 52,
+      "Pityriasis rubra pilaris": 20
+    },
+    "identifier_note": "Patient names and id numbers were removed from the UCI dermatology release; record_id enumerates source rows."
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "dataset": "ppd_bangladesh",
+  "prepared_at": "2026-10-22T11:32:18.113998+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://data.mendeley.com/public-files/datasets/4nznnrk8cg/files/26c702d7-7cba-42f0-898f-ca7261f61955/file_downloaded",
+      "path": "datasets/ppd_bangladesh/raw/PPD_dataset_v3.csv",
+      "sha256": "451d6ed3c41ca4b5da235df5086913604ee0b700f0914f792ef7c5af54a4724a",
+      "bytes": 483135,
+      "retrieved": "2026-10-22T11:32:17.566519+00:00"
+    },
+    {
+      "url": "https://data.mendeley.com/public-files/datasets/4nznnrk8cg/files/1edfebe9-cc50-4819-8046-d13b2f49338d/file_downloaded",
+      "path": "datasets/ppd_bangladesh/raw/PPD_Data_Dictionary_v3.csv",
+      "sha256": "2a5c55df53135ca69b707a001c0d1f9a977d70bffdf74d468011043a6aaf0ac6",
+      "bytes": 14983,
+      "retrieved": "2026-10-22T11:32:18.053423+00:00"
+    }
+  ],
+  "patients_csv_sha256": "13e9884575838a793dbe7126eb6c6344925b93d627cff6dfcb8b0150141ee89b",
+  "summary": {
+    "observations": 800,
+    "predictors": 40,
+    "outcome": "ppd_high",
+    "excluded_predictors": [
+      "Angry after latest child birth",
+      "EPDS Score",
+      "Feeling about motherhood",
+      "Feeling bad about yourself or that you are a failure or have let yourself or your family down",
+      "Feeling down, depressed, or hopeless",
+      "Feeling for regular activities",
+      "Feeling tired or having little energy",
+      "Little interest or pleasure in doing things",
+      "Moving or speaking or restlessness",
+      "PHQ9 Result",
+      "PHQ9 Score",
+      "Poor appetite or overeating",
+      "Relax/sleep when newborn is tended ",
+      "Relax/sleep when the newborn is asleep",
+      "The thought of harming yourself has occurred ",
+      "Things have been getting to you",
+      "Thoughts that you would be better off dead, or of hurting yourself",
+      "Trouble falling or staying asleep, or sleeping too much",
+      "Worry about newborn",
+      "You have been able to laugh and see the funny side of things",
+      "You have been anxious or worried for no good reason",
+      "You have been so unhappy that you have been crying",
+      "You have been so unhappy that you have had difficulty sleeping",
+      "You have blamed myself unnecessarily when things went wrong",
+      "You have felt sad or miserable",
+      "You have felt scared or panicky for no good reason",
+      "You have looked forward with enjoyment to things",
+      "rouble concentrating on things"
+    ],
+    "class_counts": {
+      "EPDS not high": 450,
+      "EPDS high risk": 350
+    },
+    "identifier_note": "Mendeley 4nznnrk8cg v3 (Raisa & Kaiser). Y = EPDS Result High (score 13\u201330). Current EPDS/PHQ-9 items and postpartum mood/sleep items excluded."
+  }
+}

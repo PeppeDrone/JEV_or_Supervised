@@ -1,0 +1,85 @@
+name: berlin_appendicitis
+description: Berlin paediatric suspected appendicitis (590 children). Binary histopathology from blood counts, CRP,
+  and ultrasound diameter.
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Child or adolescent assessed in a paediatric surgery emergency department for suspected acute appendicitis
+  (Reismann et al. 2019, two consecutive cohorts). The observations are age, sex, the admission blood count with
+  differential, C-reactive protein, and the appendiceal diameter on ultrasound, all available before any operation.
+observations_header: 'Admission blood count, CRP and ultrasound:'
+predictors:
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+  sex:
+    column: sex
+    kind: categorical
+    text_label: Sex
+    text_values:
+      Male: Male
+      Female: Female
+  crp:
+    column: crp
+    kind: numeric
+    text_label: C-reactive protein
+    unit: mg/L
+  platelets:
+    column: platelets
+    kind: numeric
+    text_label: Platelets
+    unit: ×10^9/L
+  wbc:
+    column: wbc
+    kind: numeric
+    text_label: White blood cells
+    unit: ×10^9/L
+  neutrophils:
+    column: neutrophils
+    kind: numeric
+    text_label: Neutrophils
+    unit: ×10^9/L
+  immature_granulocytes:
+    column: immature_granulocytes
+    kind: numeric
+    text_label: Immature granulocytes
+    unit: ×10^9/L
+  lymphocytes:
+    column: lymphocytes
+    kind: numeric
+    text_label: Lymphocytes
+    unit: ×10^9/L
+  monocytes:
+    column: monocytes
+    kind: numeric
+    text_label: Monocytes
+    unit: ×10^9/L
+  eosinophils:
+    column: eosinophils
+    kind: numeric
+    text_label: Eosinophils
+    unit: ×10^9/L
+  basophils:
+    column: basophils
+    kind: numeric
+    text_label: Basophils
+    unit: ×10^9/L
+  appendix_diameter:
+    column: appendix_diameter
+    kind: numeric
+    text_label: Appendiceal diameter on ultrasound
+    unit: mm
+outcomes:
+  appendicitis:
+    column: appendicitis
+    classes:
+    - No appendicitis
+    - Acute appendicitis confirmed on histopathology
+    mapping:
+      '0': No appendicitis
+      '1': Acute appendicitis confirmed on histopathology
+    question: Based on this admission blood count, CRP and ultrasound, did this child have acute appendicitis confirmed
+      on histopathology?

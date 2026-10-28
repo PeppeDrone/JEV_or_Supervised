@@ -1,0 +1,135 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_diabetes130",
+  "outcome": "readmit_30d",
+  "data_hash": "9b90fb452b67b573f79c2d5ead08e960d3f2eee912b1fdb55526f71d65dff87a",
+  "dataset_spec_sha256": "7ec315a0061853e34bfd195d26114d0779c26c659a8f18c53972cfc8116cdf52",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261013,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "No 30-day readmission",
+    "30-day readmission"
+  ],
+  "predictor_columns": [
+    "race",
+    "gender",
+    "age",
+    "admission_type_id",
+    "time_in_hospital",
+    "num_lab_procedures",
+    "num_procedures",
+    "num_medications",
+    "number_outpatient",
+    "number_emergency",
+    "number_inpatient",
+    "number_diagnoses",
+    "max_glu_serum",
+    "a1c",
+    "metformin",
+    "insulin",
+    "change",
+    "diabetes_med"
+  ],
+  "zs_raw_csv_sha256": "e915c5e33bec3eb31800e1c1b6a4dcacbfdc48a4d47c91e2e9d189bd0903e94c",
+  "files": {
+    "split.json": "5c9b7dfa0ee46027f4e4a9a5e25d25f78388ef13aa592a0fd7966c39ea6247ce",
+    "trials.csv": "0fc609f1f66082510cfc31030af6039ae52ad48aac79b6d033f3477130339d00",
+    "XGB_optuna.csv": "904097eccda3469788311e515526268942e554b0b9e8a2f50ae2747e73126770",
+    "ZS_raw.csv": "aeb47c18960b0b97abedf5acfb9a75e9312bf9232db03bfe07af4a6ea0ba1e1b",
+    "model.joblib": "d72ecf6b6af75b8f8363b121d494f3228d300c3db3bacc1048455b02182f9e15",
+    "best_params.json": "0ca772b3231e21769d72a44a79d3dda79ff1ff711b1a49353a4fbdd8c796b4f6",
+    "metrics.json": "3e6c00ff3863bdb1e599249c5f8d366294caa80a6c1bfe9531d34571c706566a"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

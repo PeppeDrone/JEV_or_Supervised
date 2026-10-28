@@ -1,0 +1,131 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_hcv",
+  "outcome": "hcv_category",
+  "data_hash": "c85ae1ca22283653581f77c3d8cbbd64647ebfe8d96cedc15834cdba0299894a",
+  "dataset_spec_sha256": "a7b6aee0d8233980382d3bf2eced5a341d69c5ac7fec4afa166b915d028a2bf1",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261011,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "Blood donor",
+    "Hepatitis",
+    "Fibrosis",
+    "Cirrhosis"
+  ],
+  "predictor_columns": [
+    "age",
+    "sex",
+    "albumin",
+    "alkaline_phosphatase",
+    "alt",
+    "ast",
+    "bilirubin",
+    "cholinesterase",
+    "cholesterol",
+    "creatinine",
+    "ggt",
+    "protein"
+  ],
+  "zs_raw_csv_sha256": "0c711628cb1a5f1b63a376c94a90cea0e1502b7cc11b7f9a9cbf61df464884e3",
+  "files": {
+    "split.json": "4353aa96cd297d92cb9b4ac90063d0af8adb3fa9fe694864939fed8dff9defe2",
+    "trials.csv": "812eca1a2df7b8e035f3fbe29ef2eea3de500e3db4ee1d3d902c254ec771a94a",
+    "XGB_optuna.csv": "38c8ad737efd0f198bd90e31e84c59c99694e7cfb771fb0d7a1859b51effaf24",
+    "ZS_raw.csv": "c54928ca324c0c6bdc5746f2bab661a334ebea5ca7d620c8c8ad3d14db38d305",
+    "model.joblib": "b4a7e5308d90f658998c2a9b86719acc570f97086b85fbe8983f43e3ae77c6e8",
+    "best_params.json": "9a67a81268266770acb48e94b7da32cd04c2fce3640295b4efc56c87504c2748",
+    "metrics.json": "fe460c7774396fa6b475c78a38652c0631a342a9a88b9471452bbf866b6c79d1"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

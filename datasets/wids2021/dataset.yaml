@@ -1,0 +1,218 @@
+name: wids2021
+description: WiDS Datathon 2021 diabetes mellitus task (5000 ICU encounters after restricted predictor set and stratified
+  subsample).
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Adult admitted to an intensive care unit (WiDS Datathon 2021, GOSSIS database, 2014-2015, over 200 hospitals).
+  The observations are demographics, admission source and type, APACHE-related acuity measures from the first 24
+  hours (Glasgow Coma Scale components, ventilation, renal failure), and chronic comorbidities recorded at admission;
+  all glucose and HbA1c measurements are withheld.
+observations_header: 'ICU admission record (glucose measurements withheld):'
+predictors:
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+  bmi:
+    column: bmi
+    kind: numeric
+    text_label: Body mass index
+    unit: kg/m^2
+  elective_surgery:
+    column: elective_surgery
+    kind: categorical
+    text_label: Elective surgery
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ethnicity:
+    column: ethnicity
+    kind: categorical
+    text_label: Ethnicity
+    text_values:
+      African American: African American
+      Asian: Asian
+      Caucasian: Caucasian
+      Hispanic: Hispanic
+      Native American: Native American
+      Other/Unknown: Other or unknown
+  gender:
+    column: gender
+    kind: categorical
+    text_label: Sex
+    text_values:
+      M: Male
+      F: Female
+  height:
+    column: height
+    kind: numeric
+    text_label: Height
+    unit: cm
+  weight:
+    column: weight
+    kind: numeric
+    text_label: Weight
+    unit: kg
+  pre_icu_los_days:
+    column: pre_icu_los_days
+    kind: numeric
+    text_label: Pre-ICU length of stay
+    unit: days
+  bun_apache:
+    column: bun_apache
+    kind: numeric
+    text_label: BUN (APACHE)
+    unit: mg/dL
+  creatinine_apache:
+    column: creatinine_apache
+    kind: numeric
+    text_label: Creatinine (APACHE)
+    unit: mg/dL
+  sodium_apache:
+    column: sodium_apache
+    kind: numeric
+    text_label: Sodium (APACHE)
+    unit: mEq/L
+  wbc_apache:
+    column: wbc_apache
+    kind: numeric
+    text_label: White blood cell count (APACHE)
+    unit: 10^9/L
+  hematocrit_apache:
+    column: hematocrit_apache
+    kind: numeric
+    text_label: Hematocrit (APACHE)
+    unit: '%'
+  heart_rate_apache:
+    column: heart_rate_apache
+    kind: numeric
+    text_label: Heart rate (APACHE)
+    unit: beats/min
+  map_apache:
+    column: map_apache
+    kind: numeric
+    text_label: Mean arterial pressure (APACHE)
+    unit: mm Hg
+  resprate_apache:
+    column: resprate_apache
+    kind: numeric
+    text_label: Respiratory rate (APACHE)
+    unit: breaths/min
+  temp_apache:
+    column: temp_apache
+    kind: numeric
+    text_label: Temperature (APACHE)
+    unit: °C
+  gcs_eyes_apache:
+    column: gcs_eyes_apache
+    kind: numeric
+    text_label: Glasgow Coma Scale eye-opening component (worst in first 24 h)
+    scale_note: 1-4
+  gcs_motor_apache:
+    column: gcs_motor_apache
+    kind: numeric
+    text_label: Glasgow Coma Scale motor component (worst in first 24 h)
+    scale_note: 1-6
+  gcs_verbal_apache:
+    column: gcs_verbal_apache
+    kind: numeric
+    text_label: Glasgow Coma Scale verbal component (worst in first 24 h)
+    scale_note: 1-5
+  gcs_unable_apache:
+    column: gcs_unable_apache
+    kind: categorical
+    text_label: Glasgow Coma Scale could not be assessed (sedation)
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  intubated_apache:
+    column: intubated_apache
+    kind: categorical
+    text_label: Intubated at the time of the most extreme arterial blood gas
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ventilated_apache:
+    column: ventilated_apache
+    kind: categorical
+    text_label: Invasively ventilated during the first 24 hours
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  arf_apache:
+    column: arf_apache
+    kind: categorical
+    text_label: Acute renal failure (APACHE definition) in the first 24 hours
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  apache_post_operative:
+    column: apache_post_operative
+    kind: categorical
+    text_label: APACHE operative status
+    text_values:
+      '0': Non-operative
+      '1': Post-operative
+  aids:
+    column: aids
+    kind: categorical
+    text_label: AIDS
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  cirrhosis:
+    column: cirrhosis
+    kind: categorical
+    text_label: Cirrhosis
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  hepatic_failure:
+    column: hepatic_failure
+    kind: categorical
+    text_label: Hepatic failure
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  immunosuppression:
+    column: immunosuppression
+    kind: categorical
+    text_label: Immunosuppression
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  leukemia:
+    column: leukemia
+    kind: categorical
+    text_label: Leukaemia or myeloma
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  lymphoma:
+    column: lymphoma
+    kind: categorical
+    text_label: Lymphoma
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  solid_tumor_with_metastasis:
+    column: solid_tumor_with_metastasis
+    kind: categorical
+    text_label: Solid tumour with metastasis
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+outcomes:
+  diabetes_mellitus:
+    column: diabetes_mellitus
+    classes:
+    - No diagnosis of diabetes mellitus
+    - Pre-existing diagnosis of diabetes mellitus
+    mapping:
+      '0': No diagnosis of diabetes mellitus
+      '1': Pre-existing diagnosis of diabetes mellitus
+    question: Based on this ICU admission record, without any glucose or HbA1c measurement, does this patient have
+      a pre-existing diagnosis of diabetes mellitus?

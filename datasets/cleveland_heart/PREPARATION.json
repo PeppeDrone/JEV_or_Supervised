@@ -1,0 +1,31 @@
+{
+  "dataset": "cleveland_heart",
+  "prepared_at": "2026-10-20T16:18:27.496386+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/45/data.csv",
+      "path": "datasets/cleveland_heart/raw/data.csv",
+      "sha256": "316dc37996d07fac3264e9fb02a5341463256773c456b6cba0db51438b655778",
+      "bytes": 11030,
+      "retrieved": "cached"
+    },
+    {
+      "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data",
+      "path": "datasets/cleveland_heart/raw/processed.cleveland.data",
+      "sha256": "a74b7efa387bc9d108d7d0115d831fe9b414b29ae7124f331b622b4efa0427c8",
+      "bytes": 18461,
+      "retrieved": "cached"
+    }
+  ],
+  "patients_csv_sha256": "d63657ab587de938a323d30a3720d77d7144d441e8a233e080ab7c3503a38f71",
+  "summary": {
+    "observations": 303,
+    "predictors": 13,
+    "outcome": "heart_disease",
+    "class_counts": {
+      "No heart disease": 164,
+      "Heart disease": 139
+    },
+    "identifier_note": "Original patient identifiers were removed by the UCI donors and replaced with dummy values; record_id enumerates source rows and does not independently verify unique patients."
+  }
+}

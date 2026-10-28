@@ -1,0 +1,129 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_cirrhosis",
+  "outcome": "cirrhosis_died",
+  "data_hash": "11d518cfa2cf664a7a4eb4af77439d19754113c6a2a1f1400b37f22747966bc7",
+  "dataset_spec_sha256": "46d15aba5082714fc5d0aacb150330cb50e1ba00630fb899c312583bc8a4093f",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261008,
+  "n_trials_requested": 200,
+  "timeout_seconds": 3600.0,
+  "classes": [
+    "Alive / censored",
+    "Died"
+  ],
+  "predictor_columns": [
+    "age",
+    "drug",
+    "sex",
+    "ascites",
+    "hepatomegaly",
+    "spiders",
+    "edema",
+    "bilirubin",
+    "cholesterol",
+    "albumin",
+    "copper",
+    "alk_phos",
+    "sgot",
+    "triglycerides",
+    "platelets",
+    "prothrombin",
+    "stage"
+  ],
+  "zs_raw_csv_sha256": "3d9b76ccc73083cf4aa40a4342205d073c9a86bdb9da0cfb44c2d4de9a8a741e",
+  "files": {
+    "split.json": "7650753848a37f60b35203a6dc5fcf945e1ec1c1ca0603cac5d2dc3c1cf714d5",
+    "trials.csv": "a663d10cd6e37ca3cf056aa783983317a5bb69be7be9355e366e4273ec6fb546",
+    "XGB_optuna.csv": "bf97b6e7c7c70f70acfd115baa1e2da44ab7a2a297a6d6a78abea2d0b00a413e",
+    "ZS_raw.csv": "a1a6159995f7ba96beefe1a01a10b5f48d02f1d4e24238804cac5587e627c527",
+    "model.joblib": "06fc1178e641bfd1063901e35f96926ba116d8f40d9ee3039c461bdadcf3fc14",
+    "best_params.json": "76b7c3e495bbced36f739d94813a463d18c164b3b8c7b2b381a51d0ba283629a",
+    "metrics.json": "c59a95d223062cdaae254baba38510bdcb720deba27a125e787860ac7288aa12"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

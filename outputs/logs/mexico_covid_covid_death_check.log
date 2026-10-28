@@ -1,0 +1,1 @@
+mexico_covid/covid_death: 1000 labelled patients, 16 predictors, classes {'Alive': 844, 'Died': 156}, 5 outer folds -> outputs/mexico_covid/covid_death

@@ -1,0 +1,29 @@
+{"stage": "XGB_optuna", "trial": 0, "best": null}
+{"stage": "XGB_optuna", "trial": 10, "best": 0.6714423221885909}
+{"stage": "XGB_optuna", "trial": 20, "best": 0.6794757757444325}
+{"stage": "XGB_optuna", "trial": 40, "best": 0.7047831935891639}
+{"stage": "XGB_optuna", "trial": 50, "best": 0.7081567686045298}
+{"stage": "XGB_optuna", "trial": 60, "best": 0.7081567686045298}
+{"stage": "XGB_optuna", "trial": 70, "best": 0.7081567686045298}
+{"stage": "XGB_optuna", "done": true, "holdout_bacc": 0.6862154500354358, "zs_bacc": 0.6869241672572644}
+{"stage": "XGB_optuna", "trial": 0, "best": null}
+{"stage": "XGB_optuna", "trial": 20, "best": 0.6882379091334315}
+{"stage": "XGB_optuna", "trial": 30, "best": 0.6978298097701082}
+{"stage": "XGB_optuna", "trial": 60, "best": 0.6995260681827846}
+{"stage": "XGB_optuna", "done": true, "holdout_bacc": 0.7035790219702338, "zs_bacc": 0.73706591070163}
+{"stage": "XGB_optuna", "trial": 0, "best": null}
+{"stage": "XGB_optuna", "trial": 20, "best": 0.7176628512449408}
+{"stage": "XGB_optuna", "trial": 30, "best": 0.7176628512449408}
+{"stage": "XGB_optuna", "trial": 70, "best": 0.721512290915276}
+{"stage": "XGB_optuna", "done": true, "holdout_bacc": 0.6266832034018427, "zs_bacc": 0.6394401133947556}
+{"stage": "XGB_optuna", "trial": 0, "best": null}
+{"stage": "XGB_optuna", "trial": 10, "best": 0.7091514069126009}
+{"stage": "XGB_optuna", "trial": 30, "best": 0.7091514069126009}
+{"stage": "XGB_optuna", "trial": 60, "best": 0.7091514069126009}
+{"stage": "XGB_optuna", "trial": 70, "best": 0.7106020016467778}
+{"stage": "XGB_optuna", "done": true, "holdout_bacc": 0.6500708717221828, "zs_bacc": 0.666194188518781}
+{"stage": "XGB_optuna", "trial": 0, "best": null}
+{"stage": "XGB_optuna", "trial": 10, "best": 0.6780866452508245}
+{"stage": "XGB_optuna", "trial": 20, "best": 0.6878356855968796}
+{"stage": "XGB_optuna", "trial": 30, "best": 0.6878356855968796}
+{"stage": "XGB_optuna", "done": true, "holdout_bacc": 0.7088944011339475, "zs_bacc": 0.6334160170092134}

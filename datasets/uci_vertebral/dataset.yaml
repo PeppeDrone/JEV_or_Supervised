@@ -1,0 +1,55 @@
+name: uci_vertebral
+description: 'UCI Vertebral Column (Lyon; 310 patients). Six biomechanical sagittal-balance measurements of the
+  pelvis and lumbar spine. 3-class diagnosis: normal, disc hernia, spondylolisthesis.'
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Adult assessed in an orthopaedic spine clinic (Lyon, France) with standing lateral radiographs of the pelvis
+  and lumbar spine. The observations are six sagittal pelvic and spinal alignment measurements derived from the
+  radiograph.
+observations_header: 'Pelvic and lumbar sagittal alignment measurements:'
+predictors:
+  pelvic_incidence:
+    column: pelvic_incidence
+    kind: numeric
+    text_label: Pelvic incidence
+    unit: degrees
+  pelvic_tilt:
+    column: pelvic_tilt
+    kind: numeric
+    text_label: Pelvic tilt
+    unit: degrees
+  lumbar_lordosis_angle:
+    column: lumbar_lordosis_angle
+    kind: numeric
+    text_label: Lumbar lordosis angle
+    unit: degrees
+  sacral_slope:
+    column: sacral_slope
+    kind: numeric
+    text_label: Sacral slope
+    unit: degrees
+  pelvic_radius:
+    column: pelvic_radius
+    kind: numeric
+    text_label: Pelvic radius
+    unit: mm
+  degree_spondylolisthesis:
+    column: degree_spondylolisthesis
+    kind: numeric
+    text_label: Grade of spondylolisthesis (vertebral slip)
+    unit: '% of vertebral body width'
+outcomes:
+  pathology:
+    column: pathology
+    classes:
+    - Normal spine
+    - Disc hernia
+    - Spondylolisthesis
+    mapping:
+      Normal: Normal spine
+      Hernia: Disc hernia
+      Spondylolisthesis: Spondylolisthesis
+    question: 'Based on these pelvic and lumbar alignment measurements, which diagnosis does this patient have:
+      a normal spine, a lumbar disc hernia, or spondylolisthesis?'

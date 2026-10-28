@@ -1,0 +1,8 @@
+delta,measure,title,domain,n,spearman_rho,pvalue
+delta_zs_raw,complexity_F1,F1 inverse (feature overlap),feature,45,-0.6246376811594202,4.5186213536035754e-06
+delta_zs_raw,F2,F2 overlapping volume,feature,45,-0.02239789196310935,0.8838899722582754
+delta_zs_raw,N1,N1 borderline fraction,neighbourhood,45,-0.3088274044795784,0.039004724481388066
+delta_zs_raw,N2,N2 intra/inter NN ratio,neighbourhood,45,-0.2567852437417655,0.08860955702328299
+delta_zs_raw,C2,C2 imbalance ratio,class balance,45,-0.1816924142097038,0.23228048314529617
+delta_zs_raw,T2,T2 features / samples,dimensionality,45,0.1619289173776113,0.2879098268549595
+delta_zs_raw,missingness,Missingness rate,data quality,45,-0.27947355762185666,0.06299196576552603

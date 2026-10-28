@@ -1,0 +1,114 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_ilpd",
+  "outcome": "liver_disease",
+  "seed": 20261008,
+  "n_development": 466,
+  "n_holdout": 117,
+  "n_classes": 2,
+  "inner_folds": 5,
+  "trials_completed": 57,
+  "trials_pruned": 143,
+  "tuning_seconds": 39.177971601486206,
+  "best_params": {
+    "max_depth": 7,
+    "learning_rate": 0.04383905907250746,
+    "n_estimators": 1085,
+    "min_child_weight": 13.527975522109493,
+    "subsample": 0.6082665975219492,
+    "colsample_bytree": 0.4276741011549151,
+    "colsample_bylevel": 0.6059007990819748,
+    "gamma": 3.571455425278212,
+    "reg_alpha": 0.06742078020500408,
+    "reg_lambda": 0.08576563298849312,
+    "max_bin": 64,
+    "grow_policy": "lossguide",
+    "class_weight_exponent": 0.6550863088407571,
+    "threshold": 0.6293514987383917
+  },
+  "best_cv_balanced_accuracy": 0.7050951536026162,
+  "best_cv_sd": 0.08333819406232953,
+  "consensus_params": {
+    "max_depth": 5,
+    "learning_rate": 0.04383905907250746,
+    "n_estimators": 1028,
+    "min_child_weight": 1.9847865018485837,
+    "subsample": 0.7692969459553048,
+    "colsample_bytree": 0.48004857270442886,
+    "colsample_bylevel": 0.6898685552837405,
+    "gamma": 2.9860355569193566,
+    "reg_alpha": 1.0617444972080419,
+    "reg_lambda": 0.13765467752475036,
+    "max_bin": 128,
+    "grow_policy": "lossguide",
+    "class_weight_exponent": 0.7947136733406978,
+    "threshold": 0.6033346546745009
+  },
+  "holdout": {
+    "XGB_optuna": {
+      "balanced_accuracy": 0.7002126151665485,
+      "auroc": 0.7569099929128278,
+      "brier": 0.19249903302059576,
+      "log_loss": 0.556703050225966,
+      "macro_f1": 0.6192307692307693
+    },
+    "XGB_optuna_argmax": {
+      "balanced_accuracy": 0.6809000708717222,
+      "auroc": 0.7569099929128278,
+      "brier": 0.19249903302059576,
+      "log_loss": 0.556703050225966,
+      "macro_f1": 0.6388888888888888
+    },
+    "XGB_optuna_consensus": {
+      "balanced_accuracy": 0.7062367115520907,
+      "auroc": 0.7540751240255139,
+      "brier": 0.19809097129958209,
+      "log_loss": 0.563602908196503,
+      "macro_f1": 0.6271399985177499
+    },
+    "ZS_raw": {
+      "balanced_accuracy": 0.5,
+      "auroc": 0.7319277108433736,
+      "brier": 0.18923396553673494,
+      "log_loss": 0.5620563362901766,
+      "macro_f1": 0.415
+    },
+    "ZS_raw_prior_matched": {
+      "balanced_accuracy": 0.6385542168674698,
+      "auroc": 0.7319277108433736,
+      "brier": 0.18923396553673494,
+      "log_loss": 0.5620563362901766,
+      "macro_f1": 0.4826061320754717
+    }
+  },
+  "paired": {
+    "XGB_optuna_minus_ZS_raw": {
+      "delta_bacc": 0.20021261516654854,
+      "delta_bacc_ci": [
+        0.12137931417897176,
+        0.27764171813303634
+      ],
+      "delta_auroc": 0.024982282069454187,
+      "delta_auroc_ci": [
+        -0.07057782495124044,
+        0.1260591358400352
+      ],
+      "iterations": 1000
+    },
+    "XGB_optuna_minus_ZS_raw_prior_matched": {
+      "delta_bacc": 0.06165839829907871,
+      "delta_bacc_ci": [
+        -0.013829545454545471,
+        0.13391887592788967
+      ],
+      "delta_auroc": 0.024982282069454187,
+      "delta_auroc_ci": [
+        -0.07057782495124044,
+        0.1260591358400352
+      ],
+      "iterations": 1000
+    }
+  },
+  "cv_minus_holdout_balanced_accuracy": 0.004882538436067674,
+  "rescored_from": "outputs/uci_ilpd/liver_disease/holdout"
+}

@@ -1,0 +1,136 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_cdc_diabetes",
+  "outcome": "cdc_diabetes",
+  "data_hash": "be8f14737f9f58d544b9fe4d6ed6456bd6d3d6d4fee0a3b1a246e441b2e9b4bb",
+  "dataset_spec_sha256": "2eaa35c2b076a2603097b05ffcfc451458fdf204fbe36f1248b9b73f367653c0",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261008,
+  "n_trials_requested": 200,
+  "timeout_seconds": 3600.0,
+  "classes": [
+    "No diabetes",
+    "Diabetes"
+  ],
+  "predictor_columns": [
+    "highbp",
+    "highchol",
+    "cholcheck",
+    "bmi",
+    "smoker",
+    "stroke",
+    "heartdiseaseorattack",
+    "physactivity",
+    "fruits",
+    "veggies",
+    "hvyalcoholconsump",
+    "anyhealthcare",
+    "nodocbccost",
+    "genhlth",
+    "menthlth",
+    "physhlth",
+    "diffwalk",
+    "sex",
+    "age",
+    "education",
+    "income"
+  ],
+  "zs_raw_csv_sha256": "31ada174802ed417d16fb6dec8353b84969178f50ba1431516a2dd4c7d8a7eef",
+  "files": {
+    "split.json": "42bd0cab73286110efbce7e53f64f1278c770e53d3ba3b96710e33571bba822e",
+    "trials.csv": "46d4ef3fef4c20c31b8a78d57d9e8ae1ada0b13f96860839c9037764ea93f7cc",
+    "XGB_optuna.csv": "f447505003447e84270282d960fae00c23a4fb4a70df7f8588aee28a8aa51e2f",
+    "ZS_raw.csv": "3e7c31db11da533f6b2017c6b881852a415fc705ee955ba33beb3c813e1975b8",
+    "model.joblib": "f695cbf15b08e0aa56359f069354e5680a45ac7ab21a2277abf22c713f6a112a",
+    "best_params.json": "9798b8e1018390bef0d61638ec986704bedc6ee117d22b0cdc0e9e4b91567632",
+    "metrics.json": "6c9e01dce568acc8fb5f83be5dad6eadc3d3c5e6534c7c9a12e770576ba767ca"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  },
+  "zs_raw_source": "predictions/ZS_raw_holdout.csv",
+  "rescored_from": "outputs/uci_cdc_diabetes/cdc_diabetes/holdout",
+  "source_data_hash": "3aea3ce60b07016f9b2463aeb481865293d91bc24b47d53da595d0f0b26aaa8a"
+}

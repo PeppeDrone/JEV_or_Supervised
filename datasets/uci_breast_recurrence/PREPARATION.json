@@ -1,0 +1,24 @@
+{
+  "dataset": "uci_breast_recurrence",
+  "prepared_at": "2026-10-21T11:10:24.926411+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/14/data.csv",
+      "path": "datasets/uci_breast_recurrence/raw/data.csv",
+      "sha256": "a97b0fa611429d057b021b5edda3f9f5791de0e01ddcac76bb045be4199fe749",
+      "bytes": 19213,
+      "retrieved": "2026-10-21T11:10:24.912363+00:00"
+    }
+  ],
+  "patients_csv_sha256": "a772509dd164ea9965c5dba4445909abc485579012725d7c17c574cf51f798a2",
+  "summary": {
+    "observations": 286,
+    "predictors": 9,
+    "outcome": "recurrence",
+    "class_counts": {
+      "No recurrence": 201,
+      "Recurrence": 85
+    },
+    "identifier_note": "UCI Breast Cancer (Ljubljana); recurrence-events endpoint."
+  }
+}

@@ -1,0 +1,177 @@
+/home/airlab/Desktop/JEV_prediction_testing_v2/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:635: UserWarning: Skipping features without any observed values: ['age' 'menopause' 'tumor_size' 'inv_nodes' 'node_caps' 'breast'
+ 'breast_quad' 'irradiat']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/home/airlab/Desktop/JEV_prediction_testing_v2/scripts/analyse_uci_complexity_gaps.py:531: UserWarning: complexity_vs_delta_probe: text outside canvas: 'N2 intra/inter NN ratio\n(mean intra-class NN dist / mean int'; text outside canvas: '1.25'; text outside canvas: 'wins 4/13; OR/unit = 0.13; LRT p = 0.432'
+  fs.save(fig, out.parent, stem)
+/home/airlab/Desktop/JEV_prediction_testing_v2/scripts/analyse_uci_complexity_gaps.py:531: UserWarning: complexity_vs_delta_probe_hybrid: text outside canvas: 'N2 intra/inter NN ratio\n(mean intra-class NN dist / mean int'; text outside canvas: '1.25'; text outside canvas: 'wins 6/12; OR/unit = 0.089; LRT p = 0.357'
+  fs.save(fig, out.parent, stem)
+/home/airlab/Desktop/JEV_prediction_testing_v2/scripts/analyse_uci_complexity_gaps.py:531: UserWarning: complexity_vs_delta_zs_raw: text outside canvas: 'N2 intra/inter NN ratio\n(mean intra-class NN dist / mean int'; text outside canvas: '1.25'; text outside canvas: 'wins 1/17; OR/unit = 2.4e+07; LRT p = 0.112'
+  fs.save(fig, out.parent, stem)
+              dataset                  outcome               label    n  n_classes  n_features_numeric       F1  complexity_F1       F2       N1       N2        C2       T2  missingness  auroc_M2  auroc_Probe  auroc_ProbeH  auroc_ZS_raw  delta_probe  delta_probe_h  delta_zs_raw
+      cleveland_heart            heart_disease     Cleveland heart  303          2                   6 0.507444       0.663375 0.770643 0.300330 0.875014  1.179856 0.019802     0.001523  0.900597     0.893797      0.893095      0.865810     0.006799       0.007501      0.034787
+              uci_ckd               ckd_status                 CKD  400          2                  14 1.521890       0.396528 0.003747 0.032500 0.994675  1.666667 0.035000     0.105417  0.999920     0.998000      0.997173      0.969880     0.001920       0.002747      0.030040
+      uci_dermatology dermatological_diagnosis         Dermatology  366          6                  33 8.496642       0.105300 0.471493 0.051913 0.794324  5.600000 0.090164     0.000643  0.997593     0.993726      0.996379      0.706288     0.003866       0.001214      0.291305
+              uci_hcv             hcv_category                 HCV  608          4                  11 0.900399       0.526205 0.476189 0.087171 0.518542 25.380952 0.018092     0.004249  0.973801     0.979795      0.972980      0.644605    -0.005994       0.000821      0.329196
+uci_mammographic_mass               malignancy         Mammography  961          2                   1 0.924332       0.519661 0.743590 0.422477 0.323011  1.159551 0.001041     0.041623  0.863250     0.871738      0.871538      0.829738    -0.008488      -0.008288      0.033512
+             uci_wdbc                diagnosis         WDBC breast  569          2                  30 2.043667       0.328551 0.455498 0.047452 0.794144  1.683962 0.052724     0.000000  0.992099     0.964761      0.992310      0.838909     0.027337      -0.000211      0.153190
+          uci_thyroid       hypothyroid_status             Thyroid 3163          2                   7 1.564815       0.389892 0.329422 0.024028 0.358313 19.947020 0.002213     0.067392  0.989643     0.983901      0.992942      0.960467     0.005742      -0.003299      0.029176
+       uci_arrhythmia         arrhythmia_class          Arrhythmia  429          8                 278 0.438499       0.695169 0.578805 0.447552 0.994656 18.846154 0.648019     0.003283  0.888592     0.776727      0.886282      0.648749     0.111865       0.002310      0.239843
+    uci_heart_failure                mortality       Heart failure  299          2                   6 0.190872       0.839721 0.744786 0.324415 0.884418  2.114583 0.020067     0.000000  0.780634     0.785509      0.782379      0.717544    -0.004875      -0.001745      0.063090
+             uci_ilpd            liver_disease          ILPD liver  583          2                   9 0.191810       0.839060 0.299530 0.370497 1.035014  2.491018 0.015437     0.000686  0.715814     0.740730      0.739737      0.724443    -0.024917      -0.023923     -0.008629
+      uci_diabetes130              readmit_30d Diabetes130 readmit 4000          2                   8 0.031857       0.969127 0.688525 0.168750 0.748023 10.142061 0.002000     0.097889  0.583521     0.577360      0.593680      0.557591     0.006161      -0.010159      0.025930
+         uci_cervical                   biopsy     Cervical biopsy  858          2                  10 0.047936       0.954257 0.522145 0.106061 0.687643 14.600000 0.011655     0.082308  0.942058     0.921974      0.935650      0.864814     0.020084       0.006408      0.077244
+             wids2021        diabetes_mellitus   WiDS2021 diabetes 5000          2                  17 0.036662       0.964635 0.969129 0.313000 0.937416  3.625347 0.003400     0.039469  0.689767     0.661638           NaN      0.630935     0.028129            NaN      0.058832
+   uci_breast_coimbra            breast_cancer      Coimbra breast  116          2                   9 0.201097       0.832572 0.600290 0.336207 0.924348  1.230769 0.077586     0.000000  0.780649          NaN           NaN      0.488582          NaN            NaN      0.292067
+   uci_early_diabetes                 diabetes      Early diabetes  520          2                   1 0.050320       0.952091 0.621622 0.376923 0.460656  1.600000 0.001923     0.000000  0.987672          NaN           NaN      0.894563          NaN            NaN      0.093109
+           uci_spectf                 abnormal        SPECTF heart  267          2                  44 0.368480       0.730738 0.380919 0.292135 1.099260  3.854545 0.164794     0.000000  0.826244          NaN           NaN      0.654717          NaN            NaN      0.171527
+        uci_hepatitis                     died  Hepatitis survival  155          2                   6 0.560710       0.640734 0.591425 0.277419 0.818609  3.843750 0.038710     0.056706  0.844512          NaN           NaN      0.699314          NaN            NaN      0.145198
+          uci_obesity            obesity_class       Obesity class 2111          7                   8 1.961869       0.337625 0.648483 0.189010 0.615271  1.290441 0.003790     0.000000  0.998060          NaN           NaN           NaN          NaN            NaN           NaN
+      uci_bone_marrow                 bmt_died        BMT survival  187          2                   9 0.157590       0.863864 0.097453 0.406417 0.860199  1.200000 0.048128     0.012376  0.868512          NaN           NaN           NaN          NaN            NaN           NaN
+       uci_parkinsons               parkinsons           Parkinson  195          2                  22 0.982519       0.504409 0.385283 0.112821 0.841465  3.062500 0.112821     0.000000  0.960176          NaN           NaN           NaN          NaN            NaN           NaN
+         uci_haberman                  died_5y   Haberman survival  306          2                   3 0.130348       0.884683 0.895328 0.287582 0.840937  2.777778 0.009804     0.000000  0.662990          NaN           NaN           NaN          NaN            NaN           NaN
+        uci_mi_lethal                   lethal           MI lethal 1700          2                  12 0.139045       0.877929 0.735393 0.208235 0.866496  5.273063 0.007059     0.084653  0.929925          NaN           NaN           NaN          NaN            NaN           NaN
+    uci_maternal_risk               risk_level       Maternal risk 1014          3                   6 0.586166       0.630451 0.728945 0.267258 0.446805  1.492647 0.005917     0.000000  0.939508          NaN           NaN           NaN          NaN            NaN           NaN
+    uci_thyroid_recur                 recurred       Thyroid recur  383          2                   1 0.301723       0.768213 0.955224 0.383812 0.619048  2.546296 0.002611     0.000000  0.989663          NaN           NaN           NaN          NaN            NaN           NaN
+        uci_cirrhosis           cirrhosis_died     Cirrhosis death  418          2                  11 0.306343       0.765495 0.764387 0.320574 0.905942  1.596273 0.026316     0.144807  0.843005          NaN           NaN           NaN          NaN            NaN           NaN
+         uci_support2               hosp_death      SUPPORT2 death 2500          2                  26 0.277698       0.782657 0.758072 0.219600 0.915094  2.858025 0.010400     0.122151  0.940193          NaN           NaN           NaN          NaN            NaN           NaN
+         uci_aids_cid               aids_event          AIDS event 2139          2                   5 0.066356       0.937773 0.792494 0.354371 0.908168  3.105566 0.002338     0.000000  0.691469          NaN           NaN           NaN          NaN            NaN           NaN
+           uci_glioma                      gbm          Glioma GBM  839          2                   1 1.590349       0.386048 0.871778 0.343266 0.468040  1.383523 0.001192     0.000000  0.915024          NaN           NaN           NaN          NaN            NaN           NaN
+      uci_retinopathy              retinopathy         Retinopathy 1151          2                  16 0.113233       0.898284 0.447781 0.392702 0.953210  1.131481 0.013901     0.000000  0.755092          NaN           NaN           NaN          NaN            NaN           NaN
+ uci_cardiotocography                      nsp    CTG fetal status 2126          3                  21 0.734749       0.576452 0.719530 0.099247 0.663311  9.403409 0.009878     0.000000  0.987950          NaN           NaN           NaN          NaN            NaN           NaN
+         uci_thoracic                  died_1y   Thoracic 1y death  470          2                   3 0.016202       0.984057 0.713903 0.217021 0.707151  5.714286 0.006383     0.000000  0.600786          NaN           NaN           NaN          NaN            NaN           NaN
+     uci_wbc_original                malignant        WBC original  699          2                   9 4.386492       0.185650 0.856418 0.041488 0.376452  1.900415 0.012876     0.002543  0.990804          NaN           NaN           NaN          NaN            NaN           NaN
+        uci_vertebral                pathology      Vertebral path  310          3                   6 1.720333       0.367602 0.459347 0.235484 0.927228  2.500000 0.019355     0.000000  0.948410          NaN           NaN           NaN          NaN            NaN           NaN
+           uci_autism                      asd       Autism screen  704          2                   1 0.022129       0.978350 0.120219 0.342330 0.963889  2.724868 0.001420     0.015152  0.995993          NaN           NaN           NaN          NaN            NaN           NaN
+uci_breast_recurrence               recurrence        Breast recur  286          2                   1 0.460560       0.684669 1.000000 0.297203 0.000000  2.364706 0.003497     0.003497  0.701083          NaN           NaN           NaN          NaN            NaN           NaN
+     uci_cdc_diabetes             cdc_diabetes        CDC diabetes 3000          2                   4 0.265310       0.790320 0.971803 0.209000 0.669062  6.177033 0.001333     0.000000  0.827661          NaN           NaN           NaN          NaN            NaN           NaN
+
+Logistic (improved = LLM AUROC > XGB):
+        delta       measure                        title         domain  n  n_win  coef_per_unit  odds_ratio_per_unit  lrt_pvalue
+  delta_probe complexity_F1 F1 inverse (feature overlap)        feature 13      4       1.066193         2.904302e+00    0.642970
+  delta_probe            F2        F2 overlapping volume        feature 13      4       0.596014         1.814870e+00    0.813641
+  delta_probe            N1       N1 borderline fraction  neighbourhood 13      4       6.301838         5.455736e+02    0.133848
+  delta_probe            N2      N2 intra/inter NN ratio  neighbourhood 13      4      -2.058639         1.276275e-01    0.432229
+  delta_probe            C2           C2 imbalance ratio  class balance 13      4      -0.012160         9.879134e-01    0.869928
+  delta_probe            T2        T2 features / samples dimensionality 13      4     -29.903855         1.030198e-13    0.192263
+  delta_probe   missingness             Missingness rate   data quality 13      4     -28.755427         3.248454e-13    0.135042
+delta_probe_h complexity_F1 F1 inverse (feature overlap)        feature 12      6       1.382907         3.986472e+00    0.541347
+delta_probe_h            F2        F2 overlapping volume        feature 12      6       1.633995         5.124308e+00    0.552558
+delta_probe_h            N1       N1 borderline fraction  neighbourhood 12      6       2.309220         1.006657e+01    0.537337
+delta_probe_h            N2      N2 intra/inter NN ratio  neighbourhood 12      6      -2.414154         8.944298e-02    0.357278
+delta_probe_h            C2           C2 imbalance ratio  class balance 12      6      -0.074579         9.281341e-01    0.299940
+delta_probe_h            T2        T2 features / samples dimensionality 12      6     -36.662119         1.196311e-16    0.073582
+delta_probe_h   missingness             Missingness rate   data quality 12      6       1.011503         2.749731e+00    0.942839
+ delta_zs_raw complexity_F1 F1 inverse (feature overlap)        feature 17      1       4.186216         6.577343e+01    0.432343
+ delta_zs_raw            F2        F2 overlapping volume        feature 17      1      -4.967751         6.958784e-03    0.266753
+ delta_zs_raw            N1       N1 borderline fraction  neighbourhood 17      1      11.709212         1.216875e+05    0.266830
+ delta_zs_raw            N2      N2 intra/inter NN ratio  neighbourhood 17      1      16.973312         2.351882e+07    0.111943
+ delta_zs_raw            C2           C2 imbalance ratio  class balance 17      1      -0.212974         8.081774e-01    0.438665
+ delta_zs_raw            T2        T2 features / samples dimensionality 17      1     -22.348010         1.969621e-10    0.502832
+ delta_zs_raw   missingness             Missingness rate   data quality 17      1    -218.869953         8.830539e-96    0.277924
+
+Spearman (continuous delta):
+        delta       measure                        title         domain  n  spearman_rho   pvalue
+  delta_probe complexity_F1 F1 inverse (feature overlap)        feature 13      0.186813 0.541124
+  delta_probe            F2        F2 overlapping volume        feature 13      0.313187 0.297438
+  delta_probe            N1       N1 borderline fraction  neighbourhood 13     -0.043956 0.886619
+  delta_probe            N2      N2 intra/inter NN ratio  neighbourhood 13      0.109890 0.720810
+  delta_probe            C2           C2 imbalance ratio  class balance 13      0.208791 0.493622
+  delta_probe            T2        T2 features / samples dimensionality 13      0.258242 0.394284
+  delta_probe   missingness             Missingness rate   data quality 13      0.035763 0.907661
+delta_probe_h complexity_F1 F1 inverse (feature overlap)        feature 12     -0.125874 0.696683
+delta_probe_h            F2        F2 overlapping volume        feature 12      0.132867 0.680598
+delta_probe_h            N1       N1 borderline fraction  neighbourhood 12     -0.181818 0.571701
+delta_probe_h            N2      N2 intra/inter NN ratio  neighbourhood 12      0.167832 0.602099
+delta_probe_h            C2           C2 imbalance ratio  class balance 12     -0.041958 0.896986
+delta_probe_h            T2        T2 features / samples dimensionality 12      0.510490 0.089914
+delta_probe_h   missingness             Missingness rate   data quality 12      0.087566 0.786694
+ delta_zs_raw complexity_F1 F1 inverse (feature overlap)        feature 17     -0.225490 0.384197
+ delta_zs_raw            F2        F2 overlapping volume        feature 17     -0.014706 0.955327
+ delta_zs_raw            N1       N1 borderline fraction  neighbourhood 17      0.026961 0.918191
+ delta_zs_raw            N2      N2 intra/inter NN ratio  neighbourhood 17      0.039216 0.881214
+ delta_zs_raw            C2           C2 imbalance ratio  class balance 17      0.193627 0.456497
+ delta_zs_raw            T2        T2 features / samples dimensionality 17      0.634804 0.006189
+ delta_zs_raw   missingness             Missingness rate   data quality 17     -0.501279 0.040373
+
+Wrote /home/airlab/Desktop/JEV_prediction_testing_v2/outputs/combined/complexity
+/home/airlab/Desktop/JEV_prediction_testing_v2/scripts/analyse_uci_complexity_gaps.py:538: UserWarning: complexity_vs_delta_probe: text outside canvas: 'N2 intra/inter NN ratio\n(mean intra-class NN dist / mean int'; text outside canvas: '1.2'; text outside canvas: 'wins 6/20; OR/unit = 1.2; LRT p = 0.959'
+  fs.save(fig, out.parent, stem)
+/home/airlab/Desktop/JEV_prediction_testing_v2/scripts/analyse_uci_complexity_gaps.py:538: UserWarning: complexity_vs_delta_probe_hybrid: text outside canvas: 'N2 intra/inter NN ratio\n(mean intra-class NN dist / mean int'; text outside canvas: '1.2'; text outside canvas: 'wins 7/19; OR/unit = 0.44; LRT p = 0.761'
+  fs.save(fig, out.parent, stem)
+/home/airlab/Desktop/JEV_prediction_testing_v2/scripts/analyse_uci_complexity_gaps.py:538: UserWarning: complexity_vs_delta_zs_raw: text outside canvas: 'N2 intra/inter NN ratio\n(mean intra-class NN dist / mean int'; text outside canvas: '1.2'; text outside canvas: 'wins 2/20; OR/unit = 1.5e+05; LRT p = 0.154'
+  fs.save(fig, out.parent, stem)
+              dataset           outcome               label    n  n_classes  n_features_numeric  n_features_encoded       F1  complexity_F1       F2       N1       N2        C2       T2  missingness  auroc_M2  auroc_Probe  auroc_ProbeH  auroc_ZS_raw  delta_probe  delta_probe_h  delta_zs_raw
+      cleveland_heart     heart_disease     Cleveland heart  303          2                  13                  13 0.556864       0.642317 0.886703 0.227723 0.868394  1.179856 0.042904     0.001523  0.900597     0.893797      0.893095      0.865810     0.006799       0.007501      0.034787
+              uci_hcv      hcv_category                 HCV  608          4                  12                  12 0.834206       0.545195 0.506560 0.087171 0.550693 25.380952 0.019737     0.004249  0.973801     0.979795      0.972998      0.644605    -0.005994       0.000803      0.329196
+uci_mammographic_mass        malignancy         Mammography  961          2                   4                   4 1.137940       0.467740 0.928610 0.293444 0.587974  1.159551 0.004162     0.041623  0.863250     0.871738      0.871703      0.829738    -0.008488      -0.008453      0.033512
+    uci_heart_failure         mortality       Heart failure  299          2                  11                  11 0.108580       0.902055 0.851528 0.374582 0.912705  2.114583 0.036789     0.000000  0.780634     0.785509      0.784380      0.717544    -0.004875      -0.003746      0.063090
+             uci_ilpd     liver_disease          ILPD liver  583          2                  10                  10 0.175820       0.850470 0.337906 0.361921 1.023420  2.491018 0.017153     0.000686  0.715814     0.740730      0.739435      0.724443    -0.024917      -0.023621     -0.008629
+      uci_diabetes130       readmit_30d Diabetes130 readmit 4000          2                  18                  43 0.009045       0.991036 0.258051 0.160500 0.782417 10.142061 0.004500     0.097889  0.583521     0.577360      0.593680      0.557591     0.006161      -0.010159      0.025930
+         uci_cervical            biopsy     Cervical biopsy  858          2                  29                  29 0.448468       0.690384 0.001014 0.062937 0.425213 14.600000 0.033800     0.082308  0.942058     0.921974      0.935650      0.864814     0.020084       0.006408      0.077244
+             wids2021 diabetes_mellitus   WiDS2021 diabetes 5000          2                  32                  37 0.020268       0.980134 0.467109 0.314000 0.928849  3.625347 0.006400     0.039469  0.689767     0.661638      0.679708      0.630935     0.028129       0.010059      0.058832
+   uci_breast_coimbra     breast_cancer      Coimbra breast  116          2                   9                   9 0.201097       0.832572 0.600290 0.336207 0.924348  1.230769 0.077586     0.000000  0.780649     0.750300           NaN      0.488582     0.030349            NaN      0.292067
+        uci_hepatitis              died  Hepatitis survival  155          2                  19                  19 0.495916       0.668487 0.197874 0.174194 0.789253  3.843750 0.122581     0.056706  0.844512     0.816057      0.832063      0.699314     0.028455       0.012449      0.145198
+      uci_bone_marrow          bmt_died        BMT survival  187          2                  35                  39 0.072793       0.932147 0.285594 0.465241 0.985933  1.200000 0.187166     0.012376  0.868512     0.779815      0.807497      0.556113     0.088697       0.061015      0.312399
+         uci_haberman           died_5y   Haberman survival  306          2                   3                   3 0.130348       0.884683 0.895328 0.294118 0.841055  2.777778 0.009804     0.000000  0.662990     0.691962      0.691797      0.719973    -0.028971      -0.028807     -0.056982
+    uci_maternal_risk        risk_level       Maternal risk 1014          3                   6                   6 0.586166       0.630451 0.728945 0.267258 0.446372  1.492647 0.005917     0.000000  0.939508     0.931464      0.945967      0.637323     0.008044      -0.006459      0.302186
+        uci_cirrhosis    cirrhosis_died     Cirrhosis death  418          2                  17                  27 0.202440       0.831642 0.014951 0.315789 0.895422  1.596273 0.040670     0.144807  0.843005     0.822655      0.818377      0.796457     0.020349       0.024627      0.046548
+         uci_support2        hosp_death      SUPPORT2 death 2500          2                  37                  58 0.241480       0.805490 0.883237 0.213200 0.882929  2.858025 0.014800     0.122151  0.940193     0.888671      0.941616      0.785471     0.051522      -0.001423      0.154722
+         uci_aids_cid        aids_event          AIDS event 2139          2                  19                  19 0.049093       0.953204 0.940632 0.330528 0.909307  3.105566 0.008883     0.000000  0.691469     0.661107      0.664449      0.517766     0.030361       0.027020      0.173703
+           uci_glioma               gbm          Glioma GBM  839          2                  23                  26 0.340015       0.746260 0.118749 0.202622 0.701281  1.383523 0.027414     0.000000  0.915024     0.913944      0.912539      0.485034     0.001079       0.002485      0.429989
+        uci_vertebral         pathology      Vertebral path  310          3                   6                   6 1.720333       0.367602 0.459347 0.235484 0.927228  2.500000 0.019355     0.000000  0.948410     0.898215      0.937454      0.651132     0.050195       0.010957      0.297279
+uci_breast_recurrence        recurrence        Breast recur  286          2                   9                  36 0.064141       0.939725 0.100000 0.374126 0.929075  2.364706 0.031469     0.003497  0.701083     0.717735      0.700585      0.698186    -0.016652       0.000498      0.002897
+     uci_cdc_diabetes      cdc_diabetes        CDC diabetes 3000          2                  21                  21 0.213726       0.823909 0.994567 0.195667 0.778207  6.177033 0.007000     0.000000  0.827661     0.807345      0.809234      0.769020     0.020316       0.018427      0.058641
+
+Logistic (improved = LLM AUROC > XGB):
+        delta       measure                        title         domain  n  n_win  coef_per_unit  odds_ratio_per_unit  lrt_pvalue
+  delta_probe complexity_F1 F1 inverse (feature overlap)        feature 20      6      -0.447744         6.390681e-01    0.874224
+  delta_probe            F2        F2 overlapping volume        feature 20      6       1.037762         2.822893e+00    0.481305
+  delta_probe            N1       N1 borderline fraction  neighbourhood 20      6       5.217553         1.844823e+02    0.315331
+  delta_probe            N2      N2 intra/inter NN ratio  neighbourhood 20      6       0.147930         1.159432e+00    0.958997
+  delta_probe            C2           C2 imbalance ratio  class balance 20      6       0.057607         1.059299e+00    0.469388
+  delta_probe            T2        T2 features / samples dimensionality 20      6     -21.071556         7.058939e-10    0.215127
+  delta_probe   missingness             Missingness rate   data quality 20      6     -25.888177         5.713570e-12    0.101634
+delta_probe_h complexity_F1 F1 inverse (feature overlap)        feature 19      7       1.006209         2.735211e+00    0.715265
+delta_probe_h            F2        F2 overlapping volume        feature 19      7       2.637604         1.397967e+01    0.076566
+delta_probe_h            N1       N1 borderline fraction  neighbourhood 19      7       3.293199         2.692887e+01    0.498233
+delta_probe_h            N2      N2 intra/inter NN ratio  neighbourhood 19      7      -0.831278         4.354922e-01    0.761479
+delta_probe_h            C2           C2 imbalance ratio  class balance 19      7      -0.088450         9.153487e-01    0.375387
+delta_probe_h            T2        T2 features / samples dimensionality 19      7     -71.094347         1.330815e-31    0.028211
+delta_probe_h   missingness             Missingness rate   data quality 19      7       4.110700         6.098937e+01    0.689595
+ delta_zs_raw complexity_F1 F1 inverse (feature overlap)        feature 20      2       4.858583         1.288415e+02    0.372322
+ delta_zs_raw            F2        F2 overlapping volume        feature 20      2       0.945849         2.575000e+00    0.675503
+ delta_zs_raw            N1       N1 borderline fraction  neighbourhood 20      2       8.271233         3.909767e+03    0.318243
+ delta_zs_raw            N2      N2 intra/inter NN ratio  neighbourhood 20      2      11.938920         1.531112e+05    0.154237
+ delta_zs_raw            C2           C2 imbalance ratio  class balance 20      2      -0.133307         8.751960e-01    0.541379
+ delta_zs_raw            T2        T2 features / samples dimensionality 20      2     -49.239400         4.126674e-22    0.274673
+ delta_zs_raw   missingness             Missingness rate   data quality 20      2    -404.475902        2.179455e-176    0.112140
+
+Spearman (continuous delta):
+        delta       measure                        title         domain  n  spearman_rho   pvalue
+  delta_probe complexity_F1 F1 inverse (feature overlap)        feature 20      0.004511 0.984940
+  delta_probe            F2        F2 overlapping volume        feature 20     -0.012030 0.959853
+  delta_probe            N1       N1 borderline fraction  neighbourhood 20      0.003008 0.989960
+  delta_probe            N2      N2 intra/inter NN ratio  neighbourhood 20      0.224060 0.342286
+  delta_probe            C2           C2 imbalance ratio  class balance 20      0.036090 0.879931
+  delta_probe            T2        T2 features / samples dimensionality 20      0.264662 0.259469
+  delta_probe   missingness             Missingness rate   data quality 20      0.148371 0.532443
+delta_probe_h complexity_F1 F1 inverse (feature overlap)        feature 19      0.029825 0.903530
+delta_probe_h            F2        F2 overlapping volume        feature 19     -0.115789 0.636896
+delta_probe_h            N1       N1 borderline fraction  neighbourhood 19      0.050877 0.836130
+delta_probe_h            N2      N2 intra/inter NN ratio  neighbourhood 19      0.198246 0.415880
+delta_probe_h            C2           C2 imbalance ratio  class balance 19      0.049123 0.841712
+delta_probe_h            T2        T2 features / samples dimensionality 19      0.456140 0.049655
+delta_probe_h   missingness             Missingness rate   data quality 19      0.066568 0.786573
+ delta_zs_raw complexity_F1 F1 inverse (feature overlap)        feature 20     -0.344361 0.137073
+ delta_zs_raw            F2        F2 overlapping volume        feature 20     -0.085714 0.719366
+ delta_zs_raw            N1       N1 borderline fraction  neighbourhood 20     -0.169925 0.473849
+ delta_zs_raw            N2      N2 intra/inter NN ratio  neighbourhood 20     -0.184962 0.434986
+ delta_zs_raw            C2           C2 imbalance ratio  class balance 20     -0.028571 0.904822
+ delta_zs_raw            T2        T2 features / samples dimensionality 20      0.258647 0.270856
+ delta_zs_raw   missingness             Missingness rate   data quality 20     -0.215177 0.362256
+
+Wrote /home/airlab/Desktop/JEV_prediction_testing_v2/outputs/combined/complexity
+wrote /home/airlab/Desktop/JEV_prediction_testing_v2/outputs/uci_core_benchmark_summary.csv
+wrote /home/airlab/Desktop/JEV_prediction_testing_v2/outputs/uci_core_benchmark_summary.md
+99 model rows across 20 datasets
+Created 3 combined figures from 36 outcome(s): /home/airlab/Desktop/JEV_prediction_testing_v2/outputs/combined/figures

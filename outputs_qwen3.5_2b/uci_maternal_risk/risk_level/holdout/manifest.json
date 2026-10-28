@@ -1,0 +1,122 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_maternal_risk",
+  "outcome": "risk_level",
+  "data_hash": "084a2c6573d849ccfd2945c1280d481f4f61f663f23591a1a46f9a0f96016bdc",
+  "dataset_spec_sha256": "f2533a5f2d819c7568ece9fdda010340e1472d74689e1cadad8a3dd03768d5fe",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261008,
+  "n_trials_requested": 200,
+  "timeout_seconds": 3600.0,
+  "classes": [
+    "Low risk",
+    "Mid risk",
+    "High risk"
+  ],
+  "predictor_columns": [
+    "age",
+    "systolic_bp",
+    "diastolic_bp",
+    "blood_sugar",
+    "body_temp",
+    "heart_rate"
+  ],
+  "zs_raw_csv_sha256": "623d7c30e139ae533a1f5091042686c37f7d4f03e18d47483f1e29e8b264f826",
+  "files": {
+    "split.json": "d58feea6eb98f0f1e2ad649e70d5ba17b191b7ce70d13821bf6b78f0a99a0a1f",
+    "trials.csv": "0a9811bea471faf657ce0a4ed9f56f858b941de919ef4cead671baef3a85949e",
+    "XGB_optuna.csv": "f22720e49ae061d901bcc889416e349b760264ee64d69c68418d3acd5ed261d7",
+    "ZS_raw.csv": "1019b6da549c1241e410630bdff30d1d5b8709bc9f4923d14c6b7dffc2db050c",
+    "model.joblib": "c6fd2c6faeaa013dab2c54726e9fb6432a24f464a827b26060692ee9e6c4d607",
+    "best_params.json": "cd8c2e828b1c4a445d7f11c7a7b1a498f2126daa2ac53c0166c6daa2660321ad",
+    "metrics.json": "6cbd07412aa84346332878b8bb8526ea4edb22e879160fcad1f22efc558ac8b2"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  },
+  "zs_raw_source": "predictions/ZS_raw_holdout.csv",
+  "rescored_from": "outputs/uci_maternal_risk/risk_level/holdout",
+  "source_data_hash": "18aae6b8af2ca70b4fe4086f70da21cc953f1371eecacaeb665081af8c78f5dd"
+}

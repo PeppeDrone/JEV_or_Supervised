@@ -1,0 +1,27 @@
+{
+  "dataset": "uci_bone_marrow",
+  "prepared_at": "2026-10-21T11:05:55.190179+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/565/data.csv",
+      "path": "datasets/uci_bone_marrow/raw/data.csv",
+      "sha256": "acf520cabe1d8594ef80ed396ef8ac1623aa1392a243ad2bf2a138d234900b70",
+      "bytes": 22069,
+      "retrieved": "cached"
+    }
+  ],
+  "patients_csv_sha256": "3b3dfdf76375a26d317ea7677017472bdfeca0dfc7cb287003abad66548d5e42",
+  "summary": {
+    "observations": 187,
+    "predictors": 35,
+    "outcome": "bmt_died",
+    "excluded_predictors": [
+      "survival_time"
+    ],
+    "class_counts": {
+      "Alive": 102,
+      "Dead": 85
+    },
+    "identifier_note": "UCI Bone marrow transplant in children; survival_time excluded."
+  }
+}

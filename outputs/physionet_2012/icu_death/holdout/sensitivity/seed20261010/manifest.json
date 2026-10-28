@@ -1,0 +1,193 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "physionet_2012",
+  "outcome": "icu_death",
+  "data_hash": "b23f74d4691bf818101b0989218e8e38f403fc322ea789909d558128741f96eb",
+  "dataset_spec_sha256": "5ec939bc953a52c962c6c8942897510e06bf1f45cbcb6e66216d8aa19895d628",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261010,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "Survived",
+    "Died"
+  ],
+  "predictor_columns": [
+    "age",
+    "sex",
+    "height",
+    "weight",
+    "icu_type",
+    "mech_vent",
+    "alp_last",
+    "alp_mean",
+    "alt_last",
+    "alt_mean",
+    "ast_last",
+    "ast_mean",
+    "albumin_last",
+    "albumin_mean",
+    "bun_last",
+    "bun_mean",
+    "bilirubin_last",
+    "bilirubin_mean",
+    "cholesterol_last",
+    "cholesterol_mean",
+    "creatinine_last",
+    "creatinine_mean",
+    "dias_abp_last",
+    "dias_abp_mean",
+    "fio2_last",
+    "fio2_mean",
+    "gcs_last",
+    "gcs_mean",
+    "glucose_last",
+    "glucose_mean",
+    "hco3_last",
+    "hco3_mean",
+    "hct_last",
+    "hct_mean",
+    "hr_last",
+    "hr_mean",
+    "potassium_last",
+    "potassium_mean",
+    "lactate_last",
+    "lactate_mean",
+    "magnesium_last",
+    "magnesium_mean",
+    "map_last",
+    "map_mean",
+    "sodium_last",
+    "sodium_mean",
+    "ni_dias_abp_last",
+    "ni_dias_abp_mean",
+    "ni_map_last",
+    "ni_map_mean",
+    "ni_sys_abp_last",
+    "ni_sys_abp_mean",
+    "paco2_last",
+    "paco2_mean",
+    "pao2_last",
+    "pao2_mean",
+    "ph_last",
+    "ph_mean",
+    "platelets_last",
+    "platelets_mean",
+    "resp_rate_last",
+    "resp_rate_mean",
+    "sao2_last",
+    "sao2_mean",
+    "sys_abp_last",
+    "sys_abp_mean",
+    "temp_last",
+    "temp_mean",
+    "troponin_i_last",
+    "troponin_i_mean",
+    "troponin_t_last",
+    "troponin_t_mean",
+    "urine_last",
+    "urine_mean",
+    "wbc_last",
+    "wbc_mean"
+  ],
+  "zs_raw_csv_sha256": "2ed29f290da2dc67b9fc063d75c97c377e487ee4f727959fa4cb735e47acdaef",
+  "files": {
+    "split.json": "6bb49f3e0aa5a89d8c2b834752f475a95bdf838feb71eb99420cba3a97c7ec96",
+    "trials.csv": "3ab6a63165c95ac3dd075f0b97720e78cfbc11f322ce57a6b3222a8b5cc658ae",
+    "XGB_optuna.csv": "b362adc7bb195a6180d2a9e2918e4428a7414fe3058b3a8a925fe17f60478663",
+    "ZS_raw.csv": "99290f447912faf2436c6c94003a71e0f87ba4eecc711b08585efeae16bc99a3",
+    "model.joblib": "5620c3ec6e758dddc83539cf7b63e15b35206383ac2b2dc873e5f409be06314e",
+    "best_params.json": "7c814f89498cd319a4fe538e71c61ffeece857dfe71bbf4a84571c50a33464b9",
+    "metrics.json": "aee9644bbdfe71d59297dfed03ccf010b0a7b60b9ef5b574d43ab17d273ccebe"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "dataset": "uci_cardiotocography",
+  "prepared_at": "2026-10-21T11:10:20.886052+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/193/data.csv",
+      "path": "datasets/uci_cardiotocography/raw/data.csv",
+      "sha256": "4648b5bf338d18f0c7e030a5d2cfb2018c831695cdb90129912cf00367c7d751",
+      "bytes": 190279,
+      "retrieved": "2026-10-21T11:10:20.858814+00:00"
+    }
+  ],
+  "patients_csv_sha256": "1b819aa4d1a980795325967fdfbbc3e38499465645796fa3f9440c7628a50f26",
+  "summary": {
+    "observations": 2126,
+    "predictors": 21,
+    "outcome": "nsp",
+    "excluded_predictors": [
+      "CLASS"
+    ],
+    "class_counts": {
+      "Normal": 1655,
+      "Suspect": 295,
+      "Pathologic": 176
+    },
+    "identifier_note": "UCI Cardiotocography; NSP endpoint; CLASS morphologic code excluded."
+  }
+}

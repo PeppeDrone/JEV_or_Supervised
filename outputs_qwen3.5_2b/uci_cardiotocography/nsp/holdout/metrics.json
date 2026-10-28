@@ -1,0 +1,114 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_cardiotocography",
+  "outcome": "nsp",
+  "seed": 20261008,
+  "n_development": 1700,
+  "n_holdout": 426,
+  "n_classes": 3,
+  "inner_folds": 5,
+  "trials_completed": 156,
+  "trials_pruned": 44,
+  "tuning_seconds": 287.39538192749023,
+  "best_params": {
+    "max_depth": 8,
+    "learning_rate": 0.07149540184248111,
+    "n_estimators": 717,
+    "min_child_weight": 1.265967078112013,
+    "subsample": 0.9723421802232238,
+    "colsample_bytree": 0.9822030357489228,
+    "colsample_bylevel": 0.7259088136294302,
+    "gamma": 0.04949493542614134,
+    "reg_alpha": 0.1357690484102567,
+    "reg_lambda": 6.049345618365973,
+    "max_bin": 256,
+    "grow_policy": "lossguide",
+    "class_weight_exponent": 0.08184209086143501,
+    "prior_exponent": 1.3447235931990404
+  },
+  "best_cv_balanced_accuracy": 0.9353268751632863,
+  "best_cv_sd": 0.01021144269862347,
+  "consensus_params": {
+    "max_depth": 7,
+    "learning_rate": 0.12897538365411118,
+    "n_estimators": 1274,
+    "min_child_weight": 2.1324326248454204,
+    "subsample": 0.8738435089403948,
+    "colsample_bytree": 0.9486664062978426,
+    "colsample_bylevel": 0.6688850848055105,
+    "gamma": 0.8887983784418426,
+    "reg_alpha": 0.2783958167504453,
+    "reg_lambda": 4.6287691117483245,
+    "max_bin": 256,
+    "grow_policy": "lossguide",
+    "class_weight_exponent": 0.19926667237822926,
+    "prior_exponent": 0.7533154843302788
+  },
+  "holdout": {
+    "XGB_optuna": {
+      "balanced_accuracy": 0.9467929830702957,
+      "auroc": 0.9912644549128226,
+      "brier": 0.06992209089910782,
+      "log_loss": 0.12776087467571245,
+      "macro_f1": 0.8945957424218293
+    },
+    "XGB_optuna_argmax": {
+      "balanced_accuracy": 0.9249428707566344,
+      "auroc": 0.9912644549128226,
+      "brier": 0.06992209089910782,
+      "log_loss": 0.12776087467571245,
+      "macro_f1": 0.9226823096388314
+    },
+    "XGB_optuna_consensus": {
+      "balanced_accuracy": 0.9427769188132675,
+      "auroc": 0.9901674835216897,
+      "brier": 0.07644895519911817,
+      "log_loss": 0.13985081963541235,
+      "macro_f1": 0.8906728857760714
+    },
+    "ZS_raw": {
+      "balanced_accuracy": 0.3333333333333333,
+      "auroc": 0.7183568198744149,
+      "brier": 0.3458387661516766,
+      "log_loss": 0.6314100601079691,
+      "macro_f1": 0.29199648197009676
+    },
+    "ZS_raw_prior_matched": {
+      "balanced_accuracy": 0.46594951233505455,
+      "auroc": 0.7183568198744149,
+      "brier": 0.3458387661516766,
+      "log_loss": 0.6314100601079691,
+      "macro_f1": 0.3090418353576248
+    }
+  },
+  "paired": {
+    "XGB_optuna_minus_ZS_raw": {
+      "delta_bacc": 0.6134596497369624,
+      "delta_bacc_ci": [
+        0.5804626192308423,
+        0.6392797595077052
+      ],
+      "delta_auroc": 0.27290763503840765,
+      "delta_auroc_ci": [
+        0.22418071469738413,
+        0.3224004144189098
+      ],
+      "iterations": 1000
+    },
+    "XGB_optuna_minus_ZS_raw_prior_matched": {
+      "delta_bacc": 0.48084347073524114,
+      "delta_bacc_ci": [
+        0.4236860965201546,
+        0.5327974815538592
+      ],
+      "delta_auroc": 0.27290763503840765,
+      "delta_auroc_ci": [
+        0.22418071469738413,
+        0.3224004144189098
+      ],
+      "iterations": 1000
+    }
+  },
+  "cv_minus_holdout_balanced_accuracy": -0.011466107907009415,
+  "rescored_from": "outputs/uci_cardiotocography/nsp/holdout"
+}

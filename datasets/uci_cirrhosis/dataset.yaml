@@ -1,0 +1,143 @@
+name: uci_cirrhosis
+description: UCI Cirrhosis Patient Survival (Mayo Clinic primary biliary cholangitis trial and registry, 1974-1984;
+  418 patients). 17 baseline predictors; the literal string NaNN marks values not collected for the 106 non-trial
+  patients. Binary death (vs alive or transplanted) by the July 1986 analysis.
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Adult with primary biliary cholangitis (then called primary biliary cirrhosis) referred to the Mayo Clinic
+  between 1974 and 1984, either randomised to D-penicillamine or placebo or followed outside the trial. The observations
+  are the baseline examination and laboratory values at registration; follow-up ran from registration to the July
+  1986 analysis.
+observations_header: 'Baseline findings at registration:'
+predictors:
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+  drug:
+    column: drug
+    kind: categorical
+    text_label: Trial treatment
+    text_values:
+      D-penicillamine: D-penicillamine
+      Placebo: Placebo
+    missing_codes:
+    - NaNN
+  sex:
+    column: sex
+    kind: categorical
+    text_label: Sex
+    text_values:
+      F: Female
+      M: Male
+  ascites:
+    column: ascites
+    kind: categorical
+    text_label: Ascites
+    text_values:
+      Y: 'Yes'
+      N: 'No'
+    missing_codes:
+    - NaNN
+  hepatomegaly:
+    column: hepatomegaly
+    kind: categorical
+    text_label: Hepatomegaly
+    text_values:
+      Y: 'Yes'
+      N: 'No'
+    missing_codes:
+    - NaNN
+  spiders:
+    column: spiders
+    kind: categorical
+    text_label: Spider angiomata
+    text_values:
+      Y: 'Yes'
+      N: 'No'
+    missing_codes:
+    - NaNN
+  edema:
+    column: edema
+    kind: categorical
+    text_label: Oedema
+    text_values:
+      N: No oedema and no diuretics
+      S: Oedema without diuretics, or resolved by diuretics
+      Y: Oedema despite diuretic therapy
+  bilirubin:
+    column: bilirubin
+    kind: numeric
+    text_label: Serum bilirubin
+    unit: mg/dL
+  cholesterol:
+    column: cholesterol
+    kind: numeric
+    text_label: Serum cholesterol
+    unit: mg/dL
+    missing_codes:
+    - NaNN
+  albumin:
+    column: albumin
+    kind: numeric
+    text_label: Serum albumin
+    unit: g/dL
+  copper:
+    column: copper
+    kind: numeric
+    text_label: Urine copper
+    unit: µg/day
+    missing_codes:
+    - NaNN
+  alk_phos:
+    column: alk_phos
+    kind: numeric
+    text_label: Alkaline phosphatase
+    unit: U/L
+  sgot:
+    column: sgot
+    kind: numeric
+    text_label: Aspartate aminotransferase (SGOT)
+    unit: U/mL
+  triglycerides:
+    column: triglycerides
+    kind: numeric
+    text_label: Triglycerides
+    unit: mg/dL
+    missing_codes:
+    - NaNN
+  platelets:
+    column: platelets
+    kind: numeric
+    text_label: Platelet count
+    unit: x10^9/L
+    missing_codes:
+    - NaNN
+  prothrombin:
+    column: prothrombin
+    kind: numeric
+    text_label: Prothrombin time
+    unit: seconds
+  stage:
+    column: stage
+    kind: categorical
+    text_label: Histologic stage
+    text_values:
+      '1': Stage 1 (portal)
+      '2': Stage 2 (periportal)
+      '3': Stage 3 (septal)
+      '4': Stage 4 (cirrhosis)
+outcomes:
+  cirrhosis_died:
+    column: cirrhosis_died
+    classes:
+    - Alive or transplanted at end of follow-up
+    - Died during follow-up
+    mapping:
+      '0': Alive or transplanted at end of follow-up
+      '1': Died during follow-up
+    question: Based on these baseline findings, did the patient die during the study follow-up (registration 1974-1984,
+      follow-up to July 1986) rather than remaining alive or receiving a liver transplant?

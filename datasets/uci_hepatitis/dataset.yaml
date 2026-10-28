@@ -1,0 +1,144 @@
+name: uci_hepatitis
+description: UCI Hepatitis (Ljubljana, 1988; 155 patients). 19 clinical and laboratory predictors with many missing
+  values. Binary survival (died vs lived) as recorded by the donating clinic.
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Adult with hepatitis followed at a hepatology clinic (Ljubljana, 1980s). The observations are the age and
+  sex, treatment with steroids or antivirals, symptoms and signs of liver disease on examination, liver laboratory
+  values, prothrombin activity and whether a liver biopsy was performed.
+observations_header: 'Hepatitis clinical and laboratory findings:'
+predictors:
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+  sex:
+    column: sex
+    kind: categorical
+    text_label: Sex
+    text_values:
+      '2': Female
+      '1': Male
+  steroid:
+    column: steroid
+    kind: categorical
+    text_label: Steroid treatment
+    text_values:
+      '1': 'No'
+      '2': 'Yes'
+  antivirals:
+    column: antivirals
+    kind: categorical
+    text_label: Antiviral treatment
+    text_values:
+      '2': 'Yes'
+      '1': 'No'
+  fatigue:
+    column: fatigue
+    kind: categorical
+    text_label: Fatigue
+    text_values:
+      '2': 'Yes'
+      '1': 'No'
+  malaise:
+    column: malaise
+    kind: categorical
+    text_label: Malaise
+    text_values:
+      '2': 'Yes'
+      '1': 'No'
+  anorexia:
+    column: anorexia
+    kind: categorical
+    text_label: Anorexia
+    text_values:
+      '2': 'Yes'
+      '1': 'No'
+  liver_big:
+    column: liver_big
+    kind: categorical
+    text_label: Enlarged liver on examination
+    text_values:
+      '1': 'No'
+      '2': 'Yes'
+  liver_firm:
+    column: liver_firm
+    kind: categorical
+    text_label: Firm liver on examination
+    text_values:
+      '2': 'Yes'
+      '1': 'No'
+  spleen_palpable:
+    column: spleen_palpable
+    kind: categorical
+    text_label: Palpable spleen
+    text_values:
+      '2': 'Yes'
+      '1': 'No'
+  spiders:
+    column: spiders
+    kind: categorical
+    text_label: Spider angiomata
+    text_values:
+      '2': 'Yes'
+      '1': 'No'
+  ascites:
+    column: ascites
+    kind: categorical
+    text_label: Ascites
+    text_values:
+      '2': 'Yes'
+      '1': 'No'
+  varices:
+    column: varices
+    kind: categorical
+    text_label: Oesophageal varices
+    text_values:
+      '2': 'Yes'
+      '1': 'No'
+  bilirubin:
+    column: bilirubin
+    kind: numeric
+    text_label: Serum bilirubin
+    unit: mg/dL
+  alk_phosphate:
+    column: alk_phosphate
+    kind: numeric
+    text_label: Alkaline phosphatase
+    unit: U/L
+  sgot:
+    column: sgot
+    kind: numeric
+    text_label: Aspartate aminotransferase (SGOT)
+    unit: U/L
+  albumin:
+    column: albumin
+    kind: numeric
+    text_label: Serum albumin
+    unit: g/dL
+  protime:
+    column: protime
+    kind: numeric
+    text_label: Prothrombin activity
+    unit: '% of normal'
+  histology:
+    column: histology
+    kind: categorical
+    text_label: Liver biopsy histology available
+    text_values:
+      '1': 'No'
+      '2': 'Yes'
+outcomes:
+  died:
+    column: died
+    classes:
+    - Alive at end of follow-up
+    - Died during follow-up
+    mapping:
+      '0': Alive at end of follow-up
+      '1': Died during follow-up
+    question: Based on these hepatitis clinical and laboratory findings, did the patient die during the clinic's
+      follow-up?

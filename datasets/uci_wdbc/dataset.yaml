@@ -1,0 +1,176 @@
+name: uci_wdbc
+description: UCI Breast Cancer Wisconsin Diagnostic (WDBC) cohort (569 observations, 30 real-valued nucleus features
+  from fine-needle aspirate images).
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Woman with a palpable breast mass who underwent fine-needle aspiration; the aspirate was imaged and the
+  cell nuclei were outlined digitally. For each of ten nuclear features the observations give the mean over all
+  nuclei, the standard error, and the 'worst' value (mean of the three largest nuclei).
+observations_header: 'Digitised fine-needle aspirate nucleus measurements (image pixel units unless noted):'
+predictors:
+  radius_mean:
+    column: radius_mean
+    kind: numeric
+    text_label: Nucleus radius (mean over nuclei)
+    unit: pixels
+    scale_note: mean distance from centre to perimeter
+  radius_standard_error:
+    column: radius_standard_error
+    kind: numeric
+    text_label: Nucleus radius (standard error over nuclei)
+    unit: pixels
+    scale_note: mean distance from centre to perimeter
+  radius_worst:
+    column: radius_worst
+    kind: numeric
+    text_label: Nucleus radius (worst, mean of the three largest)
+    unit: pixels
+    scale_note: mean distance from centre to perimeter
+  texture_mean:
+    column: texture_mean
+    kind: numeric
+    text_label: Nucleus texture (mean over nuclei)
+    scale_note: standard deviation of grey-scale values
+  texture_standard_error:
+    column: texture_standard_error
+    kind: numeric
+    text_label: Nucleus texture (standard error over nuclei)
+    scale_note: standard deviation of grey-scale values
+  texture_worst:
+    column: texture_worst
+    kind: numeric
+    text_label: Nucleus texture (worst, mean of the three largest)
+    scale_note: standard deviation of grey-scale values
+  perimeter_mean:
+    column: perimeter_mean
+    kind: numeric
+    text_label: Nucleus perimeter (mean over nuclei)
+    unit: pixels
+  perimeter_standard_error:
+    column: perimeter_standard_error
+    kind: numeric
+    text_label: Nucleus perimeter (standard error over nuclei)
+    unit: pixels
+  perimeter_worst:
+    column: perimeter_worst
+    kind: numeric
+    text_label: Nucleus perimeter (worst, mean of the three largest)
+    unit: pixels
+  area_mean:
+    column: area_mean
+    kind: numeric
+    text_label: Nucleus area (mean over nuclei)
+    unit: square pixels
+  area_standard_error:
+    column: area_standard_error
+    kind: numeric
+    text_label: Nucleus area (standard error over nuclei)
+    unit: square pixels
+  area_worst:
+    column: area_worst
+    kind: numeric
+    text_label: Nucleus area (worst, mean of the three largest)
+    unit: square pixels
+  smoothness_mean:
+    column: smoothness_mean
+    kind: numeric
+    text_label: Nucleus smoothness (mean over nuclei)
+    scale_note: local variation in radius lengths
+  smoothness_standard_error:
+    column: smoothness_standard_error
+    kind: numeric
+    text_label: Nucleus smoothness (standard error over nuclei)
+    scale_note: local variation in radius lengths
+  smoothness_worst:
+    column: smoothness_worst
+    kind: numeric
+    text_label: Nucleus smoothness (worst, mean of the three largest)
+    scale_note: local variation in radius lengths
+  compactness_mean:
+    column: compactness_mean
+    kind: numeric
+    text_label: Nucleus compactness (mean over nuclei)
+    scale_note: perimeter squared / area - 1
+  compactness_standard_error:
+    column: compactness_standard_error
+    kind: numeric
+    text_label: Nucleus compactness (standard error over nuclei)
+    scale_note: perimeter squared / area - 1
+  compactness_worst:
+    column: compactness_worst
+    kind: numeric
+    text_label: Nucleus compactness (worst, mean of the three largest)
+    scale_note: perimeter squared / area - 1
+  concavity_mean:
+    column: concavity_mean
+    kind: numeric
+    text_label: Nucleus concavity (mean over nuclei)
+    scale_note: severity of concave portions of the contour
+  concavity_standard_error:
+    column: concavity_standard_error
+    kind: numeric
+    text_label: Nucleus concavity (standard error over nuclei)
+    scale_note: severity of concave portions of the contour
+  concavity_worst:
+    column: concavity_worst
+    kind: numeric
+    text_label: Nucleus concavity (worst, mean of the three largest)
+    scale_note: severity of concave portions of the contour
+  concave_points_mean:
+    column: concave_points_mean
+    kind: numeric
+    text_label: Nucleus concave points (mean over nuclei)
+    scale_note: number of concave portions of the contour
+  concave_points_standard_error:
+    column: concave_points_standard_error
+    kind: numeric
+    text_label: Nucleus concave points (standard error over nuclei)
+    scale_note: number of concave portions of the contour
+  concave_points_worst:
+    column: concave_points_worst
+    kind: numeric
+    text_label: Nucleus concave points (worst, mean of the three largest)
+    scale_note: number of concave portions of the contour
+  symmetry_mean:
+    column: symmetry_mean
+    kind: numeric
+    text_label: Nucleus symmetry (mean over nuclei)
+    scale_note: dimensionless
+  symmetry_standard_error:
+    column: symmetry_standard_error
+    kind: numeric
+    text_label: Nucleus symmetry (standard error over nuclei)
+    scale_note: dimensionless
+  symmetry_worst:
+    column: symmetry_worst
+    kind: numeric
+    text_label: Nucleus symmetry (worst, mean of the three largest)
+    scale_note: dimensionless
+  fractal_dimension_mean:
+    column: fractal_dimension_mean
+    kind: numeric
+    text_label: Nucleus fractal dimension (mean over nuclei)
+    scale_note: coastline approximation - 1
+  fractal_dimension_standard_error:
+    column: fractal_dimension_standard_error
+    kind: numeric
+    text_label: Nucleus fractal dimension (standard error over nuclei)
+    scale_note: coastline approximation - 1
+  fractal_dimension_worst:
+    column: fractal_dimension_worst
+    kind: numeric
+    text_label: Nucleus fractal dimension (worst, mean of the three largest)
+    scale_note: coastline approximation - 1
+outcomes:
+  diagnosis:
+    column: diagnosis
+    classes:
+    - Benign
+    - Malignant
+    mapping:
+      B: Benign
+      M: Malignant
+    question: Based on these fine-needle aspirate nucleus measurements, is this patient's breast mass benign or
+      malignant on the confirmed diagnosis?

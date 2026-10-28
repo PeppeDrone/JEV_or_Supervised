@@ -1,0 +1,133 @@
+{
+  "model": "XGB_optuna_full",
+  "dataset": "dryad_er_cbc",
+  "outcome": "er_death",
+  "data_hash": "5388b1d6fe3717a07fdddc1d32267a860b9f6098e696f916659ae0446b55d7db",
+  "full_data_hash": "fd2fcdc4dea355b6d3a6c25a06c16fb089868f196d7a5c3207c87c72e231a7d9",
+  "readout_to_full_sha256": "2f5f08ef05cc3093013e133edd853601aa40aff78e54aaf2140d185967a67cc6",
+  "split_sha256": "792f86239d52651aac92f435f316401d038647845bf6b688cfb65f9363bba851",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261008,
+  "n_trials_requested": 100,
+  "timeout_seconds": 3600.0,
+  "tuning_cap": 50000,
+  "classes": [
+    "Alive",
+    "Died"
+  ],
+  "predictor_columns": [
+    "sex",
+    "covid_wave",
+    "age",
+    "hemoglobin",
+    "mcv",
+    "rdw",
+    "pdw",
+    "pct",
+    "rbc",
+    "wbc",
+    "neutrophils",
+    "lymphocytes",
+    "monocytes",
+    "eosinophils",
+    "basophils",
+    "platelets"
+  ],
+  "files": {
+    "trials.csv": "0eb3e00181b88080c176607c87b0ae7ff0e5311a0a83f82dda09e3e7f586f3f4",
+    "XGB_optuna_full.csv": "86a019aee03e36e4bb74913b8d70e8fce5314dedd4d796bcacff940c25caec8a",
+    "model.joblib": "224bf2c0176521f8821098253cf7b78a82637ddff5dae1b0e0fdb1a7bc1c7434",
+    "best_params.json": "08fa3ed6c6cfec2252a7ea19bc0bd8906be340567cdccf34da200cef90b4e77f",
+    "metrics.json": "a4d1f3ddfdabc2446b38db5e41123a87236e71ed20b954a08deb533f0f65b6ba"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

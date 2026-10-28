@@ -1,0 +1,28 @@
+{
+  "dataset": "physionet_2019",
+  "prepared_at": "2026-10-22T13:56:02.882760+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://physionet.org/files/challenge-2019/1.0.0/training/training_setA/",
+      "n_files": 1000,
+      "requested": 1000
+    }
+  ],
+  "patients_csv_sha256": "f530fcf233135260f8b860e9b5202ceff18aa110ee975582583dbdecfbb25f0a",
+  "summary": {
+    "observations": 1000,
+    "predictors": 38,
+    "outcome": "sepsis",
+    "excluded_predictors": [
+      "ICULOS",
+      "SepsisLabel",
+      "post-onset hourly rows"
+    ],
+    "class_counts": {
+      "No sepsis": 910,
+      "Sepsis": 90
+    },
+    "identifier_note": "PhysioNet Challenge 2019 training_setA. First 1000 patient files. Features frozen at ICULOS<=6 hours and before SepsisLabel=1. Y = ever sepsis during the stay.",
+    "cap": 1000
+  }
+}

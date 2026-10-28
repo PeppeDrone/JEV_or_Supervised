@@ -1,0 +1,196 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "physionet_2012",
+  "outcome": "icu_death",
+  "data_hash": "1526b8e79e7691c87507fd8bc2a40d8f918d9fe30b70e652b183cb4387a3e547",
+  "dataset_spec_sha256": "5ec939bc953a52c962c6c8942897510e06bf1f45cbcb6e66216d8aa19895d628",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261008,
+  "n_trials_requested": 200,
+  "timeout_seconds": 3600.0,
+  "classes": [
+    "Survived",
+    "Died"
+  ],
+  "predictor_columns": [
+    "age",
+    "sex",
+    "height",
+    "weight",
+    "icu_type",
+    "mech_vent",
+    "alp_last",
+    "alp_mean",
+    "alt_last",
+    "alt_mean",
+    "ast_last",
+    "ast_mean",
+    "albumin_last",
+    "albumin_mean",
+    "bun_last",
+    "bun_mean",
+    "bilirubin_last",
+    "bilirubin_mean",
+    "cholesterol_last",
+    "cholesterol_mean",
+    "creatinine_last",
+    "creatinine_mean",
+    "dias_abp_last",
+    "dias_abp_mean",
+    "fio2_last",
+    "fio2_mean",
+    "gcs_last",
+    "gcs_mean",
+    "glucose_last",
+    "glucose_mean",
+    "hco3_last",
+    "hco3_mean",
+    "hct_last",
+    "hct_mean",
+    "hr_last",
+    "hr_mean",
+    "potassium_last",
+    "potassium_mean",
+    "lactate_last",
+    "lactate_mean",
+    "magnesium_last",
+    "magnesium_mean",
+    "map_last",
+    "map_mean",
+    "sodium_last",
+    "sodium_mean",
+    "ni_dias_abp_last",
+    "ni_dias_abp_mean",
+    "ni_map_last",
+    "ni_map_mean",
+    "ni_sys_abp_last",
+    "ni_sys_abp_mean",
+    "paco2_last",
+    "paco2_mean",
+    "pao2_last",
+    "pao2_mean",
+    "ph_last",
+    "ph_mean",
+    "platelets_last",
+    "platelets_mean",
+    "resp_rate_last",
+    "resp_rate_mean",
+    "sao2_last",
+    "sao2_mean",
+    "sys_abp_last",
+    "sys_abp_mean",
+    "temp_last",
+    "temp_mean",
+    "troponin_i_last",
+    "troponin_i_mean",
+    "troponin_t_last",
+    "troponin_t_mean",
+    "urine_last",
+    "urine_mean",
+    "wbc_last",
+    "wbc_mean"
+  ],
+  "zs_raw_csv_sha256": "cd6ffffdb5823b393e0dca52791c7866264083ec01762590a5bfe1914d8c53bb",
+  "files": {
+    "split.json": "ff1c672f25ada5721e481d248f8044275c1daf6ace48a555f1e96dae992288c9",
+    "trials.csv": "55aefa5336ff942e4bd77ec55ea4bb441cb650ffee4257482120536ea33f8c6f",
+    "XGB_optuna.csv": "3cdce8feaa852aaa088f82649f5c61478996a9073773c78ba1cc7c1379fec35a",
+    "ZS_raw.csv": "07d109c7be5d49d8e32b46f85c820512d6461b143dd8e1041991b3b26582b96e",
+    "model.joblib": "b7cb91b77a8a716997fcbd439264f330729a872ccbe11775696749ca12d9b312",
+    "best_params.json": "857e9191d667e660bd23874336cfea76eab8d9647be9cf4cdf3d1697fe3510f1",
+    "metrics.json": "3f285968b26bc7bbf980db9ab4d672c926fb6d42735af0c6b2d85168aa763db9"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  },
+  "zs_raw_source": "predictions/ZS_raw_holdout.csv",
+  "rescored_from": "outputs/physionet_2012/icu_death/holdout",
+  "source_data_hash": "b23f74d4691bf818101b0989218e8e38f403fc322ea789909d558128741f96eb"
+}

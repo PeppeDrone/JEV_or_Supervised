@@ -1,0 +1,24 @@
+{
+  "dataset": "uci_glioma",
+  "prepared_at": "2026-10-21T11:10:18.840777+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/759/data.csv",
+      "path": "datasets/uci_glioma/raw/data.csv",
+      "sha256": "5d1ebd8485790b691744e756774bd00f810b545d0c754bfa42996c5e56d0ad25",
+      "bytes": 60012,
+      "retrieved": "2026-10-21T11:10:18.809774+00:00"
+    }
+  ],
+  "patients_csv_sha256": "8d6d3cffdcc0324c874c0e513e3e9ae781ca26185b486f7e2cd07eb579e65323",
+  "summary": {
+    "observations": 839,
+    "predictors": 23,
+    "outcome": "gbm",
+    "class_counts": {
+      "Lower-grade glioma": 487,
+      "Glioblastoma": 352
+    },
+    "identifier_note": "UCI Glioma grading clinical and mutation features; Grade 0=LGG, 1=GBM."
+  }
+}

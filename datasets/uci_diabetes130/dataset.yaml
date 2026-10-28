@@ -1,0 +1,155 @@
+name: uci_diabetes130
+description: UCI Diabetes 130-US Hospitals 1999-2008 (Strack et al. 2014). One encounter per patient after cleaning;
+  class-stratified subsample of 1000 for the readout, whole table for XGBoost. 18 admission, utilisation and diabetes
+  treatment predictors. Binary readmission within 30 days.
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Adult with diabetes discharged after an inpatient stay of 1 to 14 days at one of 130 US hospitals between
+  1999 and 2008. The observations are demographics, admission type, length of stay, counts of tests, procedures,
+  medications and diagnoses during the stay, utilisation in the preceding year, glucose and HbA1c test results,
+  and changes to metformin, insulin and other diabetes medication.
+observations_header: 'Inpatient encounter record:'
+predictors:
+  race:
+    column: race
+    kind: categorical
+    text_label: Race
+    text_values:
+      Caucasian: Caucasian
+      AfricanAmerican: African American
+      Hispanic: Hispanic
+      Asian: Asian
+      Other: Other
+  gender:
+    column: gender
+    kind: categorical
+    text_label: Sex
+    text_values:
+      Female: Female
+      Male: Male
+      Unknown/Invalid: Unknown or invalid
+  age:
+    column: age
+    kind: categorical
+    text_label: Age band
+    text_values:
+      '[0-10)': 0 to 9 years
+      '[10-20)': 10 to 19 years
+      '[20-30)': 20 to 29 years
+      '[30-40)': 30 to 39 years
+      '[40-50)': 40 to 49 years
+      '[50-60)': 50 to 59 years
+      '[60-70)': 60 to 69 years
+      '[70-80)': 70 to 79 years
+      '[80-90)': 80 to 89 years
+      '[90-100)': 90 to 99 years
+  admission_type_id:
+    column: admission_type_id
+    kind: categorical
+    text_label: Admission type
+    text_values:
+      '1': Emergency
+      '2': Urgent
+      '3': Elective
+      '4': Newborn
+      '5': Not available
+      '6': Not recorded
+      '7': Trauma centre
+      '8': Not mapped
+  time_in_hospital:
+    column: time_in_hospital
+    kind: numeric
+    text_label: Length of hospital stay
+    unit: days
+  num_lab_procedures:
+    column: num_lab_procedures
+    kind: numeric
+    text_label: Number of laboratory tests during the stay
+    scale_note: count
+  num_procedures:
+    column: num_procedures
+    kind: numeric
+    text_label: Number of non-laboratory procedures during the stay
+    scale_note: count
+  num_medications:
+    column: num_medications
+    kind: numeric
+    text_label: Number of distinct medications administered during the stay
+    scale_note: count
+  number_outpatient:
+    column: number_outpatient
+    kind: numeric
+    text_label: Outpatient visits in the preceding year
+    scale_note: count
+  number_emergency:
+    column: number_emergency
+    kind: numeric
+    text_label: Emergency visits in the preceding year
+    scale_note: count
+  number_inpatient:
+    column: number_inpatient
+    kind: numeric
+    text_label: Inpatient admissions in the preceding year
+    scale_note: count
+  number_diagnoses:
+    column: number_diagnoses
+    kind: numeric
+    text_label: Number of diagnoses recorded
+    scale_note: count
+  max_glu_serum:
+    column: max_glu_serum
+    kind: categorical
+    text_label: Maximum serum glucose test result during the stay
+    text_values:
+      '>200': Above 200 mg/dL
+      '>300': Above 300 mg/dL
+      Norm: Normal
+  a1c:
+    column: a1c
+    kind: categorical
+    text_label: HbA1c test result during the stay
+    text_values:
+      '>7': Above 7% (but not above 8%)
+      '>8': Above 8%
+      Norm: Normal (below 7%)
+  metformin:
+    column: metformin
+    kind: categorical
+    text_label: Metformin during the stay
+    text_values: &id001
+      'No': Not prescribed
+      Steady: Steady dose
+      Up: Dose increased
+      Down: Dose decreased
+  insulin:
+    column: insulin
+    kind: categorical
+    text_label: Insulin during the stay
+    text_values: *id001
+  change:
+    column: change
+    kind: categorical
+    text_label: Any change to diabetes medication during the stay
+    text_values:
+      Ch: Changed
+      'No': No change
+  diabetes_med:
+    column: diabetes_med
+    kind: categorical
+    text_label: Any diabetes medication prescribed
+    text_values:
+      'Yes': 'Yes'
+      'No': 'No'
+outcomes:
+  readmit_30d:
+    column: readmit_30d
+    classes:
+    - Not readmitted within 30 days
+    - Readmitted within 30 days
+    mapping:
+      '0': Not readmitted within 30 days
+      '1': Readmitted within 30 days
+    question: Based on this inpatient encounter record, was the patient readmitted to hospital within 30 days of
+      discharge?

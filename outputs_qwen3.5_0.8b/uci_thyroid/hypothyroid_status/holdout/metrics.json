@@ -1,0 +1,114 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_thyroid",
+  "outcome": "hypothyroid_status",
+  "seed": 20261008,
+  "n_development": 2530,
+  "n_holdout": 633,
+  "n_classes": 2,
+  "inner_folds": 5,
+  "trials_completed": 100,
+  "trials_pruned": 100,
+  "tuning_seconds": 87.32830214500427,
+  "best_params": {
+    "max_depth": 6,
+    "learning_rate": 0.12130043562933358,
+    "n_estimators": 298,
+    "min_child_weight": 1.5508105581687321,
+    "subsample": 0.683221605921224,
+    "colsample_bytree": 0.8285480672189774,
+    "colsample_bylevel": 0.8876215624350786,
+    "gamma": 1.5766750046510023,
+    "reg_alpha": 0.04960421464363253,
+    "reg_lambda": 0.13708474727702377,
+    "max_bin": 256,
+    "grow_policy": "lossguide",
+    "class_weight_exponent": 0.9191327240703284,
+    "threshold": 0.12093633074397289
+  },
+  "best_cv_balanced_accuracy": 0.9744091522099823,
+  "best_cv_sd": 0.014501605284312142,
+  "consensus_params": {
+    "max_depth": 9,
+    "learning_rate": 0.1591683182738539,
+    "n_estimators": 1315,
+    "min_child_weight": 1.932463412312257,
+    "subsample": 0.6323262101378166,
+    "colsample_bytree": 0.9576504670399173,
+    "colsample_bylevel": 0.7932752289462126,
+    "gamma": 2.043075188060911,
+    "reg_alpha": 0.24664649014417564,
+    "reg_lambda": 0.04766628863508367,
+    "max_bin": 256,
+    "grow_policy": "lossguide",
+    "class_weight_exponent": 0.8613006987402471,
+    "threshold": 0.12093633074397289
+  },
+  "holdout": {
+    "XGB_optuna": {
+      "balanced_accuracy": 0.9308457711442786,
+      "auroc": 0.9852957435046987,
+      "brier": 0.008167762171238217,
+      "log_loss": 0.04343828370054406,
+      "macro_f1": 0.9377782146518192
+    },
+    "XGB_optuna_argmax": {
+      "balanced_accuracy": 0.9316749585406302,
+      "auroc": 0.9852957435046987,
+      "brier": 0.008167762171238217,
+      "log_loss": 0.04343828370054406,
+      "macro_f1": 0.9457924183603563
+    },
+    "XGB_optuna_consensus": {
+      "balanced_accuracy": 0.9458540630182422,
+      "auroc": 0.9803482587064677,
+      "brier": 0.007774801980235613,
+      "log_loss": 0.04576273962662952,
+      "macro_f1": 0.9321616118315292
+    },
+    "ZS_raw": {
+      "balanced_accuracy": 0.5,
+      "auroc": 0.5765616362631288,
+      "brier": 0.15126365503505196,
+      "log_loss": 0.4912593872002324,
+      "macro_f1": 0.4878640776699029
+    },
+    "ZS_raw_prior_matched": {
+      "balanced_accuracy": 0.5,
+      "auroc": 0.5765616362631288,
+      "brier": 0.15126365503505196,
+      "log_loss": 0.4912593872002324,
+      "macro_f1": 0.04524886877828054
+    }
+  },
+  "paired": {
+    "XGB_optuna_minus_ZS_raw": {
+      "delta_bacc": 0.4308457711442786,
+      "delta_bacc_ci": [
+        0.3633097140264223,
+        0.4828035287570788
+      ],
+      "delta_auroc": 0.4087341072415699,
+      "delta_auroc_ci": [
+        0.30149506165791284,
+        0.5140487220395881
+      ],
+      "iterations": 1000
+    },
+    "XGB_optuna_minus_ZS_raw_prior_matched": {
+      "delta_bacc": 0.4308457711442786,
+      "delta_bacc_ci": [
+        0.3633097140264223,
+        0.4828035287570788
+      ],
+      "delta_auroc": 0.4087341072415699,
+      "delta_auroc_ci": [
+        0.30149506165791284,
+        0.5140487220395881
+      ],
+      "iterations": 1000
+    }
+  },
+  "cv_minus_holdout_balanced_accuracy": 0.04356338106570368,
+  "rescored_from": "outputs/uci_thyroid/hypothyroid_status/holdout"
+}

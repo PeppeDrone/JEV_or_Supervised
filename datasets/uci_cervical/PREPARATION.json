@@ -1,0 +1,32 @@
+{
+  "dataset": "uci_cervical",
+  "prepared_at": "2026-10-21T07:56:25.972118+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/383/data.csv",
+      "path": "datasets/uci_cervical/raw/data.csv",
+      "sha256": "f71865358287ba3e87192ccc833fb8924efaec7b060f277771305559035ea7d4",
+      "bytes": 109303,
+      "retrieved": "cached"
+    }
+  ],
+  "patients_csv_sha256": "bc53dc6070e95e7478846a434dcf255464003e125af8cc6f9a53d68e79a05d4d",
+  "summary": {
+    "observations": 858,
+    "predictors": 29,
+    "outcome": "biopsy",
+    "excluded_predictors": [
+      "Dx",
+      "Dx:CIN",
+      "Dx:Cancer",
+      "Dx:HPV",
+      "STDs: Time since first diagnosis",
+      "STDs: Time since last diagnosis"
+    ],
+    "class_counts": {
+      "Negative biopsy": 803,
+      "Positive biopsy": 55
+    },
+    "identifier_note": "UCI Cervical Cancer Risk Factors. Outcome = biopsy. Dx* diagnosis columns and near-empty STD timing fields excluded. Missing values preserved as blanks."
+  }
+}

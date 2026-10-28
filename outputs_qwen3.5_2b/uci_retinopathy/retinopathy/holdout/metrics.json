@@ -1,0 +1,114 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_retinopathy",
+  "outcome": "retinopathy",
+  "seed": 20261008,
+  "n_development": 920,
+  "n_holdout": 231,
+  "n_classes": 2,
+  "inner_folds": 5,
+  "trials_completed": 128,
+  "trials_pruned": 72,
+  "tuning_seconds": 143.21484446525574,
+  "best_params": {
+    "max_depth": 7,
+    "learning_rate": 0.16106837222139989,
+    "n_estimators": 968,
+    "min_child_weight": 1.3075555923753732,
+    "subsample": 0.6256824674854035,
+    "colsample_bytree": 0.8697039565228774,
+    "colsample_bylevel": 0.9961923574319815,
+    "gamma": 0.8643062961532949,
+    "reg_alpha": 0.009424028224260524,
+    "reg_lambda": 0.6376552318003642,
+    "max_bin": 64,
+    "grow_policy": "depthwise",
+    "class_weight_exponent": 0.022656030417243844,
+    "threshold": 0.5981931072951739
+  },
+  "best_cv_balanced_accuracy": 0.7299060546349179,
+  "best_cv_sd": 0.0257264219845334,
+  "consensus_params": {
+    "max_depth": 10,
+    "learning_rate": 0.060018692492482956,
+    "n_estimators": 944,
+    "min_child_weight": 2.579154132300458,
+    "subsample": 0.6122311628549078,
+    "colsample_bytree": 0.8359998546915957,
+    "colsample_bylevel": 0.5361853513425545,
+    "gamma": 0.6985260597838581,
+    "reg_alpha": 0.009424028224260524,
+    "reg_lambda": 0.969409117737893,
+    "max_bin": 64,
+    "grow_policy": "lossguide",
+    "class_weight_exponent": 0.20748699125463238,
+    "threshold": 0.6194587828863839
+  },
+  "holdout": {
+    "XGB_optuna": {
+      "balanced_accuracy": 0.6742321589882565,
+      "auroc": 0.7729599518217404,
+      "brier": 0.21853545943798675,
+      "log_loss": 0.6834757102889911,
+      "macro_f1": 0.67412771560237
+    },
+    "XGB_optuna_argmax": {
+      "balanced_accuracy": 0.6766034327009938,
+      "auroc": 0.7729599518217404,
+      "brier": 0.21853545943798675,
+      "log_loss": 0.6834757102889911,
+      "macro_f1": 0.676984126984127
+    },
+    "XGB_optuna_consensus": {
+      "balanced_accuracy": 0.7072041553748871,
+      "auroc": 0.7767991568804576,
+      "brier": 0.20944389025951654,
+      "log_loss": 0.6298276519974113,
+      "macro_f1": 0.7054897255137242
+    },
+    "ZS_raw": {
+      "balanced_accuracy": 0.4824977416440831,
+      "auroc": 0.5273261065943993,
+      "brier": 0.32751595158296526,
+      "log_loss": 0.9308206287536299,
+      "macro_f1": 0.37398373983739835
+    },
+    "ZS_raw_prior_matched": {
+      "balanced_accuracy": 0.4824977416440831,
+      "auroc": 0.5273261065943993,
+      "brier": 0.32751595158296526,
+      "log_loss": 0.9308206287536299,
+      "macro_f1": 0.37398373983739835
+    }
+  },
+  "paired": {
+    "XGB_optuna_minus_ZS_raw": {
+      "delta_bacc": 0.1917344173441734,
+      "delta_bacc_ci": [
+        0.11978517389340564,
+        0.2546044852452834
+      ],
+      "delta_auroc": 0.2456338452273411,
+      "delta_auroc_ci": [
+        0.14744297558462033,
+        0.34852086246228575
+      ],
+      "iterations": 1000
+    },
+    "XGB_optuna_minus_ZS_raw_prior_matched": {
+      "delta_bacc": 0.1917344173441734,
+      "delta_bacc_ci": [
+        0.11978517389340564,
+        0.2546044852452834
+      ],
+      "delta_auroc": 0.2456338452273411,
+      "delta_auroc_ci": [
+        0.14744297558462033,
+        0.34852086246228575
+      ],
+      "iterations": 1000
+    }
+  },
+  "cv_minus_holdout_balanced_accuracy": 0.055673895646661364,
+  "rescored_from": "outputs/uci_retinopathy/retinopathy/holdout"
+}

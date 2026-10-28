@@ -1,0 +1,60 @@
+Loading weights:   0%|          | 0/427 [00:00<?, ?it/s]Loading weights: 100%|██████████| 427/427 [00:00<00:00, 6725.63it/s]
+/home/airlab/Desktop/JEV_prediction_testing_v2/.venv/lib/python3.12/site-packages/torch/cuda/__init__.py:283: UserWarning: 
+    Found GPU0 NVIDIA GB10 which is of cuda capability 12.1.
+    Minimum and Maximum cuda capability supported by this version of PyTorch is
+    (8.0) - (12.0)
+    
+  warnings.warn(
+{"stage": "zero-shot", "completed": 0, "patients": 200}
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+{"stage": "zero-shot", "completed": 4, "patients": 200}
+{"stage": "zero-shot", "completed": 8, "patients": 200}
+{"stage": "zero-shot", "completed": 12, "patients": 200}
+{"stage": "zero-shot", "completed": 16, "patients": 200}
+{"stage": "zero-shot", "completed": 20, "patients": 200}
+{"stage": "zero-shot", "completed": 24, "patients": 200}
+{"stage": "zero-shot", "completed": 28, "patients": 200}
+{"stage": "zero-shot", "completed": 32, "patients": 200}
+{"stage": "zero-shot", "completed": 36, "patients": 200}
+{"stage": "zero-shot", "completed": 40, "patients": 200}
+{"stage": "zero-shot", "completed": 44, "patients": 200}
+{"stage": "zero-shot", "completed": 48, "patients": 200}
+{"stage": "zero-shot", "completed": 52, "patients": 200}
+{"stage": "zero-shot", "completed": 56, "patients": 200}
+{"stage": "zero-shot", "completed": 60, "patients": 200}
+{"stage": "zero-shot", "completed": 64, "patients": 200}
+{"stage": "zero-shot", "completed": 68, "patients": 200}
+{"stage": "zero-shot", "completed": 72, "patients": 200}
+{"stage": "zero-shot", "completed": 76, "patients": 200}
+{"stage": "zero-shot", "completed": 80, "patients": 200}
+{"stage": "zero-shot", "completed": 84, "patients": 200}
+{"stage": "zero-shot", "completed": 88, "patients": 200}
+{"stage": "zero-shot", "completed": 92, "patients": 200}
+{"stage": "zero-shot", "completed": 96, "patients": 200}
+{"stage": "zero-shot", "completed": 100, "patients": 200}
+{"stage": "zero-shot", "completed": 104, "patients": 200}
+{"stage": "zero-shot", "completed": 108, "patients": 200}
+{"stage": "zero-shot", "completed": 112, "patients": 200}
+{"stage": "zero-shot", "completed": 116, "patients": 200}
+{"stage": "zero-shot", "completed": 120, "patients": 200}
+{"stage": "zero-shot", "completed": 124, "patients": 200}
+{"stage": "zero-shot", "completed": 128, "patients": 200}
+{"stage": "zero-shot", "completed": 132, "patients": 200}
+{"stage": "zero-shot", "completed": 136, "patients": 200}
+{"stage": "zero-shot", "completed": 140, "patients": 200}
+{"stage": "zero-shot", "completed": 144, "patients": 200}
+{"stage": "zero-shot", "completed": 148, "patients": 200}
+{"stage": "zero-shot", "completed": 152, "patients": 200}
+{"stage": "zero-shot", "completed": 156, "patients": 200}
+{"stage": "zero-shot", "completed": 160, "patients": 200}
+{"stage": "zero-shot", "completed": 164, "patients": 200}
+{"stage": "zero-shot", "completed": 168, "patients": 200}
+{"stage": "zero-shot", "completed": 172, "patients": 200}
+{"stage": "zero-shot", "completed": 176, "patients": 200}
+{"stage": "zero-shot", "completed": 180, "patients": 200}
+{"stage": "zero-shot", "completed": 184, "patients": 200}
+{"stage": "zero-shot", "completed": 188, "patients": 200}
+{"stage": "zero-shot", "completed": 192, "patients": 200}
+{"stage": "zero-shot", "completed": 196, "patients": 200}
+{"stage": "zero-shot", "completed": 200, "patients": 200}

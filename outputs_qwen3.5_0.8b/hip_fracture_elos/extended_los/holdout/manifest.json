@@ -1,0 +1,138 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "hip_fracture_elos",
+  "outcome": "extended_los",
+  "data_hash": "8b0f67bbedb2fe9d7bc2b1379861c803c96d5834a5efafc794af3fd64e33c234",
+  "dataset_spec_sha256": "e43e7f54464d81c6ad5779dcc187b0bbd275c443ff44581c56bfbc3fc6b90b2f",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261008,
+  "n_trials_requested": 200,
+  "timeout_seconds": 3600.0,
+  "classes": [
+    "Not extended stay",
+    "Extended stay"
+  ],
+  "predictor_columns": [
+    "fracture_type",
+    "age",
+    "sex",
+    "heart_rate",
+    "pre_hb",
+    "pre_hct",
+    "pre_mchc",
+    "pre_platelet",
+    "pre_albumin",
+    "pre_pt",
+    "pre_aptt",
+    "pre_ddimer",
+    "pre_calcium",
+    "pre_creatinine",
+    "pre_liver",
+    "pre_renal",
+    "arthroplasty",
+    "tranexamic"
+  ],
+  "zs_raw_csv_sha256": "5368efc315781092abb1a95150cdc8a9f2d23449595ba7d1dcc34b27be260353",
+  "files": {
+    "split.json": "7fa29e85a768c81bd6b45684c5e7edda125bd3167e83e14d7265f105ace5bdda",
+    "trials.csv": "257e2fa0ec857054c116ca2066b099e04ae17fbcd3d13b484734ba70da6d586f",
+    "XGB_optuna.csv": "3606be860ab90ad16d3ce070a0f21f8d980383dc9bb887b0e4d50a666b0b0f77",
+    "ZS_raw.csv": "15a721b3a9a57003858bcf8402731e3e1bdebd5c0866762df0d793ba4e0da9a7",
+    "model.joblib": "29b8aa6c0597db7e74ac401bc0fdacbafc87056cdfc4c050e7b73ce27cedeaab",
+    "best_params.json": "e4a234d75fd7846a5672306eee8ff5382d232263d1b59d9901e70dc88a726b83",
+    "metrics.json": "5acdefd0663f752d945b1478e73ba256744cbe3811c123b3343aa9d76345ca0c"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  },
+  "zs_raw_source": "predictions/ZS_raw_holdout.csv",
+  "rescored_from": "outputs/hip_fracture_elos/extended_los/holdout",
+  "source_data_hash": "4284b425bdf234f7194aa3f89ead88a232791e34be032aeed511970f33f4ca5e"
+}

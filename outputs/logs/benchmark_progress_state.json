@@ -1,0 +1,355 @@
+{
+  "updated": "2026-10-24T17:29:39+02:00",
+  "rows": {
+    "cleveland_heart/heart_disease": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_hcv/hcv_category": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_mammographic_mass/malignancy": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_heart_failure/mortality": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_ilpd/liver_disease": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_diabetes130/readmit_30d": {
+      "have": [
+        "ZS_raw"
+      ],
+      "classical": false,
+      "full": false
+    },
+    "uci_cervical/biopsy": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "wids2021/diabetes_mellitus": {
+      "have": [
+        "ZS_raw"
+      ],
+      "classical": false,
+      "full": false
+    },
+    "uci_breast_coimbra/breast_cancer": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_hepatitis/died": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_bone_marrow/bmt_died": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_haberman/died_5y": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_maternal_risk/risk_level": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_cirrhosis/cirrhosis_died": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_support2/hosp_death": {
+      "have": [
+        "ZS_raw"
+      ],
+      "classical": false,
+      "full": false
+    },
+    "uci_aids_cid/aids_event": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_glioma/gbm": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_vertebral/pathology": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_breast_recurrence/recurrence": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_cdc_diabetes/cdc_diabetes": {
+      "have": [
+        "ZS_raw"
+      ],
+      "classical": false,
+      "full": false
+    },
+    "uci_parkinsons/parkinsons": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_spectf/abnormal": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_dermatology/dermatological_diagnosis": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_thyroid_recur/recurred": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_ckd/ckd_status": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_arrhythmia/arrhythmia_class": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_thoracic/died_1y": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_early_diabetes/diabetes": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_wdbc/diagnosis": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_wbc_original/malignant": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_autism/asd": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_retinopathy/retinopathy": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_mi_lethal/lethal": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_obesity/obesity_class": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_cardiotocography/nsp": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "uci_thyroid/hypothyroid_status": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "ppd_bangladesh/ppd_high": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "hip_fracture_elos/extended_los": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "berlin_appendicitis/appendicitis": {
+      "have": [
+        "M2",
+        "ZS_raw"
+      ],
+      "classical": true,
+      "full": true
+    },
+    "physionet_2012/icu_death": {
+      "have": [
+        "ZS_raw"
+      ],
+      "classical": false,
+      "full": false
+    },
+    "physionet_2019/sepsis": {
+      "have": [
+        "ZS_raw"
+      ],
+      "classical": false,
+      "full": false
+    },
+    "nhanes_htn/hypertension": {
+      "have": [
+        "ZS_raw"
+      ],
+      "classical": false,
+      "full": false
+    },
+    "metabric/pam50_subtype": {
+      "have": [
+        "ZS_raw"
+      ],
+      "classical": false,
+      "full": false
+    },
+    "mexico_covid/covid_death": {
+      "have": [
+        "ZS_raw"
+      ],
+      "classical": false,
+      "full": false
+    },
+    "dryad_er_cbc/er_death": {
+      "have": [
+        "ZS_raw"
+      ],
+      "classical": false,
+      "full": false
+    }
+  }
+}

@@ -1,0 +1,3 @@
+2026-10-25T21:26:55+01:00 START study_qwen3.5_27b_prior_none zeroshot cleveland_heart/heart_disease
+2026-10-25T21:35:12+01:00 START study_qwen3.5_27b_prior_none zeroshot cleveland_heart/heart_disease
+2026-10-25T21:39:17+01:00 STOPPED by user; moving to pod

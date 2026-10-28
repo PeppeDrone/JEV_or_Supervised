@@ -1,0 +1,126 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_breast_recurrence",
+  "outcome": "recurrence",
+  "data_hash": "c8e6d9d805c971e57e94d4398a1bcc94ec9798c757e7662ced6b0b055865b31e",
+  "dataset_spec_sha256": "ee7816555f155e5b60e9736ef196d31d887c8d8c5ee43b1acbd7b360ec8f56f1",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261011,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "No recurrence",
+    "Recurrence"
+  ],
+  "predictor_columns": [
+    "age",
+    "menopause",
+    "tumor_size",
+    "inv_nodes",
+    "node_caps",
+    "deg_malig",
+    "breast",
+    "breast_quad",
+    "irradiat"
+  ],
+  "zs_raw_csv_sha256": "fe3c5e7bf1ffb78ffc1f386d84b47ed6ec6f29403b6fbd2f3bf1573687e164ca",
+  "files": {
+    "split.json": "a9dc61d4e62f0849d8865e1e9dbe5f4c17a62683a9fac56821b31cff6e521425",
+    "trials.csv": "e39afd56e497e6e215eadb1417f60eb61412275fe932511ede885683ef3b4313",
+    "XGB_optuna.csv": "b2bab4b4a4cdd2ac7d19baecc0e7625a88a642047562df2dc9c828a46b1ded72",
+    "ZS_raw.csv": "69e1305377d4b3965e58336677fd426265ac46c737c6012941244462aef324d6",
+    "model.joblib": "21a018ba2017597ae18b1ae741b3394b40bf715633aaef720b0fdc8c025e29bb",
+    "best_params.json": "3b1c49d7283a7b1d4c07d0dc01a3cea22d929c781130060775c42236f799308e",
+    "metrics.json": "6f0a7308526c61b53cb49cb9098b500285811666c70d9506c60f5b229721db20"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

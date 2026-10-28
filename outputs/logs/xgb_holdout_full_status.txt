@@ -1,0 +1,22 @@
+2026-10-24T16:59:19+02:00 QUEUE START mode=full workers=4
+2026-10-24T16:59:19+02:00 START wids2021/diabetes_mellitus
+2026-10-24T16:59:19+02:00 START uci_diabetes130/readmit_30d
+2026-10-24T16:59:19+02:00 START uci_cdc_diabetes/cdc_diabetes
+2026-10-24T16:59:19+02:00 START uci_support2/hosp_death
+2026-10-24T17:02:20+02:00 OK uci_support2/hosp_death
+2026-10-24T17:02:20+02:00 START physionet_2012/icu_death
+2026-10-24T17:03:07+02:00 OK uci_diabetes130/readmit_30d
+2026-10-24T17:03:07+02:00 START physionet_2019/sepsis
+2026-10-24T17:05:03+02:00 OK physionet_2019/sepsis
+2026-10-24T17:05:03+02:00 START nhanes_htn/hypertension
+2026-10-24T17:05:44+02:00 OK physionet_2012/icu_death
+2026-10-24T17:05:44+02:00 START metabric/pam50_subtype
+2026-10-24T17:05:58+02:00 OK nhanes_htn/hypertension
+2026-10-24T17:05:58+02:00 START mexico_covid/covid_death
+2026-10-24T17:06:09+02:00 OK uci_cdc_diabetes/cdc_diabetes
+2026-10-24T17:06:09+02:00 START dryad_er_cbc/er_death
+2026-10-24T17:06:10+02:00 OK wids2021/diabetes_mellitus
+2026-10-24T17:07:10+02:00 OK dryad_er_cbc/er_death
+2026-10-24T17:08:20+02:00 OK metabric/pam50_subtype
+2026-10-24T17:08:28+02:00 OK mexico_covid/covid_death
+2026-10-24T17:08:28+02:00 QUEUE END mode=full

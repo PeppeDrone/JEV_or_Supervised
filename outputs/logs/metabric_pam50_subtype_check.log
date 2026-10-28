@@ -1,0 +1,1 @@
+metabric/pam50_subtype: 1000 labelled patients, 13 predictors, classes {'Basal': 86, 'Her2': 109, 'LumA': 352, 'LumB': 239, 'Normal': 73, 'claudin-low': 141}, 5 outer folds -> outputs/metabric/pam50_subtype

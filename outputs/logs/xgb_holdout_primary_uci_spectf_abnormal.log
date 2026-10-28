@@ -1,0 +1,6 @@
+{"stage": "XGB_optuna", "trial": 0, "best": null}
+{"stage": "XGB_optuna", "trial": 10, "best": 0.7240790255496137}
+{"stage": "XGB_optuna", "trial": 40, "best": 0.7498885918003566}
+{"stage": "XGB_optuna", "trial": 100, "best": 0.7506387403446227}
+{"stage": "XGB_optuna", "trial": 130, "best": 0.7506387403446227}
+{"stage": "XGB_optuna", "done": true, "holdout_bacc": 0.7801268498942917, "zs_bacc": 0.5}

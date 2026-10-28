@@ -1,0 +1,133 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "mexico_covid",
+  "outcome": "covid_death",
+  "data_hash": "b26442bec43e60ab87faa778cfadde20b9fca55199e0a2a6a6f055f3f2aae50b",
+  "dataset_spec_sha256": "1a1379776e6cbe28892eccca1ea5cd807a2c6c0162e9eee5677a88af75e22115",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261013,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "Alive",
+    "Died"
+  ],
+  "predictor_columns": [
+    "age",
+    "sex",
+    "pregnancy",
+    "indigenous",
+    "nationality",
+    "pneumonia",
+    "diabetes",
+    "copd",
+    "asthma",
+    "immunosuppressed",
+    "hypertension",
+    "other_disease",
+    "cardiovascular",
+    "obesity",
+    "chronic_kidney",
+    "smoking"
+  ],
+  "zs_raw_csv_sha256": "f72f6d76bb1d17283b7d0abaa2c4cb2722758c7e4e6b7071bc3ba3dc94cc5d4c",
+  "files": {
+    "split.json": "12f8f9be9d3cae6d74e13dbdfcf7ebc38e6cdee0fe6157e4f61f0b2939fd59e9",
+    "trials.csv": "a61433118576c8a87fabc35582aa8cf6c558de59359ed459cb0e45d948e3273a",
+    "XGB_optuna.csv": "6f283f3319d989b1a9149ed2b27e336e7782afe0987e86b16a1213802d272d65",
+    "ZS_raw.csv": "c8fec24b0bb49c09300d66a02e785c8b9558a03c1eca990b7e0036f532eb71b6",
+    "model.joblib": "999ea30502c4735e05c4f09f9c1dbe21ec02e804f82a2d4e65585e32e4bcd535",
+    "best_params.json": "a4e429c0deead920d4c5314c1b5b3a4626e09ede77ac56f36a28c326df692a0b",
+    "metrics.json": "408bdf3112da770a48b46bdfd834880986f4a9d4f4982d6923e6f20a6f855fa0"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

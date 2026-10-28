@@ -1,0 +1,166 @@
+name: uci_cdc_diabetes
+description: UCI CDC Diabetes Health Indicators (BRFSS 2015 telephone survey, binary balanced-free version; class-stratified
+  subsample of 1000 for the readout, whole table for XGBoost). 21 self-reported health and lifestyle indicators.
+  Binary diabetes (prediabetes or diabetes ever diagnosed).
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: 'Adult respondent to the 2015 US Behavioral Risk Factor Surveillance System telephone health survey. The
+  observations are self-reported: ever told of high blood pressure or cholesterol, body mass index, smoking, cardiovascular
+  history, physical activity, diet, alcohol use, healthcare access, general, mental and physical health, mobility,
+  sex, age group, education and income.'
+observations_header: 'Self-reported survey answers:'
+predictors:
+  highbp:
+    column: highbp
+    kind: categorical
+    text_label: Ever told by a health professional that blood pressure is high
+    text_values: &id001
+      '0': 'No'
+      '1': 'Yes'
+  highchol:
+    column: highchol
+    kind: categorical
+    text_label: Ever told that blood cholesterol is high
+    text_values: *id001
+  cholcheck:
+    column: cholcheck
+    kind: categorical
+    text_label: Cholesterol checked within the last 5 years
+    text_values: *id001
+  bmi:
+    column: bmi
+    kind: numeric
+    text_label: Body mass index
+    unit: kg/m2
+  smoker:
+    column: smoker
+    kind: categorical
+    text_label: Smoked at least 100 cigarettes in lifetime
+    text_values: *id001
+  stroke:
+    column: stroke
+    kind: categorical
+    text_label: Ever told of a stroke
+    text_values: *id001
+  heartdiseaseorattack:
+    column: heartdiseaseorattack
+    kind: categorical
+    text_label: Ever told of coronary heart disease or myocardial infarction
+    text_values: *id001
+  physactivity:
+    column: physactivity
+    kind: categorical
+    text_label: Any physical activity in the past 30 days outside of work
+    text_values: *id001
+  fruits:
+    column: fruits
+    kind: categorical
+    text_label: Eats fruit one or more times per day
+    text_values: *id001
+  veggies:
+    column: veggies
+    kind: categorical
+    text_label: Eats vegetables one or more times per day
+    text_values: *id001
+  hvyalcoholconsump:
+    column: hvyalcoholconsump
+    kind: categorical
+    text_label: Heavy drinker (more than 14 drinks per week for men, 7 for women)
+    text_values: *id001
+  anyhealthcare:
+    column: anyhealthcare
+    kind: categorical
+    text_label: Has any kind of health care coverage
+    text_values: *id001
+  nodocbccost:
+    column: nodocbccost
+    kind: categorical
+    text_label: Could not see a doctor in the past 12 months because of cost
+    text_values: *id001
+  genhlth:
+    column: genhlth
+    kind: categorical
+    text_label: Self-rated general health
+    text_values:
+      '1': Excellent
+      '2': Very good
+      '3': Good
+      '4': Fair
+      '5': Poor
+  menthlth:
+    column: menthlth
+    kind: numeric
+    text_label: Days of poor mental health in the past 30 days
+    unit: days
+  physhlth:
+    column: physhlth
+    kind: numeric
+    text_label: Days of poor physical health in the past 30 days
+    unit: days
+  diffwalk:
+    column: diffwalk
+    kind: categorical
+    text_label: Serious difficulty walking or climbing stairs
+    text_values: *id001
+  sex:
+    column: sex
+    kind: categorical
+    text_label: Sex
+    text_values:
+      '0': Female
+      '1': Male
+  age:
+    column: age
+    kind: categorical
+    text_label: Age group
+    text_values:
+      '1': 18-24 years
+      '2': 25-29 years
+      '3': 30-34 years
+      '4': 35-39 years
+      '5': 40-44 years
+      '6': 45-49 years
+      '7': 50-54 years
+      '8': 55-59 years
+      '9': 60-64 years
+      '10': 65-69 years
+      '11': 70-74 years
+      '12': 75-79 years
+      '13': 80 years or older
+  education:
+    column: education
+    kind: categorical
+    text_label: Highest education level
+    text_values:
+      '1': Never attended school or only kindergarten
+      '2': Grades 1 through 8 (elementary)
+      '3': Grades 9 through 11 (some high school)
+      '4': Grade 12 or GED (high school graduate)
+      '5': College 1 to 3 years (some college or technical school)
+      '6': College 4 years or more (college graduate)
+  income:
+    column: income
+    kind: categorical
+    text_label: Annual household income
+    text_values:
+      '1': Less than 10 000 dollars
+      '2': 10 000 to under 15 000 dollars
+      '3': 15 000 to under 20 000 dollars
+      '4': 20 000 to under 25 000 dollars
+      '5': 25 000 to under 35 000 dollars
+      '6': 35 000 to under 50 000 dollars
+      '7': 50 000 to under 75 000 dollars
+      '8': 75 000 dollars or more
+outcomes:
+  cdc_diabetes:
+    column: cdc_diabetes
+    classes:
+    - No diabetes
+    - Prediabetes or diabetes
+    mapping:
+      '0': No diabetes
+      '1': Prediabetes or diabetes
+    question: Based on these survey answers, has this respondent ever been told by a health professional that they
+      have diabetes or prediabetes?

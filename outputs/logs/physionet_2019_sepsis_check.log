@@ -1,0 +1,1 @@
+physionet_2019/sepsis: 1000 labelled patients, 38 predictors, classes {'No sepsis': 910, 'Sepsis': 90}, 5 outer folds -> outputs/physionet_2019/sepsis

@@ -1,0 +1,17 @@
+2026-10-24T19:08:24+02:00 LADDER zeroshot configs/study.yaml subset=holdout
+2026-10-24T19:08:24+02:00 START study zeroshot cleveland_heart/heart_disease
+2026-10-24T19:09:18+02:00 OK    study zeroshot cleveland_heart/heart_disease
+2026-10-24T19:09:18+02:00 START study zeroshot uci_hcv/hcv_category
+Terminated
+2026-10-24T19:09:41+02:00 FAIL  study zeroshot uci_hcv/hcv_category (exit 143)
+{"stage": "zero-shot", "completed": 88, "patients": 608}
+{"stage": "zero-shot", "completed": 92, "patients": 608}
+{"stage": "zero-shot", "completed": 96, "patients": 608}
+{"stage": "zero-shot", "completed": 100, "patients": 608}
+{"stage": "zero-shot", "completed": 104, "patients": 608}
+2026-10-24T19:09:41+02:00 START study zeroshot uci_mammographic_mass/malignancy
+ro-shot", "completed": 92, "patients": 608}
+{"stage": "zero-shot", "completed": 96, "patients": 608}
+{"stage": "zero-shot", "completed": 100, "patients": 608}
+{"stage": "zero-shot", "completed": 104, "patients": 608}
+2026-10-24T19:09:41+02:00 START study zeroshot uci_mammographic_mass/malignancy

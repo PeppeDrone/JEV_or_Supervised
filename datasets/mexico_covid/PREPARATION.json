@@ -1,0 +1,32 @@
+{
+  "dataset": "mexico_covid",
+  "prepared_at": "2026-10-22T13:56:39.945435+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://datosabiertos.salud.gob.mx/gobmx/salud/datos_abiertos/historicos/2020/COVID19MEXICO2020.zip",
+      "path": "datasets/mexico_covid/raw/COVID19MEXICO2020.zip",
+      "sha256": "64c90685b68a1164bfa093eeef8c8d33d35d93d9d8b8f3d2d6315359a18dab90",
+      "bytes": 61401773,
+      "retrieved": "cached"
+    }
+  ],
+  "patients_csv_sha256": "2acd058420fea65cd57fd924860ec3824bcc831889d385571a2f1c418ba4fdbc",
+  "summary": {
+    "observations": 1000,
+    "predictors": 16,
+    "outcome": "covid_death",
+    "excluded_predictors": [
+      "INTUBADO",
+      "UCI",
+      "TIPO_PACIENTE",
+      "FECHA_INGRESO",
+      "FECHA_DEF"
+    ],
+    "class_counts": {
+      "Alive": 844,
+      "Died": 156
+    },
+    "identifier_note": "Mexico SSA datos abiertos 2020 cierre. CLASIFICACION_FINAL in {1,2,3}. First 1000 confirmed rows in file order. INTUBADO/UCI/TIPO_PACIENTE dropped. Codes 97/98/99 left empty.",
+    "cap": 1000
+  }
+}

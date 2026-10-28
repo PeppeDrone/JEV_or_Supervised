@@ -1,0 +1,226 @@
+name: uci_autism
+description: UCI Autism Screening Adult (704 adults). Binary ASD classification.
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Adult (aged 17 or older) completing the ten-item Autism Spectrum Quotient (AQ-10) screening questionnaire
+  through a mobile application (Thabtah 2017). The observations are the ten item responses, each recorded as whether
+  the answer was in the autistic-trait direction, and the demographic details entered with the questionnaire.
+observations_header: 'AQ-10 item responses (autistic-trait direction) and demographics:'
+predictors:
+  a1_score:
+    column: a1_score
+    kind: categorical
+    text_label: 'AQ-10 item 1: Often notices small sounds when others do not'
+    text_values:
+      '1': 'Yes'
+      '0': 'No'
+  a2_score:
+    column: a2_score
+    kind: categorical
+    text_label: 'AQ-10 item 2: Concentrates on small details rather than the whole picture'
+    text_values:
+      '1': 'Yes'
+      '0': 'No'
+  a3_score:
+    column: a3_score
+    kind: categorical
+    text_label: 'AQ-10 item 3: Finds it hard to do more than one thing at once'
+    text_values:
+      '1': 'Yes'
+      '0': 'No'
+  a4_score:
+    column: a4_score
+    kind: categorical
+    text_label: 'AQ-10 item 4: Finds it hard to return to a task after an interruption'
+    text_values:
+      '1': 'Yes'
+      '0': 'No'
+  a5_score:
+    column: a5_score
+    kind: categorical
+    text_label: 'AQ-10 item 5: Finds it hard to read between the lines in conversation'
+    text_values:
+      '1': 'Yes'
+      '0': 'No'
+  a6_score:
+    column: a6_score
+    kind: categorical
+    text_label: 'AQ-10 item 6: Finds it hard to tell when a listener is getting bored'
+    text_values:
+      '1': 'Yes'
+      '0': 'No'
+  a7_score:
+    column: a7_score
+    kind: categorical
+    text_label: 'AQ-10 item 7: Finds it difficult to work out characters'' intentions when reading a story'
+    text_values:
+      '1': 'Yes'
+      '0': 'No'
+  a8_score:
+    column: a8_score
+    kind: categorical
+    text_label: 'AQ-10 item 8: Likes to collect information about categories of things'
+    text_values:
+      '1': 'Yes'
+      '0': 'No'
+  a9_score:
+    column: a9_score
+    kind: categorical
+    text_label: 'AQ-10 item 9: Finds it hard to work out what someone thinks or feels from their face'
+    text_values:
+      '1': 'Yes'
+      '0': 'No'
+  a10_score:
+    column: a10_score
+    kind: categorical
+    text_label: 'AQ-10 item 10: Finds it difficult to work out people''s intentions'
+    text_values:
+      '1': 'Yes'
+      '0': 'No'
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+    text_range:
+    - 17
+    - 110
+  gender:
+    column: gender
+    kind: categorical
+    text_label: Sex
+    text_values:
+      f: Female
+      m: Male
+  ethnicity:
+    column: ethnicity
+    kind: categorical
+    text_label: Ethnicity
+    text_values:
+      White-European: White-European
+      Latino: Latino
+      Black: Black
+      Asian: Asian
+      Middle Eastern: Middle Eastern
+      Pasifika: Pasifika
+      South Asian: South Asian
+      Hispanic: Hispanic
+      Turkish: Turkish
+      Others: Other
+      others: Other
+  jaundice:
+    column: jaundice
+    kind: categorical
+    text_label: Had jaundice at birth
+    text_values:
+      'no': 'No'
+      'yes': 'Yes'
+  family_pdd:
+    column: family_pdd
+    kind: categorical
+    text_label: Immediate family member with a pervasive developmental disorder
+    text_values:
+      'no': 'No'
+      'yes': 'Yes'
+  country_of_res:
+    column: country_of_res
+    kind: categorical
+    text_label: Country of residence
+    text_values:
+      United States: United States
+      Brazil: Brazil
+      Spain: Spain
+      Egypt: Egypt
+      New Zealand: New Zealand
+      Bahamas: Bahamas
+      Burundi: Burundi
+      Austria: Austria
+      Argentina: Argentina
+      Jordan: Jordan
+      Ireland: Ireland
+      United Arab Emirates: United Arab Emirates
+      Afghanistan: Afghanistan
+      Lebanon: Lebanon
+      United Kingdom: United Kingdom
+      South Africa: South Africa
+      Italy: Italy
+      Pakistan: Pakistan
+      Bangladesh: Bangladesh
+      Chile: Chile
+      France: France
+      China: China
+      Australia: Australia
+      Canada: Canada
+      Saudi Arabia: Saudi Arabia
+      Netherlands: Netherlands
+      Romania: Romania
+      Sweden: Sweden
+      Tonga: Tonga
+      Oman: Oman
+      India: India
+      Philippines: Philippines
+      Sri Lanka: Sri Lanka
+      Sierra Leone: Sierra Leone
+      Ethiopia: Ethiopia
+      Viet Nam: Vietnam
+      Iran: Iran
+      Costa Rica: Costa Rica
+      Germany: Germany
+      Mexico: Mexico
+      Russia: Russia
+      Armenia: Armenia
+      Iceland: Iceland
+      Nicaragua: Nicaragua
+      Hong Kong: Hong Kong
+      Japan: Japan
+      Ukraine: Ukraine
+      Kazakhstan: Kazakhstan
+      AmericanSamoa: American Samoa
+      Uruguay: Uruguay
+      Serbia: Serbia
+      Portugal: Portugal
+      Malaysia: Malaysia
+      Ecuador: Ecuador
+      Niger: Niger
+      Belgium: Belgium
+      Bolivia: Bolivia
+      Aruba: Aruba
+      Finland: Finland
+      Turkey: Turkey
+      Nepal: Nepal
+      Indonesia: Indonesia
+      Angola: Angola
+      Azerbaijan: Azerbaijan
+      Iraq: Iraq
+      Czech Republic: Czech Republic
+      Cyprus: Cyprus
+  used_app_before:
+    column: used_app_before
+    kind: categorical
+    text_label: Has used the screening app before
+    text_values:
+      'no': 'No'
+      'yes': 'Yes'
+  relation:
+    column: relation
+    kind: categorical
+    text_label: Who completed the questionnaire
+    text_values:
+      Self: The person themselves
+      Parent: Parent
+      Health care professional: Health-care professional
+      Relative: Relative
+      Others: Other
+outcomes:
+  asd:
+    column: asd
+    classes:
+    - AQ-10 screen negative
+    - AQ-10 screen positive (6 or more items endorsed)
+    mapping:
+      '0': AQ-10 screen negative
+      '1': AQ-10 screen positive (6 or more items endorsed)
+    question: Based on these AQ-10 item responses and demographics, does this adult screen positive for autism spectrum
+      traits on the AQ-10?

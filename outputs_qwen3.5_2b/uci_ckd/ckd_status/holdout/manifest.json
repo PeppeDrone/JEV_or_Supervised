@@ -1,0 +1,139 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_ckd",
+  "outcome": "ckd_status",
+  "data_hash": "a37b46b2dc46956d2d7fdbac837e18dde8cc93bffb16730a7660800e3101c823",
+  "dataset_spec_sha256": "ccc8d97e183126ca38a5249f369601e15ac29ba70edec7e026a54745d78543bf",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261008,
+  "n_trials_requested": 200,
+  "timeout_seconds": 3600.0,
+  "classes": [
+    "No chronic kidney disease",
+    "Chronic kidney disease"
+  ],
+  "predictor_columns": [
+    "age",
+    "bp",
+    "sg",
+    "al",
+    "su",
+    "rbc",
+    "pc",
+    "pcc",
+    "ba",
+    "bgr",
+    "bu",
+    "sc",
+    "sod",
+    "pot",
+    "hemo",
+    "pcv",
+    "wc",
+    "rc",
+    "htn",
+    "dm",
+    "cad",
+    "appet",
+    "pe",
+    "ane"
+  ],
+  "zs_raw_csv_sha256": "372b49b21c2202a67c2418ea0652925e2dbeb77944a7baae2ba5c5477afb16e8",
+  "files": {
+    "split.json": "b6e680b4bcda3b57b6b59b6b684a47f102bf05f077a2023dab8f0e15729a9e34",
+    "trials.csv": "83824cb2c63c2f224e29e77ffa87d4dc334ddf184a6793438b0ab9a059771898",
+    "XGB_optuna.csv": "94a328f6bbe3492a0e54f8771a640911845ecd1a5cad37a5025c638fb4e0584b",
+    "ZS_raw.csv": "824297d56598dcd11cab64acc0f91dfab12dc04a6880478aba32d0dffa741fea",
+    "model.joblib": "ead44d37de0e6096e940083e0d17e08a41cfaaf474b3b6710e2ff6476616d3f8",
+    "best_params.json": "2dad2ef36d034980cbc3b34f6fd92e6b7fd6e853d1ebea303b1551e9d5f00240",
+    "metrics.json": "b40bda49cffb690762c9a3b941f97f0645b9d65edb866166b5454d64086f017d"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  },
+  "zs_raw_source": "predictions/ZS_raw_holdout.csv",
+  "rescored_from": "outputs/uci_ckd/ckd_status/holdout",
+  "source_data_hash": "19cf9690e6ff2b010422a2a0c8f33d3825fc48ae5b2e193d1828c5d325e6b6e6"
+}

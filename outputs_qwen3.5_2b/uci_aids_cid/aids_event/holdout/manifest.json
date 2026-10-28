@@ -1,0 +1,134 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_aids_cid",
+  "outcome": "aids_event",
+  "data_hash": "d433eeb11634cce73c5b6c522b243630f67e63fa3d844fe83ee465c40a98362e",
+  "dataset_spec_sha256": "e26965d30ff681c64f162b6d9ab06615bf39f5a6fbdf4327435ccbc0c0913191",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261008,
+  "n_trials_requested": 200,
+  "timeout_seconds": 3600.0,
+  "classes": [
+    "No AIDS-defining event",
+    "AIDS-defining event"
+  ],
+  "predictor_columns": [
+    "trt",
+    "age",
+    "wtkg",
+    "hemo",
+    "homo",
+    "drugs",
+    "karnof",
+    "oprior",
+    "z30",
+    "zprior",
+    "preanti",
+    "race",
+    "gender",
+    "str2",
+    "strat",
+    "symptom",
+    "treat",
+    "cd40",
+    "cd80"
+  ],
+  "zs_raw_csv_sha256": "55fcf83720a56c40fa8ba9d7872a475d6225ebe8d0021c388c23ce0b442bebb5",
+  "files": {
+    "split.json": "af1f096f96352a25381acd7e4d48cd6a9f6d032f7640f5a6e606cf99de913f80",
+    "trials.csv": "675206a941c949add2e0308013ea998afa8581c94ceef85ce9549922dca73f43",
+    "XGB_optuna.csv": "7398e33a2f8f5bfc9fc180ffcd284607ef7227c106486a2b645a5f40ea4115cd",
+    "ZS_raw.csv": "d533b20a5b9c0d002a89c18c256e98eeef356dde5fbc2ecbf1fafc10d84dc47a",
+    "model.joblib": "f4ed092b8d0e4f2560dffe6be4491fd1c8a72b895bed688b6e2c4f4055354b93",
+    "best_params.json": "ed2e9d22f490a9e47ee692dead12f07bc8afbc284c9871b6475d1908e41b83fe",
+    "metrics.json": "850f0d7e6ade9c492950d2ea580938731d164674885525f296f30cb159dbcc8c"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  },
+  "zs_raw_source": "predictions/ZS_raw_holdout.csv",
+  "rescored_from": "outputs/uci_aids_cid/aids_event/holdout",
+  "source_data_hash": "3d7cffeb51eef3c850678bc84cdb99efbec02b3ba40dcc4840e22178f28a6067"
+}

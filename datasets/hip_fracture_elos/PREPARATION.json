@@ -1,0 +1,57 @@
+{
+  "dataset": "hip_fracture_elos",
+  "prepared_at": "2026-10-22T11:32:18.370228+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://zenodo.org/api/records/22866907/files/deposit_JCEPI-D-26-01477_v1.0.0.zip/content",
+      "path": "datasets/hip_fracture_elos/raw/deposit_JCEPI-D-26-01477_v1.0.0.zip",
+      "sha256": "9921ebcc720bfa2add076f4b9449de313b1e26130d3b27da118886389018448e",
+      "bytes": 243682,
+      "retrieved": "2026-10-22T11:32:18.342501+00:00"
+    },
+    {
+      "path": "datasets/hip_fracture_elos/raw/m2_deid.csv",
+      "extracted_from": "datasets/hip_fracture_elos/raw/deposit_JCEPI-D-26-01477_v1.0.0.zip",
+      "sha256": "57d7b477ec880588e05f70ba9f66e996fd832581adff592633244b2acd8927a6"
+    }
+  ],
+  "patients_csv_sha256": "a2e028a996ba0b8ca84979624e4588b708d1b09a6bfb1a3eb07b27609ffd5e8f",
+  "summary": {
+    "observations": 1137,
+    "predictors": 18,
+    "outcome": "extended_los",
+    "excluded_predictors": [
+      "age_ori",
+      "age_sup_old",
+      "anemia",
+      "bmi",
+      "cost",
+      "death",
+      "drgs",
+      "extra_fra",
+      "fixation",
+      "gender_female",
+      "general_anesth",
+      "height",
+      "insu_cost",
+      "intra_fra",
+      "los",
+      "malnourish",
+      "op_time",
+      "po_dvt",
+      "po_hct_d1",
+      "po_hlb_d1",
+      "po_pneu",
+      "po_urin",
+      "pre_anal",
+      "time_admission_surgery",
+      "transfusion",
+      "weight"
+    ],
+    "class_counts": {
+      "Not extended stay": 637,
+      "Extended stay": 500
+    },
+    "identifier_note": "Zenodo 10.5281/zenodo.22866907 development cohort m2_deid.csv. Predictors = S_honest_T0_deduped. Postoperative labs, complications, costs, death, LOS, and time-to-surgery excluded."
+  }
+}

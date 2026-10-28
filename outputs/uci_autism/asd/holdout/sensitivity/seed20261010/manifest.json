@@ -1,0 +1,135 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_autism",
+  "outcome": "asd",
+  "data_hash": "1e4cdf7cd0ba8f26ac9bafe8314c791b7e1608527b1652b974f2fac28ace569e",
+  "dataset_spec_sha256": "d8c6d8fd5c8c9de61e74e17662cb39516deb807c965927961d7b3f1d101d6e74",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261010,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "No ASD",
+    "ASD"
+  ],
+  "predictor_columns": [
+    "a1_score",
+    "a2_score",
+    "a3_score",
+    "a4_score",
+    "a5_score",
+    "a6_score",
+    "a7_score",
+    "a8_score",
+    "a9_score",
+    "a10_score",
+    "age",
+    "gender",
+    "ethnicity",
+    "jaundice",
+    "family_pdd",
+    "country_of_res",
+    "used_app_before",
+    "relation"
+  ],
+  "zs_raw_csv_sha256": "5065e017d39122b2a18a266924412ae410fb2d3e93cc83277c6b3edc9dca427a",
+  "files": {
+    "split.json": "72c083a1a4c5cfd12956b2f9e10706d85b94d195a4cc5b7681326da2fe138182",
+    "trials.csv": "85b590b0c48dc582cf0593751965fc00f7465f078cd5c6dde76e9b0cf7bfded5",
+    "XGB_optuna.csv": "eb05b3afed6f9f432a475ac9f64538803651603260cbaf45e35262227dfdc002",
+    "ZS_raw.csv": "51afa84fdc4a80d28e1e90b474cc6d3a9ae460b9aae604be132634c4f78fefc5",
+    "model.joblib": "6b930a89527f1095adb39b07b14661bdeaec6b0724dcdcef578525763159ee84",
+    "best_params.json": "843cd6e282779cb962f117c27f1f873f8d81ab8ff6dbfbbab32855f52106998f",
+    "metrics.json": "37caa7cf4af1874a4284e96c51b8b4185321e5a3e73e8f04cc76963e444b898b"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

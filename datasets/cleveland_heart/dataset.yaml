@@ -1,0 +1,110 @@
+name: cleveland_heart
+description: UCI Heart Disease processed Cleveland cohort (303 observations, 13 clinical predictors). Binary angiographic
+  heart-disease status from the original num field.
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Adult referred to the Cleveland Clinic (1980s) for evaluation of suspected coronary artery disease, who
+  then underwent coronary angiography. The observations are the history, resting examination, resting ECG, exercise
+  test and thallium scintigraphy findings available before angiography.
+observations_header: 'Clinical examination and non-invasive diagnostic findings:'
+predictors:
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+  sex:
+    column: sex
+    kind: categorical
+    text_label: Sex
+    text_values:
+      '0': Female
+      '1': Male
+  cp:
+    column: cp
+    kind: categorical
+    text_label: Chest pain type
+    text_values:
+      '1': Typical angina
+      '2': Atypical angina
+      '3': Non-anginal pain
+      '4': Asymptomatic
+  trestbps:
+    column: trestbps
+    kind: numeric
+    text_label: Resting blood pressure on admission
+    unit: mmHg
+  chol:
+    column: chol
+    kind: numeric
+    text_label: Serum cholesterol
+    unit: mg/dL
+  fbs:
+    column: fbs
+    kind: categorical
+    text_label: Fasting blood sugar above 120 mg/dL
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  restecg:
+    column: restecg
+    kind: categorical
+    text_label: Resting electrocardiographic results
+    text_values:
+      '0': Normal
+      '1': ST-T wave abnormality (T-wave inversions and/or ST elevation or depression > 0.05 mV)
+      '2': Probable or definite left ventricular hypertrophy by Estes' criteria
+  thalach:
+    column: thalach
+    kind: numeric
+    text_label: Maximum heart rate achieved during exercise
+    unit: beats/min
+  exang:
+    column: exang
+    kind: categorical
+    text_label: Exercise-induced angina
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  oldpeak:
+    column: oldpeak
+    kind: numeric
+    text_label: ST depression induced by exercise relative to rest
+    unit: mm
+  slope:
+    column: slope
+    kind: categorical
+    text_label: Slope of the peak exercise ST segment
+    text_values:
+      '1': Upsloping
+      '2': Flat
+      '3': Downsloping
+  ca:
+    column: ca
+    kind: numeric
+    text_label: Number of major vessels coloured by fluoroscopy
+    scale_note: 0-3
+  thal:
+    column: thal
+    kind: categorical
+    text_label: Thallium scintigraphy result
+    text_values:
+      '3': Normal
+      '6': Fixed defect
+      '7': Reversible defect
+outcomes:
+  heart_disease:
+    column: num
+    classes:
+    - No angiographic coronary artery disease (less than 50% narrowing)
+    - Angiographic coronary artery disease (50% or more narrowing)
+    mapping:
+      '0': No angiographic coronary artery disease (less than 50% narrowing)
+      '1': Angiographic coronary artery disease (50% or more narrowing)
+      '2': Angiographic coronary artery disease (50% or more narrowing)
+      '3': Angiographic coronary artery disease (50% or more narrowing)
+      '4': Angiographic coronary artery disease (50% or more narrowing)
+    question: Based on these clinical examination and non-invasive diagnostic findings, did coronary angiography
+      show that this patient has coronary artery disease (50% or more narrowing of a major vessel)?

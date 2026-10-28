@@ -1,0 +1,8 @@
+{"stage": "XGB_optuna", "trial": 0, "best": null}
+{"stage": "XGB_optuna", "trial": 10, "best": 0.7820037523452157}
+{"stage": "XGB_optuna", "trial": 20, "best": 0.7820037523452157}
+{"stage": "XGB_optuna", "trial": 30, "best": 0.7820037523452157}
+{"stage": "XGB_optuna", "trial": 40, "best": 0.7946078799249531}
+{"stage": "XGB_optuna", "trial": 70, "best": 0.7946078799249531}
+{"stage": "XGB_optuna", "trial": 150, "best": 0.800765478424015}
+{"stage": "XGB_optuna", "done": true, "holdout_bacc": 0.7536057692307692, "zs_bacc": 0.5841346153846154}

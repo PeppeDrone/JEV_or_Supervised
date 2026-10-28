@@ -1,0 +1,24 @@
+{
+  "dataset": "uci_wbc_original",
+  "prepared_at": "2026-10-21T11:10:22.332724+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/15/data.csv",
+      "path": "datasets/uci_wbc_original/raw/data.csv",
+      "sha256": "3fb81e10c657874f9db975b43a5c10fd0f95ec9ca33150962d486fd4740a8701",
+      "bytes": 20809,
+      "retrieved": "2026-10-21T11:10:22.323559+00:00"
+    }
+  ],
+  "patients_csv_sha256": "fc3cbf17be50003fd13df35a2a31abd887e797713223a1cfe80fbec3ad9b6709",
+  "summary": {
+    "observations": 699,
+    "predictors": 9,
+    "outcome": "malignant",
+    "class_counts": {
+      "Benign": 458,
+      "Malignant": 241
+    },
+    "identifier_note": "UCI Breast Cancer Wisconsin (Original); Class 2=benign, 4=malignant."
+  }
+}

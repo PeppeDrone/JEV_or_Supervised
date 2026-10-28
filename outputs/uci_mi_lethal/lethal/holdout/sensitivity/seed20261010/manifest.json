@@ -1,0 +1,228 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_mi_lethal",
+  "outcome": "lethal",
+  "data_hash": "b901e63f47e0de641a09ef57220c019c24608381fbadc25f0805e23bc751473f",
+  "dataset_spec_sha256": "9cf3fae85e909fa2cc93557f9beeee5108802f77d222b9069eb1f1ad22a6e553",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261010,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "Non-lethal course",
+    "Lethal outcome"
+  ],
+  "predictor_columns": [
+    "age",
+    "sex",
+    "inf_anam",
+    "stenok_an",
+    "fk_stenok",
+    "ibs_post",
+    "ibs_nasl",
+    "gb",
+    "sim_gipert",
+    "dlit_ag",
+    "zsn_a",
+    "nr_11",
+    "nr_01",
+    "nr_02",
+    "nr_03",
+    "nr_04",
+    "nr_07",
+    "nr_08",
+    "np_01",
+    "np_04",
+    "np_05",
+    "np_07",
+    "np_08",
+    "np_09",
+    "np_10",
+    "endocr_01",
+    "endocr_02",
+    "endocr_03",
+    "zab_leg_01",
+    "zab_leg_02",
+    "zab_leg_03",
+    "zab_leg_04",
+    "zab_leg_06",
+    "s_ad_kbrig",
+    "d_ad_kbrig",
+    "s_ad_orit",
+    "d_ad_orit",
+    "o_l_post",
+    "k_sh_post",
+    "mp_tp_post",
+    "svt_post",
+    "gt_post",
+    "fib_g_post",
+    "ant_im",
+    "lat_im",
+    "inf_im",
+    "post_im",
+    "im_pg_p",
+    "ritm_ecg_p_01",
+    "ritm_ecg_p_02",
+    "ritm_ecg_p_04",
+    "ritm_ecg_p_06",
+    "ritm_ecg_p_07",
+    "ritm_ecg_p_08",
+    "n_r_ecg_p_01",
+    "n_r_ecg_p_02",
+    "n_r_ecg_p_03",
+    "n_r_ecg_p_04",
+    "n_r_ecg_p_05",
+    "n_r_ecg_p_06",
+    "n_r_ecg_p_08",
+    "n_r_ecg_p_09",
+    "n_r_ecg_p_10",
+    "n_p_ecg_p_01",
+    "n_p_ecg_p_03",
+    "n_p_ecg_p_04",
+    "n_p_ecg_p_05",
+    "n_p_ecg_p_06",
+    "n_p_ecg_p_07",
+    "n_p_ecg_p_08",
+    "n_p_ecg_p_09",
+    "n_p_ecg_p_10",
+    "n_p_ecg_p_11",
+    "n_p_ecg_p_12",
+    "fibr_ter_01",
+    "fibr_ter_02",
+    "fibr_ter_03",
+    "fibr_ter_05",
+    "fibr_ter_06",
+    "fibr_ter_07",
+    "fibr_ter_08",
+    "gipo_k",
+    "k_blood",
+    "giper_na",
+    "na_blood",
+    "alt_blood",
+    "ast_blood",
+    "kfk_blood",
+    "l_blood",
+    "roe",
+    "time_b_s",
+    "r_ab_1_n",
+    "r_ab_2_n",
+    "r_ab_3_n",
+    "na_kb",
+    "not_na_kb",
+    "lid_kb",
+    "nitr_s",
+    "na_r_1_n",
+    "na_r_2_n",
+    "na_r_3_n",
+    "not_na_1_n",
+    "not_na_2_n",
+    "not_na_3_n",
+    "lid_s_n",
+    "b_blok_s_n",
+    "ant_ca_s_n",
+    "gepar_s_n",
+    "asp_s_n",
+    "tikl_s_n",
+    "trent_s_n"
+  ],
+  "zs_raw_csv_sha256": "91b977d07ae271dfe99732568c9fa3caa80162054084905d50dcb8e422983c70",
+  "files": {
+    "split.json": "28f2699ac896b52fec3da1094d92f317f575e654a4d0c64ad1aaa9effbf1ac10",
+    "trials.csv": "3a6dac134fc0a70ad62cadc9fd9e251bcf2eb5b28ec118e137842d250a00c4cd",
+    "XGB_optuna.csv": "8f52a51d3f5e50152c8498d5a5393efbd61d99ef56fd26710a2087730f63b874",
+    "ZS_raw.csv": "cfaaf536ba39e5c09402d6a57a66e1cccc1a028b93487a47eb3cd816cf8d7a05",
+    "model.joblib": "46669de940b5fb0d1517b31e999f9fde764b00b1d4ed7995b4980d5b6d86d01b",
+    "best_params.json": "56b1d00e10aadc05f628ea86b88268d2413e1555ba4aaa06817c0f1476a4de3a",
+    "metrics.json": "e239603d932fa4a36ac571fc629a9566f78476965fae18cd872c724f210e6d91"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

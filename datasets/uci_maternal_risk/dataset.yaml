@@ -1,0 +1,57 @@
+name: uci_maternal_risk
+description: UCI Maternal Health Risk (1014 pregnancies, vital-sign predictors).
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Pregnant woman attending hospitals, community clinics or maternal health-care centres in rural Bangladesh,
+  with vital signs collected through a wearable monitoring system (Ahmed et al. 2020). The observations are age,
+  blood pressure, blood glucose, body temperature and heart rate.
+observations_header: 'Maternal vital signs:'
+predictors:
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+  systolic_bp:
+    column: systolic_bp
+    kind: numeric
+    text_label: Systolic blood pressure
+    unit: mm Hg
+  diastolic_bp:
+    column: diastolic_bp
+    kind: numeric
+    text_label: Diastolic blood pressure
+    unit: mm Hg
+  blood_sugar:
+    column: blood_sugar
+    kind: numeric
+    text_label: Blood glucose
+    unit: mmol/L
+  body_temp:
+    column: body_temp
+    kind: numeric
+    text_label: Body temperature
+    unit: °F
+  heart_rate:
+    column: heart_rate
+    kind: numeric
+    text_label: Resting heart rate
+    unit: beats/min
+    text_range:
+    - 30
+    - 220
+outcomes:
+  risk_level:
+    column: risk_level
+    classes:
+    - Low risk
+    - Medium risk
+    - High risk
+    mapping:
+      low risk: Low risk
+      mid risk: Medium risk
+      high risk: High risk
+    question: Based on these maternal vital signs, what is this pregnancy's risk level as assessed by the attending
+      health workers?

@@ -1,0 +1,128 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_heart_failure",
+  "outcome": "mortality",
+  "data_hash": "8848488f779c8652f8bd9bd2ba1f21a335cc15a1dea44d0bc32636deb91c577a",
+  "dataset_spec_sha256": "869d951a7eca80a0c5f9473a35af0ec5d554b0bab92ff24a8e627aedf256a384",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261011,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "Survived follow-up",
+    "Died during follow-up"
+  ],
+  "predictor_columns": [
+    "age",
+    "anaemia",
+    "creatinine_phosphokinase",
+    "diabetes",
+    "ejection_fraction",
+    "high_blood_pressure",
+    "platelets",
+    "serum_creatinine",
+    "serum_sodium",
+    "sex",
+    "smoking"
+  ],
+  "zs_raw_csv_sha256": "be3b8e6d2a4586d508e3cb117db97ceb491591926707a6f855cc2b661a167f11",
+  "files": {
+    "split.json": "342045d6c2051a5874cf5157c86fb285f31bdc0b94b707f59797e245712f2cfc",
+    "trials.csv": "5d86affc0df3f63e889157f9589e5611773d1bf0fabf0e095fe342acec22385e",
+    "XGB_optuna.csv": "5c5301bbffe0f642d2c3d96311174c28e161176faccf11e6c67597f694d7e412",
+    "ZS_raw.csv": "2de9955ad453f1829daf7bf4177d8c7e9f1d512ad9602695ffd292a4a10cc7ff",
+    "model.joblib": "2ad999cd381bf6093a27b6f6d88deede9fc19054a9b8d9ef41a1298cd208f1d4",
+    "best_params.json": "2ac84e69a04a232a46098372560224147791432819d6ecbaa68188546cad56be",
+    "metrics.json": "9798363a14ccb8eb890e8dad021805cbf041d07b95bbbf711a462d0c01738274"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

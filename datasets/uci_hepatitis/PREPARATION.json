@@ -1,0 +1,24 @@
+{
+  "dataset": "uci_hepatitis",
+  "prepared_at": "2026-10-21T11:05:55.146477+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/46/data.csv",
+      "path": "datasets/uci_hepatitis/raw/data.csv",
+      "sha256": "79377934000c89e8ec579cb22486f236d96e37b57e179ec849ee790816cb8fe6",
+      "bytes": 8053,
+      "retrieved": "cached"
+    }
+  ],
+  "patients_csv_sha256": "de11e3332fe5c7b8334976eb961bdd329c30ff1ec93941fef8a33a26a527a51f",
+  "summary": {
+    "observations": 155,
+    "predictors": 19,
+    "outcome": "died",
+    "class_counts": {
+      "Lived": 123,
+      "Died": 32
+    },
+    "identifier_note": "UCI Hepatitis; Class 1=die, 2=live."
+  }
+}

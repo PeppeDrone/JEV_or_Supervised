@@ -1,0 +1,136 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_retinopathy",
+  "outcome": "retinopathy",
+  "data_hash": "a72fb6e1cae55fd0adb19954f27d2068f55db608888131c93a81c0aced2c73e8",
+  "dataset_spec_sha256": "6b968a6bb4f66306a217498b05d309c30e3bca14ece7dcfe7ba208d8e79cef9c",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261010,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "No retinopathy",
+    "Retinopathy"
+  ],
+  "predictor_columns": [
+    "quality",
+    "pre_screening",
+    "ma1",
+    "ma2",
+    "ma3",
+    "ma4",
+    "ma5",
+    "ma6",
+    "exudate1",
+    "exudate2",
+    "exudate3",
+    "exudate3_1",
+    "exudate5",
+    "exudate6",
+    "exudate7",
+    "exudate8",
+    "macula_opticdisc_distance",
+    "opticdisc_diameter",
+    "am_fm_classification"
+  ],
+  "zs_raw_csv_sha256": "16780321fd42dcc16948d7684c9b0fec94cf9e2f0bb07fd631ef094e3fd66b2b",
+  "files": {
+    "split.json": "b3337d26e0579f32f22cac25f50a2a0597c0b466d6f54c6e9a94a4c4a86f1b0a",
+    "trials.csv": "87ba9210ce9d37c4e5b5bd534ee44ec400104386d793b2ee5f444a1166ca2dfa",
+    "XGB_optuna.csv": "0b75a7ac93b8d94a8fef33e9faa4c928ee48b7b6cebec0bf164ccb20cb451fc3",
+    "ZS_raw.csv": "e6dc061ae6499ad52a475757e8199d2055864f1ac4a7a743407a066d4d0e5605",
+    "model.joblib": "b29363ee5d0baf77a3e356c052bbae5908792103a0a3d89c1f058d2252125e64",
+    "best_params.json": "ed998e45092d6b35b0bd5bdc41ead8965f827a2e53d7b98fe2a7a6d315109c28",
+    "metrics.json": "26e00a210a67493b50c09ec5a04c846d614af9d954d133c4f48a78e8f3a44b1c"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

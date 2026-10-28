@@ -1,0 +1,136 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_aids_cid",
+  "outcome": "aids_event",
+  "data_hash": "3d7cffeb51eef3c850678bc84cdb99efbec02b3ba40dcc4840e22178f28a6067",
+  "dataset_spec_sha256": "e26965d30ff681c64f162b6d9ab06615bf39f5a6fbdf4327435ccbc0c0913191",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261013,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "No AIDS-defining event",
+    "AIDS-defining event"
+  ],
+  "predictor_columns": [
+    "trt",
+    "age",
+    "wtkg",
+    "hemo",
+    "homo",
+    "drugs",
+    "karnof",
+    "oprior",
+    "z30",
+    "zprior",
+    "preanti",
+    "race",
+    "gender",
+    "str2",
+    "strat",
+    "symptom",
+    "treat",
+    "cd40",
+    "cd80"
+  ],
+  "zs_raw_csv_sha256": "77983d519b864375c70d574c6bef019144c5c3586a3dce5d36c5edf1ec57e02a",
+  "files": {
+    "split.json": "811c9de4c7a888d0a91271e011afe63d606cdd98b3e466c01bd177d744c51e7e",
+    "trials.csv": "11ecefc4bb6670d8a9b826b12e76ad905568beae907b474aed3a2f2ca3fa275d",
+    "XGB_optuna.csv": "77942d3d64eae1ceab1b7416bdbd88e22437b88a1b80c9d4666d9698959328cb",
+    "ZS_raw.csv": "368c6b0b0ad32848f22fcd68a237056b7a471ee302b3bea883fe95a2bb9b0fe0",
+    "model.joblib": "02c809364dae7f0bf0c4527982b7520f38c5361465a452ee56c7dd7ebcb63dbe",
+    "best_params.json": "8de39a079e9a1fb889009b668424a19aab6af2016836ac5dd860e38e37b20789",
+    "metrics.json": "a85dfd09b2336c15aff331bd5bc0497ce3441c3fc11a9f540adfa3f1e71fcdbd"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_parkinsons",
+  "outcome": "parkinsons",
+  "data_hash": "493482da30dd0d7371332b4f71f76c05c3f52c87ed1a91cb525585dfd4e5a3d0",
+  "dataset_spec_sha256": "c3d5b6e051d7befc56febbc7cba751177a27d5569839be3eb32f2efbb7f27cfe",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261011,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "Healthy",
+    "Parkinson disease"
+  ],
+  "predictor_columns": [
+    "mdvp_fohz",
+    "mdvp_fhihz",
+    "mdvp_flohz",
+    "mdvp_jitterpct",
+    "mdvp_jitterabs",
+    "mdvp_rap",
+    "mdvp_ppq",
+    "jitter_ddp",
+    "mdvp_shimmer",
+    "mdvp_shimmerdb",
+    "shimmer_apq3",
+    "shimmer_apq5",
+    "mdvp_apq",
+    "shimmer_dda",
+    "nhr",
+    "hnr",
+    "rpde",
+    "dfa",
+    "spread1",
+    "spread2",
+    "d2",
+    "ppe"
+  ],
+  "zs_raw_csv_sha256": "06c2baa2124ab49e7c7672d0b43b78e03de73e03ca3c2d62dae9d0de8e69c0bb",
+  "files": {
+    "split.json": "c08994cc8f60cf1f6a91277165c865481bac9bea1e1e586cb9118fe79bcaaecd",
+    "trials.csv": "1cef87634dc41688865886422bd9b4afa27162c1540e01dd02c4362e6f68c286",
+    "XGB_optuna.csv": "b46392c5f23d2aea6558aa91eaa6ac9561b1d74e5fda5d45247f4838798cb99a",
+    "ZS_raw.csv": "b647a54f777e2227545992cc7cd0d1d27b0aaf209c88b46bc7dca1d8c52796aa",
+    "model.joblib": "e8d4aa41c1e8cec1a008e0a7cbdb398cef2604de866bbb9fb74062241f949c72",
+    "best_params.json": "b466a13d262d149d7901fa46f8407cc9851405d536f0ea306b9aeeeaeaeb2457",
+    "metrics.json": "12539da529c30b3d77c28b16e42c3fe14bb32b171603a0ac9dcbf038bd03bd57"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

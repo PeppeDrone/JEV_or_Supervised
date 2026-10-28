@@ -1,0 +1,25 @@
+{
+  "dataset": "uci_maternal_risk",
+  "prepared_at": "2026-10-21T11:10:07.212591+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/863/data.csv",
+      "path": "datasets/uci_maternal_risk/raw/data.csv",
+      "sha256": "a1f7025719f84715096e0d1f95ae2e56b57809b9b15449e1836c96a7d976ae9b",
+      "bytes": 30290,
+      "retrieved": "2026-10-21T11:10:07.206372+00:00"
+    }
+  ],
+  "patients_csv_sha256": "12a287451275888c79e56f91ee4a13ba6ac8e0c63d581c4cf4aa5590b0472f31",
+  "summary": {
+    "observations": 1014,
+    "predictors": 6,
+    "outcome": "risk_level",
+    "class_counts": {
+      "Low risk": 406,
+      "Mid risk": 336,
+      "High risk": 272
+    },
+    "identifier_note": "UCI Maternal Health Risk; vital signs \u2192 risk level."
+  }
+}

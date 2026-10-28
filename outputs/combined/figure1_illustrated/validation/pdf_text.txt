@@ -1,0 +1,20 @@
+                                                              Per-task
+                                                             comparison
+
+
+                                XGBoost                                           Task complexity
+                      Supervised · tabular predictors
+
+
+
+
+39 clinical tasks                                       Balanced accuracy
+Binary + multiclass                                     Difference vs XGBoost
+
+
+
+
+                                System 1                                        Codebook explanation
+                           Frozen Qwen3-4B
+                       Zero-shot · no training labels
+

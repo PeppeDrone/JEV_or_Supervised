@@ -1,0 +1,64 @@
+{
+  "dataset": "dryad_er_cbc",
+  "prepared_at": "2026-10-22T13:57:21.758089+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://datadryad.org/api/v2/files/2639375/download",
+      "path": "datasets/dryad_er_cbc/raw/DryadDB_bmjopen_2023_071937_R1_csv.csv",
+      "sha256": "03ef2442fe9ee8ffecc9d3b570f2a6bf7b53739813884f67b049091a00505e24",
+      "bytes": 1776192,
+      "retrieved": "cached"
+    }
+  ],
+  "patients_csv_sha256": "5991852a7da34b987a3fa9fc940e5017d3a8743be3e8fe7e2f45853f689b4465",
+  "summary": {
+    "observations": 1000,
+    "predictors": 16,
+    "outcome": "er_death",
+    "excluded_predictors": [
+      "ddFUp",
+      "deadTRUE",
+      "alive0_dead1",
+      "Dischrd0_Inward1",
+      "Hb_tailr",
+      "RDW_tailr",
+      "RBC_tailr",
+      "MCV_tailr",
+      "WBC_tailr",
+      "Neu_tailr",
+      "Lym_tailr",
+      "Mon_tailr",
+      "Eos_tailr",
+      "Bas_tailr",
+      "PLT_tailr",
+      "PCT_tailr",
+      "PDW_tailr",
+      "Tailr_score_sum",
+      "Tailr_BCDC_score",
+      "Tailr_AgeSex_InW_Wave",
+      "HB_bench",
+      "RDW_bench",
+      "RBC_bench",
+      "MCV_bench",
+      "WBC_bench",
+      "Neu_bench",
+      "Lym_bench",
+      "Mon_bench",
+      "Eos_bench",
+      "Bas_bench",
+      "PLT_bench",
+      "PCT_bench",
+      "PDW_bench",
+      "Bench_score_sum",
+      "Bench_BCDC_score",
+      "Bench_AgeSex_InW_Wave",
+      "Dischrd0_Inward1"
+    ],
+    "class_counts": {
+      "Alive": 859,
+      "Died": 141
+    },
+    "identifier_note": "Dryad 10.5061/dryad.dncjsxm5g. First 1000 Num. Y = all-cause death. Follow-up days, inward admission, and tailored/benchmark score columns dropped.",
+    "cap": 1000
+  }
+}

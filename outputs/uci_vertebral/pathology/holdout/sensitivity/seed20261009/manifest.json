@@ -1,0 +1,124 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_vertebral",
+  "outcome": "pathology",
+  "data_hash": "4eb684de8d04b66ff2e27c298e522fd7d59ab0d2ceaf8ba84824479c5562508c",
+  "dataset_spec_sha256": "b4c74f1523f2171d34c0e70c07330443e75d31ee056195b548beec2f3cd594be",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261009,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "Normal",
+    "Hernia",
+    "Spondylolisthesis"
+  ],
+  "predictor_columns": [
+    "pelvic_incidence",
+    "pelvic_tilt",
+    "lumbar_lordosis_angle",
+    "sacral_slope",
+    "pelvic_radius",
+    "degree_spondylolisthesis"
+  ],
+  "zs_raw_csv_sha256": "343571b1414ea4ed4815a25a082ebb6367802fed66a20a655d6d4206fc1f29a3",
+  "files": {
+    "split.json": "9dd90d44f8256d2bada3b5693fa82c06c576c93da27d0e41cacb9d26daa15312",
+    "trials.csv": "5712284421e7a0d062ed26054b1feb9782c0b110d070d9c882d03a402bfa3411",
+    "XGB_optuna.csv": "6fd5241d47894c630c8da31b25908136c45ad6e88fd49aa7b89aebf232b7dfb7",
+    "ZS_raw.csv": "bb16b8872abdd6af1ca51d2c6876c0843d1cf16f179f6c84b4ca8942533f5804",
+    "model.joblib": "3947dda8a6907b876801c5275793256eb0dafec33f16889682b52f219a90833f",
+    "best_params.json": "fcc6d271f2a2f5d3b3f864c0dc9d5a524d04943262267c43e69250d5aa404ddd",
+    "metrics.json": "b97ec7f26cf3380a3616f90eb9081bfc6b5a907360d2cefefc1d3354a4ddca6d"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

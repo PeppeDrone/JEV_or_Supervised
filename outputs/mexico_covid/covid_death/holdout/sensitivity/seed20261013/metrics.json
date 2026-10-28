@@ -1,0 +1,113 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "mexico_covid",
+  "outcome": "covid_death",
+  "seed": 20261013,
+  "n_development": 800,
+  "n_holdout": 200,
+  "n_classes": 2,
+  "inner_folds": 5,
+  "trials_completed": 39,
+  "trials_pruned": 61,
+  "tuning_seconds": 13.57312798500061,
+  "best_params": {
+    "max_depth": 7,
+    "learning_rate": 0.046459170277584796,
+    "n_estimators": 89,
+    "min_child_weight": 16.06846245110981,
+    "subsample": 0.6176481510109192,
+    "colsample_bytree": 0.5387857408080398,
+    "colsample_bylevel": 0.5576977464583843,
+    "gamma": 2.4637858866838953,
+    "reg_alpha": 0.005630647779628673,
+    "reg_lambda": 7.08416636681669,
+    "max_bin": 128,
+    "grow_policy": "lossguide",
+    "class_weight_exponent": 0.23361725288920612,
+    "threshold": 0.2509083056431126
+  },
+  "best_cv_balanced_accuracy": 0.8428148148148148,
+  "best_cv_sd": 0.027997256381356403,
+  "consensus_params": {
+    "max_depth": 3,
+    "learning_rate": 0.056617393213033135,
+    "n_estimators": 221,
+    "min_child_weight": 39.32670917837619,
+    "subsample": 0.8475816528367868,
+    "colsample_bytree": 0.6381201697762297,
+    "colsample_bylevel": 0.5576977464583843,
+    "gamma": 3.0046421554213447,
+    "reg_alpha": 0.11965442345443528,
+    "reg_lambda": 2.039375953312366,
+    "max_bin": 256,
+    "grow_policy": "depthwise",
+    "class_weight_exponent": 0.6699184550665687,
+    "threshold": 0.40885108543720494
+  },
+  "holdout": {
+    "XGB_optuna": {
+      "balanced_accuracy": 0.8190494369154419,
+      "auroc": 0.9218362282878412,
+      "brier": 0.08032256910674285,
+      "log_loss": 0.26623849941201116,
+      "macro_f1": 0.7611084567606308
+    },
+    "XGB_optuna_argmax": {
+      "balanced_accuracy": 0.7505249093338423,
+      "auroc": 0.9218362282878412,
+      "brier": 0.08032256910674285,
+      "log_loss": 0.26623849941201116,
+      "macro_f1": 0.771594684385382
+    },
+    "XGB_optuna_consensus": {
+      "balanced_accuracy": 0.8190494369154419,
+      "auroc": 0.9092384042756251,
+      "brier": 0.09375408266771376,
+      "log_loss": 0.3084690391145306,
+      "macro_f1": 0.7611084567606308
+    },
+    "ZS_raw": {
+      "balanced_accuracy": 0.5878984539034167,
+      "auroc": 0.9113380416109944,
+      "brier": 0.13862193031172967,
+      "log_loss": 1.3213135133070832,
+      "macro_f1": 0.6111111111111112
+    },
+    "ZS_raw_prior_matched": {
+      "balanced_accuracy": 0.5878984539034167,
+      "auroc": 0.9113380416109944,
+      "brier": 0.13862193031172967,
+      "log_loss": 1.3213135133070832,
+      "macro_f1": 0.6111111111111112
+    }
+  },
+  "paired": {
+    "XGB_optuna_minus_ZS_raw": {
+      "delta_bacc": 0.2311509830120252,
+      "delta_bacc_ci": [
+        0.12339860356534858,
+        0.3283473320158102
+      ],
+      "delta_auroc": 0.010498186676846766,
+      "delta_auroc_ci": [
+        -0.02451210217904466,
+        0.045972153387753505
+      ],
+      "iterations": 1000
+    },
+    "XGB_optuna_minus_ZS_raw_prior_matched": {
+      "delta_bacc": 0.2311509830120252,
+      "delta_bacc_ci": [
+        0.12339860356534858,
+        0.3283473320158102
+      ],
+      "delta_auroc": 0.010498186676846766,
+      "delta_auroc_ci": [
+        -0.02451210217904466,
+        0.045972153387753505
+      ],
+      "iterations": 1000
+    }
+  },
+  "cv_minus_holdout_balanced_accuracy": 0.02376537789937294
+}

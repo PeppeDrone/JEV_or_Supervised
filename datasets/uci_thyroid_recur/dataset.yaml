@@ -1,0 +1,157 @@
+name: uci_thyroid_recur
+description: UCI Differentiated thyroid cancer recurrence (383 patients).
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Adult treated for well-differentiated thyroid cancer and followed for at least ten years (Borzooei et al.
+  2023, 383 patients over a 15-year span). The observations are demographics, smoking and radiotherapy history,
+  thyroid function, examination and lymph-node findings, tumour pathology, focality, American Thyroid Association
+  risk category, TNM and AJCC stage, and the response to initial therapy at the first post-treatment assessment.
+observations_header: 'Clinical, pathological and staging findings:'
+predictors:
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+  gender:
+    column: gender
+    kind: categorical
+    text_label: Sex
+    text_values:
+      F: Female
+      M: Male
+  smoking:
+    column: smoking
+    kind: categorical
+    text_label: Current smoker
+    text_values:
+      'No': 'No'
+      'Yes': 'Yes'
+  hx_smoking:
+    column: hx_smoking
+    kind: categorical
+    text_label: Former smoker
+    text_values:
+      'No': 'No'
+      'Yes': 'Yes'
+  hx_radiotherapy:
+    column: hx_radiotherapy
+    kind: categorical
+    text_label: Previous head-and-neck radiotherapy
+    text_values:
+      'No': 'No'
+      'Yes': 'Yes'
+  thyroid_function:
+    column: thyroid_function
+    kind: categorical
+    text_label: Thyroid function
+    text_values:
+      Euthyroid: Euthyroid
+      Clinical Hyperthyroidism: Clinical hyperthyroidism
+      Clinical Hypothyroidism: Clinical hypothyroidism
+      Subclinical Hyperthyroidism: Subclinical hyperthyroidism
+      Subclinical Hypothyroidism: Subclinical hypothyroidism
+  physical_exam:
+    column: physical_exam
+    kind: categorical
+    text_label: Thyroid examination
+    text_values:
+      Single nodular goiter-left: Single nodule, left lobe
+      Single nodular goiter-right: Single nodule, right lobe
+      Multinodular goiter: Multinodular goitre
+      Diffuse goiter: Diffuse goitre
+      Normal: Normal
+  adenopathy:
+    column: adenopathy
+    kind: categorical
+    text_label: Cervical lymphadenopathy
+    text_values:
+      'No': None
+      Right: Right-sided
+      Left: Left-sided
+      Bilateral: Bilateral
+      Posterior: Posterior
+      Extensive: Extensive
+  pathology:
+    column: pathology
+    kind: categorical
+    text_label: Histological type
+    text_values:
+      Micropapillary: Papillary microcarcinoma
+      Papillary: Papillary carcinoma
+      Follicular: Follicular carcinoma
+      Hurthel cell: Hurthle cell carcinoma
+  focality:
+    column: focality
+    kind: categorical
+    text_label: Focality
+    text_values:
+      Uni-Focal: Unifocal
+      Multi-Focal: Multifocal
+  ata_risk:
+    column: ata_risk
+    kind: categorical
+    text_label: American Thyroid Association risk of recurrence category
+    text_values:
+      Low: Low
+      Intermediate: Intermediate
+      High: High
+  t_stage:
+    column: t_stage
+    kind: categorical
+    text_label: T stage (AJCC 8th)
+    text_values:
+      T1a: T1a (tumour 1 cm or less)
+      T1b: T1b (1-2 cm)
+      T2: T2 (2-4 cm)
+      T3a: T3a (over 4 cm, limited to thyroid)
+      T3b: T3b (gross extension into strap muscles)
+      T4a: T4a (invades subcutaneous tissue, larynx, trachea, oesophagus or recurrent laryngeal nerve)
+      T4b: T4b (invades prevertebral fascia or encases carotid or mediastinal vessels)
+  n_stage:
+    column: n_stage
+    kind: categorical
+    text_label: N stage (AJCC 8th)
+    text_values:
+      N0: N0 (no regional node metastasis)
+      N1a: N1a (central compartment nodes)
+      N1b: N1b (lateral neck or retropharyngeal nodes)
+  m_stage:
+    column: m_stage
+    kind: categorical
+    text_label: M stage (AJCC 8th)
+    text_values:
+      M0: M0 (no distant metastasis)
+      M1: M1 (distant metastasis)
+  stage:
+    column: stage
+    kind: categorical
+    text_label: AJCC stage
+    text_values:
+      I: Stage I
+      II: Stage II
+      III: Stage III
+      IVA: Stage IVA
+      IVB: Stage IVB
+  response:
+    column: response
+    kind: categorical
+    text_label: Response to initial therapy (ATA categories)
+    text_values:
+      Excellent: Excellent
+      Indeterminate: Indeterminate
+      Biochemical Incomplete: Biochemical incomplete
+      Structural Incomplete: Structural incomplete
+outcomes:
+  recurred:
+    column: recurred
+    classes:
+    - No recurrence during follow-up
+    - Recurrence during follow-up
+    mapping:
+      '0': No recurrence during follow-up
+      '1': Recurrence during follow-up
+    question: Based on these clinical, pathological and staging findings, did this thyroid cancer recur during at
+      least ten years of follow-up?

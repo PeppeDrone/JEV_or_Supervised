@@ -1,0 +1,149 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "wids2021",
+  "outcome": "diabetes_mellitus",
+  "data_hash": "b8ce1045cd33e0a91ab1b5fd26ada2483bba7c4d58f8aac8ccde53eecb589e89",
+  "dataset_spec_sha256": "9c0daa2ba79f5c273d5d94f38e98bc45dce814247fe855d276e3058ee2b601d2",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261009,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "No diabetes mellitus",
+    "Diabetes mellitus"
+  ],
+  "predictor_columns": [
+    "age",
+    "bmi",
+    "elective_surgery",
+    "ethnicity",
+    "gender",
+    "height",
+    "weight",
+    "pre_icu_los_days",
+    "bun_apache",
+    "creatinine_apache",
+    "sodium_apache",
+    "wbc_apache",
+    "hematocrit_apache",
+    "heart_rate_apache",
+    "map_apache",
+    "resprate_apache",
+    "temp_apache",
+    "gcs_eyes_apache",
+    "gcs_motor_apache",
+    "gcs_verbal_apache",
+    "gcs_unable_apache",
+    "intubated_apache",
+    "ventilated_apache",
+    "arf_apache",
+    "apache_post_operative",
+    "aids",
+    "cirrhosis",
+    "hepatic_failure",
+    "immunosuppression",
+    "leukemia",
+    "lymphoma",
+    "solid_tumor_with_metastasis"
+  ],
+  "zs_raw_csv_sha256": "2556cb7121f7b32739963a48098b7b3f97233b43c0527738cb5c9ff5f473bed6",
+  "files": {
+    "split.json": "5a46aa66c27117197bc3ddb05e5f58b2c85d6050dbc368b21c0ddc78df0c237d",
+    "trials.csv": "523b606afaafead903d3a1efd2cea59b7dd6d3c60dde3f3b2ce79c9d04e5dec9",
+    "XGB_optuna.csv": "8145c872d4022ca95a7f5139e0e65dcda84acd59e09280c91d7d841eb5b68fc1",
+    "ZS_raw.csv": "127a1676c798b4449cfccbc1613cdd26ae8e37a3b39804f62acb68a909d32dfa",
+    "model.joblib": "6fd5d1cca4adf4a17b2d54fd63532816e8358b1283e6b9fce553d56c5bf8eb78",
+    "best_params.json": "97b922452188f615ef6c4dbef79054a16b713e0f482b756cd9d6842e597cbdf1",
+    "metrics.json": "354cc4a73790cf4882a0b65157986cebf8efb938e91382997457893e2c2f293e"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

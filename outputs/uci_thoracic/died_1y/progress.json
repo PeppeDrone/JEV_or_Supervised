@@ -1,0 +1,7 @@
+{
+  "stage": "XGB_optuna",
+  "done": true,
+  "holdout_bacc": 0.6133928571428571,
+  "zs_bacc": 0.6455357142857143,
+  "time": "2026-10-24T16:28:24"
+}

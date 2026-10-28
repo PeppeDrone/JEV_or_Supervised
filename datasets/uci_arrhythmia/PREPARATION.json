@@ -1,0 +1,38 @@
+{
+  "dataset": "uci_arrhythmia",
+  "prepared_at": "2026-10-20T19:15:55.395990+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/arrhythmia/arrhythmia.data",
+      "path": "datasets/uci_arrhythmia/raw/arrhythmia.data",
+      "sha256": "a7f0f4ca289a4c58b5ed85a9adb793189acd38425828ce3dfbb70adb45f30169",
+      "bytes": 402355,
+      "retrieved": "2026-10-20T19:15:54.502932+00:00"
+    },
+    {
+      "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/arrhythmia/arrhythmia.names",
+      "path": "datasets/uci_arrhythmia/raw/arrhythmia.names",
+      "sha256": "c99ec888e05d61fb8201f2fc426ff5f41b548d7e61536d33edc5b3d6cfce2660",
+      "bytes": 6162,
+      "retrieved": "2026-10-20T19:15:55.006327+00:00"
+    }
+  ],
+  "patients_csv_sha256": "82c8d045c98cc0463e2b6a6d5e95637aa75d9b06867260a76f3f17cbf93ac8ed",
+  "summary": {
+    "observations": 429,
+    "predictors": 279,
+    "outcome": "arrhythmia_class",
+    "class_counts": {
+      "Normal": 245,
+      "Ischemic changes (coronary artery disease)": 44,
+      "Old anterior myocardial infarction": 15,
+      "Old inferior myocardial infarction": 15,
+      "Sinus tachycardia": 13,
+      "Sinus bradycardia": 25,
+      "Right bundle branch block": 50,
+      "Unclassified arrhythmia": 22
+    },
+    "excluded_rare_classes_n_lt_10": 23,
+    "identifier_note": "record_id enumerates retained arrhythmia.data rows after dropping arrhythmia types with fewer than 10 examples (study min_class_count). Original patient identifiers were already removed upstream by UCI."
+  }
+}

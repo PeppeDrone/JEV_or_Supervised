@@ -1,0 +1,11 @@
+measure,title,domain,n,n_win,odds_ratio_per_sd,lrt_pvalue
+explanation_rate,Explanation rate,fidelity,45,9,0.7566797841249192,0.3905698782137498
+label_readability,Label readability,fidelity,45,9,0.868722420104275,0.6694551286433191
+quantity_explained,Quantity explained,fidelity,45,9,0.7938604417556082,0.47017450383153014
+words_per_predictor,Prompt words per predictor,detail,45,9,1.3480514171604365,0.38120573544169856
+added_per_predictor,Unique words per predictor,detail,45,9,1.3038967588019192,0.44974944445871623
+context_words,Setting + question length,detail,45,9,1.265406427623709,0.5282713330101516
+v1_fidelity_score,v1 fidelity (comparison),v1,45,9,1.431127536475707,0.38591892419508445
+v1_detail_score,v1 detail (comparison),v1,45,9,1.0008733932298517,0.9981925218867991
+v1_translation_rate,v1 opaque-code translation,v1,27,6,,
+v1_unit_coverage,v1 unit coverage,v1,44,8,1.0475941002247142,0.9064673422419997

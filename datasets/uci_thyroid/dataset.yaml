@@ -1,0 +1,153 @@
+name: uci_thyroid
+description: UCI Thyroid Disease hypothyroid cohort (3163 observations). Binary hypothyroid vs negative labels with
+  clinical flags and thyroid function tests; missing lab values retained as blank cells.
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Adult referred to the Garavan Institute (Sydney, 1980s) for thyroid function testing. The observations
+  are the clinical context recorded on the request form (current thyroid treatment, surgery, pregnancy, intercurrent
+  illness, lithium, goitre, and whether hypo- or hyperthyroidism was queried) and the thyroid function test results
+  that were performed; a value of 0 means the result was below the detection limit.
+observations_header: 'Request-form context and thyroid function tests:'
+predictors:
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+  sex:
+    column: sex
+    kind: categorical
+    text_label: Sex
+    text_values:
+      M: Male
+      F: Female
+  on_thyroxine:
+    column: on_thyroxine
+    kind: categorical
+    text_label: Currently on thyroxine
+    text_values: &id001
+      '0': 'No'
+      '1': 'Yes'
+  query_on_thyroxine:
+    column: query_on_thyroxine
+    kind: categorical
+    text_label: Thyroxine use queried on the request form
+    text_values: *id001
+  on_antithyroid_medication:
+    column: on_antithyroid_medication
+    kind: categorical
+    text_label: On antithyroid medication
+    text_values: *id001
+  thyroid_surgery:
+    column: thyroid_surgery
+    kind: categorical
+    text_label: History of thyroid surgery
+    text_values: *id001
+  query_hypothyroid:
+    column: query_hypothyroid
+    kind: categorical
+    text_label: Hypothyroidism queried by the referring clinician
+    text_values: *id001
+  query_hyperthyroid:
+    column: query_hyperthyroid
+    kind: categorical
+    text_label: Hyperthyroidism queried by the referring clinician
+    text_values: *id001
+  pregnant:
+    column: pregnant
+    kind: categorical
+    text_label: Pregnant
+    text_values: *id001
+  sick:
+    column: sick
+    kind: categorical
+    text_label: Currently ill
+    text_values: *id001
+  tumor:
+    column: tumor
+    kind: categorical
+    text_label: Tumour suspected or present
+    text_values: *id001
+  lithium:
+    column: lithium
+    kind: categorical
+    text_label: On lithium
+    text_values: *id001
+  goitre:
+    column: goitre
+    kind: categorical
+    text_label: Goitre
+    text_values: *id001
+  TSH_measured:
+    column: TSH_measured
+    kind: categorical
+    text_label: TSH measured
+    text_values: *id001
+  T3_measured:
+    column: T3_measured
+    kind: categorical
+    text_label: T3 measured
+    text_values: *id001
+  TT4_measured:
+    column: TT4_measured
+    kind: categorical
+    text_label: Total T4 measured
+    text_values: *id001
+  T4U_measured:
+    column: T4U_measured
+    kind: categorical
+    text_label: Thyroxine uptake measured
+    text_values: *id001
+  FTI_measured:
+    column: FTI_measured
+    kind: categorical
+    text_label: Free thyroxine index measured
+    text_values: *id001
+  TBG_measured:
+    column: TBG_measured
+    kind: categorical
+    text_label: Thyroxine-binding globulin measured
+    text_values: *id001
+  TSH:
+    column: TSH
+    kind: numeric
+    text_label: Thyroid-stimulating hormone (TSH)
+    unit: mU/L
+  T3:
+    column: T3
+    kind: numeric
+    text_label: Triiodothyronine (T3)
+    unit: nmol/L
+  TT4:
+    column: TT4
+    kind: numeric
+    text_label: Total thyroxine (TT4)
+    unit: nmol/L
+  T4U:
+    column: T4U
+    kind: numeric
+    text_label: Thyroxine uptake (T4U)
+    scale_note: ratio, normal about 0.8-1.2
+  FTI:
+    column: FTI
+    kind: numeric
+    text_label: Free thyroxine index (TT4 / T4U)
+    scale_note: index
+  TBG:
+    column: TBG
+    kind: numeric
+    text_label: Thyroxine-binding globulin (TBG)
+    unit: mg/L
+outcomes:
+  hypothyroid_status:
+    column: thyroid_class
+    classes:
+    - Not hypothyroid
+    - Hypothyroid
+    mapping:
+      negative: Not hypothyroid
+      hypothyroid: Hypothyroid
+    question: Based on this request-form context and these thyroid function tests, was this patient diagnosed as
+      hypothyroid?

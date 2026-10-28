@@ -1,0 +1,122 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_vertebral",
+  "outcome": "pathology",
+  "data_hash": "0df52e8506fd19dd20d90ecd9d4aab84018a34c87d609ceb98ac12e47f321c9c",
+  "dataset_spec_sha256": "b4c74f1523f2171d34c0e70c07330443e75d31ee056195b548beec2f3cd594be",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261008,
+  "n_trials_requested": 200,
+  "timeout_seconds": 3600.0,
+  "classes": [
+    "Normal",
+    "Hernia",
+    "Spondylolisthesis"
+  ],
+  "predictor_columns": [
+    "pelvic_incidence",
+    "pelvic_tilt",
+    "lumbar_lordosis_angle",
+    "sacral_slope",
+    "pelvic_radius",
+    "degree_spondylolisthesis"
+  ],
+  "zs_raw_csv_sha256": "93d912845e8ec214919f1903a0ce3dab826a0425641e76029a39a4e30cb3f369",
+  "files": {
+    "split.json": "0dacaf176e1cd964751d484faf1ea91b6238217c46df17a43c0b96eb8664baca",
+    "trials.csv": "9e4a1b3e96e2c6563bab1e2e4d8d29748c52b07e7e82fe0d0fcafdd331f2a0c5",
+    "XGB_optuna.csv": "368ea5339bd7a64c8710613564edbc24ca70c17fbc5382a2d5974d74ba365d7b",
+    "ZS_raw.csv": "549524e561c4c415c53a5939629de5e8a7d211b5a9b563d3694f9a65a848f355",
+    "model.joblib": "40323a5ecb88d168a9678f0c83fb3547a6e37e9414cc9a3ac4de51ec1c502452",
+    "best_params.json": "1eeb6d0b71f7189c575f7b446ec85a5f9169a15df027692a84559358d3496446",
+    "metrics.json": "9c8712b6b5c817786e3e0afdf4177d706fd7d14f89b01a9c66dad57645b96df1"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  },
+  "zs_raw_source": "predictions/ZS_raw_holdout.csv",
+  "rescored_from": "outputs/uci_vertebral/pathology/holdout",
+  "source_data_hash": "4eb684de8d04b66ff2e27c298e522fd7d59ab0d2ceaf8ba84824479c5562508c"
+}

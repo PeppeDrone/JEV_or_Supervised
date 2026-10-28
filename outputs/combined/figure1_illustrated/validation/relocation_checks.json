@@ -1,0 +1,10 @@
+{
+  "status": "pass",
+  "publication_exports": "outputs/combined/figures/Figure1.{pdf,svg,png}",
+  "source_and_assets": "outputs/combined/figure1_illustrated",
+  "regeneration_verified": true,
+  "png_identical_to_approved_figure": true,
+  "icons_caption_prompts_and_proofs_unchanged": true,
+  "old_directory_removed": true,
+  "existing_combined_cleanup_preserves_Figure1": true
+}

@@ -1,0 +1,135 @@
+name: uci_cardiotocography
+description: 'UCI Cardiotocography (2126 antepartum CTG recordings, SisPorto automatic analysis). 21 features: fetal
+  heart rate baseline, event rates per second, variability measures and FHR histogram statistics. 3-class fetal
+  state by consensus of three obstetricians (normal, suspect, pathologic).'
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: 'Antepartum fetal monitoring: one cardiotocogram (fetal heart rate and uterine contraction tracing) analysed
+  automatically by the SisPorto system. The observations are the fetal heart rate baseline, the rates of accelerations,
+  fetal movements, contractions and decelerations per second of tracing, short- and long-term variability, and the
+  fetal heart rate histogram statistics.'
+observations_header: 'Cardiotocogram features (event rates are per second of recording):'
+predictors:
+  lb:
+    column: lb
+    kind: numeric
+    text_label: Fetal heart rate baseline
+    unit: beats/min
+  ac:
+    column: ac
+    kind: numeric
+    text_label: Accelerations
+    unit: per second
+  fm:
+    column: fm
+    kind: numeric
+    text_label: Fetal movements
+    unit: per second
+  uc:
+    column: uc
+    kind: numeric
+    text_label: Uterine contractions
+    unit: per second
+  dl:
+    column: dl
+    kind: numeric
+    text_label: Light decelerations
+    unit: per second
+  ds:
+    column: ds
+    kind: numeric
+    text_label: Severe decelerations
+    unit: per second
+  dp:
+    column: dp
+    kind: numeric
+    text_label: Prolonged decelerations
+    unit: per second
+  astv:
+    column: astv
+    kind: numeric
+    text_label: Time with abnormal short-term variability
+    unit: '% of recording'
+  mstv:
+    column: mstv
+    kind: numeric
+    text_label: Mean short-term variability
+    unit: beats/min
+  altv:
+    column: altv
+    kind: numeric
+    text_label: Time with abnormal long-term variability
+    unit: '% of recording'
+  mltv:
+    column: mltv
+    kind: numeric
+    text_label: Mean long-term variability
+    unit: beats/min
+  width:
+    column: width
+    kind: numeric
+    text_label: Fetal heart rate histogram width
+    unit: beats/min
+  min:
+    column: min
+    kind: numeric
+    text_label: Fetal heart rate histogram minimum
+    unit: beats/min
+  max:
+    column: max
+    kind: numeric
+    text_label: Fetal heart rate histogram maximum
+    unit: beats/min
+  nmax:
+    column: nmax
+    kind: numeric
+    text_label: Number of fetal heart rate histogram peaks
+    scale_note: count
+  nzeros:
+    column: nzeros
+    kind: numeric
+    text_label: Number of fetal heart rate histogram zeros
+    scale_note: count
+  mode:
+    column: mode
+    kind: numeric
+    text_label: Fetal heart rate histogram mode
+    unit: beats/min
+  mean:
+    column: mean
+    kind: numeric
+    text_label: Fetal heart rate histogram mean
+    unit: beats/min
+  median:
+    column: median
+    kind: numeric
+    text_label: Fetal heart rate histogram median
+    unit: beats/min
+  variance:
+    column: variance
+    kind: numeric
+    text_label: Fetal heart rate histogram variance
+    scale_note: (beats/min) squared
+  tendency:
+    column: tendency
+    kind: categorical
+    text_label: Fetal heart rate histogram tendency (skew)
+    text_values:
+      '-1': Left-asymmetric
+      '0': Symmetric
+      '1': Right-asymmetric
+outcomes:
+  nsp:
+    column: nsp
+    classes:
+    - Normal fetal state
+    - Suspect fetal state
+    - Pathologic fetal state
+    mapping:
+      '1': Normal fetal state
+      '2': Suspect fetal state
+      '3': Pathologic fetal state
+    question: Based on these cardiotocogram features, how did the expert obstetricians classify the fetal state
+      of this recording?

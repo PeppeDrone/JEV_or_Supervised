@@ -1,0 +1,134 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "metabric",
+  "outcome": "pam50_subtype",
+  "data_hash": "c3af42b81c2421d13632bdf00ed82251c4f5972be5d742f226670dfe7a55e339",
+  "dataset_spec_sha256": "b68fe52d9dd71fccbe4a336a918d5102d67c76886c93e676320b6ac7d05a914b",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261011,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "Basal",
+    "Her2",
+    "LumA",
+    "LumB",
+    "Normal",
+    "claudin-low"
+  ],
+  "predictor_columns": [
+    "age",
+    "menopausal",
+    "laterality",
+    "histology",
+    "surgery",
+    "cellularity",
+    "tumor_size",
+    "tumor_stage",
+    "grade",
+    "positive_nodes",
+    "er_status",
+    "pr_status",
+    "her2_status"
+  ],
+  "zs_raw_csv_sha256": "03be25c5eae1ef3626ae4023be45798ac005877556a2eaff01307686e06781d1",
+  "files": {
+    "split.json": "80d48116fcf3e8c85dd679e9d7f8f09071088e8bb200ad27b7137758748231f5",
+    "trials.csv": "f30b545e1421022276b2ff53001a6a769e78124c0a70bba984aeced3d9d589a7",
+    "XGB_optuna.csv": "4a6e1ffd05d3b90eaa7bda53f19970f21413b2f94c3158a32a98e26f29d43cbd",
+    "ZS_raw.csv": "2e340440ec5807f83411ad4f43cfb7f8df0869185f3a8d2628fd2c9c7d57be5a",
+    "model.joblib": "947177332e8aa461b10226144e782b5ae98a9fe3036fdbc973d47df953b373a9",
+    "best_params.json": "e6664f0bfcfa375204750e5e48cb8ff398cb5fb60aae1fba983d8ead60541ddc",
+    "metrics.json": "2e92018a5c06cee739c9a2f779d64f8eacaa7d5c8ec9a7615148c49d519bb7a4"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "dataset": "uci_ilpd",
+  "prepared_at": "2026-10-21T07:56:25.186237+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/225/data.csv",
+      "path": "datasets/uci_ilpd/raw/data.csv",
+      "sha256": "dbb065e6bf2b226b6d9c04f066ddc0b45173861dfb3a4df83f3710d3927ef5de",
+      "bytes": 23817,
+      "retrieved": "cached"
+    }
+  ],
+  "patients_csv_sha256": "48c30fb835ada15c970d5dd477a71dffb769cd24e72b640337d81753817c8b0c",
+  "summary": {
+    "observations": 583,
+    "predictors": 10,
+    "outcome": "liver_disease",
+    "class_counts": {
+      "No liver disease": 167,
+      "Liver disease": 416
+    },
+    "identifier_note": "UCI ILPD; Selector 1\u2192liver disease, 2\u2192no liver disease."
+  }
+}

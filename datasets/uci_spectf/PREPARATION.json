@@ -1,0 +1,24 @@
+{
+  "dataset": "uci_spectf",
+  "prepared_at": "2026-10-21T11:03:41.695179+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/96/data.csv",
+      "path": "datasets/uci_spectf/raw/data.csv",
+      "sha256": "4dd3afe8f35cc6b138153e9dff3c7e130a512de901adb92ecc4e7ab36c3d05e2",
+      "bytes": 36243,
+      "retrieved": "2026-10-21T11:03:41.626570+00:00"
+    }
+  ],
+  "patients_csv_sha256": "113156638829f75f9cbb7f149db9e99ece6e614424782cb32104789f40950fe2",
+  "summary": {
+    "observations": 267,
+    "predictors": 44,
+    "outcome": "abnormal",
+    "class_counts": {
+      "Normal SPECT": 55,
+      "Abnormal SPECT": 212
+    },
+    "identifier_note": "UCI SPECTF Heart; diagnosis 0=normal, 1=abnormal."
+  }
+}

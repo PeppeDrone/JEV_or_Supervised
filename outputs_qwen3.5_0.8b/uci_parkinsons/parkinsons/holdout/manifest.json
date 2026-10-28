@@ -1,0 +1,137 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_parkinsons",
+  "outcome": "parkinsons",
+  "data_hash": "966c1f615d08cff460be46f3d9c3999d1eab3d7bda8ce7462bc919ddb6f6477f",
+  "dataset_spec_sha256": "c3d5b6e051d7befc56febbc7cba751177a27d5569839be3eb32f2efbb7f27cfe",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261008,
+  "n_trials_requested": 200,
+  "timeout_seconds": 3600.0,
+  "classes": [
+    "Healthy",
+    "Parkinson disease"
+  ],
+  "predictor_columns": [
+    "mdvp_fohz",
+    "mdvp_fhihz",
+    "mdvp_flohz",
+    "mdvp_jitterpct",
+    "mdvp_jitterabs",
+    "mdvp_rap",
+    "mdvp_ppq",
+    "jitter_ddp",
+    "mdvp_shimmer",
+    "mdvp_shimmerdb",
+    "shimmer_apq3",
+    "shimmer_apq5",
+    "mdvp_apq",
+    "shimmer_dda",
+    "nhr",
+    "hnr",
+    "rpde",
+    "dfa",
+    "spread1",
+    "spread2",
+    "d2",
+    "ppe"
+  ],
+  "zs_raw_csv_sha256": "3d76bef8318665791a85517351205830bf3fe9614d59f86bddc8439ba042a880",
+  "files": {
+    "split.json": "f21ca917533301e86322d70b3527b134d29dffdc5193fa4f8b3cfc3eb85a3ca5",
+    "trials.csv": "d56d67062077e781e7e4f38625914a0cddb231fc167f53db4b6faf1eaa4cb45c",
+    "XGB_optuna.csv": "40365eb51c0c27c9d620b2e626f941ef7cd596a7b23a4138665c220da6b61342",
+    "ZS_raw.csv": "05f2e2b9828ce7eac0a4fe0d50e60d287c1cd6b6678ef7046aceca78e6146b8a",
+    "model.joblib": "787acd6c2a575b80deed460890655df45caf6b3b91798ac1e7621fd64bc9a3fd",
+    "best_params.json": "438123c26d7da0a544bb71e036e8e660b101e8ddca58b31ba8f66488b74b11db",
+    "metrics.json": "8f1c853a794fe0d82a8dce076b4cfe5a0d3dc7440e8524291dbd05694e852945"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  },
+  "zs_raw_source": "predictions/ZS_raw_holdout.csv",
+  "rescored_from": "outputs/uci_parkinsons/parkinsons/holdout",
+  "source_data_hash": "493482da30dd0d7371332b4f71f76c05c3f52c87ed1a91cb525585dfd4e5a3d0"
+}

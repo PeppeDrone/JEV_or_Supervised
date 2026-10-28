@@ -1,0 +1,13 @@
+{"stage": "XGB_optuna", "trial": 0, "best": null}
+{"stage": "XGB_optuna", "trial": 10, "best": 0.9731634762755096}
+{"stage": "XGB_optuna", "trial": 30, "best": 0.9735788453630778}
+{"stage": "XGB_optuna", "trial": 40, "best": 0.9735788453630778}
+{"stage": "XGB_optuna", "trial": 60, "best": 0.9735788453630778}
+{"stage": "XGB_optuna", "trial": 80, "best": 0.9735788453630778}
+{"stage": "XGB_optuna", "trial": 100, "best": 0.9735788453630778}
+{"stage": "XGB_optuna", "trial": 110, "best": 0.9735788453630778}
+{"stage": "XGB_optuna", "trial": 140, "best": 0.974201252002082}
+{"stage": "XGB_optuna", "trial": 150, "best": 0.974201252002082}
+{"stage": "XGB_optuna", "trial": 160, "best": 0.9744091522099823}
+{"stage": "XGB_optuna", "trial": 190, "best": 0.9744091522099823}
+{"stage": "XGB_optuna", "done": true, "holdout_bacc": 0.9308457711442786, "zs_bacc": 0.9185737976782753}

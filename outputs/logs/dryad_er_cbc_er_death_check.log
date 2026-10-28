@@ -1,0 +1,1 @@
+dryad_er_cbc/er_death: 1000 labelled patients, 16 predictors, classes {'Alive': 859, 'Died': 141}, 5 outer folds -> outputs/dryad_er_cbc/er_death

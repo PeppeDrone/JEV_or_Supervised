@@ -1,0 +1,30 @@
+{
+  "status": "pass",
+  "canvas_mm": [
+    183,
+    96
+  ],
+  "raster_pixels": [
+    4322,
+    2267
+  ],
+  "raster_dpi": [
+    599.9988,
+    599.9988
+  ],
+  "visual_review": [
+    "183 mm proof: continuous flow and clear labels.",
+    "160 mm proof: legible labels and recognizable illustrations.",
+    "PDF round-trip: no clipping or missing glyphs."
+  ],
+  "layout_collisions": [],
+  "minimum_font_pt": 7.8,
+  "six_original_generated_images_unchanged": true,
+  "svg_independent_images": 6,
+  "svg_live_text_elements": 13,
+  "pdf_fonts_embedded": true,
+  "minimum_pdf_native_image_resolution_ppi": 865.553846153846,
+  "caption_review": "Distinguishes out-of-fold XGBoost predictions from direct frozen inference; task-level associations without causal claims.",
+  "prior_redesign_exports_unchanged": true,
+  "legacy_figure_snapshot_note": "The legacy figure1_study_flow files differ from the previous-turn snapshot. This task wrote only inside figure1_illustrated and generated_images; legacy changes were not made here."
+}

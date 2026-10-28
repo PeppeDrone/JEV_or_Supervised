@@ -1,0 +1,41 @@
+{
+  "best": {
+    "max_depth": 9,
+    "learning_rate": 0.024633234914616376,
+    "n_estimators": 773,
+    "min_child_weight": 2.137238459026158,
+    "subsample": 0.8039097901948399,
+    "colsample_bytree": 0.8584934392838369,
+    "colsample_bylevel": 0.4237597551900183,
+    "gamma": 3.809910659095716,
+    "reg_alpha": 0.04987153410378661,
+    "reg_lambda": 8.11212336249629,
+    "max_bin": 128,
+    "grow_policy": "depthwise",
+    "class_weight_exponent": 0.09546682513823915,
+    "threshold": 0.7754572192743188
+  },
+  "consensus": {
+    "max_depth": 8,
+    "learning_rate": 0.03845243240853174,
+    "n_estimators": 773,
+    "min_child_weight": 2.137238459026158,
+    "subsample": 0.8039097901948399,
+    "colsample_bytree": 0.7941413968713926,
+    "colsample_bylevel": 0.46658048187484935,
+    "gamma": 3.809910659095716,
+    "reg_alpha": 0.042128396119885995,
+    "reg_lambda": 8.11212336249629,
+    "max_bin": 256,
+    "grow_policy": "depthwise",
+    "class_weight_exponent": 0.18964271818734496,
+    "threshold": 0.7212226218346809
+  },
+  "rule": {
+    "threshold": 0.7754572192743188
+  },
+  "prior_development": [
+    0.19915254237288135,
+    0.8008474576271186
+  ]
+}

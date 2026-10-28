@@ -1,0 +1,16 @@
+{
+  "svg_independently_editable_images": 7,
+  "svg_live_text_elements": 23,
+  "canvas_mm": [
+    183.0,
+    110.0
+  ],
+  "png_dpi": 600,
+  "asset_pixels_changed": false,
+  "minimum_native_asset_dpi": 1125.2199999999998,
+  "outputs_sha256": {
+    "Figure1.svg": "51c6c15bca968388a1923c9d300a673f83d34d710568c57d10bbeee291f410c0",
+    "Figure1.png": "9ee57743dfeba9d35d2f53f134436d5b0828bccb2eccabde4dfb2ea27ab1fc99",
+    "Figure1.pdf": "abc940a65dd7dac872c8ceaa50afc52c9597ae458afd6d5c14cc664e863f6a36"
+  }
+}

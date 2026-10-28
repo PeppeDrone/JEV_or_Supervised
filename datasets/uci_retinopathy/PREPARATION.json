@@ -1,0 +1,24 @@
+{
+  "dataset": "uci_retinopathy",
+  "prepared_at": "2026-10-21T11:10:19.885565+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/329/data.csv",
+      "path": "datasets/uci_retinopathy/raw/data.csv",
+      "sha256": "2636b73e6830e9d5f5967a286766b5d39f48a7bf40761e9621bcd5d79a2aa527",
+      "bytes": 118115,
+      "retrieved": "2026-10-21T11:10:19.809072+00:00"
+    }
+  ],
+  "patients_csv_sha256": "0abaf399e7d60d4453fbd513c87d7d67eac66a324d929bbc4523c0ccc2443a1d",
+  "summary": {
+    "observations": 1151,
+    "predictors": 19,
+    "outcome": "retinopathy",
+    "class_counts": {
+      "No retinopathy": 540,
+      "Retinopathy": 611
+    },
+    "identifier_note": "UCI Diabetic Retinopathy Debrecen; image-derived features."
+  }
+}

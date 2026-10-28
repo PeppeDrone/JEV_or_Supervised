@@ -1,0 +1,161 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_spectf",
+  "outcome": "abnormal",
+  "data_hash": "35d9ef119f73f2fd1d24e0c498becb2aefee0949916ba8e07fc7d25e727e085d",
+  "dataset_spec_sha256": "a8a0bcd9f0d292d814bbe6e4d853b89ea89dbb19182adda56542f1e91865dbeb",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261012,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "Normal SPECT",
+    "Abnormal SPECT"
+  ],
+  "predictor_columns": [
+    "f1r",
+    "f1s",
+    "f2r",
+    "f2s",
+    "f3r",
+    "f3s",
+    "f4r",
+    "f4s",
+    "f5r",
+    "f5s",
+    "f6r",
+    "f6s",
+    "f7r",
+    "f7s",
+    "f8r",
+    "f8s",
+    "f9r",
+    "f9s",
+    "f10r",
+    "f10s",
+    "f11r",
+    "f11s",
+    "f12r",
+    "f12s",
+    "f13r",
+    "f13s",
+    "f14r",
+    "f14s",
+    "f15r",
+    "f15s",
+    "f16r",
+    "f16s",
+    "f17r",
+    "f17s",
+    "f18r",
+    "f18s",
+    "f19r",
+    "f19s",
+    "f20r",
+    "f20s",
+    "f21r",
+    "f21s",
+    "f22r",
+    "f22s"
+  ],
+  "zs_raw_csv_sha256": "ce2e1dc9aeb339bc936460f1fdbcd5fbcd7399666e4b07b5dc2effae402d6e6e",
+  "files": {
+    "split.json": "1d785ccf39547517a86e1f025df62f6fa6f932f70c107af13e9c66b942a2c2a3",
+    "trials.csv": "7ab848d205c83bb07c9266676f90225f0094be4fae8bcf08e7f30ce002600083",
+    "XGB_optuna.csv": "5c3edd9e573faf72d7b495bc68fbfd3978ead0c03d3dce4b2ef312031e572fab",
+    "ZS_raw.csv": "38e2a33f175de2acee684f93dbe724db66d10eb06b5592bd8b3543f21b8737b2",
+    "model.joblib": "a01fda23b12293f5fd747a6d09c1a5354d3573ffa968bb57aefe751722e7f041",
+    "best_params.json": "ef17cfa946760ee3e7a7b9597d9c35a8cae04aa04f06f0025c4efc4ce0954a87",
+    "metrics.json": "11e831b28d37f6312f5c3b55286e4f6bc5795071235b033bda3a37534bf92843"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

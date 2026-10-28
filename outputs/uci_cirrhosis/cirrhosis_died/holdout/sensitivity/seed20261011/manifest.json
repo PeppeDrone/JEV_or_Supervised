@@ -1,0 +1,134 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_cirrhosis",
+  "outcome": "cirrhosis_died",
+  "data_hash": "11d518cfa2cf664a7a4eb4af77439d19754113c6a2a1f1400b37f22747966bc7",
+  "dataset_spec_sha256": "46d15aba5082714fc5d0aacb150330cb50e1ba00630fb899c312583bc8a4093f",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261011,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "Alive / censored",
+    "Died"
+  ],
+  "predictor_columns": [
+    "age",
+    "drug",
+    "sex",
+    "ascites",
+    "hepatomegaly",
+    "spiders",
+    "edema",
+    "bilirubin",
+    "cholesterol",
+    "albumin",
+    "copper",
+    "alk_phos",
+    "sgot",
+    "triglycerides",
+    "platelets",
+    "prothrombin",
+    "stage"
+  ],
+  "zs_raw_csv_sha256": "3d9b76ccc73083cf4aa40a4342205d073c9a86bdb9da0cfb44c2d4de9a8a741e",
+  "files": {
+    "split.json": "c65d997927310cf5e17c6041e40f89ae795644ebd26e7f6b62f258f5264fa863",
+    "trials.csv": "a55e895ea548f00694c25dc911306af7beffa5f2b8719e109b0b121dda314093",
+    "XGB_optuna.csv": "360d18b7cd45a07b136ab4d82d11c916245d333c075e335ec343feb611823900",
+    "ZS_raw.csv": "5ee9de6f84e01fd02cb188d19d1c9a2022311873f459154ef37cf2872c67b63d",
+    "model.joblib": "20a8dfec74473bde15f3d3b013b78a82fd3b8c1ef4a15f584e58f87f712a1341",
+    "best_params.json": "b623d3ccca734a6f2818ad1c122a8bcdf6294041dd5488d9d19a427b5c371860",
+    "metrics.json": "853598d451aa189e69b94838e062faebb6b09f24108f7548ad4bda9d41d23ede"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

@@ -1,0 +1,182 @@
+name: uci_glioma
+description: UCI Glioma grading (839 cases). Binary LGG vs GBM from clinical+mutation features.
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Adult with a diffuse glioma in The Cancer Genome Atlas lower-grade glioma and glioblastoma cohorts (TCGA-LGG
+  and TCGA-GBM). The observations are sex, age at diagnosis, race, and whether each of the 20 most frequently mutated
+  genes carries a somatic mutation in the tumour.
+observations_header: 'Demographics and tumour somatic mutation status:'
+predictors:
+  gender:
+    column: gender
+    kind: categorical
+    text_label: Sex
+    text_values:
+      '0': Male
+      '1': Female
+  age:
+    column: age
+    kind: numeric
+    text_label: Age at diagnosis
+    unit: years
+  race:
+    column: race
+    kind: categorical
+    text_label: Race
+    text_values:
+      white: White
+      asian: Asian
+      black or african american: Black or African American
+      american indian or alaska native: American Indian or Alaska Native
+  idh1:
+    column: idh1
+    kind: categorical
+    text_label: IDH1 (isocitrate dehydrogenase 1)
+    text_values:
+      '0': Wild type
+      '1': Mutated
+  tp53:
+    column: tp53
+    kind: categorical
+    text_label: TP53 (tumour protein p53)
+    text_values:
+      '0': Wild type
+      '1': Mutated
+  atrx:
+    column: atrx
+    kind: categorical
+    text_label: ATRX (chromatin remodeler)
+    text_values:
+      '0': Wild type
+      '1': Mutated
+  pten:
+    column: pten
+    kind: categorical
+    text_label: PTEN (phosphatase and tensin homolog)
+    text_values:
+      '0': Wild type
+      '1': Mutated
+  egfr:
+    column: egfr
+    kind: categorical
+    text_label: EGFR (epidermal growth factor receptor)
+    text_values:
+      '0': Wild type
+      '1': Mutated
+  cic:
+    column: cic
+    kind: categorical
+    text_label: CIC (capicua transcriptional repressor)
+    text_values:
+      '0': Wild type
+      '1': Mutated
+  muc16:
+    column: muc16
+    kind: categorical
+    text_label: MUC16 (mucin 16)
+    text_values:
+      '0': Wild type
+      '1': Mutated
+  pik3ca:
+    column: pik3ca
+    kind: categorical
+    text_label: PIK3CA (PI3-kinase catalytic subunit alpha)
+    text_values:
+      '0': Wild type
+      '1': Mutated
+  nf1:
+    column: nf1
+    kind: categorical
+    text_label: NF1 (neurofibromin 1)
+    text_values:
+      '0': Wild type
+      '1': Mutated
+  pik3r1:
+    column: pik3r1
+    kind: categorical
+    text_label: PIK3R1 (PI3-kinase regulatory subunit 1)
+    text_values:
+      '0': Wild type
+      '1': Mutated
+  fubp1:
+    column: fubp1
+    kind: categorical
+    text_label: FUBP1 (far upstream element binding protein 1)
+    text_values:
+      '0': Wild type
+      '1': Mutated
+  rb1:
+    column: rb1
+    kind: categorical
+    text_label: RB1 (retinoblastoma protein)
+    text_values:
+      '0': Wild type
+      '1': Mutated
+  notch1:
+    column: notch1
+    kind: categorical
+    text_label: NOTCH1 (notch receptor 1)
+    text_values:
+      '0': Wild type
+      '1': Mutated
+  bcor:
+    column: bcor
+    kind: categorical
+    text_label: BCOR (BCL6 corepressor)
+    text_values:
+      '0': Wild type
+      '1': Mutated
+  csmd3:
+    column: csmd3
+    kind: categorical
+    text_label: CSMD3 (CUB and Sushi multiple domains 3)
+    text_values:
+      '0': Wild type
+      '1': Mutated
+  smarca4:
+    column: smarca4
+    kind: categorical
+    text_label: SMARCA4 (SWI/SNF chromatin regulator)
+    text_values:
+      '0': Wild type
+      '1': Mutated
+  grin2a:
+    column: grin2a
+    kind: categorical
+    text_label: GRIN2A (NMDA receptor subunit 2A)
+    text_values:
+      '0': Wild type
+      '1': Mutated
+  idh2:
+    column: idh2
+    kind: categorical
+    text_label: IDH2 (isocitrate dehydrogenase 2)
+    text_values:
+      '0': Wild type
+      '1': Mutated
+  fat4:
+    column: fat4
+    kind: categorical
+    text_label: FAT4 (FAT atypical cadherin 4)
+    text_values:
+      '0': Wild type
+      '1': Mutated
+  pdgfra:
+    column: pdgfra
+    kind: categorical
+    text_label: PDGFRA (platelet-derived growth factor receptor alpha)
+    text_values:
+      '0': Wild type
+      '1': Mutated
+outcomes:
+  gbm:
+    column: gbm
+    classes:
+    - Lower-grade glioma (WHO grade II or III)
+    - Glioblastoma (WHO grade IV)
+    mapping:
+      '0': Lower-grade glioma (WHO grade II or III)
+      '1': Glioblastoma (WHO grade IV)
+    question: Based on these demographics and the tumour's somatic mutation status, is this glioma a glioblastoma?

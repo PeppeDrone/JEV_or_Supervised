@@ -1,0 +1,1 @@
+nhanes_htn/hypertension: 1000 labelled patients, 12 predictors, classes {'No hypertension': 459, 'Hypertension': 541}, 5 outer folds -> outputs/nhanes_htn/hypertension

@@ -1,0 +1,136 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_hepatitis",
+  "outcome": "died",
+  "data_hash": "ad8a66546b383b1c67652fa82b1fbceaf61fa5c98f9e4104d3fa79c12e265d75",
+  "dataset_spec_sha256": "80879daaab403e5b87f3aae38763a6b784c777269492f1f9291ddbc438d233d6",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261012,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "Lived",
+    "Died"
+  ],
+  "predictor_columns": [
+    "age",
+    "sex",
+    "steroid",
+    "antivirals",
+    "fatigue",
+    "malaise",
+    "anorexia",
+    "liver_big",
+    "liver_firm",
+    "spleen_palpable",
+    "spiders",
+    "ascites",
+    "varices",
+    "bilirubin",
+    "alk_phosphate",
+    "sgot",
+    "albumin",
+    "protime",
+    "histology"
+  ],
+  "zs_raw_csv_sha256": "da95c8324fa26fe21146ed2a0d8a7bcee3240081557c5ec9a83556c81afed3cf",
+  "files": {
+    "split.json": "b6eedfdffbc6c733d026e3c270802730d3031f88242b866e6e2736178fc96338",
+    "trials.csv": "8abe4e8201fcc007cd276a9fd1d6dae56ca80802c5437d41750b914002c26284",
+    "XGB_optuna.csv": "c4544c4fd1d941278fc0b8d08b4f8c9ffcef5425ddcf4b1c34ee4db3c9c3b8af",
+    "ZS_raw.csv": "9d6fe08871cd9d9a94fa4887d26f04890409df9e62d57ff6a66e299bfb0691a4",
+    "model.joblib": "01ab7411c545a04e9d40e4fd6dc1aab8ef22e1f4d714c6270f38cb083a0f5f87",
+    "best_params.json": "7453540f7d993d5df58a2408902d99503fa10f5cf179786e1ac6d268d9eac3a0",
+    "metrics.json": "6ea527edd7c7c2278189f8e69746bf0343466222b99e263f3e399f8097c18250"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

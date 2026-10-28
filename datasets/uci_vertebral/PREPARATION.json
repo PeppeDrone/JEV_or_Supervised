@@ -1,0 +1,25 @@
+{
+  "dataset": "uci_vertebral",
+  "prepared_at": "2026-10-21T11:10:23.376622+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/212/data.csv",
+      "path": "datasets/uci_vertebral/raw/data.csv",
+      "sha256": "7b98e6802c824d4c20a97f86174ef47db9171875888775a3884245443f7432d5",
+      "bytes": 26181,
+      "retrieved": "2026-10-21T11:10:23.367879+00:00"
+    }
+  ],
+  "patients_csv_sha256": "1cb9230ae2a4be40e6345dee027e313c0965cb2aff975822468fb09569112b9f",
+  "summary": {
+    "observations": 310,
+    "predictors": 6,
+    "outcome": "pathology",
+    "class_counts": {
+      "Normal": 100,
+      "Hernia": 60,
+      "Spondylolisthesis": 150
+    },
+    "identifier_note": "UCI Vertebral Column; biomechanical predictors."
+  }
+}

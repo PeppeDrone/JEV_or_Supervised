@@ -1,0 +1,664 @@
+name: uci_mi_lethal
+description: UCI Myocardial infarction complications (Krasnoyarsk, 1992-1995; 1700 patients, 111 predictors). Binary
+  in-hospital lethal outcome (LET_IS > 0). Predictors cover history, admission examination, admission ECG, admission
+  laboratory values and treatment up to the third hospital day.
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Adult admitted to the intensive cardiac care unit of a city hospital with an acute myocardial infarction.
+  The record covers the cardiovascular history, the examination and ECG at admission, admission blood tests, and
+  the drugs given by the emergency cardiology team and in the unit during the first three hospital days.
+observations_header: 'History, admission findings, admission laboratory values and early treatment:'
+predictors:
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+  sex:
+    column: sex
+    kind: categorical
+    text_label: Sex
+    text_values:
+      '0': Female
+      '1': Male
+  inf_anam:
+    column: inf_anam
+    kind: categorical
+    text_label: Number of previous myocardial infarctions
+    text_values:
+      '0': None
+      '1': One
+      '2': Two
+      '3': Three or more
+  stenok_an:
+    column: stenok_an
+    kind: categorical
+    text_label: Exertional angina in the history (time since onset)
+    text_values:
+      '0': Never had exertional angina
+      '1': Angina began during the last year
+      '2': Angina began one year ago
+      '3': Angina began two years ago
+      '4': Angina began three years ago
+      '5': Angina began 4-5 years ago
+      '6': Angina began more than 5 years ago
+  fk_stenok:
+    column: fk_stenok
+    kind: categorical
+    text_label: Functional class of angina pectoris in the last year
+    text_values:
+      '0': No angina pectoris
+      '1': Functional class I (angina only on strenuous exertion)
+      '2': Functional class II (slight limitation of ordinary activity)
+      '3': Functional class III (marked limitation of ordinary activity)
+      '4': Functional class IV (angina at rest or on any activity)
+  ibs_post:
+    column: ibs_post
+    kind: categorical
+    text_label: Coronary heart disease in the weeks and days before admission
+    text_values:
+      '0': None
+      '1': Exertional angina pectoris
+      '2': Unstable angina pectoris
+  ibs_nasl:
+    column: ibs_nasl
+    kind: categorical
+    text_label: Family history of coronary heart disease
+    text_values:
+      '0': Not burdened
+      '1': Burdened
+  gb:
+    column: gb
+    kind: categorical
+    text_label: Essential hypertension
+    text_values:
+      '0': No essential hypertension
+      '1': Stage 1
+      '2': Stage 2
+      '3': Stage 3
+  sim_gipert:
+    column: sim_gipert
+    kind: categorical
+    text_label: Symptomatic (secondary) hypertension
+    text_values: &id001
+      '0': 'No'
+      '1': 'Yes'
+  dlit_ag:
+    column: dlit_ag
+    kind: categorical
+    text_label: Duration of arterial hypertension
+    text_values:
+      '0': No arterial hypertension
+      '1': One year
+      '2': Two years
+      '3': Three years
+      '4': Four years
+      '5': Five years
+      '6': 6-10 years
+      '7': More than 10 years
+  zsn_a:
+    column: zsn_a
+    kind: categorical
+    text_label: Chronic heart failure in the history
+    text_values:
+      '0': No chronic heart failure
+      '1': Stage I
+      '2': Stage II with right-ventricular failure (systemic congestion)
+      '3': Stage II with left-ventricular failure (pulmonary congestion)
+      '4': Stage II with both right- and left-ventricular failure
+  nr_11:
+    column: nr_11
+    kind: categorical
+    text_label: Arrhythmia of any kind in the history
+    text_values: *id001
+  nr_01:
+    column: nr_01
+    kind: categorical
+    text_label: Premature atrial contractions in the history
+    text_values: *id001
+  nr_02:
+    column: nr_02
+    kind: categorical
+    text_label: Premature ventricular contractions in the history
+    text_values: *id001
+  nr_03:
+    column: nr_03
+    kind: categorical
+    text_label: Paroxysmal atrial fibrillation in the history
+    text_values: *id001
+  nr_04:
+    column: nr_04
+    kind: categorical
+    text_label: Persistent atrial fibrillation in the history
+    text_values: *id001
+  nr_07:
+    column: nr_07
+    kind: categorical
+    text_label: Ventricular fibrillation in the history
+    text_values: *id001
+  nr_08:
+    column: nr_08
+    kind: categorical
+    text_label: Paroxysmal ventricular tachycardia in the history
+    text_values: *id001
+  np_01:
+    column: np_01
+    kind: categorical
+    text_label: First-degree atrioventricular block in the history
+    text_values: *id001
+  np_04:
+    column: np_04
+    kind: categorical
+    text_label: Third-degree (complete) atrioventricular block in the history
+    text_values: *id001
+  np_05:
+    column: np_05
+    kind: categorical
+    text_label: Left anterior fascicular block in the history
+    text_values: *id001
+  np_07:
+    column: np_07
+    kind: categorical
+    text_label: Incomplete left bundle branch block in the history
+    text_values: *id001
+  np_08:
+    column: np_08
+    kind: categorical
+    text_label: Complete left bundle branch block in the history
+    text_values: *id001
+  np_09:
+    column: np_09
+    kind: categorical
+    text_label: Incomplete right bundle branch block in the history
+    text_values: *id001
+  np_10:
+    column: np_10
+    kind: categorical
+    text_label: Complete right bundle branch block in the history
+    text_values: *id001
+  endocr_01:
+    column: endocr_01
+    kind: categorical
+    text_label: Diabetes mellitus in the history
+    text_values: *id001
+  endocr_02:
+    column: endocr_02
+    kind: categorical
+    text_label: Obesity in the history
+    text_values: *id001
+  endocr_03:
+    column: endocr_03
+    kind: categorical
+    text_label: Thyrotoxicosis in the history
+    text_values: *id001
+  zab_leg_01:
+    column: zab_leg_01
+    kind: categorical
+    text_label: Chronic bronchitis in the history
+    text_values: *id001
+  zab_leg_02:
+    column: zab_leg_02
+    kind: categorical
+    text_label: Chronic obstructive bronchitis in the history
+    text_values: *id001
+  zab_leg_03:
+    column: zab_leg_03
+    kind: categorical
+    text_label: Bronchial asthma in the history
+    text_values: *id001
+  zab_leg_04:
+    column: zab_leg_04
+    kind: categorical
+    text_label: Chronic pneumonia in the history
+    text_values: *id001
+  zab_leg_06:
+    column: zab_leg_06
+    kind: categorical
+    text_label: Pulmonary tuberculosis in the history
+    text_values: *id001
+  s_ad_kbrig:
+    column: s_ad_kbrig
+    kind: numeric
+    text_label: Systolic blood pressure measured by the emergency cardiology team
+    unit: mmHg
+  d_ad_kbrig:
+    column: d_ad_kbrig
+    kind: numeric
+    text_label: Diastolic blood pressure measured by the emergency cardiology team
+    unit: mmHg
+  s_ad_orit:
+    column: s_ad_orit
+    kind: numeric
+    text_label: Systolic blood pressure at admission to the intensive care unit
+    unit: mmHg
+  d_ad_orit:
+    column: d_ad_orit
+    kind: numeric
+    text_label: Diastolic blood pressure at admission to the intensive care unit
+    unit: mmHg
+  o_l_post:
+    column: o_l_post
+    kind: categorical
+    text_label: Pulmonary oedema at admission to the intensive care unit
+    text_values: &id002
+      '0': Absent
+      '1': Present
+  k_sh_post:
+    column: k_sh_post
+    kind: categorical
+    text_label: Cardiogenic shock at admission to the intensive care unit
+    text_values: *id002
+  mp_tp_post:
+    column: mp_tp_post
+    kind: categorical
+    text_label: Paroxysmal atrial fibrillation at admission or in the pre-hospital phase
+    text_values: *id002
+  svt_post:
+    column: svt_post
+    kind: categorical
+    text_label: Paroxysmal supraventricular tachycardia at admission or in the pre-hospital phase
+    text_values: *id002
+  gt_post:
+    column: gt_post
+    kind: categorical
+    text_label: Paroxysmal ventricular tachycardia at admission or in the pre-hospital phase
+    text_values: *id002
+  fib_g_post:
+    column: fib_g_post
+    kind: categorical
+    text_label: Ventricular fibrillation at admission or in the pre-hospital phase
+    text_values: *id002
+  ant_im:
+    column: ant_im
+    kind: categorical
+    text_label: Anterior left-ventricular infarction on ECG (leads V1-V4)
+    text_values: &id003
+      '0': No infarction in this territory
+      '1': Infarction present, QRS complex unchanged
+      '2': Infarction present, QRS of QR type
+      '3': Infarction present, QRS of Qr type
+      '4': Infarction present, QRS of QS type (transmural)
+  lat_im:
+    column: lat_im
+    kind: categorical
+    text_label: Lateral left-ventricular infarction on ECG (leads V5-V6, I, aVL)
+    text_values: *id003
+  inf_im:
+    column: inf_im
+    kind: categorical
+    text_label: Inferior left-ventricular infarction on ECG (leads II, III, aVF)
+    text_values: *id003
+  post_im:
+    column: post_im
+    kind: categorical
+    text_label: Posterior left-ventricular infarction on ECG (leads V7-V9, reciprocal changes in V1-V3)
+    text_values: *id003
+  im_pg_p:
+    column: im_pg_p
+    kind: categorical
+    text_label: Right-ventricular myocardial infarction
+    text_values: *id002
+  ritm_ecg_p_01:
+    column: ritm_ecg_p_01
+    kind: categorical
+    text_label: 'Admission ECG rhythm: sinus rhythm, heart rate 60-90 per minute'
+    text_values: *id002
+  ritm_ecg_p_02:
+    column: ritm_ecg_p_02
+    kind: categorical
+    text_label: 'Admission ECG rhythm: atrial fibrillation'
+    text_values: *id002
+  ritm_ecg_p_04:
+    column: ritm_ecg_p_04
+    kind: categorical
+    text_label: 'Admission ECG rhythm: atrial (ectopic atrial) rhythm'
+    text_values: *id002
+  ritm_ecg_p_06:
+    column: ritm_ecg_p_06
+    kind: categorical
+    text_label: 'Admission ECG rhythm: idioventricular rhythm'
+    text_values: *id002
+  ritm_ecg_p_07:
+    column: ritm_ecg_p_07
+    kind: categorical
+    text_label: 'Admission ECG rhythm: sinus tachycardia, heart rate above 90 per minute'
+    text_values: *id002
+  ritm_ecg_p_08:
+    column: ritm_ecg_p_08
+    kind: categorical
+    text_label: 'Admission ECG rhythm: sinus bradycardia, heart rate below 60 per minute'
+    text_values: *id002
+  n_r_ecg_p_01:
+    column: n_r_ecg_p_01
+    kind: categorical
+    text_label: 'Admission ECG: premature atrial contractions'
+    text_values: *id002
+  n_r_ecg_p_02:
+    column: n_r_ecg_p_02
+    kind: categorical
+    text_label: 'Admission ECG: frequent premature atrial contractions'
+    text_values: *id002
+  n_r_ecg_p_03:
+    column: n_r_ecg_p_03
+    kind: categorical
+    text_label: 'Admission ECG: premature ventricular contractions'
+    text_values: *id002
+  n_r_ecg_p_04:
+    column: n_r_ecg_p_04
+    kind: categorical
+    text_label: 'Admission ECG: frequent premature ventricular contractions'
+    text_values: *id002
+  n_r_ecg_p_05:
+    column: n_r_ecg_p_05
+    kind: categorical
+    text_label: 'Admission ECG: paroxysmal atrial fibrillation'
+    text_values: *id002
+  n_r_ecg_p_06:
+    column: n_r_ecg_p_06
+    kind: categorical
+    text_label: 'Admission ECG: persistent atrial fibrillation'
+    text_values: *id002
+  n_r_ecg_p_08:
+    column: n_r_ecg_p_08
+    kind: categorical
+    text_label: 'Admission ECG: paroxysmal supraventricular tachycardia'
+    text_values: *id002
+  n_r_ecg_p_09:
+    column: n_r_ecg_p_09
+    kind: categorical
+    text_label: 'Admission ECG: paroxysmal ventricular tachycardia'
+    text_values: *id002
+  n_r_ecg_p_10:
+    column: n_r_ecg_p_10
+    kind: categorical
+    text_label: 'Admission ECG: ventricular fibrillation'
+    text_values: *id002
+  n_p_ecg_p_01:
+    column: n_p_ecg_p_01
+    kind: categorical
+    text_label: 'Admission ECG: sinoatrial block'
+    text_values: *id002
+  n_p_ecg_p_03:
+    column: n_p_ecg_p_03
+    kind: categorical
+    text_label: 'Admission ECG: first-degree atrioventricular block'
+    text_values: *id002
+  n_p_ecg_p_04:
+    column: n_p_ecg_p_04
+    kind: categorical
+    text_label: 'Admission ECG: second-degree atrioventricular block, Mobitz I (Wenckebach)'
+    text_values: *id002
+  n_p_ecg_p_05:
+    column: n_p_ecg_p_05
+    kind: categorical
+    text_label: 'Admission ECG: second-degree atrioventricular block, Mobitz II'
+    text_values: *id002
+  n_p_ecg_p_06:
+    column: n_p_ecg_p_06
+    kind: categorical
+    text_label: 'Admission ECG: third-degree (complete) atrioventricular block'
+    text_values: *id002
+  n_p_ecg_p_07:
+    column: n_p_ecg_p_07
+    kind: categorical
+    text_label: 'Admission ECG: left anterior fascicular block'
+    text_values: *id002
+  n_p_ecg_p_08:
+    column: n_p_ecg_p_08
+    kind: categorical
+    text_label: 'Admission ECG: left posterior fascicular block'
+    text_values: *id002
+  n_p_ecg_p_09:
+    column: n_p_ecg_p_09
+    kind: categorical
+    text_label: 'Admission ECG: incomplete left bundle branch block'
+    text_values: *id002
+  n_p_ecg_p_10:
+    column: n_p_ecg_p_10
+    kind: categorical
+    text_label: 'Admission ECG: complete left bundle branch block'
+    text_values: *id002
+  n_p_ecg_p_11:
+    column: n_p_ecg_p_11
+    kind: categorical
+    text_label: 'Admission ECG: incomplete right bundle branch block'
+    text_values: *id002
+  n_p_ecg_p_12:
+    column: n_p_ecg_p_12
+    kind: categorical
+    text_label: 'Admission ECG: complete right bundle branch block'
+    text_values: *id002
+  fibr_ter_01:
+    column: fibr_ter_01
+    kind: categorical
+    text_label: Fibrinolytic therapy with streptokinase (Celiase) 750 000 IU
+    text_values:
+      '0': Not given
+      '1': Given
+  fibr_ter_02:
+    column: fibr_ter_02
+    kind: categorical
+    text_label: Fibrinolytic therapy with streptokinase (Celiase) 1 million IU
+    text_values:
+      '0': Not given
+      '1': Given
+  fibr_ter_03:
+    column: fibr_ter_03
+    kind: categorical
+    text_label: Fibrinolytic therapy with streptokinase (Celiase) 3 million IU
+    text_values:
+      '0': Not given
+      '1': Given
+  fibr_ter_05:
+    column: fibr_ter_05
+    kind: categorical
+    text_label: Fibrinolytic therapy with streptokinase (Streptase)
+    text_values:
+      '0': Not given
+      '1': Given
+  fibr_ter_06:
+    column: fibr_ter_06
+    kind: categorical
+    text_label: Fibrinolytic therapy with streptokinase (Celiase) 500 000 IU
+    text_values:
+      '0': Not given
+      '1': Given
+  fibr_ter_07:
+    column: fibr_ter_07
+    kind: categorical
+    text_label: Fibrinolytic therapy with streptokinase (Celiase) 250 000 IU
+    text_values:
+      '0': Not given
+      '1': Given
+  fibr_ter_08:
+    column: fibr_ter_08
+    kind: categorical
+    text_label: Fibrinolytic therapy with streptokinase (Celiase) 1.5 million IU
+    text_values:
+      '0': Not given
+      '1': Given
+  gipo_k:
+    column: gipo_k
+    kind: categorical
+    text_label: Hypokalaemia (serum potassium below 4 mmol/L)
+    text_values: *id001
+  k_blood:
+    column: k_blood
+    kind: numeric
+    text_label: Serum potassium
+    unit: mmol/L
+  giper_na:
+    column: giper_na
+    kind: categorical
+    text_label: Hypernatraemia (serum sodium above 150 mmol/L)
+    text_values: *id001
+  na_blood:
+    column: na_blood
+    kind: numeric
+    text_label: Serum sodium
+    unit: mmol/L
+  alt_blood:
+    column: alt_blood
+    kind: numeric
+    text_label: Serum alanine aminotransferase (ALT)
+    unit: IU/L
+    scale_note: as recorded by the source laboratory; observed values 0.03-3
+  ast_blood:
+    column: ast_blood
+    kind: numeric
+    text_label: Serum aspartate aminotransferase (AST)
+    unit: IU/L
+    scale_note: as recorded by the source laboratory; observed values 0.04-2.2
+  kfk_blood:
+    column: kfk_blood
+    kind: numeric
+    text_label: Serum creatine phosphokinase (CPK)
+    unit: IU/L
+  l_blood:
+    column: l_blood
+    kind: numeric
+    text_label: White blood cell count
+    unit: x10^9/L
+  roe:
+    column: roe
+    kind: numeric
+    text_label: Erythrocyte sedimentation rate
+    unit: mm/h
+  time_b_s:
+    column: time_b_s
+    kind: categorical
+    text_label: Time from onset of the attack to arrival at hospital
+    text_values:
+      '1': Less than 2 hours
+      '2': 2-4 hours
+      '3': 4-6 hours
+      '4': 6-8 hours
+      '5': 8-12 hours
+      '6': 12-24 hours
+      '7': More than 1 day
+      '8': More than 2 days
+      '9': More than 3 days
+  r_ab_1_n:
+    column: r_ab_1_n
+    kind: categorical
+    text_label: Relapse of chest pain in the first hours in hospital
+    text_values: &id004
+      '0': No relapse
+      '1': One relapse
+      '2': Two relapses
+      '3': Three or more relapses
+  r_ab_2_n:
+    column: r_ab_2_n
+    kind: categorical
+    text_label: Relapse of chest pain on the second hospital day
+    text_values: *id004
+  r_ab_3_n:
+    column: r_ab_3_n
+    kind: categorical
+    text_label: Relapse of chest pain on the third hospital day
+    text_values: *id004
+  na_kb:
+    column: na_kb
+    kind: categorical
+    text_label: Opioid analgesic given by the emergency cardiology team
+    text_values: &id005
+      '0': Not given
+      '1': Given
+  not_na_kb:
+    column: not_na_kb
+    kind: categorical
+    text_label: Non-steroidal anti-inflammatory drug given by the emergency cardiology team
+    text_values: *id005
+  lid_kb:
+    column: lid_kb
+    kind: categorical
+    text_label: Lidocaine given by the emergency cardiology team
+    text_values: *id005
+  nitr_s:
+    column: nitr_s
+    kind: categorical
+    text_label: Intravenous nitrates given in the intensive care unit
+    text_values: *id005
+  na_r_1_n:
+    column: na_r_1_n
+    kind: categorical
+    text_label: Opioid analgesic doses in the intensive care unit during the first hours
+    text_values: &id006
+      '0': None
+      '1': Once
+      '2': Twice
+      '3': Three times
+      '4': Four or more times
+  na_r_2_n:
+    column: na_r_2_n
+    kind: categorical
+    text_label: Opioid analgesic doses in the intensive care unit on the second day
+    text_values: *id006
+  na_r_3_n:
+    column: na_r_3_n
+    kind: categorical
+    text_label: Opioid analgesic doses in the intensive care unit on the third day
+    text_values: *id006
+  not_na_1_n:
+    column: not_na_1_n
+    kind: categorical
+    text_label: Non-steroidal anti-inflammatory doses in the intensive care unit during the first hours
+    text_values: *id006
+  not_na_2_n:
+    column: not_na_2_n
+    kind: categorical
+    text_label: Non-steroidal anti-inflammatory doses in the intensive care unit on the second day
+    text_values: *id006
+  not_na_3_n:
+    column: not_na_3_n
+    kind: categorical
+    text_label: Non-steroidal anti-inflammatory doses in the intensive care unit on the third day
+    text_values: *id006
+  lid_s_n:
+    column: lid_s_n
+    kind: categorical
+    text_label: Lidocaine given in the intensive care unit
+    text_values: *id005
+  b_blok_s_n:
+    column: b_blok_s_n
+    kind: categorical
+    text_label: Beta-blocker given in the intensive care unit
+    text_values: *id005
+  ant_ca_s_n:
+    column: ant_ca_s_n
+    kind: categorical
+    text_label: Calcium channel blocker given in the intensive care unit
+    text_values: *id005
+  gepar_s_n:
+    column: gepar_s_n
+    kind: categorical
+    text_label: Heparin (anticoagulant) given in the intensive care unit
+    text_values: *id005
+  asp_s_n:
+    column: asp_s_n
+    kind: categorical
+    text_label: Acetylsalicylic acid (aspirin) given in the intensive care unit
+    text_values: *id005
+  tikl_s_n:
+    column: tikl_s_n
+    kind: categorical
+    text_label: Ticlopidine given in the intensive care unit
+    text_values: *id005
+  trent_s_n:
+    column: trent_s_n
+    kind: categorical
+    text_label: Pentoxifylline (Trental) given in the intensive care unit
+    text_values: *id005
+outcomes:
+  lethal:
+    column: lethal
+    classes:
+    - Survived the hospital stay
+    - Died during the hospital stay
+    mapping:
+      '0': Survived the hospital stay
+      '1': Died during the hospital stay
+    question: Based on the history, admission findings, admission laboratory values and treatment during the first
+      three days, did this patient die during the hospital stay for this myocardial infarction?

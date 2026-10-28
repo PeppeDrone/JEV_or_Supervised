@@ -1,0 +1,133 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_thyroid_recur",
+  "outcome": "recurred",
+  "data_hash": "f6189b39bbf7e90510587709b1eb8ec6d28a687807a23f8c7310508fc472279e",
+  "dataset_spec_sha256": "ebae11e845408d22bbe0279acde5c3579821c1a9b40c3b40391b1d93e08a35d2",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261009,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "No recurrence",
+    "Recurred"
+  ],
+  "predictor_columns": [
+    "age",
+    "gender",
+    "smoking",
+    "hx_smoking",
+    "hx_radiotherapy",
+    "thyroid_function",
+    "physical_exam",
+    "adenopathy",
+    "pathology",
+    "focality",
+    "ata_risk",
+    "t_stage",
+    "n_stage",
+    "m_stage",
+    "stage",
+    "response"
+  ],
+  "zs_raw_csv_sha256": "01c98246d33f2cecc14c51f59b7d805073332fc6d7edcaa1869a5ba1898a05bb",
+  "files": {
+    "split.json": "eed7e33124462c171cce644ffa4b04d6a7be64760527da9b7069c5ddfe17dfaa",
+    "trials.csv": "0eeb5a4a3a6100ca2812410171f28b265c44cca2b2206a7ad814eaffbe3f8d4f",
+    "XGB_optuna.csv": "a38dc6b74f3e4c25c547cc934f9d0be42df9e0503f6cbb0b05e953e40b134e44",
+    "ZS_raw.csv": "c25e8652ae4b40751bcc06961d2baa25deda3aa7207e917385d0bfde9a10bb04",
+    "model.joblib": "c296a5ae31741e8e3619a293b61974ff7c08db48dcaebf5f4116267fcbd967af",
+    "best_params.json": "f4e585b6fed3a04637a99366bb1f472c0fe478b7e62a2e433f18535e3ea6ed39",
+    "metrics.json": "afc91f5c9d078da879d8ab7b842bc163891f6171e914e75d6d4d2a427d5ac5b8"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

@@ -1,0 +1,1578 @@
+name: uci_arrhythmia
+description: 'UCI Cardiac Arrhythmia (Bilkent; 429 observations after excluding rhythm classes with n<10; 23 rows
+  dropped). 279 predictors: demographics, global interval/axis measurements and, for each of the 12 standard leads,
+  wave widths, deflection counts, morphology flags, wave amplitudes and QRS/QRST areas. 8 retained rhythm classes.'
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: Adult referred for a standard resting 12-lead electrocardiogram. The observations are the automatically
+  measured global intervals, frontal-plane axes and heart rate, followed by, for each of the twelve leads (DI, DII,
+  DIII, aVR, aVL, aVF, V1-V6), the wave widths, number of intrinsic deflections, wave-morphology flags, wave amplitudes
+  and QRS/QRST areas.
+observations_header: 'Resting 12-lead ECG measurements (widths in ms; amplitudes in tenths of a millivolt; 0 means
+  the wave is absent in that lead):'
+predictors:
+  age:
+    column: age
+    kind: numeric
+    text_label: Age
+    unit: years
+  sex:
+    column: sex
+    kind: categorical
+    text_label: Sex
+    text_values:
+      '0': Male
+      '1': Female
+  height:
+    column: height
+    kind: numeric
+    text_label: Height
+    unit: cm
+  weight:
+    column: weight
+    kind: numeric
+    text_label: Weight
+    unit: kg
+  qrs_duration:
+    column: qrs_duration
+    kind: numeric
+    text_label: Average QRS duration
+    unit: ms
+  pr_interval:
+    column: pr_interval
+    kind: numeric
+    text_label: Average P-R interval (onset of P to onset of Q)
+    unit: ms
+  qt_interval:
+    column: qt_interval
+    kind: numeric
+    text_label: Average Q-T interval (onset of Q to offset of T)
+    unit: ms
+  t_interval:
+    column: t_interval
+    kind: numeric
+    text_label: Average T-wave duration
+    unit: ms
+  p_interval:
+    column: p_interval
+    kind: numeric
+    text_label: Average P-wave duration
+    unit: ms
+  qrs_angle:
+    column: qrs_angle
+    kind: numeric
+    text_label: QRS axis in the frontal plane
+    unit: degrees
+  t_angle:
+    column: t_angle
+    kind: numeric
+    text_label: T-wave axis in the frontal plane
+    unit: degrees
+  p_angle:
+    column: p_angle
+    kind: numeric
+    text_label: P-wave axis in the frontal plane
+    unit: degrees
+  qrst_angle:
+    column: qrst_angle
+    kind: numeric
+    text_label: QRST axis in the frontal plane
+    unit: degrees
+  j_angle:
+    column: j_angle
+    kind: numeric
+    text_label: J-point axis in the frontal plane
+    unit: degrees
+  heart_rate:
+    column: heart_rate
+    kind: numeric
+    text_label: Heart rate
+    unit: beats/min
+  ecg_attr_016:
+    column: ecg_attr_016
+    kind: numeric
+    text_label: 'Lead DI: average width of Q wave'
+    unit: ms
+  ecg_attr_017:
+    column: ecg_attr_017
+    kind: numeric
+    text_label: 'Lead DI: average width of R wave'
+    unit: ms
+  ecg_attr_018:
+    column: ecg_attr_018
+    kind: numeric
+    text_label: 'Lead DI: average width of S wave'
+    unit: ms
+  ecg_attr_019:
+    column: ecg_attr_019
+    kind: numeric
+    text_label: 'Lead DI: average width of R'' wave (small peak just after R)'
+    unit: ms
+  ecg_attr_020:
+    column: ecg_attr_020
+    kind: numeric
+    text_label: 'Lead DI: average width of S'' wave'
+    unit: ms
+  ecg_attr_021:
+    column: ecg_attr_021
+    kind: numeric
+    text_label: 'Lead DI: number of intrinsic deflections'
+    scale_note: count
+  ecg_attr_022:
+    column: ecg_attr_022
+    kind: categorical
+    text_label: 'Lead DI: ragged R wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_023:
+    column: ecg_attr_023
+    kind: categorical
+    text_label: 'Lead DI: diphasic R wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_024:
+    column: ecg_attr_024
+    kind: categorical
+    text_label: 'Lead DI: ragged P wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_025:
+    column: ecg_attr_025
+    kind: categorical
+    text_label: 'Lead DI: diphasic P wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_026:
+    column: ecg_attr_026
+    kind: categorical
+    text_label: 'Lead DI: ragged T wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_027:
+    column: ecg_attr_027
+    kind: categorical
+    text_label: 'Lead DI: diphasic T wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_028:
+    column: ecg_attr_028
+    kind: numeric
+    text_label: 'Lead DII: average width of Q wave'
+    unit: ms
+  ecg_attr_029:
+    column: ecg_attr_029
+    kind: numeric
+    text_label: 'Lead DII: average width of R wave'
+    unit: ms
+  ecg_attr_030:
+    column: ecg_attr_030
+    kind: numeric
+    text_label: 'Lead DII: average width of S wave'
+    unit: ms
+  ecg_attr_031:
+    column: ecg_attr_031
+    kind: numeric
+    text_label: 'Lead DII: average width of R'' wave (small peak just after R)'
+    unit: ms
+  ecg_attr_032:
+    column: ecg_attr_032
+    kind: numeric
+    text_label: 'Lead DII: average width of S'' wave'
+    unit: ms
+  ecg_attr_033:
+    column: ecg_attr_033
+    kind: numeric
+    text_label: 'Lead DII: number of intrinsic deflections'
+    scale_note: count
+  ecg_attr_034:
+    column: ecg_attr_034
+    kind: categorical
+    text_label: 'Lead DII: ragged R wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_035:
+    column: ecg_attr_035
+    kind: categorical
+    text_label: 'Lead DII: diphasic R wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_036:
+    column: ecg_attr_036
+    kind: categorical
+    text_label: 'Lead DII: ragged P wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_037:
+    column: ecg_attr_037
+    kind: categorical
+    text_label: 'Lead DII: diphasic P wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_038:
+    column: ecg_attr_038
+    kind: categorical
+    text_label: 'Lead DII: ragged T wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_039:
+    column: ecg_attr_039
+    kind: categorical
+    text_label: 'Lead DII: diphasic T wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_040:
+    column: ecg_attr_040
+    kind: numeric
+    text_label: 'Lead DIII: average width of Q wave'
+    unit: ms
+  ecg_attr_041:
+    column: ecg_attr_041
+    kind: numeric
+    text_label: 'Lead DIII: average width of R wave'
+    unit: ms
+  ecg_attr_042:
+    column: ecg_attr_042
+    kind: numeric
+    text_label: 'Lead DIII: average width of S wave'
+    unit: ms
+  ecg_attr_043:
+    column: ecg_attr_043
+    kind: numeric
+    text_label: 'Lead DIII: average width of R'' wave (small peak just after R)'
+    unit: ms
+  ecg_attr_044:
+    column: ecg_attr_044
+    kind: numeric
+    text_label: 'Lead DIII: average width of S'' wave'
+    unit: ms
+  ecg_attr_045:
+    column: ecg_attr_045
+    kind: numeric
+    text_label: 'Lead DIII: number of intrinsic deflections'
+    scale_note: count
+  ecg_attr_046:
+    column: ecg_attr_046
+    kind: categorical
+    text_label: 'Lead DIII: ragged R wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_047:
+    column: ecg_attr_047
+    kind: categorical
+    text_label: 'Lead DIII: diphasic R wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_048:
+    column: ecg_attr_048
+    kind: categorical
+    text_label: 'Lead DIII: ragged P wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_049:
+    column: ecg_attr_049
+    kind: categorical
+    text_label: 'Lead DIII: diphasic P wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_050:
+    column: ecg_attr_050
+    kind: categorical
+    text_label: 'Lead DIII: ragged T wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_051:
+    column: ecg_attr_051
+    kind: categorical
+    text_label: 'Lead DIII: diphasic T wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_052:
+    column: ecg_attr_052
+    kind: numeric
+    text_label: 'Lead aVR: average width of Q wave'
+    unit: ms
+  ecg_attr_053:
+    column: ecg_attr_053
+    kind: numeric
+    text_label: 'Lead aVR: average width of R wave'
+    unit: ms
+  ecg_attr_054:
+    column: ecg_attr_054
+    kind: numeric
+    text_label: 'Lead aVR: average width of S wave'
+    unit: ms
+  ecg_attr_055:
+    column: ecg_attr_055
+    kind: numeric
+    text_label: 'Lead aVR: average width of R'' wave (small peak just after R)'
+    unit: ms
+  ecg_attr_056:
+    column: ecg_attr_056
+    kind: numeric
+    text_label: 'Lead aVR: average width of S'' wave'
+    unit: ms
+  ecg_attr_057:
+    column: ecg_attr_057
+    kind: numeric
+    text_label: 'Lead aVR: number of intrinsic deflections'
+    scale_note: count
+  ecg_attr_058:
+    column: ecg_attr_058
+    kind: categorical
+    text_label: 'Lead aVR: ragged R wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_059:
+    column: ecg_attr_059
+    kind: categorical
+    text_label: 'Lead aVR: diphasic R wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_060:
+    column: ecg_attr_060
+    kind: categorical
+    text_label: 'Lead aVR: ragged P wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_061:
+    column: ecg_attr_061
+    kind: categorical
+    text_label: 'Lead aVR: diphasic P wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_062:
+    column: ecg_attr_062
+    kind: categorical
+    text_label: 'Lead aVR: ragged T wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_063:
+    column: ecg_attr_063
+    kind: categorical
+    text_label: 'Lead aVR: diphasic T wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_064:
+    column: ecg_attr_064
+    kind: numeric
+    text_label: 'Lead aVL: average width of Q wave'
+    unit: ms
+  ecg_attr_065:
+    column: ecg_attr_065
+    kind: numeric
+    text_label: 'Lead aVL: average width of R wave'
+    unit: ms
+  ecg_attr_066:
+    column: ecg_attr_066
+    kind: numeric
+    text_label: 'Lead aVL: average width of S wave'
+    unit: ms
+  ecg_attr_067:
+    column: ecg_attr_067
+    kind: numeric
+    text_label: 'Lead aVL: average width of R'' wave (small peak just after R)'
+    unit: ms
+  ecg_attr_068:
+    column: ecg_attr_068
+    kind: numeric
+    text_label: 'Lead aVL: average width of S'' wave'
+    unit: ms
+  ecg_attr_069:
+    column: ecg_attr_069
+    kind: numeric
+    text_label: 'Lead aVL: number of intrinsic deflections'
+    scale_note: count
+  ecg_attr_070:
+    column: ecg_attr_070
+    kind: categorical
+    text_label: 'Lead aVL: ragged R wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_071:
+    column: ecg_attr_071
+    kind: categorical
+    text_label: 'Lead aVL: diphasic R wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_072:
+    column: ecg_attr_072
+    kind: categorical
+    text_label: 'Lead aVL: ragged P wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_073:
+    column: ecg_attr_073
+    kind: categorical
+    text_label: 'Lead aVL: diphasic P wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_074:
+    column: ecg_attr_074
+    kind: categorical
+    text_label: 'Lead aVL: ragged T wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_075:
+    column: ecg_attr_075
+    kind: categorical
+    text_label: 'Lead aVL: diphasic T wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_076:
+    column: ecg_attr_076
+    kind: numeric
+    text_label: 'Lead aVF: average width of Q wave'
+    unit: ms
+  ecg_attr_077:
+    column: ecg_attr_077
+    kind: numeric
+    text_label: 'Lead aVF: average width of R wave'
+    unit: ms
+  ecg_attr_078:
+    column: ecg_attr_078
+    kind: numeric
+    text_label: 'Lead aVF: average width of S wave'
+    unit: ms
+  ecg_attr_079:
+    column: ecg_attr_079
+    kind: numeric
+    text_label: 'Lead aVF: average width of R'' wave (small peak just after R)'
+    unit: ms
+  ecg_attr_080:
+    column: ecg_attr_080
+    kind: numeric
+    text_label: 'Lead aVF: average width of S'' wave'
+    unit: ms
+  ecg_attr_081:
+    column: ecg_attr_081
+    kind: numeric
+    text_label: 'Lead aVF: number of intrinsic deflections'
+    scale_note: count
+  ecg_attr_082:
+    column: ecg_attr_082
+    kind: categorical
+    text_label: 'Lead aVF: ragged R wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_083:
+    column: ecg_attr_083
+    kind: categorical
+    text_label: 'Lead aVF: diphasic R wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_084:
+    column: ecg_attr_084
+    kind: categorical
+    text_label: 'Lead aVF: ragged P wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_085:
+    column: ecg_attr_085
+    kind: categorical
+    text_label: 'Lead aVF: diphasic P wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_086:
+    column: ecg_attr_086
+    kind: categorical
+    text_label: 'Lead aVF: ragged T wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_087:
+    column: ecg_attr_087
+    kind: categorical
+    text_label: 'Lead aVF: diphasic T wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_088:
+    column: ecg_attr_088
+    kind: numeric
+    text_label: 'Lead V1: average width of Q wave'
+    unit: ms
+  ecg_attr_089:
+    column: ecg_attr_089
+    kind: numeric
+    text_label: 'Lead V1: average width of R wave'
+    unit: ms
+  ecg_attr_090:
+    column: ecg_attr_090
+    kind: numeric
+    text_label: 'Lead V1: average width of S wave'
+    unit: ms
+  ecg_attr_091:
+    column: ecg_attr_091
+    kind: numeric
+    text_label: 'Lead V1: average width of R'' wave (small peak just after R)'
+    unit: ms
+  ecg_attr_092:
+    column: ecg_attr_092
+    kind: numeric
+    text_label: 'Lead V1: average width of S'' wave'
+    unit: ms
+  ecg_attr_093:
+    column: ecg_attr_093
+    kind: numeric
+    text_label: 'Lead V1: number of intrinsic deflections'
+    scale_note: count
+  ecg_attr_094:
+    column: ecg_attr_094
+    kind: categorical
+    text_label: 'Lead V1: ragged R wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_095:
+    column: ecg_attr_095
+    kind: categorical
+    text_label: 'Lead V1: diphasic R wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_096:
+    column: ecg_attr_096
+    kind: categorical
+    text_label: 'Lead V1: ragged P wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_097:
+    column: ecg_attr_097
+    kind: categorical
+    text_label: 'Lead V1: diphasic P wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_098:
+    column: ecg_attr_098
+    kind: categorical
+    text_label: 'Lead V1: ragged T wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_099:
+    column: ecg_attr_099
+    kind: categorical
+    text_label: 'Lead V1: diphasic T wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_100:
+    column: ecg_attr_100
+    kind: numeric
+    text_label: 'Lead V2: average width of Q wave'
+    unit: ms
+  ecg_attr_101:
+    column: ecg_attr_101
+    kind: numeric
+    text_label: 'Lead V2: average width of R wave'
+    unit: ms
+  ecg_attr_102:
+    column: ecg_attr_102
+    kind: numeric
+    text_label: 'Lead V2: average width of S wave'
+    unit: ms
+  ecg_attr_103:
+    column: ecg_attr_103
+    kind: numeric
+    text_label: 'Lead V2: average width of R'' wave (small peak just after R)'
+    unit: ms
+  ecg_attr_104:
+    column: ecg_attr_104
+    kind: numeric
+    text_label: 'Lead V2: average width of S'' wave'
+    unit: ms
+  ecg_attr_105:
+    column: ecg_attr_105
+    kind: numeric
+    text_label: 'Lead V2: number of intrinsic deflections'
+    scale_note: count
+  ecg_attr_106:
+    column: ecg_attr_106
+    kind: categorical
+    text_label: 'Lead V2: ragged R wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_107:
+    column: ecg_attr_107
+    kind: categorical
+    text_label: 'Lead V2: diphasic R wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_108:
+    column: ecg_attr_108
+    kind: categorical
+    text_label: 'Lead V2: ragged P wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_109:
+    column: ecg_attr_109
+    kind: categorical
+    text_label: 'Lead V2: diphasic P wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_110:
+    column: ecg_attr_110
+    kind: categorical
+    text_label: 'Lead V2: ragged T wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_111:
+    column: ecg_attr_111
+    kind: categorical
+    text_label: 'Lead V2: diphasic T wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_112:
+    column: ecg_attr_112
+    kind: numeric
+    text_label: 'Lead V3: average width of Q wave'
+    unit: ms
+  ecg_attr_113:
+    column: ecg_attr_113
+    kind: numeric
+    text_label: 'Lead V3: average width of R wave'
+    unit: ms
+  ecg_attr_114:
+    column: ecg_attr_114
+    kind: numeric
+    text_label: 'Lead V3: average width of S wave'
+    unit: ms
+  ecg_attr_115:
+    column: ecg_attr_115
+    kind: numeric
+    text_label: 'Lead V3: average width of R'' wave (small peak just after R)'
+    unit: ms
+  ecg_attr_116:
+    column: ecg_attr_116
+    kind: numeric
+    text_label: 'Lead V3: average width of S'' wave'
+    unit: ms
+  ecg_attr_117:
+    column: ecg_attr_117
+    kind: numeric
+    text_label: 'Lead V3: number of intrinsic deflections'
+    scale_note: count
+  ecg_attr_118:
+    column: ecg_attr_118
+    kind: categorical
+    text_label: 'Lead V3: ragged R wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_119:
+    column: ecg_attr_119
+    kind: categorical
+    text_label: 'Lead V3: diphasic R wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_120:
+    column: ecg_attr_120
+    kind: categorical
+    text_label: 'Lead V3: ragged P wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_121:
+    column: ecg_attr_121
+    kind: categorical
+    text_label: 'Lead V3: diphasic P wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_122:
+    column: ecg_attr_122
+    kind: categorical
+    text_label: 'Lead V3: ragged T wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_123:
+    column: ecg_attr_123
+    kind: categorical
+    text_label: 'Lead V3: diphasic T wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_124:
+    column: ecg_attr_124
+    kind: numeric
+    text_label: 'Lead V4: average width of Q wave'
+    unit: ms
+  ecg_attr_125:
+    column: ecg_attr_125
+    kind: numeric
+    text_label: 'Lead V4: average width of R wave'
+    unit: ms
+  ecg_attr_126:
+    column: ecg_attr_126
+    kind: numeric
+    text_label: 'Lead V4: average width of S wave'
+    unit: ms
+  ecg_attr_127:
+    column: ecg_attr_127
+    kind: numeric
+    text_label: 'Lead V4: average width of R'' wave (small peak just after R)'
+    unit: ms
+  ecg_attr_128:
+    column: ecg_attr_128
+    kind: numeric
+    text_label: 'Lead V4: average width of S'' wave'
+    unit: ms
+  ecg_attr_129:
+    column: ecg_attr_129
+    kind: numeric
+    text_label: 'Lead V4: number of intrinsic deflections'
+    scale_note: count
+  ecg_attr_130:
+    column: ecg_attr_130
+    kind: categorical
+    text_label: 'Lead V4: ragged R wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_131:
+    column: ecg_attr_131
+    kind: categorical
+    text_label: 'Lead V4: diphasic R wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_132:
+    column: ecg_attr_132
+    kind: categorical
+    text_label: 'Lead V4: ragged P wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_133:
+    column: ecg_attr_133
+    kind: categorical
+    text_label: 'Lead V4: diphasic P wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_134:
+    column: ecg_attr_134
+    kind: categorical
+    text_label: 'Lead V4: ragged T wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_135:
+    column: ecg_attr_135
+    kind: categorical
+    text_label: 'Lead V4: diphasic T wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_136:
+    column: ecg_attr_136
+    kind: numeric
+    text_label: 'Lead V5: average width of Q wave'
+    unit: ms
+  ecg_attr_137:
+    column: ecg_attr_137
+    kind: numeric
+    text_label: 'Lead V5: average width of R wave'
+    unit: ms
+  ecg_attr_138:
+    column: ecg_attr_138
+    kind: numeric
+    text_label: 'Lead V5: average width of S wave'
+    unit: ms
+  ecg_attr_139:
+    column: ecg_attr_139
+    kind: numeric
+    text_label: 'Lead V5: average width of R'' wave (small peak just after R)'
+    unit: ms
+  ecg_attr_140:
+    column: ecg_attr_140
+    kind: numeric
+    text_label: 'Lead V5: average width of S'' wave'
+    unit: ms
+  ecg_attr_141:
+    column: ecg_attr_141
+    kind: numeric
+    text_label: 'Lead V5: number of intrinsic deflections'
+    scale_note: count
+  ecg_attr_142:
+    column: ecg_attr_142
+    kind: categorical
+    text_label: 'Lead V5: ragged R wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_143:
+    column: ecg_attr_143
+    kind: categorical
+    text_label: 'Lead V5: diphasic R wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_144:
+    column: ecg_attr_144
+    kind: categorical
+    text_label: 'Lead V5: ragged P wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_145:
+    column: ecg_attr_145
+    kind: categorical
+    text_label: 'Lead V5: diphasic P wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_146:
+    column: ecg_attr_146
+    kind: categorical
+    text_label: 'Lead V5: ragged T wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_147:
+    column: ecg_attr_147
+    kind: categorical
+    text_label: 'Lead V5: diphasic T wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_148:
+    column: ecg_attr_148
+    kind: numeric
+    text_label: 'Lead V6: average width of Q wave'
+    unit: ms
+  ecg_attr_149:
+    column: ecg_attr_149
+    kind: numeric
+    text_label: 'Lead V6: average width of R wave'
+    unit: ms
+  ecg_attr_150:
+    column: ecg_attr_150
+    kind: numeric
+    text_label: 'Lead V6: average width of S wave'
+    unit: ms
+  ecg_attr_151:
+    column: ecg_attr_151
+    kind: numeric
+    text_label: 'Lead V6: average width of R'' wave (small peak just after R)'
+    unit: ms
+  ecg_attr_152:
+    column: ecg_attr_152
+    kind: numeric
+    text_label: 'Lead V6: average width of S'' wave'
+    unit: ms
+  ecg_attr_153:
+    column: ecg_attr_153
+    kind: numeric
+    text_label: 'Lead V6: number of intrinsic deflections'
+    scale_note: count
+  ecg_attr_154:
+    column: ecg_attr_154
+    kind: categorical
+    text_label: 'Lead V6: ragged R wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_155:
+    column: ecg_attr_155
+    kind: categorical
+    text_label: 'Lead V6: diphasic R wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_156:
+    column: ecg_attr_156
+    kind: categorical
+    text_label: 'Lead V6: ragged P wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_157:
+    column: ecg_attr_157
+    kind: categorical
+    text_label: 'Lead V6: diphasic P wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_158:
+    column: ecg_attr_158
+    kind: categorical
+    text_label: 'Lead V6: ragged T wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_159:
+    column: ecg_attr_159
+    kind: categorical
+    text_label: 'Lead V6: diphasic T wave present'
+    text_values:
+      '0': 'No'
+      '1': 'Yes'
+  ecg_attr_160:
+    column: ecg_attr_160
+    kind: numeric
+    text_label: 'Lead DI: amplitude of JJ point'
+    unit: x0.1 mV
+  ecg_attr_161:
+    column: ecg_attr_161
+    kind: numeric
+    text_label: 'Lead DI: amplitude of Q wave'
+    unit: x0.1 mV
+  ecg_attr_162:
+    column: ecg_attr_162
+    kind: numeric
+    text_label: 'Lead DI: amplitude of R wave'
+    unit: x0.1 mV
+  ecg_attr_163:
+    column: ecg_attr_163
+    kind: numeric
+    text_label: 'Lead DI: amplitude of S wave'
+    unit: x0.1 mV
+  ecg_attr_164:
+    column: ecg_attr_164
+    kind: numeric
+    text_label: 'Lead DI: amplitude of R'' wave'
+    unit: x0.1 mV
+  ecg_attr_165:
+    column: ecg_attr_165
+    kind: numeric
+    text_label: 'Lead DI: amplitude of S'' wave'
+    unit: x0.1 mV
+  ecg_attr_166:
+    column: ecg_attr_166
+    kind: numeric
+    text_label: 'Lead DI: amplitude of P wave'
+    unit: x0.1 mV
+  ecg_attr_167:
+    column: ecg_attr_167
+    kind: numeric
+    text_label: 'Lead DI: amplitude of T wave'
+    unit: x0.1 mV
+  ecg_attr_168:
+    column: ecg_attr_168
+    kind: numeric
+    text_label: 'Lead DI: QRS area (sum of segment areas / 10)'
+    scale_note: area = width x height / 2
+  ecg_attr_169:
+    column: ecg_attr_169
+    kind: numeric
+    text_label: 'Lead DI: QRST area (QRS area plus half the T-wave area)'
+    scale_note: area = width x height / 2
+  ecg_attr_170:
+    column: ecg_attr_170
+    kind: numeric
+    text_label: 'Lead DII: amplitude of JJ point'
+    unit: x0.1 mV
+  ecg_attr_171:
+    column: ecg_attr_171
+    kind: numeric
+    text_label: 'Lead DII: amplitude of Q wave'
+    unit: x0.1 mV
+  ecg_attr_172:
+    column: ecg_attr_172
+    kind: numeric
+    text_label: 'Lead DII: amplitude of R wave'
+    unit: x0.1 mV
+  ecg_attr_173:
+    column: ecg_attr_173
+    kind: numeric
+    text_label: 'Lead DII: amplitude of S wave'
+    unit: x0.1 mV
+  ecg_attr_174:
+    column: ecg_attr_174
+    kind: numeric
+    text_label: 'Lead DII: amplitude of R'' wave'
+    unit: x0.1 mV
+  ecg_attr_175:
+    column: ecg_attr_175
+    kind: numeric
+    text_label: 'Lead DII: amplitude of S'' wave'
+    unit: x0.1 mV
+  ecg_attr_176:
+    column: ecg_attr_176
+    kind: numeric
+    text_label: 'Lead DII: amplitude of P wave'
+    unit: x0.1 mV
+  ecg_attr_177:
+    column: ecg_attr_177
+    kind: numeric
+    text_label: 'Lead DII: amplitude of T wave'
+    unit: x0.1 mV
+  ecg_attr_178:
+    column: ecg_attr_178
+    kind: numeric
+    text_label: 'Lead DII: QRS area (sum of segment areas / 10)'
+    scale_note: area = width x height / 2
+  ecg_attr_179:
+    column: ecg_attr_179
+    kind: numeric
+    text_label: 'Lead DII: QRST area (QRS area plus half the T-wave area)'
+    scale_note: area = width x height / 2
+  ecg_attr_180:
+    column: ecg_attr_180
+    kind: numeric
+    text_label: 'Lead DIII: amplitude of JJ point'
+    unit: x0.1 mV
+  ecg_attr_181:
+    column: ecg_attr_181
+    kind: numeric
+    text_label: 'Lead DIII: amplitude of Q wave'
+    unit: x0.1 mV
+  ecg_attr_182:
+    column: ecg_attr_182
+    kind: numeric
+    text_label: 'Lead DIII: amplitude of R wave'
+    unit: x0.1 mV
+  ecg_attr_183:
+    column: ecg_attr_183
+    kind: numeric
+    text_label: 'Lead DIII: amplitude of S wave'
+    unit: x0.1 mV
+  ecg_attr_184:
+    column: ecg_attr_184
+    kind: numeric
+    text_label: 'Lead DIII: amplitude of R'' wave'
+    unit: x0.1 mV
+  ecg_attr_185:
+    column: ecg_attr_185
+    kind: numeric
+    text_label: 'Lead DIII: amplitude of S'' wave'
+    unit: x0.1 mV
+  ecg_attr_186:
+    column: ecg_attr_186
+    kind: numeric
+    text_label: 'Lead DIII: amplitude of P wave'
+    unit: x0.1 mV
+  ecg_attr_187:
+    column: ecg_attr_187
+    kind: numeric
+    text_label: 'Lead DIII: amplitude of T wave'
+    unit: x0.1 mV
+  ecg_attr_188:
+    column: ecg_attr_188
+    kind: numeric
+    text_label: 'Lead DIII: QRS area (sum of segment areas / 10)'
+    scale_note: area = width x height / 2
+  ecg_attr_189:
+    column: ecg_attr_189
+    kind: numeric
+    text_label: 'Lead DIII: QRST area (QRS area plus half the T-wave area)'
+    scale_note: area = width x height / 2
+  ecg_attr_190:
+    column: ecg_attr_190
+    kind: numeric
+    text_label: 'Lead aVR: amplitude of JJ point'
+    unit: x0.1 mV
+  ecg_attr_191:
+    column: ecg_attr_191
+    kind: numeric
+    text_label: 'Lead aVR: amplitude of Q wave'
+    unit: x0.1 mV
+  ecg_attr_192:
+    column: ecg_attr_192
+    kind: numeric
+    text_label: 'Lead aVR: amplitude of R wave'
+    unit: x0.1 mV
+  ecg_attr_193:
+    column: ecg_attr_193
+    kind: numeric
+    text_label: 'Lead aVR: amplitude of S wave'
+    unit: x0.1 mV
+  ecg_attr_194:
+    column: ecg_attr_194
+    kind: numeric
+    text_label: 'Lead aVR: amplitude of R'' wave'
+    unit: x0.1 mV
+  ecg_attr_195:
+    column: ecg_attr_195
+    kind: numeric
+    text_label: 'Lead aVR: amplitude of S'' wave'
+    unit: x0.1 mV
+  ecg_attr_196:
+    column: ecg_attr_196
+    kind: numeric
+    text_label: 'Lead aVR: amplitude of P wave'
+    unit: x0.1 mV
+  ecg_attr_197:
+    column: ecg_attr_197
+    kind: numeric
+    text_label: 'Lead aVR: amplitude of T wave'
+    unit: x0.1 mV
+  ecg_attr_198:
+    column: ecg_attr_198
+    kind: numeric
+    text_label: 'Lead aVR: QRS area (sum of segment areas / 10)'
+    scale_note: area = width x height / 2
+  ecg_attr_199:
+    column: ecg_attr_199
+    kind: numeric
+    text_label: 'Lead aVR: QRST area (QRS area plus half the T-wave area)'
+    scale_note: area = width x height / 2
+  ecg_attr_200:
+    column: ecg_attr_200
+    kind: numeric
+    text_label: 'Lead aVL: amplitude of JJ point'
+    unit: x0.1 mV
+  ecg_attr_201:
+    column: ecg_attr_201
+    kind: numeric
+    text_label: 'Lead aVL: amplitude of Q wave'
+    unit: x0.1 mV
+  ecg_attr_202:
+    column: ecg_attr_202
+    kind: numeric
+    text_label: 'Lead aVL: amplitude of R wave'
+    unit: x0.1 mV
+  ecg_attr_203:
+    column: ecg_attr_203
+    kind: numeric
+    text_label: 'Lead aVL: amplitude of S wave'
+    unit: x0.1 mV
+  ecg_attr_204:
+    column: ecg_attr_204
+    kind: numeric
+    text_label: 'Lead aVL: amplitude of R'' wave'
+    unit: x0.1 mV
+  ecg_attr_205:
+    column: ecg_attr_205
+    kind: numeric
+    text_label: 'Lead aVL: amplitude of S'' wave'
+    unit: x0.1 mV
+  ecg_attr_206:
+    column: ecg_attr_206
+    kind: numeric
+    text_label: 'Lead aVL: amplitude of P wave'
+    unit: x0.1 mV
+  ecg_attr_207:
+    column: ecg_attr_207
+    kind: numeric
+    text_label: 'Lead aVL: amplitude of T wave'
+    unit: x0.1 mV
+  ecg_attr_208:
+    column: ecg_attr_208
+    kind: numeric
+    text_label: 'Lead aVL: QRS area (sum of segment areas / 10)'
+    scale_note: area = width x height / 2
+  ecg_attr_209:
+    column: ecg_attr_209
+    kind: numeric
+    text_label: 'Lead aVL: QRST area (QRS area plus half the T-wave area)'
+    scale_note: area = width x height / 2
+  ecg_attr_210:
+    column: ecg_attr_210
+    kind: numeric
+    text_label: 'Lead aVF: amplitude of JJ point'
+    unit: x0.1 mV
+  ecg_attr_211:
+    column: ecg_attr_211
+    kind: numeric
+    text_label: 'Lead aVF: amplitude of Q wave'
+    unit: x0.1 mV
+  ecg_attr_212:
+    column: ecg_attr_212
+    kind: numeric
+    text_label: 'Lead aVF: amplitude of R wave'
+    unit: x0.1 mV
+  ecg_attr_213:
+    column: ecg_attr_213
+    kind: numeric
+    text_label: 'Lead aVF: amplitude of S wave'
+    unit: x0.1 mV
+  ecg_attr_214:
+    column: ecg_attr_214
+    kind: numeric
+    text_label: 'Lead aVF: amplitude of R'' wave'
+    unit: x0.1 mV
+  ecg_attr_215:
+    column: ecg_attr_215
+    kind: numeric
+    text_label: 'Lead aVF: amplitude of S'' wave'
+    unit: x0.1 mV
+  ecg_attr_216:
+    column: ecg_attr_216
+    kind: numeric
+    text_label: 'Lead aVF: amplitude of P wave'
+    unit: x0.1 mV
+  ecg_attr_217:
+    column: ecg_attr_217
+    kind: numeric
+    text_label: 'Lead aVF: amplitude of T wave'
+    unit: x0.1 mV
+  ecg_attr_218:
+    column: ecg_attr_218
+    kind: numeric
+    text_label: 'Lead aVF: QRS area (sum of segment areas / 10)'
+    scale_note: area = width x height / 2
+  ecg_attr_219:
+    column: ecg_attr_219
+    kind: numeric
+    text_label: 'Lead aVF: QRST area (QRS area plus half the T-wave area)'
+    scale_note: area = width x height / 2
+  ecg_attr_220:
+    column: ecg_attr_220
+    kind: numeric
+    text_label: 'Lead V1: amplitude of JJ point'
+    unit: x0.1 mV
+  ecg_attr_221:
+    column: ecg_attr_221
+    kind: numeric
+    text_label: 'Lead V1: amplitude of Q wave'
+    unit: x0.1 mV
+  ecg_attr_222:
+    column: ecg_attr_222
+    kind: numeric
+    text_label: 'Lead V1: amplitude of R wave'
+    unit: x0.1 mV
+  ecg_attr_223:
+    column: ecg_attr_223
+    kind: numeric
+    text_label: 'Lead V1: amplitude of S wave'
+    unit: x0.1 mV
+  ecg_attr_224:
+    column: ecg_attr_224
+    kind: numeric
+    text_label: 'Lead V1: amplitude of R'' wave'
+    unit: x0.1 mV
+  ecg_attr_225:
+    column: ecg_attr_225
+    kind: numeric
+    text_label: 'Lead V1: amplitude of S'' wave'
+    unit: x0.1 mV
+  ecg_attr_226:
+    column: ecg_attr_226
+    kind: numeric
+    text_label: 'Lead V1: amplitude of P wave'
+    unit: x0.1 mV
+  ecg_attr_227:
+    column: ecg_attr_227
+    kind: numeric
+    text_label: 'Lead V1: amplitude of T wave'
+    unit: x0.1 mV
+  ecg_attr_228:
+    column: ecg_attr_228
+    kind: numeric
+    text_label: 'Lead V1: QRS area (sum of segment areas / 10)'
+    scale_note: area = width x height / 2
+  ecg_attr_229:
+    column: ecg_attr_229
+    kind: numeric
+    text_label: 'Lead V1: QRST area (QRS area plus half the T-wave area)'
+    scale_note: area = width x height / 2
+  ecg_attr_230:
+    column: ecg_attr_230
+    kind: numeric
+    text_label: 'Lead V2: amplitude of JJ point'
+    unit: x0.1 mV
+  ecg_attr_231:
+    column: ecg_attr_231
+    kind: numeric
+    text_label: 'Lead V2: amplitude of Q wave'
+    unit: x0.1 mV
+  ecg_attr_232:
+    column: ecg_attr_232
+    kind: numeric
+    text_label: 'Lead V2: amplitude of R wave'
+    unit: x0.1 mV
+  ecg_attr_233:
+    column: ecg_attr_233
+    kind: numeric
+    text_label: 'Lead V2: amplitude of S wave'
+    unit: x0.1 mV
+  ecg_attr_234:
+    column: ecg_attr_234
+    kind: numeric
+    text_label: 'Lead V2: amplitude of R'' wave'
+    unit: x0.1 mV
+  ecg_attr_235:
+    column: ecg_attr_235
+    kind: numeric
+    text_label: 'Lead V2: amplitude of S'' wave'
+    unit: x0.1 mV
+  ecg_attr_236:
+    column: ecg_attr_236
+    kind: numeric
+    text_label: 'Lead V2: amplitude of P wave'
+    unit: x0.1 mV
+  ecg_attr_237:
+    column: ecg_attr_237
+    kind: numeric
+    text_label: 'Lead V2: amplitude of T wave'
+    unit: x0.1 mV
+  ecg_attr_238:
+    column: ecg_attr_238
+    kind: numeric
+    text_label: 'Lead V2: QRS area (sum of segment areas / 10)'
+    scale_note: area = width x height / 2
+  ecg_attr_239:
+    column: ecg_attr_239
+    kind: numeric
+    text_label: 'Lead V2: QRST area (QRS area plus half the T-wave area)'
+    scale_note: area = width x height / 2
+  ecg_attr_240:
+    column: ecg_attr_240
+    kind: numeric
+    text_label: 'Lead V3: amplitude of JJ point'
+    unit: x0.1 mV
+  ecg_attr_241:
+    column: ecg_attr_241
+    kind: numeric
+    text_label: 'Lead V3: amplitude of Q wave'
+    unit: x0.1 mV
+  ecg_attr_242:
+    column: ecg_attr_242
+    kind: numeric
+    text_label: 'Lead V3: amplitude of R wave'
+    unit: x0.1 mV
+  ecg_attr_243:
+    column: ecg_attr_243
+    kind: numeric
+    text_label: 'Lead V3: amplitude of S wave'
+    unit: x0.1 mV
+  ecg_attr_244:
+    column: ecg_attr_244
+    kind: numeric
+    text_label: 'Lead V3: amplitude of R'' wave'
+    unit: x0.1 mV
+  ecg_attr_245:
+    column: ecg_attr_245
+    kind: numeric
+    text_label: 'Lead V3: amplitude of S'' wave'
+    unit: x0.1 mV
+  ecg_attr_246:
+    column: ecg_attr_246
+    kind: numeric
+    text_label: 'Lead V3: amplitude of P wave'
+    unit: x0.1 mV
+  ecg_attr_247:
+    column: ecg_attr_247
+    kind: numeric
+    text_label: 'Lead V3: amplitude of T wave'
+    unit: x0.1 mV
+  ecg_attr_248:
+    column: ecg_attr_248
+    kind: numeric
+    text_label: 'Lead V3: QRS area (sum of segment areas / 10)'
+    scale_note: area = width x height / 2
+  ecg_attr_249:
+    column: ecg_attr_249
+    kind: numeric
+    text_label: 'Lead V3: QRST area (QRS area plus half the T-wave area)'
+    scale_note: area = width x height / 2
+  ecg_attr_250:
+    column: ecg_attr_250
+    kind: numeric
+    text_label: 'Lead V4: amplitude of JJ point'
+    unit: x0.1 mV
+  ecg_attr_251:
+    column: ecg_attr_251
+    kind: numeric
+    text_label: 'Lead V4: amplitude of Q wave'
+    unit: x0.1 mV
+  ecg_attr_252:
+    column: ecg_attr_252
+    kind: numeric
+    text_label: 'Lead V4: amplitude of R wave'
+    unit: x0.1 mV
+  ecg_attr_253:
+    column: ecg_attr_253
+    kind: numeric
+    text_label: 'Lead V4: amplitude of S wave'
+    unit: x0.1 mV
+  ecg_attr_254:
+    column: ecg_attr_254
+    kind: numeric
+    text_label: 'Lead V4: amplitude of R'' wave'
+    unit: x0.1 mV
+  ecg_attr_255:
+    column: ecg_attr_255
+    kind: numeric
+    text_label: 'Lead V4: amplitude of S'' wave'
+    unit: x0.1 mV
+  ecg_attr_256:
+    column: ecg_attr_256
+    kind: numeric
+    text_label: 'Lead V4: amplitude of P wave'
+    unit: x0.1 mV
+  ecg_attr_257:
+    column: ecg_attr_257
+    kind: numeric
+    text_label: 'Lead V4: amplitude of T wave'
+    unit: x0.1 mV
+  ecg_attr_258:
+    column: ecg_attr_258
+    kind: numeric
+    text_label: 'Lead V4: QRS area (sum of segment areas / 10)'
+    scale_note: area = width x height / 2
+  ecg_attr_259:
+    column: ecg_attr_259
+    kind: numeric
+    text_label: 'Lead V4: QRST area (QRS area plus half the T-wave area)'
+    scale_note: area = width x height / 2
+  ecg_attr_260:
+    column: ecg_attr_260
+    kind: numeric
+    text_label: 'Lead V5: amplitude of JJ point'
+    unit: x0.1 mV
+  ecg_attr_261:
+    column: ecg_attr_261
+    kind: numeric
+    text_label: 'Lead V5: amplitude of Q wave'
+    unit: x0.1 mV
+  ecg_attr_262:
+    column: ecg_attr_262
+    kind: numeric
+    text_label: 'Lead V5: amplitude of R wave'
+    unit: x0.1 mV
+  ecg_attr_263:
+    column: ecg_attr_263
+    kind: numeric
+    text_label: 'Lead V5: amplitude of S wave'
+    unit: x0.1 mV
+  ecg_attr_264:
+    column: ecg_attr_264
+    kind: numeric
+    text_label: 'Lead V5: amplitude of R'' wave'
+    unit: x0.1 mV
+  ecg_attr_265:
+    column: ecg_attr_265
+    kind: numeric
+    text_label: 'Lead V5: amplitude of S'' wave'
+    unit: x0.1 mV
+  ecg_attr_266:
+    column: ecg_attr_266
+    kind: numeric
+    text_label: 'Lead V5: amplitude of P wave'
+    unit: x0.1 mV
+  ecg_attr_267:
+    column: ecg_attr_267
+    kind: numeric
+    text_label: 'Lead V5: amplitude of T wave'
+    unit: x0.1 mV
+  ecg_attr_268:
+    column: ecg_attr_268
+    kind: numeric
+    text_label: 'Lead V5: QRS area (sum of segment areas / 10)'
+    scale_note: area = width x height / 2
+  ecg_attr_269:
+    column: ecg_attr_269
+    kind: numeric
+    text_label: 'Lead V5: QRST area (QRS area plus half the T-wave area)'
+    scale_note: area = width x height / 2
+  ecg_attr_270:
+    column: ecg_attr_270
+    kind: numeric
+    text_label: 'Lead V6: amplitude of JJ point'
+    unit: x0.1 mV
+  ecg_attr_271:
+    column: ecg_attr_271
+    kind: numeric
+    text_label: 'Lead V6: amplitude of Q wave'
+    unit: x0.1 mV
+  ecg_attr_272:
+    column: ecg_attr_272
+    kind: numeric
+    text_label: 'Lead V6: amplitude of R wave'
+    unit: x0.1 mV
+  ecg_attr_273:
+    column: ecg_attr_273
+    kind: numeric
+    text_label: 'Lead V6: amplitude of S wave'
+    unit: x0.1 mV
+  ecg_attr_274:
+    column: ecg_attr_274
+    kind: numeric
+    text_label: 'Lead V6: amplitude of R'' wave'
+    unit: x0.1 mV
+  ecg_attr_275:
+    column: ecg_attr_275
+    kind: numeric
+    text_label: 'Lead V6: amplitude of S'' wave'
+    unit: x0.1 mV
+  ecg_attr_276:
+    column: ecg_attr_276
+    kind: numeric
+    text_label: 'Lead V6: amplitude of P wave'
+    unit: x0.1 mV
+  ecg_attr_277:
+    column: ecg_attr_277
+    kind: numeric
+    text_label: 'Lead V6: amplitude of T wave'
+    unit: x0.1 mV
+  ecg_attr_278:
+    column: ecg_attr_278
+    kind: numeric
+    text_label: 'Lead V6: QRS area (sum of segment areas / 10)'
+    scale_note: area = width x height / 2
+  ecg_attr_279:
+    column: ecg_attr_279
+    kind: numeric
+    text_label: 'Lead V6: QRST area (QRS area plus half the T-wave area)'
+    scale_note: area = width x height / 2
+outcomes:
+  arrhythmia_class:
+    column: arrhythmia_code
+    classes:
+    - Normal ECG
+    - Ischaemic changes (coronary artery disease)
+    - Old anterior myocardial infarction
+    - Old inferior myocardial infarction
+    - Sinus tachycardia
+    - Sinus bradycardia
+    - Right bundle branch block
+    - Other, unclassified arrhythmia
+    mapping:
+      '1': Normal ECG
+      '2': Ischaemic changes (coronary artery disease)
+      '3': Old anterior myocardial infarction
+      '4': Old inferior myocardial infarction
+      '5': Sinus tachycardia
+      '6': Sinus bradycardia
+      '10': Right bundle branch block
+      '16': Other, unclassified arrhythmia
+    question: Based on these resting 12-lead ECG measurements, which diagnostic class best describes this electrocardiogram?

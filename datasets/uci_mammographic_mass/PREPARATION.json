@@ -1,0 +1,34 @@
+{
+  "dataset": "uci_mammographic_mass",
+  "prepared_at": "2026-10-20T16:18:27.521511+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/161/data.csv",
+      "path": "datasets/uci_mammographic_mass/raw/data.csv",
+      "sha256": "639743f0022f536927628c5e259e106d89a36541d2059d075e592eee0a24ebda",
+      "bytes": 12855,
+      "retrieved": "cached"
+    },
+    {
+      "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/mammographic-masses/mammographic_masses.data",
+      "path": "datasets/uci_mammographic_mass/raw/mammographic_masses.data",
+      "sha256": "2ed8bb60a517f631256d218a4885c56ef196d41023c63307ab40d69985be3b4a",
+      "bytes": 12489,
+      "retrieved": "cached"
+    }
+  ],
+  "patients_csv_sha256": "5a89eeb2633b1dfeb89711e0e0f6ec97f71e275391f1f25c06800dbbbbd5ddf2",
+  "summary": {
+    "observations": 961,
+    "predictors": 4,
+    "outcome": "malignancy",
+    "excluded_predictors": [
+      "BI-RADS"
+    ],
+    "class_counts": {
+      "Benign": 516,
+      "Malignant": 445
+    },
+    "identifier_note": "Each row is a mammographic mass lesion, not necessarily a unique patient. record_id enumerates source lesions; unique patients cannot be independently verified."
+  }
+}

@@ -1,0 +1,110 @@
+name: uci_breast_recurrence
+description: UCI Breast Cancer (Ljubljana Oncology Institute, 1988; 286 patients). 9 clinical predictors recorded
+  as categories; several numeric bins were corrupted to date strings in the source CSV and are decoded in the codebook.
+  Binary recurrence of breast cancer during follow-up.
+file: patients.csv
+separator: ','
+id_column: record_id
+pseudonymize: false
+setting: 'Woman treated for primary breast cancer at an oncology institute (Ljubljana, 1980s) and followed after
+  surgery. The observations are the clinical record at primary treatment: age group, menopausal status, tumour size,
+  involved axillary nodes, nodal capsule invasion, histological grade, side and quadrant of the tumour, and whether
+  radiotherapy was given.'
+observations_header: 'Clinical record at primary breast-cancer treatment:'
+predictors:
+  age:
+    column: age
+    kind: categorical
+    text_label: Age group
+    text_values:
+      20-29: 20-29 years
+      30-39: 30-39 years
+      40-49: 40-49 years
+      50-59: 50-59 years
+      60-69: 60-69 years
+      70-79: 70-79 years
+  menopause:
+    column: menopause
+    kind: categorical
+    text_label: Menopausal status
+    text_values:
+      premeno: Premenopausal
+      lt40: Postmenopausal, menopause before age 40
+      ge40: Postmenopausal, menopause at age 40 or later
+  tumor_size:
+    column: tumor_size
+    kind: categorical
+    text_label: Tumour size (largest diameter)
+    text_values:
+      0-4: 0-4 mm
+      9-May: 5-9 mm
+      14-Oct: 10-14 mm
+      15-19: 15-19 mm
+      20-24: 20-24 mm
+      25-29: 25-29 mm
+      30-34: 30-34 mm
+      35-39: 35-39 mm
+      40-44: 40-44 mm
+      45-49: 45-49 mm
+      50-54: 50-54 mm
+  inv_nodes:
+    column: inv_nodes
+    kind: categorical
+    text_label: Number of involved axillary lymph nodes
+    text_values:
+      0-2: 0-2 nodes
+      5-Mar: 3-5 nodes
+      8-Jun: 6-8 nodes
+      11-Sep: 9-11 nodes
+      14-Dec: 12-14 nodes
+      15-17: 15-17 nodes
+      24-26: 24-26 nodes
+  node_caps:
+    column: node_caps
+    kind: categorical
+    text_label: Tumour penetration of the lymph-node capsule
+    text_values:
+      'no': 'No'
+      'yes': 'Yes'
+  deg_malig:
+    column: deg_malig
+    kind: categorical
+    text_label: Histological grade of malignancy
+    text_values:
+      '1': Grade 1 (low)
+      '2': Grade 2 (intermediate)
+      '3': Grade 3 (high)
+  breast:
+    column: breast
+    kind: categorical
+    text_label: Affected breast
+    text_values:
+      left: Left
+      right: Right
+  breast_quad:
+    column: breast_quad
+    kind: categorical
+    text_label: Breast quadrant of the tumour
+    text_values:
+      left_up: Upper outer / upper quadrant, left side
+      left_low: Lower quadrant, left side
+      right_up: Upper quadrant, right side
+      right_low: Lower quadrant, right side
+      central: Central (retroareolar)
+  irradiat:
+    column: irradiat
+    kind: categorical
+    text_label: Radiotherapy given
+    text_values:
+      'no': 'No'
+      'yes': 'Yes'
+outcomes:
+  recurrence:
+    column: recurrence
+    classes:
+    - No recurrence during follow-up
+    - Recurrence during follow-up
+    mapping:
+      '0': No recurrence during follow-up
+      '1': Recurrence during follow-up
+    question: Based on this clinical record at primary treatment, did the breast cancer recur during follow-up?

@@ -1,0 +1,38 @@
+{
+  "dataset": "physionet_2012",
+  "prepared_at": "2026-10-22T13:56:02.141072+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://physionet.org/files/challenge-2012/1.0.0/set-a.tar.gz",
+      "path": "datasets/physionet_2012/raw/set-a.tar.gz",
+      "sha256": "8cb250f179cd0952b4b9ebcf8954b63d70383131670fac1cfee13deaa13ca920",
+      "bytes": 6632372,
+      "retrieved": "cached"
+    },
+    {
+      "url": "https://physionet.org/files/challenge-2012/1.0.0/Outcomes-a.txt",
+      "path": "datasets/physionet_2012/raw/Outcomes-a.txt",
+      "sha256": "2613ea60ccda29f87571a7d6b09ad130858a8ccd66325bd073365925026883c2",
+      "bytes": 79219,
+      "retrieved": "cached"
+    }
+  ],
+  "patients_csv_sha256": "8d56b0eadad2a4f9db7d78b06f2b7861bb64b915ee94d33acee74524945259d5",
+  "summary": {
+    "observations": 1000,
+    "predictors": 76,
+    "outcome": "icu_death",
+    "excluded_predictors": [
+      "SAPS-I",
+      "SOFA",
+      "Length_of_stay",
+      "Survival"
+    ],
+    "class_counts": {
+      "Survived": 864,
+      "Died": 136
+    },
+    "identifier_note": "PhysioNet Challenge 2012 set A. First 1000 RecordIDs. Y = In-hospital_death. Predictors = 48h last/mean of named labs and vitals plus admission descriptors. Missing encoded as -1 in the source and converted to empty. SAPS-I/SOFA/LOS/Survival dropped.",
+    "cap": 1000
+  }
+}

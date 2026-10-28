@@ -1,0 +1,147 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_wdbc",
+  "outcome": "diagnosis",
+  "data_hash": "160a389dc87b45b2cc4faae0b37ca22f3dead500d15d8eb220213aec16f4fb81",
+  "dataset_spec_sha256": "4ebd9e319067bce00ccd019205f5cd082b34c4482e3692eac08378f7c5d158cf",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261013,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "Benign",
+    "Malignant"
+  ],
+  "predictor_columns": [
+    "radius_mean",
+    "radius_standard_error",
+    "radius_worst",
+    "texture_mean",
+    "texture_standard_error",
+    "texture_worst",
+    "perimeter_mean",
+    "perimeter_standard_error",
+    "perimeter_worst",
+    "area_mean",
+    "area_standard_error",
+    "area_worst",
+    "smoothness_mean",
+    "smoothness_standard_error",
+    "smoothness_worst",
+    "compactness_mean",
+    "compactness_standard_error",
+    "compactness_worst",
+    "concavity_mean",
+    "concavity_standard_error",
+    "concavity_worst",
+    "concave_points_mean",
+    "concave_points_standard_error",
+    "concave_points_worst",
+    "symmetry_mean",
+    "symmetry_standard_error",
+    "symmetry_worst",
+    "fractal_dimension_mean",
+    "fractal_dimension_standard_error",
+    "fractal_dimension_worst"
+  ],
+  "zs_raw_csv_sha256": "38e02560e183e138bae0cc31b73d3357a6e3234af9f49f814879ed285f0864a7",
+  "files": {
+    "split.json": "fdc970e3e5165929d386b14cd22c598485555db1652171172eb090d55bf42a14",
+    "trials.csv": "73a864db63b64450fff826bed0c56c5c34bb0ec604d7df7eab31249245cdf6cc",
+    "XGB_optuna.csv": "afaef2fb016b9c4c071b07e60469df8c402fdaa6cf498e321012bc96a0dae45b",
+    "ZS_raw.csv": "5e91106d50452cd08ba6611e889102a6faac84f598ac006e0c1435231ff5b500",
+    "model.joblib": "04e1c4083219c9ea8d3935f384f6ca202ea7cf383f761a0c2d117f77c4026793",
+    "best_params.json": "1b5ab65ee9c4cbe78b51a8833cf0ec14a17c3f04421029d2cff9a96ce4000750",
+    "metrics.json": "4923274fb8f9e0c923f0dc6dbbe939d9aeb401c151098684c5b1fd3e25fa3da2"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

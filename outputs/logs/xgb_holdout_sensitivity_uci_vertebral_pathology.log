@@ -1,0 +1,30 @@
+{"stage": "XGB_optuna", "trial": 0, "best": null}
+{"stage": "XGB_optuna", "trial": 10, "best": 0.8169444444444445}
+{"stage": "XGB_optuna", "trial": 30, "best": 0.8439814814814814}
+{"stage": "XGB_optuna", "trial": 50, "best": 0.8475925925925927}
+{"stage": "XGB_optuna", "done": true, "holdout_bacc": 0.7222222222222223, "zs_bacc": 0.3333333333333333}
+{"stage": "XGB_optuna", "trial": 0, "best": null}
+{"stage": "XGB_optuna", "trial": 20, "best": 0.8027777777777778}
+{"stage": "XGB_optuna", "trial": 30, "best": 0.8066666666666666}
+{"stage": "XGB_optuna", "trial": 40, "best": 0.8245370370370371}
+{"stage": "XGB_optuna", "trial": 50, "best": 0.8245370370370371}
+{"stage": "XGB_optuna", "done": true, "holdout_bacc": 0.8222222222222223, "zs_bacc": 0.3333333333333333}
+{"stage": "XGB_optuna", "trial": 0, "best": null}
+{"stage": "XGB_optuna", "trial": 20, "best": 0.8028703703703703}
+{"stage": "XGB_optuna", "trial": 40, "best": 0.8142592592592592}
+{"stage": "XGB_optuna", "trial": 60, "best": 0.8162037037037037}
+{"stage": "XGB_optuna", "trial": 70, "best": 0.8250925925925925}
+{"stage": "XGB_optuna", "trial": 80, "best": 0.8250925925925925}
+{"stage": "XGB_optuna", "trial": 90, "best": 0.8250925925925925}
+{"stage": "XGB_optuna", "done": true, "holdout_bacc": 0.7944444444444444, "zs_bacc": 0.3333333333333333}
+{"stage": "XGB_optuna", "trial": 0, "best": null}
+{"stage": "XGB_optuna", "trial": 10, "best": 0.7749074074074074}
+{"stage": "XGB_optuna", "trial": 40, "best": 0.8003703703703703}
+{"stage": "XGB_optuna", "trial": 60, "best": 0.8003703703703703}
+{"stage": "XGB_optuna", "trial": 80, "best": 0.8003703703703703}
+{"stage": "XGB_optuna", "trial": 90, "best": 0.8133333333333332}
+{"stage": "XGB_optuna", "done": true, "holdout_bacc": 0.75, "zs_bacc": 0.3333333333333333}
+{"stage": "XGB_optuna", "trial": 0, "best": null}
+{"stage": "XGB_optuna", "trial": 10, "best": 0.8293518518518518}
+{"stage": "XGB_optuna", "trial": 20, "best": 0.8469444444444443}
+{"stage": "XGB_optuna", "done": true, "holdout_bacc": 0.8055555555555555, "zs_bacc": 0.3333333333333333}

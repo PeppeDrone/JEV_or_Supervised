@@ -1,0 +1,1 @@
+physionet_2012/icu_death: 1000 labelled patients, 76 predictors, classes {'Survived': 864, 'Died': 136}, 5 outer folds -> outputs/physionet_2012/icu_death

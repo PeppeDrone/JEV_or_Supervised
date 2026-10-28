@@ -1,0 +1,119 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_mammographic_mass",
+  "outcome": "malignancy",
+  "data_hash": "9b30f78a0926e5392adf196fc2368327ed5722a8df0b6a5aa40e72337889aa67",
+  "dataset_spec_sha256": "968310f8710aee3ef113bdc440b45aa19cafb44f982f67ef81a4466a73b1d949",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261008,
+  "n_trials_requested": 200,
+  "timeout_seconds": 3600.0,
+  "classes": [
+    "Benign",
+    "Malignant"
+  ],
+  "predictor_columns": [
+    "age",
+    "shape",
+    "margin",
+    "density"
+  ],
+  "zs_raw_csv_sha256": "f18c1968ea43bdad57a7c5937acd438886dfae97388f0a5ad208ccdbda4c9aa9",
+  "files": {
+    "split.json": "d59bd7ff0c556821c5c9dbb1796b24b9cb204bef42fe759e81d93c22b45dd486",
+    "trials.csv": "b613cb50baefec0c74d3554daa14eeacbe3b238f5df4b4f5e55891dd3d14a556",
+    "XGB_optuna.csv": "bf8f8fc8d72477845c2e14e1a5a0908841b0ee6ea25682eae3ad8088252cd4de",
+    "ZS_raw.csv": "57c7688f51374a885d5cc3dcfebd6764ec752df7115b0f97df8266df3d5c6551",
+    "model.joblib": "35b792d86cccb3f05964b11714bee038037bf0eea01ab7d4bfdd89c74ab3f364",
+    "best_params.json": "f91677f11da6b87d2e7b8478913f2d7be43f236726e67ffb2dd0cfb94962415b",
+    "metrics.json": "e9328c0253fc2a8726b6daf7d516c5f853eaf2b5197d4c49b6f76cb9701e106d"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  },
+  "zs_raw_source": "predictions/ZS_raw_holdout.csv",
+  "rescored_from": "outputs/uci_mammographic_mass/malignancy/holdout",
+  "source_data_hash": "b9d1de7e0f77bc7ebf181712e69bc6e232e812fde301358006eb295174106a67"
+}

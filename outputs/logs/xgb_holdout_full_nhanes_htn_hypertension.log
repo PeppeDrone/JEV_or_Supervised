@@ -1,0 +1,10 @@
+{"stage": "XGB_optuna", "trial": 0, "best": null}
+{"stage": "XGB_optuna", "trial": 10, "best": 0.7184925173768377}
+{"stage": "XGB_optuna", "trial": 20, "best": 0.7230680063478027}
+{"stage": "XGB_optuna", "trial": 40, "best": 0.7267333655750703}
+{"stage": "XGB_optuna", "trial": 50, "best": 0.7283376660547274}
+{"stage": "XGB_optuna", "trial": 80, "best": 0.7283376660547274}
+{"stage": "XGB_optuna", "trial": 90, "best": 0.7283376660547274}
+/home/airlab/Desktop/JEV_prediction_testing_v2/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:3001: UserWarning: The y_pred values do not sum to one. Make sure to pass probabilities.
+  warnings.warn(
+{"stage": "XGB_optuna_full", "done": true, "holdout_bacc": 0.7059178743961352, "zs_bacc": 0.5841384863123994}

@@ -1,0 +1,155 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "uci_dermatology",
+  "outcome": "dermatological_diagnosis",
+  "data_hash": "bcbb6a24018db171c88da1fc75fc2f20d632bc4481a246e55ae59a5b204139bf",
+  "dataset_spec_sha256": "b14a18596206156cfc2ad40029a49c853df512bb911abef389022c3ffca09369",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261013,
+  "n_trials_requested": 100,
+  "timeout_seconds": 1200.0,
+  "classes": [
+    "Psoriasis",
+    "Seborrhoeic dermatitis",
+    "Lichen planus",
+    "Pityriasis rosea",
+    "Chronic dermatitis",
+    "Pityriasis rubra pilaris"
+  ],
+  "predictor_columns": [
+    "erythema",
+    "scaling",
+    "definite_borders",
+    "itching",
+    "koebner_phenomenon",
+    "polygonal_papules",
+    "follicular_papules",
+    "oral_mucosal_involvement",
+    "knee_elbow_involvement",
+    "scalp_involvement",
+    "family_history",
+    "melanin_incontinence",
+    "eosinophils_in_infiltrate",
+    "pnl_infiltrate",
+    "fibrosis_papillary_dermis",
+    "exocytosis",
+    "acanthosis",
+    "hyperkeratosis",
+    "parakeratosis",
+    "clubbing_rete_ridges",
+    "elongation_rete_ridges",
+    "thinning_suprapapillary",
+    "spongiform_pustule",
+    "munro_microabscess",
+    "focal_hypergranulosis",
+    "disappearance_granular_layer",
+    "vacuolisation_basal_layer",
+    "spongiosis",
+    "saw_tooth_retes",
+    "follicular_horn_plug",
+    "perifollicular_parakeratosis",
+    "inflammatory_mononuclear",
+    "band_like_infiltrate",
+    "age"
+  ],
+  "zs_raw_csv_sha256": "6aaf24de1e23d3283e7672a0a082703103d00fc13705b5bfbc4659dd3c2a8beb",
+  "files": {
+    "split.json": "8924b50e8d6f7c61f7e0f13e52ef5c7dd18a44b2ebde6b9b2a949169cfb9edc5",
+    "trials.csv": "784a7fc3663b0dc57389d44d54d2bd5dffdfbf362386dfa55dec7c95e76e2a1e",
+    "XGB_optuna.csv": "5980924c77a3053a6a5c4e71447f442bc1f4e91f328a2f1fe6a45122036b30c9",
+    "ZS_raw.csv": "f5a13944a167853297e058b577b80deb321b97691b977761b1c58c7d84c18f42",
+    "model.joblib": "157fc8e06eef26ff23f5f9afb37295ad704973ece80a3133a9466b7493f2b134",
+    "best_params.json": "0faec36fd30db1344114f97285ef5e743b8ff38fe9cb80b12f9a8909313ff50d",
+    "metrics.json": "09109b1d2c149bc1b32bf9b5f21778935365b5d6b74b1590fd499b120f7e0b84"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

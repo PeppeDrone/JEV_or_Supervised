@@ -1,0 +1,129 @@
+{
+  "model": "XGB_optuna",
+  "dataset": "berlin_appendicitis",
+  "outcome": "appendicitis",
+  "data_hash": "1509adebd0d25df256824da9365fed0328d75e4e586113f124b4d58916247268",
+  "dataset_spec_sha256": "cd5ba87059576359a81ba176062066af17a031df81269ae6cffc8651d03025c7",
+  "holdout_config": {
+    "fraction": 0.2,
+    "inner_folds": 5,
+    "optuna_trials": 200,
+    "max_minutes": 60,
+    "threads": 5,
+    "bootstrap_iterations": 1000,
+    "sensitivity_seeds": 5,
+    "sensitivity_trials": 100,
+    "sensitivity_max_minutes": 20,
+    "full": {
+      "tuning_cap": 50000,
+      "optuna_trials": 100,
+      "max_minutes": 60
+    },
+    "search_space": {
+      "max_depth": [
+        2,
+        10
+      ],
+      "learning_rate": [
+        0.005,
+        0.3
+      ],
+      "n_estimators": [
+        50,
+        1500
+      ],
+      "min_child_weight": [
+        0.5,
+        50
+      ],
+      "subsample": [
+        0.5,
+        1.0
+      ],
+      "colsample_bytree": [
+        0.4,
+        1.0
+      ],
+      "colsample_bylevel": [
+        0.4,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        5.0
+      ],
+      "reg_alpha": [
+        0.001,
+        10
+      ],
+      "reg_lambda": [
+        0.01,
+        50
+      ],
+      "max_bin": [
+        64,
+        128,
+        256
+      ],
+      "grow_policy": [
+        "depthwise",
+        "lossguide"
+      ],
+      "class_weight_exponent": [
+        0.0,
+        1.0
+      ],
+      "threshold": [
+        0.05,
+        0.95
+      ],
+      "prior_exponent": [
+        0.0,
+        1.5
+      ]
+    }
+  },
+  "seed": 20261008,
+  "n_trials_requested": 200,
+  "timeout_seconds": 3600.0,
+  "classes": [
+    "No appendicitis",
+    "Appendicitis"
+  ],
+  "predictor_columns": [
+    "age",
+    "sex",
+    "crp",
+    "platelets",
+    "wbc",
+    "neutrophils",
+    "immature_granulocytes",
+    "lymphocytes",
+    "monocytes",
+    "eosinophils",
+    "basophils",
+    "appendix_diameter"
+  ],
+  "zs_raw_csv_sha256": "bacdcf98c9dc041bd9aa93c0cd8587697a8cd1d923cfbe624a43a286be3c8463",
+  "files": {
+    "split.json": "9b5eb43a6ca726dfb70f1bb67125b2205bb941e07b085a43db1ef694548a50cd",
+    "trials.csv": "37afe332491844cdaba18c0d1881ef82158209d72b1b2e29f7c16e1d58ee4c96",
+    "XGB_optuna.csv": "a53d66da672d21f7abcfb7d76692fa87a2feb74b8e0aef952e382358208fcfaf",
+    "ZS_raw.csv": "7ba563abc6834a0ed7de48af13676959de5e01789a8ff467f049093bbb3dc25a",
+    "model.joblib": "cb6966aa882f23357caaf4490e20aae8f72f099851c576009c29171c903d0b3d",
+    "best_params.json": "cd1e4c987c67192b66d74e0ae7823289c25731812b14159212929e22291f20cd",
+    "metrics.json": "b0a6177505a207c2ba287e424897a799d16d6f49fbba5c89d322f0013a4010c2"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.1.2",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "xgboost": "3.0.5",
+    "scipy": "1.15.3",
+    "torch": "2.8.0+cu129",
+    "transformers": "4.57.1",
+    "joblib": "1.6.0",
+    "optuna": "4.9.0"
+  }
+}

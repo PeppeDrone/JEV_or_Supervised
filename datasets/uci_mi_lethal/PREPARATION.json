@@ -1,0 +1,38 @@
+{
+  "dataset": "uci_mi_lethal",
+  "prepared_at": "2026-10-21T11:05:55.688064+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/579/data.csv",
+      "path": "datasets/uci_mi_lethal/raw/data.csv",
+      "sha256": "335805edbe66e47f0dc322c0d9c010da64384830ad68d80030b705f964ce95ac",
+      "bytes": 485483,
+      "retrieved": "cached"
+    }
+  ],
+  "patients_csv_sha256": "cdf14e70d26277a3bb5d96acf73080d6e8820586b61a5c014e84359b6a36fe44",
+  "summary": {
+    "observations": 1700,
+    "predictors": 111,
+    "outcome": "lethal",
+    "excluded_predictors": [
+      "FIBR_PREDS",
+      "PREDS_TAH",
+      "JELUD_TAH",
+      "FIBR_JELUD",
+      "A_V_BLOK",
+      "OTEK_LANC",
+      "RAZRIV",
+      "DRESSLER",
+      "ZSN",
+      "REC_IM",
+      "P_IM_STEN",
+      "LET_IS"
+    ],
+    "class_counts": {
+      "Non-lethal course": 1429,
+      "Lethal outcome": 271
+    },
+    "identifier_note": "UCI Myocardial infarction complications; predictors = admission features only; target lethal if LET_IS \u2260 0; other complication labels excluded."
+  }
+}

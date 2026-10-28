@@ -1,0 +1,30 @@
+{
+  "dataset": "uci_aids_cid",
+  "prepared_at": "2026-10-21T11:10:17.994519+00:00",
+  "source_retrieval": [
+    {
+      "url": "https://archive.ics.uci.edu/static/public/890/data.csv",
+      "path": "datasets/uci_aids_cid/raw/data.csv",
+      "sha256": "cf58638c7687764ccb32d037938142518293d505eec349ccec406d4d42ba9532",
+      "bytes": 159675,
+      "retrieved": "2026-10-21T11:10:17.925991+00:00"
+    }
+  ],
+  "patients_csv_sha256": "c246c7175713f372562e5e5da893baf60a2055f223c8c131b973fed0c8a4bf4c",
+  "summary": {
+    "observations": 2139,
+    "predictors": 19,
+    "outcome": "aids_event",
+    "excluded_predictors": [
+      "cd420",
+      "cd820",
+      "offtrt",
+      "time"
+    ],
+    "class_counts": {
+      "No AIDS-defining event": 1618,
+      "AIDS-defining event": 521
+    },
+    "identifier_note": "UCI AIDS Clinical Trials Group Study 175; cid endpoint; time excluded."
+  }
+}

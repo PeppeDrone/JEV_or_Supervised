@@ -1,0 +1,33 @@
+{
+  "dataset": "wids2021",
+  "prepared_at": "2026-10-21T08:00:36.998853+00:00",
+  "source": "datasets/wids2021/raw/TrainingWiDS2021.csv",
+  "source_sha256": "ca65bf5c36cafa9788f06d09e7fb66831dc88cde725e1fdc3a80e707e2cf893b",
+  "patients_csv_sha256": "c3253e5194e995aef70731305e851dcd7bdf1cd69e0ade04f0534e3f01370fbb",
+  "summary": {
+    "observations": 5000,
+    "predictors": 32,
+    "outcome": "diabetes_mellitus",
+    "class_counts": {
+      "No diabetes mellitus": 3919,
+      "Diabetes mellitus": 1081
+    },
+    "identifier_note": "WiDS 2021 TrainingWiDS2021.csv; stratified sample of 5000 encounters (seed 20261008) from 130157 labelled encounters. Excluded: identifiers, hospital/ICU ids, APACHE diagnosis codes, all glucose labs (near-label for existing diabetes), and unused labs/vitals outside the fixed KEEP list. Target is existing diabetes status, not incidence.",
+    "full_training_n": 130157,
+    "excluded_near_label": [
+      "glucose_apache",
+      "d1_glucose_max",
+      "d1_glucose_min",
+      "h1_glucose_max",
+      "h1_glucose_min"
+    ]
+  },
+  "kaggle_note": "Official kaggle competitions download -c widsdatathon2021 succeeded after joining; TrainingWiDS2021.csv sha256 matches the earlier sangeetha1213 mirror (ca65bf5c36cafa9788f06d09e7fb66831dc88cde725e1fdc3a80e707e2cf893b). Prepared cohort unchanged.",
+  "official_raw": "datasets/wids2021/raw_official/",
+  "readout_subsample": {
+    "n": 1000,
+    "from_n": 5000,
+    "seed": 20261008,
+    "method": "class-stratified, within the earlier stratified sample"
+  }
+}
